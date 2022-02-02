@@ -37,7 +37,7 @@ sudo apt install python3.7
 python --version
 ```
 
-3. If some other version of python then you can configure the versions and switch between them. The cureent command will set 3.7 to highest priority.
+3. If some other version of python then you can configure the versions and switch between them. The current command will set 3.7 to highest priority.
 ```
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1
 ```
