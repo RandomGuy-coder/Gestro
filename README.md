@@ -79,6 +79,11 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
     
 # jX the X depends on your number of cores. I ran on 4 cores.
 make -j4
+
+# If the following error occurs: "recipe for target "all" failed", just rerun the make command again:
+make -j4
+
+# when opencv is successfully built, run the following command:
 sudo make install            
 ```
 
