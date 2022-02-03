@@ -63,6 +63,10 @@ wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.x.
 unzip opencv.zip
 unzip opencv_contrib.zip
 
+
+# cd into opencv-4.x 
+cd opencv-4.x
+
 # build the opencv
 mkdir build && cd build
 
@@ -71,7 +75,7 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
     -D INSTALL_C_EXAMPLES=ON \
     -D INSTALL_PYTHON_EXAMPLES=ON \
     -D OPENCV_GENERATE_PKGCONFIG=ON \
-    -D OPENCV_EXTRA_MODULES_PATH=~/opencv_build/opencv_contrib/modules \
+    -D OPENCV_EXTRA_MODULES_PATH=~/opencv_build/opencv_contrib-4.x/modules \
     -D BUILD_EXAMPLES=ON ..
     
 # jX the X depends on your number of cores. I ran on 4 cores.
