@@ -7,7 +7,7 @@ find_package(OpenCV 4.5 REQUIRED PATHS "/usr/local/")
 
 include_directories(${OpenCV_INCLUDE_DIRS})
 add_executable(Ubuntu_GestureControl
-        opencvtest.cpp)
+        opencvtest.cpp SkinColorDetector.cpp SkinColorDetector.h)
 target_link_libraries(Ubuntu_GestureControl ${OpenCV_LIBS})
 
 message(STATUS "OpenCV_INCLUDE_DIRS = ${OpenCV_INCLUDE_DIRS}")

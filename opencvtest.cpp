@@ -4,9 +4,37 @@
 #include "opencv2/opencv.hpp"
 #include "iostream"
 #include "stdio.h"
+#include "SkinColorDetector.h"
 
 using namespace cv;
 using namespace std;
+
+SkinColorDetector skinDetector;
+int lowThres = 50, highThres = 10;
+
+void on_trackbar(int, void*) {
+    skinDetector.calibrateTrackBar(lowThres, highThres);
+}
+
+//void createHSVTrackbars() {
+//    // create window for trackbars
+//    namedWindow("trackbars", 0);
+//    // create memory to store trackbar name on window
+//    char TrackBarName[50];
+//    sprintf(TrackBarName, "H_MIN", H_MIN);
+//    sprintf(TrackBarName, "H_MAX", H_MAX);
+//    sprintf(TrackBarName, "S_MIN", S_MIN);
+//    sprintf(TrackBarName, "S_MAX", S_MAX);
+//    sprintf(TrackBarName, "V_MIN", V_MIN);
+//    sprintf(TrackBarName, "V_MAX", V_MAX);
+//    // create trackabrs and insert them into windows
+//    createTrackbar("H_MIN", "trackbars", &H_MIN, H_MAX, skinDetector.calibrateTrackBar);
+//    createTrackbar("H_MAX", "trackbars", &H_MAX, H_MAX, skinDetector.calibrateTrackBar);
+//    createTrackbar("S_MIN", "trackbars", &S_MIN, S_MAX, skinDetector.calibrateTrackBar);
+//    createTrackbar("S_MAX", "trackbars", &S_MAX, S_MAX, skinDetector.calibrateTrackBar);
+//    createTrackbar("V_MIN", "trackbars", &V_MIN, V_MAX, skinDetector.calibrateTrackBar);
+//    createTrackbar("V_MAX", "trackbars", &V_MAX, V_MAX, skinDetector.calibrateTrackBar);
+//}
 
 int main(int, char**)
 {
@@ -32,9 +60,35 @@ int main(int, char**)
     string window_name = "My Camera Feed";
     namedWindow(window_name); //create a window called "My Camera Feed"
 
+//    SkinColorDetector skinDetector;
+    Mat frame, HSVframe, frameOutput, skinMask;
+    // int H_MIN = 0, H_MAX = 256, S_MIN = 0, S_MAX = 256, V_MIN = 0, V_MAX = 256;
+//     int lowThres = 50, highThres = 10,
+    int maximum = 256;
+    // create window for trackbars
+    namedWindow("trackbars", 0);
+    // create memory to store trackbar name on window
+    char TrackBarName[50];
+//    sprintf(TrackBarName, "H_MIN", H_MIN);
+//    sprintf(TrackBarName, "H_MAX", H_MAX);
+//    sprintf(TrackBarName, "S_MIN", S_MIN);
+//    sprintf(TrackBarName, "S_MAX", S_MAX);
+//    sprintf(TrackBarName, "V_MIN", V_MIN);
+//    sprintf(TrackBarName, "V_MAX", V_MAX);
+    sprintf(TrackBarName, "lowThres");
+    sprintf(TrackBarName, "highThres");
+    // create trackbars and insert them into windows
+//    createTrackbar("H_MIN", "trackbars", &H_MIN, H_MAX, skinDetector.calibrateTrackBar());
+//    createTrackbar("H_MAX", "trackbars", &H_MAX, H_MAX, skinDetector.calibrateTrackBar());
+//    createTrackbar("S_MIN", "trackbars", &S_MIN, S_MAX, skinDetector.calibrateTrackBar());
+//    createTrackbar("S_MAX", "trackbars", &S_MAX, S_MAX, skinDetector.calibrateTrackBar());
+//    createTrackbar("V_MIN", "trackbars", &V_MIN, V_MAX, skinDetector.calibrateTrackBar());
+//    createTrackbar("V_MAX", "trackbars", &V_MAX, V_MAX, skinDetector.calibrateTrackBar());
+    createTrackbar("lowThres", "trackbars", &lowThres, maximum, on_trackbar);
+    createTrackbar("highThres", "trackbars", &highThres, maximum, on_trackbar);
+
     while (true)
     {
-        Mat frame;
         bool bSuccess = cap.read(frame); // read a new frame from video
 
         //Breaking the while loop if the frames cannot be captured
@@ -46,16 +100,32 @@ int main(int, char**)
         }
 
         //show the frame in the created window
-        imshow(window_name, frame);
+//        cvtColor(frame, HSVframe, COLOR_BGR2HSV);
+//        imshow(window_name, frame);
+        frameOutput = frame.clone();
+        skinDetector.drawSkinColorSampler(frameOutput);
+
+        skinMask = skinDetector.getSkinMask(frameOutput);
+        if (skinDetector.getCalibrated()) {
+            imshow(window_name, skinMask);
+        } else {
+            imshow("frameO", frameOutput);
+        }
+
+
 
         //wait for for 10 ms until any key is pressed.
         //If the 'Esc' key is pressed, break the while loop.
         //If the any other key is pressed, continue the loop
         //If any key is not pressed withing 10 ms, continue the loop
-        if (waitKey(10) == 27)
+        int pressedKey = waitKey(10);
+        if (pressedKey == 27)
         {
-            cout << "Esc key is pressed by user. Stoppig the video" << endl;
+            cout << "Esc key is pressed by user. Stopping the video" << endl;
             break;
+        } else if (pressedKey == 115) {
+            skinDetector.calibrate(frame);
+            destroyWindow("frameO");
         }
     }
 
