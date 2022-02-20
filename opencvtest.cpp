@@ -5,6 +5,8 @@
 #include "iostream"
 #include "stdio.h"
 #include "SkinColorDetector.h"
+#include "FaceRemover.h"
+#include "BackgroundRemover.h"
 
 using namespace cv;
 using namespace std;
@@ -61,7 +63,7 @@ int main(int, char**)
     namedWindow(window_name); //create a window called "My Camera Feed"
 
 //    SkinColorDetector skinDetector;
-    Mat frame, HSVframe, frameOutput, skinMask;
+    Mat frame, HSVframe, frameOutput, foreground, skinMask;
     // int H_MIN = 0, H_MAX = 256, S_MIN = 0, S_MAX = 256, V_MIN = 0, V_MAX = 256;
 //     int lowThres = 50, highThres = 10,
     int maximum = 256;
@@ -87,7 +89,10 @@ int main(int, char**)
     createTrackbar("lowThres", "trackbars", &lowThres, maximum, on_trackbar);
     createTrackbar("highThres", "trackbars", &highThres, maximum, on_trackbar);
 
-    while (true)
+    FaceRemover faceRemover;
+    BackgroundRemover backgroundRemover;
+
+      while (true)
     {
         bool bSuccess = cap.read(frame); // read a new frame from video
 
@@ -104,8 +109,10 @@ int main(int, char**)
 //        imshow(window_name, frame);
         frameOutput = frame.clone();
         skinDetector.drawSkinColorSampler(frameOutput);
-
-        skinMask = skinDetector.getSkinMask(frameOutput);
+        foreground = backgroundRemover.getForeground(frame);
+//        foreground = frame.clone();
+        faceRemover.removeFaces(frame, foreground);
+        skinMask = skinDetector.getSkinMask(foreground);
         if (skinDetector.getCalibrated()) {
             imshow(window_name, skinMask);
         } else {
@@ -119,11 +126,12 @@ int main(int, char**)
         //If the any other key is pressed, continue the loop
         //If any key is not pressed withing 10 ms, continue the loop
         int pressedKey = waitKey(10);
-        if (pressedKey == 27)
-        {
+        if (pressedKey == 27) { // esc
             cout << "Esc key is pressed by user. Stopping the video" << endl;
             break;
-        } else if (pressedKey == 115) {
+        } else if (pressedKey == 98) { // b
+                backgroundRemover.calibrate(frame);
+        } else if (pressedKey == 115) { // s
             skinDetector.calibrate(frame);
             destroyWindow("frameO");
         }
