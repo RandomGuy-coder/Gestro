@@ -5,7 +5,7 @@
 #include "FaceRemover.h"
 #include "opencv2/opencv.hpp"
 
-String faceClassifierFileName = "/home/terrancewong/opencv_build/opencv-4.x/data/haarcascades/haarcascade_frontalface_alt.xml";
+String faceClassifierFileName = "../Resources/haarcascade_frontalface_alt.xml";
 CascadeClassifier faceCascadeClassifier;
 
 FaceRemover::FaceRemover(void) {
