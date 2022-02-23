@@ -26,7 +26,7 @@ void FaceRemover::removeFaces(Mat inputFrame, Mat outputFrame) {
         rectangle(
                 outputFrame,
                 Point(faces[i].x, faces[i].y),
-                Point(faces[i].x + faces[i].width, faces[i].y + faces[i].height),
+                Point(faces[i].x + faces[i].width + 15, faces[i].y + faces[i].height + 40),
                 Scalar(0, 0, 0),
                 -1
         );

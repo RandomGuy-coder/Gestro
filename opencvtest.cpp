@@ -107,10 +107,10 @@ int main(int, char**)
         //show the frame in the created window
 //        cvtColor(frame, HSVframe, COLOR_BGR2HSV);
 //        imshow(window_name, frame);
+        flip(frame, frame, 1);
         frameOutput = frame.clone();
         skinDetector.drawSkinColorSampler(frameOutput);
         foreground = backgroundRemover.getForeground(frame);
-//        foreground = frame.clone();
         faceRemover.removeFaces(frame, foreground);
         skinMask = skinDetector.getSkinMask(foreground);
         if (skinDetector.getCalibrated()) {
