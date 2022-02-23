@@ -7,6 +7,7 @@
 #include "SkinColorDetector.h"
 #include "FaceRemover.h"
 #include "BackgroundRemover.h"
+#include "FingerCounter.h"
 
 using namespace cv;
 using namespace std;
@@ -17,26 +18,6 @@ int lowThres = 50, highThres = 10;
 void on_trackbar(int, void*) {
     skinDetector.calibrateTrackBar(lowThres, highThres);
 }
-
-//void createHSVTrackbars() {
-//    // create window for trackbars
-//    namedWindow("trackbars", 0);
-//    // create memory to store trackbar name on window
-//    char TrackBarName[50];
-//    sprintf(TrackBarName, "H_MIN", H_MIN);
-//    sprintf(TrackBarName, "H_MAX", H_MAX);
-//    sprintf(TrackBarName, "S_MIN", S_MIN);
-//    sprintf(TrackBarName, "S_MAX", S_MAX);
-//    sprintf(TrackBarName, "V_MIN", V_MIN);
-//    sprintf(TrackBarName, "V_MAX", V_MAX);
-//    // create trackabrs and insert them into windows
-//    createTrackbar("H_MIN", "trackbars", &H_MIN, H_MAX, skinDetector.calibrateTrackBar);
-//    createTrackbar("H_MAX", "trackbars", &H_MAX, H_MAX, skinDetector.calibrateTrackBar);
-//    createTrackbar("S_MIN", "trackbars", &S_MIN, S_MAX, skinDetector.calibrateTrackBar);
-//    createTrackbar("S_MAX", "trackbars", &S_MAX, S_MAX, skinDetector.calibrateTrackBar);
-//    createTrackbar("V_MIN", "trackbars", &V_MIN, V_MAX, skinDetector.calibrateTrackBar);
-//    createTrackbar("V_MAX", "trackbars", &V_MAX, V_MAX, skinDetector.calibrateTrackBar);
-//}
 
 int main(int, char**)
 {
@@ -63,37 +44,25 @@ int main(int, char**)
     namedWindow(window_name); //create a window called "My Camera Feed"
 
 //    SkinColorDetector skinDetector;
-    Mat frame, HSVframe, frameOutput, foreground, skinMask;
-    // int H_MIN = 0, H_MAX = 256, S_MIN = 0, S_MAX = 256, V_MIN = 0, V_MAX = 256;
-//     int lowThres = 50, highThres = 10,
+    Mat frame, frameOutput, foreground, skinMask, fingerCounterDebug;
+
     int maximum = 256;
     // create window for trackbars
     namedWindow("trackbars", 0);
     // create memory to store trackbar name on window
     char TrackBarName[50];
-//    sprintf(TrackBarName, "H_MIN", H_MIN);
-//    sprintf(TrackBarName, "H_MAX", H_MAX);
-//    sprintf(TrackBarName, "S_MIN", S_MIN);
-//    sprintf(TrackBarName, "S_MAX", S_MAX);
-//    sprintf(TrackBarName, "V_MIN", V_MIN);
-//    sprintf(TrackBarName, "V_MAX", V_MAX);
     sprintf(TrackBarName, "lowThres");
     sprintf(TrackBarName, "highThres");
     // create trackbars and insert them into windows
-//    createTrackbar("H_MIN", "trackbars", &H_MIN, H_MAX, skinDetector.calibrateTrackBar());
-//    createTrackbar("H_MAX", "trackbars", &H_MAX, H_MAX, skinDetector.calibrateTrackBar());
-//    createTrackbar("S_MIN", "trackbars", &S_MIN, S_MAX, skinDetector.calibrateTrackBar());
-//    createTrackbar("S_MAX", "trackbars", &S_MAX, S_MAX, skinDetector.calibrateTrackBar());
-//    createTrackbar("V_MIN", "trackbars", &V_MIN, V_MAX, skinDetector.calibrateTrackBar());
-//    createTrackbar("V_MAX", "trackbars", &V_MAX, V_MAX, skinDetector.calibrateTrackBar());
     createTrackbar("lowThres", "trackbars", &lowThres, maximum, on_trackbar);
     createTrackbar("highThres", "trackbars", &highThres, maximum, on_trackbar);
 
     FaceRemover faceRemover;
     BackgroundRemover backgroundRemover;
+    FingerCounter fingerCounter;
 
-      while (true)
-    {
+    while (true) {
+
         bool bSuccess = cap.read(frame); // read a new frame from video
 
         //Breaking the while loop if the frames cannot be captured
@@ -104,22 +73,22 @@ int main(int, char**)
             break;
         }
 
-        //show the frame in the created window
-//        cvtColor(frame, HSVframe, COLOR_BGR2HSV);
-//        imshow(window_name, frame);
+        //show the flippedframe in the created window
         flip(frame, frame, 1);
         frameOutput = frame.clone();
         skinDetector.drawSkinColorSampler(frameOutput);
         foreground = backgroundRemover.getForeground(frame);
         faceRemover.removeFaces(frame, foreground);
         skinMask = skinDetector.getSkinMask(foreground);
-        if (skinDetector.getCalibrated()) {
-            imshow(window_name, skinMask);
+        fingerCounterDebug = fingerCounter.findFingersCount(skinMask, frameOutput);
+
+
+        if (!skinDetector.getCalibrated()) {
+            imshow("Remove Background and Detect Skin Color", frameOutput);
         } else {
-            imshow("frameO", frameOutput);
+            imshow(window_name, skinMask);
+            imshow("Finger Detection", fingerCounterDebug);
         }
-
-
 
         //wait for for 10 ms until any key is pressed.
         //If the 'Esc' key is pressed, break the while loop.
