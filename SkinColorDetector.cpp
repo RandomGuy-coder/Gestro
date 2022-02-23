@@ -22,7 +22,7 @@ SkinColorDetector::SkinColorDetector(void) {
 
 void SkinColorDetector::drawSkinColorSampler(Mat inputFrame) {
     int frameWidth = inputFrame.size().width, frameHeight = inputFrame.size().height;
-    int rectSize = 300;
+    int rectSize = 200;
     Scalar rectColor = (0, 0, 255);
 
     skinColorSamplerRect1 =  Rect(frameWidth / 5, frameHeight / 2, rectSize, rectSize);
@@ -91,7 +91,8 @@ Mat SkinColorDetector::getSkinMask(Mat inputFrame) {
     cvtColor(inputFrame, inputFramehsv, COLOR_BGR2HSV);
 
     inRange(inputFramehsv,Scalar(hLower, sLower, vLower), Scalar(hUpper, sUpper, vUpper), skinMask);
-    opening(skinMask, MORPH_ELLIPSE, {5,5});
+    opening(skinMask, MORPH_ELLIPSE, {5, 5});
+//    opening(skinMask, MORPH_ELLIPSE, {3, 3});
     dilate(skinMask, skinMask, Mat(), Point(-1, -1), 3);
 
     return skinMask;
