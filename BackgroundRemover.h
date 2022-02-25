@@ -11,17 +11,18 @@ using namespace cv;
 using namespace std;
 
 class BackgroundRemover {
-public:
-    BackgroundRemover(void);
-    void calibrate(Mat input);
-    Mat getForeground(Mat input);
-
 private:
     Mat background;
     bool calibrated = false;
 
     Mat getForegroundMask(Mat input);
     void removeBackground(Mat input, Mat background);
+
+public:
+    BackgroundRemover(void);
+    void calibrate(Mat input);
+    Mat getForeground(Mat input);
+    bool getCalibrated() {return calibrated;}
 };
 
 #endif //UBUNTU_GESTURECONTROL_BACKGROUNDREMOVER_H

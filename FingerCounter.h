@@ -15,6 +15,8 @@ public:
     FingerCounter(void);
     Mat findFingersCount(Mat input_image, Mat frame);
 
+    int getFingerNumber() {return fingerNumber;}
+
 private:
     Scalar color_blue;
     Scalar color_green;
@@ -30,6 +32,8 @@ private:
     vector<Point> findClosestOnX(vector<Point> points, Point pivot);
     double findPointsDistanceOnX(Point a, Point b);
     void drawVectorPoints(Mat image, vector<Point> points, Scalar color, bool with_numbers);
+
+    int fingerNumber = 0;
 };
 
 #endif //UBUNTU_GESTURECONTROL_FINGERCOUNTER_H

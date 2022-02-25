@@ -17,6 +17,8 @@ SkinColorDetector::SkinColorDetector(void) {
 
     calibrated = false;
 
+    dilation_size = 5;
+
     skinColorSamplerRect1, skinColorSamplerRect2;
 }
 
@@ -62,7 +64,8 @@ void SkinColorDetector::calculateThresholds(Mat sample1, Mat sample2) {
     //vLower = 0;
 }
 
-void SkinColorDetector::calibrateTrackBar(int offsetLow, int offsetHigh) {
+void SkinColorDetector::calibrateTrackBar(int offsetLow, int offsetHigh, int dilation_size2) {
+    dilation_size = dilation_size2;
     int offsetLowThreshold = offsetLow, offsetHighThreshold = offsetHigh;
     Scalar hsvMeansSample1 = MeansSample1, hsvMeansSample2 = MeansSample2;
 
@@ -92,8 +95,9 @@ Mat SkinColorDetector::getSkinMask(Mat inputFrame) {
 
     inRange(inputFramehsv,Scalar(hLower, sLower, vLower), Scalar(hUpper, sUpper, vUpper), skinMask);
     opening(skinMask, MORPH_ELLIPSE, {5, 5});
-//    opening(skinMask, MORPH_ELLIPSE, {3, 3});
-    dilate(skinMask, skinMask, Mat(), Point(-1, -1), 3);
+//    opening(skinMask, MORPH_ELLIPSE, {dilation_size, dilation_size});
+//    dilate(skinMask, skinMask, Mat(), Point(-1, -1), 3);
+    dilate(skinMask, skinMask, getStructuringElement(MORPH_ELLIPSE, Size( 11, 11 )),Point(-1, -1), 3);
 
     return skinMask;
 }
