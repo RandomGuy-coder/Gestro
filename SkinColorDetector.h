@@ -12,6 +12,7 @@ class SkinColorDetector {
 private:
     int hUpper, hLower, sUpper, sLower, vUpper, vLower;
     Scalar MeansSample1, MeansSample2;
+    int dilation_size;
 
     bool calibrated;
 
@@ -26,7 +27,7 @@ public:
     void calibrate(Mat inputFrame);
     Mat getSkinMask(Mat inputFrame);
     bool getCalibrated() {return calibrated;}
-    void calibrateTrackBar(int offsetLow, int offsetHigh);
+    void calibrateTrackBar(int offsetLow, int offsetHigh, int dilation_size);
 };
 
 

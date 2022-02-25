@@ -142,6 +142,8 @@ Mat FingerCounter::findFingersCount(Mat input_image, Mat frame) {
     drawVectorPoints(contours_image, filtered_finger_points, color_yellow, false);
     putText(contours_image, to_string(filtered_finger_points.size()), center_bounding_rect, FONT_HERSHEY_PLAIN, 3, color_purple);
 
+    fingerNumber = filtered_finger_points.size();
+
     // and on the starting frame
     drawContours(frame, contours, biggest_contour_index, color_green, 2, 8, hierarchy);
     circle(frame, center_bounding_rect, 5, color_purple, 2, 8);
