@@ -1,6 +1,18 @@
-# ENG5220 - Real-Time-Embedded-Systems - Team 26
+<h1 align="center">Gestro</h1>
+<p align="center">
+  <a href="https://github.com/RandomGuy-coder/Gestro">
+    <img src="/images/logo.png" alt="Gestro Logo" width="200">
+  </a>
 
-## To control the Ubuntu system using hand gestures
+  <p align="center">Controlling Linux system using hand gestures</p>  
+</p>
+
+![Contributors](https://img.shields.io/github/contributors/RandomGuy-coder/Gestro?color=9cf&style=flat-square)
+![Issues](https://img.shields.io/github/issues/RandomGuy-coder/Gestro?color=orange&style=flat-square)
+![License](https://img.shields.io/github/license/RandomGuy-coder/Gestro?color=skyblue&style=flat-square)
+![Releases](https://img.shields.io/github/v/release/RandomGuy-coder/Gestro?color=blueviolet&include_prereleases&style=flat-square)
+![LastCommit](https://img.shields.io/github/last-commit/RandomGuy-coder/Gestro?color=violet&style=flat-square)
+
 **Functions:**
 * Increase or Decrease Volume and Brightness.
 * Switch between applications.
