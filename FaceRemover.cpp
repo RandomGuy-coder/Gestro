@@ -13,20 +13,19 @@ FaceRemover::FaceRemover(void) {
         throw runtime_error("can't load file " + faceClassifierFileName);
 }
 
-void FaceRemover::removeFaces(Mat inputFrame, Mat outputFrame) {
+void FaceRemover::removeFaces(Mat &inputFrame) {
     vector<Rect> faces;
     Mat frameGray;
 
     cvtColor(inputFrame, frameGray, COLOR_BGR2GRAY);
-    equalizeHist(frameGray, frameGray);
+//    equalizeHist(frameGray, frameGray);
 
     faceCascadeClassifier.detectMultiScale(frameGray, faces, 1.1, 2, 0 | CASCADE_SCALE_IMAGE, Size(120, 120));
 
     for (size_t i = 0; i < faces.size(); i++) {
         rectangle(
-                outputFrame,
-                Point(faces[i].x, faces[i].y),
-                Point(faces[i].x + faces[i].width + 20, faces[i].y + faces[i].height + 45),
+                inputFrame,
+                faces[i],
                 Scalar(0, 0, 0),
                 -1
         );

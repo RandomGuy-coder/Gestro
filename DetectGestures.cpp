@@ -1,0 +1,119 @@
+//
+// Created by tushar on 02/02/2022.
+//
+
+#include "DetectGestures.h"
+
+DetectGestures::DetectGestures(void) {
+    H_MIN = 0; // minimum Hue
+    H_MAX = 180; // maximum Hue
+    S_MIN = 0; // minimum Saturation
+    S_MAX = 255; // maximum Saturation
+    V_MIN = 0; // minimum Value
+    V_MAX = 255; //maximum Value
+}
+
+void DetectGestures::on_trackbar(int, void*) {
+   skinDetector.calibrateValues(H_MIN, H_MAX, S_MIN, S_MAX, V_MIN, V_MAX);
+}
+
+void DetectGestures::createTrackBars() {
+
+    namedWindow(trackbarWindowName,0);
+
+    //create memory to store trackbar name on window
+    char TrackbarName[50];
+    sprintf( TrackbarName, "H_MIN", H_MIN);
+    sprintf( TrackbarName, "H_MAX", H_MAX);
+    sprintf( TrackbarName, "S_MIN", S_MIN);
+    sprintf( TrackbarName, "S_MAX", S_MAX);
+    sprintf( TrackbarName, "V_MIN", V_MIN);
+    sprintf( TrackbarName, "V_MAX", V_MAX);
+
+    createTrackbar( "H_MIN", trackbarWindowName, &H_MIN, H_MAX, on_trackbar );
+    createTrackbar( "H_MAX", trackbarWindowName, &H_MAX, H_MAX, on_trackbar );
+    createTrackbar( "S_MIN", trackbarWindowName, &S_MIN, S_MAX, on_trackbar );
+    createTrackbar( "S_MAX", trackbarWindowName, &S_MAX, S_MAX, on_trackbar );
+    createTrackbar( "V_MIN", trackbarWindowName, &V_MIN, V_MAX, on_trackbar );
+    createTrackbar( "V_MAX", trackbarWindowName, &V_MAX, V_MAX, on_trackbar );
+}
+
+void DetectGestures::startDetection() {
+    VideoCapture cap(0);
+
+    if (!cap.isOpened())
+    {
+        throw "Unable to capture video";
+    }
+
+    cap.set(3, 1280);
+    cap.set(4, 720);
+
+    Mat frame, frameOutput, skinMask, bgMask;
+
+    // create window for trackbars
+    createTrackBars();
+
+    FaceRemover faceRemover;
+    FingerCounter fingerCounter;
+
+    int counter = 0;
+    while (true) {
+
+        bool bSuccess = cap.read(frame); // read a new frame from video
+
+        //Breaking the while loop if the frames cannot be captured
+        if (bSuccess == false)
+        {
+            cout << "Video camera is disconnected" << endl;
+            cin.get(); //Wait for any key press
+            break;
+        }
+
+        //show the flipped frame in the created window
+        flip(frame, frame, 1);
+        frameOutput = frame.clone();
+
+        skinDetector.drawSkinColorSampler(frameOutput);
+
+        if (!skinDetector.getCalibrated()) {
+            imshow("Detect Skin Color", frameOutput);
+        } else {
+            faceRemover.removeFaces(frame);
+
+            // Blur the frame
+            Size kSize;
+            kSize.height = 3;
+            kSize.width = 3;
+            double sigma = 0.3*(3/2 - 1) + 0.8;
+            GaussianBlur(frame,frame,kSize,sigma,0.0,4);
+
+            skinMask = skinDetector.getSkinMask(frame);
+
+            Ptr<BackgroundSubtractor> backgroundRemover = cv::createBackgroundSubtractorMOG2();
+            backgroundRemover ->apply(skinMask, bgMask);
+
+            imshow("Skin Mask", bgMask);
+
+            imshow("Binarised Hand Only", frame);
+
+        }
+
+
+        //wait for for 10 ms until any key is pressed.
+        //If the 'Esc' key is pressed, break the while loop.
+        //If the any other key is pressed, continue the loop
+        //If any key is not pressed withing 10 ms, continue the loop
+        int pressedKey = waitKey(10);
+        if (pressedKey == 27) { // esc
+            cout << "Esc key is pressed by user. Stopping the video" << endl;
+            break;
+        } else if (pressedKey == 115) { // s
+            skinDetector.calibrate(frame);
+            destroyWindow("Detect Skin Color");
+        }
+    }
+
+//    return 0;
+}
+

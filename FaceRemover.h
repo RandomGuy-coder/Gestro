@@ -14,7 +14,7 @@ using namespace std;
 class FaceRemover {
 public:
     FaceRemover(void);
-    void removeFaces(Mat inputFrame, Mat outputFrame);
+    void removeFaces(Mat &inputFrame);
 };
 
 
