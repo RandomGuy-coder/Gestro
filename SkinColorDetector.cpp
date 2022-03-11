@@ -6,6 +6,7 @@
 #include "opencv2/opencv.hpp"
 
 using namespace cv;
+using namespace std;
 
 SkinColorDetector::SkinColorDetector(void) {
     hUpper = 0;
@@ -14,7 +15,8 @@ SkinColorDetector::SkinColorDetector(void) {
     sLower = 0;
     vUpper = 0;
     vLower = 0;
-
+    offsetHighThreshold = 50;
+    offsetLowThreshold = 10;
     calibrated = false;
 
     dilation_size = 5;
@@ -24,7 +26,7 @@ SkinColorDetector::SkinColorDetector(void) {
 
 void SkinColorDetector::drawSkinColorSampler(Mat inputFrame) {
     int frameWidth = inputFrame.size().width, frameHeight = inputFrame.size().height;
-    int rectSize = 200;
+    int rectSize = 100;
     Scalar rectColor = (0, 0, 255);
 
     skinColorSamplerRect1 =  Rect(frameWidth / 5, frameHeight / 2, rectSize, rectSize);
@@ -42,62 +44,55 @@ void SkinColorDetector::calibrate(Mat inputFrame) {
     Mat sample2 = Mat(inputFramehsv, skinColorSamplerRect2);
 
     calculateThresholds(sample1, sample2);
-    calibrated = true;
+    setValues();
 }
 
 void SkinColorDetector::calculateThresholds(Mat sample1, Mat sample2) {
-    int offsetLowThreshold = 50, offsetHighThreshold = 10;
-    Scalar hsvMeansSample1 = mean(sample1), hsvMeansSample2 = mean(sample2);
+//    int offsetLowThreshold = 50, offsetHighThreshold = 10;
+    Scalar hsvMeansSample1 = mean(sample1);
+    Scalar hsvMeansSample2 = mean(sample2);
+
     MeansSample1 = hsvMeansSample1;
     MeansSample2 = hsvMeansSample2;
 
-    hUpper = max(hsvMeansSample1[0], hsvMeansSample2[0]) + offsetHighThreshold;
-    hLower = min(hsvMeansSample1[0], hsvMeansSample2[0]) - offsetLowThreshold;
+    hUpper = max(hsvMeansSample1[0], hsvMeansSample2[0]);
+    hLower = min(hsvMeansSample1[0], hsvMeansSample2[0]);
 
-    sUpper = max(hsvMeansSample1[1], hsvMeansSample2[1]) + offsetHighThreshold;
-    sLower = min(hsvMeansSample1[1], hsvMeansSample2[1]) - offsetLowThreshold;
+    sUpper = max(hsvMeansSample1[1], hsvMeansSample2[1]);
+    sLower = min(hsvMeansSample1[1], hsvMeansSample2[1]);
 
-    // V channel shouldn't be used, but this will cause some kind of bug if we ignored it
-    vUpper = max(hsvMeansSample1[2], hsvMeansSample2[2]) + offsetHighThreshold;
-    vLower = min(hsvMeansSample1[2], hsvMeansSample2[2]) - offsetLowThreshold;
-    //vUpper = 255;
-    //vLower = 0;
+    vUpper = 255;
+    vLower = 1;
 }
 
-void SkinColorDetector::calibrateTrackBar(int offsetLow, int offsetHigh, int dilation_size2) {
-    dilation_size = dilation_size2;
-    int offsetLowThreshold = offsetLow, offsetHighThreshold = offsetHigh;
-    Scalar hsvMeansSample1 = MeansSample1, hsvMeansSample2 = MeansSample2;
+void SkinColorDetector::calibrateValues(int H_MIN, int H_MAX, int S_MIN, int S_MAX, int V_MIN, int V_MAX) {
 
-    hUpper = max(hsvMeansSample1[0], hsvMeansSample2[0]) + offsetHighThreshold;
-    hLower = min(hsvMeansSample1[0], hsvMeansSample2[0]) - offsetLowThreshold;
+    hUpper = H_MAX;
+    hLower = H_MIN;
 
-    sUpper = max(hsvMeansSample1[1], hsvMeansSample2[1]) + offsetHighThreshold;
-    sLower = min(hsvMeansSample1[1], hsvMeansSample2[1]) - offsetLowThreshold;
+    sUpper = S_MAX;
+    sLower = S_MIN;
 
-    // V channel shouldn't be used, but this will cause some kind of bug if we ignored it
-    vUpper = max(hsvMeansSample1[2], hsvMeansSample2[2]) + offsetHighThreshold;
-    vLower = min(hsvMeansSample1[2], hsvMeansSample2[2]) - offsetLowThreshold;
-    //vUpper = 255;
-    //vLower = 0;
+    vUpper = V_MAX;
+    vLower = V_MIN;
+
 }
 
 Mat SkinColorDetector::getSkinMask(Mat inputFrame) {
+
     Mat skinMask;
-
-    if (!calibrated) {
-        skinMask = Mat::zeros(inputFrame.size(), CV_8UC1);
-        return skinMask;
-    }
-
+    Mat frame;
     Mat inputFramehsv;
     cvtColor(inputFrame, inputFramehsv, COLOR_BGR2HSV);
 
     inRange(inputFramehsv,Scalar(hLower, sLower, vLower), Scalar(hUpper, sUpper, vUpper), skinMask);
-    opening(skinMask, MORPH_ELLIPSE, {5, 5});
-//    opening(skinMask, MORPH_ELLIPSE, {dilation_size, dilation_size});
-//    dilate(skinMask, skinMask, Mat(), Point(-1, -1), 3);
-    dilate(skinMask, skinMask, getStructuringElement(MORPH_ELLIPSE, Size( 11, 11 )),Point(-1, -1), 3);
+    inRange(inputFramehsv, Scalar(50, sLower, vLower), Scalar(150, sUpper, vUpper), frame);
+    skinMask = skinMask - frame;
+//    cv::erode(skinMask, skinMask, cv::Mat(), Point(-1,-1));
+    Mat sE = getStructuringElement(MORPH_ELLIPSE, {3,3});
+    morphologyEx(skinMask, skinMask, MORPH_OPEN, sE);
+
+    cv::dilate(skinMask, skinMask, cv::Mat(), Point(-1,-1),2);
 
     return skinMask;
 }
@@ -105,4 +100,16 @@ Mat SkinColorDetector::getSkinMask(Mat inputFrame) {
 void SkinColorDetector::opening(Mat binaryInput, int seShape, Point seSize) {
     Mat sE = getStructuringElement(seShape, seSize);
     morphologyEx(binaryInput, binaryInput, MORPH_OPEN, sE);
+}
+
+void SkinColorDetector::setValues() {
+
+    setTrackbarPos("H_MIN", "TrackBars", hLower);
+    setTrackbarPos("H_MAX", "TrackBars", hUpper);
+    setTrackbarPos("S_MIN", "TrackBars", sLower);
+    setTrackbarPos("S_MAX", "TrackBars", sUpper);
+    setTrackbarPos("V_MIN", "TrackBars", vLower);
+    setTrackbarPos("V_MAX", "TrackBars", vUpper);
+
+    calibrated = true;
 }
