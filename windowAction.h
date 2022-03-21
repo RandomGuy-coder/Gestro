@@ -1,41 +1,27 @@
-#include <stdio.h>     // printf, fprintf and fflush
-#include <string.h>    // memset
-#include <unistd.h>    // sleep and usleep
+//
+// Created by terrancewong on 21/03/2022.
+//
+
+#ifndef UBUNTU_GESTURECONTROL_WINDOWACTION_H
+#define UBUNTU_GESTURECONTROL_WINDOWACTION_H
+
 #include <X11/Xlib.h>  // X11
 #include "window_control.h"
 
 //Call class to declare a variable
 //that can be used to control window action
-class WindowAction{
+class windowAction{
 private:
     Display* display;
     Window winFocus;
     int revert;
-
+    window_control windowControl;
 public:
-    WindowAction(Display *d){
-        display = d;
-    }
-
-    //call method with new width
-    //and height as arguments
-    void changeWindowSize(int x, int y){
-        resize(display, x, y);
-    }
-
-    //call method with new
-    //x and y position for the top right corner
-    void moveWindow(int x, int y){
-        move(display, x, y);
-    }
-    //close the current window
-    void closeWindow(){
-        close(display);
-    }
-
-    //make the current window an icon
-    void minimizeWindow(){
-        minimize(display);
-    }
-
+    windowAction(Display *d);
+    void changeWindowSize(int x, int y);
+    void moveWindow(int x, int y);
+    void closeWindow();
+    void minimizeWindow();
 };
+
+#endif //UBUNTU_GESTURECONTROL_WINDOWACTION_H
