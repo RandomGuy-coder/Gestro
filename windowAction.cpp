@@ -13,7 +13,7 @@ void windowAction::changeWindowSize(int x, int y){
     windowControl.resize(display, x, y);
 }
 
-//call method with new x and y position for the top right corner
+//call method with new x and y position from the top left corner
 void windowAction::moveWindow(int x, int y){
     windowControl.move(display, x, y);
 }

@@ -15,7 +15,82 @@ using namespace std;
 int main(int, char**)
 {
     // Testing
-    windowAction windowAction;
+    Display *display;
+    display = XOpenDisplay(NULL);
+    XEvent event;
+    bool keyPressed = false;
+    bool windowChanged = false;
+
+    // testing for mouseAction
+//    mouseAction mouseAction2 = mouseAction(display, 1, event);
+//    mouseAction2.moveMouseTo(500, 500);
+//    mouseAction2.pressButton();
+//    mouseAction2.releaseButton();
+
+    // testing for volumeControl
+//    volumeControl volumeControl2 = volumeControl();
+//    volumeControl2.SetMasterVolume(20);
+
+    if (display == NULL)
+    {
+        fprintf(stderr, "Cannot open display\n");
+        exit(1);
+    }
+
+    int s = DefaultScreen(display);
+
+
+
+    /* create window */
+    Window window = XCreateSimpleWindow(display, RootWindow(display, s), 10, 10, 200, 200, 1,
+                                 BlackPixel(display, s), WhitePixel(display, s));
+
+    /* select kind of events we are interested in */
+    XSelectInput(display, window, KeyPressMask | KeyReleaseMask );
+
+    /* map (show) the window */
+    XMapWindow(display, window);
+
+    /* event loop */
+    while (1)
+    {
+        XNextEvent(display, &event);
+
+        // testing for windowAction
+        if (windowChanged == false) {
+            windowAction windowAction2 = windowAction(display);
+//            windowAction2.moveWindow(50, 50);
+//            windowAction2.closeWindow();
+//            windowAction2.minimizeWindow();
+//            windowAction2.changeWindowSize(500, 500); //doesn't work
+            windowChanged = true;
+        }
+
+        // testing for keyboardAction
+//        if (keyPressed == false) {
+//            keyboardAction keyboardAction2 = keyboardAction(display, 0x27);
+//            keyboardAction2.pressKey();
+//            keyPressed = true;
+//        }
+
+
+        /* keyboard events */
+        if (event.type == KeyPress)
+        {
+            printf( "KeyPress: %x\n", event.xkey.keycode );
+
+            /* exit on ESC key press */
+            if ( event.xkey.keycode == 0x09 )
+                break;
+        }
+        else if (event.type == KeyRelease)
+        {
+            printf( "KeyRelease: %x\n", event.xkey.keycode );
+        }
+    }
+
+    /* close connection to server */
+    XCloseDisplay(display);
 
 
 //    volumeControl volumeControl;
