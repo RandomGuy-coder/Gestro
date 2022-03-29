@@ -17,8 +17,10 @@ public:
 
 private:
     Ui::Widget *ui;
-public:
-    void show_picture();
+public slots:
+    void pushbutton_start_clicked();
+    void pushbutton_software_intro_clicked();
+    void pushbutton_team_intro_clicked();
 };
 
 #endif // WIDGET_H
