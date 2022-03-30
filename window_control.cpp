@@ -23,13 +23,14 @@ void window_control::resize(Display *display, int x, int y)
 {
     Window w = identifyWindow(display);
     Window* root;
+    Drawable d;
     int* x_loc;
     int* y_loc;
     unsigned int* width;
     unsigned int* height;
     unsigned int* border_width;
     unsigned int* depth;
-    XGetGeometry(display, w, root, x_loc,y_loc,width,height, border_width, depth);
+    XGetGeometry(display, d, &w, x_loc,y_loc,width,height,border_width,depth);
     XResizeWindow(display, w, x, y);
 
 }
