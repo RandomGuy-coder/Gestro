@@ -1,7 +1,7 @@
 #include "opencv2/opencv.hpp"
-#include "SkinColorDetector.h"
-#include "FaceRemover.h"
-#include "FingerCounter.h"
+#include "src/gesture_detection/SkinColorDetector.h"
+#include "src/gesture_detection/FaceRemover.h"
+#include "src/gesture_detection/FingerCounter.h"
 
 using namespace std;
 using namespace cv;
