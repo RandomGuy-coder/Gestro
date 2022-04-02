@@ -3,6 +3,8 @@
 //
 
 #include "window_control.h"
+#include <iostream>
+using namespace std;
 
 window_control::window_control(void){};
 
@@ -26,7 +28,7 @@ void window_control::resize(Display *display, int x, int y)
     try {
         if (XGetWindowAttributes(display, w, &windowattr)==0)
             {
-                cout << "Failed to get window dimensions");
+                cout << "Failed to get window dimensions";
             }
         else
             {

@@ -62,7 +62,7 @@ int main(int, char**)
 //            windowAction2.moveWindow(50, 50);
 //            windowAction2.closeWindow();
 //            windowAction2.minimizeWindow();
-//            windowAction2.changeWindowSize(500, 500); //doesn't work
+            windowAction2.changeWindowSize(500, 500); //doesn't work
             windowChanged = true;
         }
 
