@@ -1,0 +1,31 @@
+\hypertarget{keyboard_action_8h_source}{}\doxysection{keyboard\+Action.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//}}
+\DoxyCodeLine{2 \textcolor{comment}{// Created by terrancewong on 21/03/2022.}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef UBUNTU\_GESTURECONTROL\_KEYBOARDACTION\_H}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define UBUNTU\_GESTURECONTROL\_KEYBOARDACTION\_H}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <X11/Xlib.h>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}keyboard\_event.h"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{comment}{//class to hold all available keyboard shortcuts}}
+\DoxyCodeLine{12 \textcolor{comment}{//Class is declared using the keycode}}
+\DoxyCodeLine{13 \textcolor{comment}{//as defined by the keysymdef library}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }\mbox{\hyperlink{classkeyboard_action}{keyboardAction}}}
+\DoxyCodeLine{16 \{}
+\DoxyCodeLine{17 \textcolor{keyword}{private}:}
+\DoxyCodeLine{18     Display *display;}
+\DoxyCodeLine{19     \textcolor{keywordtype}{int} keycode;}
+\DoxyCodeLine{20 \textcolor{keyword}{public}:}
+\DoxyCodeLine{21     \mbox{\hyperlink{classkeyboard_action}{keyboardAction}}(Display *d, \textcolor{keywordtype}{int} k);}
+\DoxyCodeLine{22     \textcolor{keywordtype}{void} pressKey();}
+\DoxyCodeLine{23 \};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//UBUNTU\_GESTURECONTROL\_KEYBOARDACTION\_H}}
+
+\end{DoxyCode}

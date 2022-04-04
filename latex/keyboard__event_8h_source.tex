@@ -1,0 +1,26 @@
+\hypertarget{keyboard__event_8h_source}{}\doxysection{keyboard\+\_\+event.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//}}
+\DoxyCodeLine{2 \textcolor{comment}{// Created by terrancewong on 21/03/2022.}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef UBUNTU\_GESTURECONTROL\_KEYBOARD\_EVENT\_H}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define UBUNTU\_GESTURECONTROL\_KEYBOARD\_EVENT\_H}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <X11/Xlib.h>}  \textcolor{comment}{// X11}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <X11/keysymdef.h>}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{classkeyboard__event}{keyboard\_event}} \{}
+\DoxyCodeLine{12 \textcolor{keyword}{public}:}
+\DoxyCodeLine{13     \mbox{\hyperlink{classkeyboard__event}{keyboard\_event}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{14     XKeyEvent createKeyEvent(Display *display, Window \&win,}
+\DoxyCodeLine{15                              Window \&winRoot, \textcolor{keywordtype}{bool} press,}
+\DoxyCodeLine{16                              \textcolor{keywordtype}{int} keycode, \textcolor{keywordtype}{int} modifiers);}
+\DoxyCodeLine{17     \textcolor{keywordtype}{void} keyPress(Display *display, \textcolor{keywordtype}{int} keycode);}
+\DoxyCodeLine{18 \};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//UBUNTU\_GESTURECONTROL\_KEYBOARD\_EVENT\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,28 @@
+\hypertarget{mouse__control_8h_source}{}\doxysection{mouse\+\_\+control.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//}}
+\DoxyCodeLine{2 \textcolor{comment}{// Created by terrancewong on 21/03/2022.}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef UBUNTU\_GESTURECONTROL\_MOUSE\_CONTROL\_H}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define UBUNTU\_GESTURECONTROL\_MOUSE\_CONTROL\_H}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <X11/Xlib.h>}  \textcolor{comment}{// X11}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <stdio.h>}     \textcolor{comment}{// printf, fprintf and fflush}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <string.h>}    \textcolor{comment}{// memset}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{classmouse__control}{mouse\_control}} \{}
+\DoxyCodeLine{13 \textcolor{keyword}{public}:}
+\DoxyCodeLine{14     \mbox{\hyperlink{classmouse__control}{mouse\_control}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{15     \textcolor{keywordtype}{void} click(Display *display, \textcolor{keywordtype}{int} button, XEvent event);}
+\DoxyCodeLine{16     \textcolor{keywordtype}{void} release(Display *display, \textcolor{keywordtype}{int} button, XEvent event);}
+\DoxyCodeLine{17     \textcolor{keywordtype}{void} coords(Display *display, \textcolor{keywordtype}{int} *x, \textcolor{keywordtype}{int} *y);}
+\DoxyCodeLine{18     \textcolor{keywordtype}{void} move (Display *display, \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y);}
+\DoxyCodeLine{19     \textcolor{keywordtype}{void} move\_to (Display *display, \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y);}
+\DoxyCodeLine{20 \};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//UBUNTU\_GESTURECONTROL\_MOUSE\_CONTROL\_H}}
+
+\end{DoxyCode}
