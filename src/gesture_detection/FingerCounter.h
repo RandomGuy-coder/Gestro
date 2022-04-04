@@ -2,8 +2,8 @@
 // Created by terrancewong on 23/02/2022.
 //
 
-#ifndef UBUNTU_GESTURECONTROL_FINGERCOUNTER_H
-#define UBUNTU_GESTURECONTROL_FINGERCOUNTER_H
+#ifndef GESTRO_FINGERCOUNTER_H
+#define GESTRO_FINGERCOUNTER_H
 
 #include <opencv2/core/mat.hpp>
 
@@ -36,4 +36,4 @@ private:
     int fingerNumber = 0;
 };
 
-#endif //UBUNTU_GESTURECONTROL_FINGERCOUNTER_H
+#endif //GESTRO_FINGERCOUNTER_H

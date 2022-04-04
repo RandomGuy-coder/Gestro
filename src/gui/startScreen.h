@@ -2,7 +2,8 @@
 #define WIDGET_H
 
 #include <QWidget>
-
+#include "../gesture_detection/CaptureAndDetect.h"
+#include "thread"
 namespace Ui {
 class Widget;
 }
@@ -14,9 +15,11 @@ class Widget : public QWidget
 public:
     explicit Widget(QWidget *parent = 0);
     ~Widget();
+    CaptureAndDetect captureAndDetect;
 
 private:
     Ui::Widget *ui;
+
 public slots:
     void pushbutton_start_clicked();
     void pushbutton_software_intro_clicked();

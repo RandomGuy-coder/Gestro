@@ -2,8 +2,8 @@
 // Created by terrancewong on 20/02/2022.
 //
 
-#ifndef UBUNTU_GESTURECONTROL_FACEREMOVER_H
-#define UBUNTU_GESTURECONTROL_FACEREMOVER_H
+#ifndef GESTRO_FACEREMOVER_H
+#define GESTRO_FACEREMOVER_H
 
 #include <opencv2/core/mat.hpp>
 
@@ -19,4 +19,4 @@ public:
 };
 
 
-#endif //UBUNTU_GESTURECONTROL_FACEREMOVER_H
+#endif //GESTRO_FACEREMOVER_H

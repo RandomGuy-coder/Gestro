@@ -1,0 +1,38 @@
+//
+// Created by tushar on 03/04/2022.
+//
+
+#ifndef GESTRO_CAPTUREANDDETECT_H
+#define GESTRO_CAPTUREANDDETECT_H
+
+#include "opencv2/opencv.hpp"
+#include "SkinColorDetector.h"
+#include "FaceRemover.h"
+#include "FingerCounter.h"
+#include "thread"
+
+using namespace std;
+using namespace cv;
+
+class CaptureAndDetect {
+public:
+    CaptureAndDetect(void);
+    void calibrateValues(int, void*);
+    static void on_trackbar(int, void*);
+    void start();
+
+private:
+    int H_MIN;
+    int H_MAX;
+    int S_MIN;
+    int S_MAX;
+    int V_MIN;
+    int V_MAX;
+    const string trackbarWindowName = "TrackBars";
+    SkinColorDetector skinDetector;
+    void createTrackBars();
+    void captureAndTrack();
+
+
+};
+#endif //GESTRO_CAPTUREANDDETECT_H

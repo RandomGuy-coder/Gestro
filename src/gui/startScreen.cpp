@@ -1,4 +1,4 @@
-#include "widget.h"
+#include "startScreen.h"
 #include "ui_widget.h"
 #include <QImage>
 #include <QPixmap>
@@ -27,16 +27,17 @@ Widget::~Widget()
 {
     delete ui;
 }
+
 void Widget::pushbutton_start_clicked()
 {
-
     controller_dialog *controller_info = new controller_dialog();
     controller_info->show();
+    captureAndDetect.start();
 }
 
 void Widget::pushbutton_software_intro_clicked()
 {
-    QColor bgcolor(0,0,0);
+    QColor bgcolor;
     bgcolor = ui->pushButton_software_into->palette().color(QPalette::Background);
     if(bgcolor == QColor(85, 170, 255))
     {
@@ -52,7 +53,7 @@ void Widget::pushbutton_software_intro_clicked()
 
 void Widget::pushbutton_team_intro_clicked()
 {
-    QColor bgcolor(0,0,0);
+    QColor bgcolor;
     bgcolor = ui->pushButton_team_intro->palette().color(QPalette::Background);
     if(bgcolor == QColor(85, 170, 255))
     {
