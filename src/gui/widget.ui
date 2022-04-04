@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Widget</class>
- <widget class="QWidget" name="Widget">
+ <class>StartScreen</class>
+ <widget class="QWidget" name="StartScreen">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1024</width>
-    <height>900</height>
+    <width>1280</width>
+    <height>720</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QLabel" name="label_logo">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>80</y>
+     <x>450</x>
+     <y>10</y>
      <width>351</width>
      <height>351</height>
     </rect>
@@ -32,8 +32,8 @@
   <widget class="QWidget" name="horizontalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>70</x>
-     <y>490</y>
+     <x>180</x>
+     <y>360</y>
      <width>861</width>
      <height>301</height>
     </rect>

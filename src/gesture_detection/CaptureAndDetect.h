@@ -19,7 +19,9 @@ public:
     CaptureAndDetect(void);
     void calibrateValues(int, void*);
     static void on_trackbar(int, void*);
-    void start();
+    void start(function<void(Mat)> callTo);
+    void stop();
+    const string trackbarWindowName = "TrackBars";
 
 private:
     int H_MIN;
@@ -28,10 +30,11 @@ private:
     int S_MAX;
     int V_MIN;
     int V_MAX;
-    const string trackbarWindowName = "TrackBars";
+    thread uthread;
     SkinColorDetector skinDetector;
     void createTrackBars();
     void captureAndTrack();
+    function<void(Mat)> callback;
 
 
 };

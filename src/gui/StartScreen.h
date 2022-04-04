@@ -4,21 +4,22 @@
 #include <QWidget>
 #include "../gesture_detection/CaptureAndDetect.h"
 #include "thread"
+
 namespace Ui {
-class Widget;
+class StartScreen;
 }
 
-class Widget : public QWidget
+class StartScreen : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit Widget(QWidget *parent = 0);
-    ~Widget();
+    explicit StartScreen(QWidget *parent = 0);
+    ~StartScreen();
     CaptureAndDetect captureAndDetect;
 
 private:
-    Ui::Widget *ui;
+    Ui::StartScreen *ui;
 
 public slots:
     void pushbutton_start_clicked();

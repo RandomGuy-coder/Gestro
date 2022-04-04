@@ -1,12 +1,12 @@
-#include "startScreen.h"
+#include "StartScreen.h"
 #include "ui_widget.h"
 #include <QImage>
 #include <QPixmap>
-#include "controller_dialog.h"
+#include "ControllerScreen.h"
 
-Widget::Widget(QWidget *parent) :
+StartScreen::StartScreen(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::Widget)
+    ui(new Ui::StartScreen)
 {
     ui->setupUi(this);
     QImage *image1 = new QImage("../Resources/Images/Logo.jpeg");
@@ -23,19 +23,20 @@ Widget::Widget(QWidget *parent) :
 
 }
 
-Widget::~Widget()
+StartScreen::~StartScreen()
 {
     delete ui;
 }
 
-void Widget::pushbutton_start_clicked()
+void StartScreen::pushbutton_start_clicked()
 {
-    controller_dialog *controller_info = new controller_dialog();
+    ControllerScreen *controller_info = new ControllerScreen();
     controller_info->show();
-    captureAndDetect.start();
+    this->hide();
+    captureAndDetect.start(std::bind(&ControllerScreen::Callback, controller_info, std::placeholders::_1));
 }
 
-void Widget::pushbutton_software_intro_clicked()
+void StartScreen::pushbutton_software_intro_clicked()
 {
     QColor bgcolor;
     bgcolor = ui->pushButton_software_into->palette().color(QPalette::Background);
@@ -51,7 +52,7 @@ void Widget::pushbutton_software_intro_clicked()
     }
 }
 
-void Widget::pushbutton_team_intro_clicked()
+void StartScreen::pushbutton_team_intro_clicked()
 {
     QColor bgcolor;
     bgcolor = ui->pushButton_team_intro->palette().color(QPalette::Background);

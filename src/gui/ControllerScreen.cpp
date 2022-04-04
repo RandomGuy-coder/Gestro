@@ -1,4 +1,4 @@
-#include "controller_dialog.h"
+#include "ControllerScreen.h"
 #include "ui_controller_dialog.h"
 #include <QImage>
 #include <QPixmap>
@@ -7,9 +7,9 @@
 #include <QTableWidgetItem>
 #include <QTime>
 uint32_t operate_num = 0;
-controller_dialog::controller_dialog(QWidget *parent) :
+ControllerScreen::ControllerScreen(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::controller_dialog)
+    ui(new Ui::ControllerScreen)
 {
     ui->setupUi(this);
     QImage *image2 = new QImage("C:/Users/jxrt/Desktop/GUI/QT_gui/QT_gui/picture.jpg");
@@ -26,12 +26,12 @@ controller_dialog::controller_dialog(QWidget *parent) :
     connect(ui->calibrate,SIGNAL(clicked(bool)),this,SLOT(pushbutton4_clicked()));
 }
 
-controller_dialog::~controller_dialog()
+ControllerScreen::~ControllerScreen()
 {
     delete ui;
 }
 
-void controller_dialog::pushbutton1_clicked()
+void ControllerScreen::pushbutton1_clicked()
 {
     QTableWidgetItem *item;
     ui->tableWidget->setRowCount(operate_num+1);      //Set the number of table rows
@@ -59,7 +59,7 @@ void controller_dialog::pushbutton1_clicked()
 
 
 
-void controller_dialog::pushbutton2_clicked()
+void ControllerScreen::pushbutton2_clicked()
 {
     QTableWidgetItem *item;
     ui->tableWidget->setRowCount(operate_num+1);      //Set the number of table rows
@@ -85,7 +85,7 @@ void controller_dialog::pushbutton2_clicked()
     operate_num++;
 }
 
-void controller_dialog::pushbutton3_clicked()
+void ControllerScreen::pushbutton3_clicked()
 {
     QTableWidgetItem *item;
     ui->tableWidget->setRowCount(operate_num+1);      //Set the number of table rows
@@ -113,7 +113,7 @@ void controller_dialog::pushbutton3_clicked()
 
 
 
-void controller_dialog::pushbutton4_clicked()
+void ControllerScreen::pushbutton4_clicked()
 {
     QTableWidgetItem *item;
     ui->tableWidget->setRowCount(operate_num+1);      //Set the number of table rows
@@ -136,4 +136,9 @@ void controller_dialog::pushbutton4_clicked()
     item = new QTableWidgetItem(current_time.toString());
     item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
     ui->tableWidget->setItem(operate_num,3,item);
+}
+
+void ControllerScreen::Callback(Mat dest){
+    QImage image1 = QImage((uchar*) dest.data, dest.cols, dest.rows, dest.step, QImage::Format_RGB888);
+    ui->label_show_pic->setPixmap(QPixmap::fromImage(image1));
 }

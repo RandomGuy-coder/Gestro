@@ -7,6 +7,7 @@
 #include "FingerCounter.h"
 #include "CaptureAndDetect.h"
 
+#include <utility>
 
 using namespace std;
 using namespace cv;
@@ -78,7 +79,7 @@ void CaptureAndDetect::captureAndTrack() {
         bool bSuccess = cap.read(frame); // read a new frame from video
 
         //Breaking the while loop if the frames cannot be captured
-        if (bSuccess == false)
+        if (!bSuccess || frame.empty())
         {
             cout << "Video camera is disconnected" << endl;
             cin.get(); //Wait for any key press
@@ -114,12 +115,14 @@ void CaptureAndDetect::captureAndTrack() {
 //            imshow("Skin Mask", skinMask);
 //
 //            imshow("Binarised Hand Only", fingerCounterDebug);
-            imshow("Fingers", frame);
-
+//
+            callback(frame);
+//            waitKey(1);
+//                break;
 //            backgroundRemoved = NULL;
 //            newimg = NULL;
 //            waitKey(10);
-            cout<<"jrtr"<<endl;
+//            cout<<"jrtr"<<endl;
         }
 
         //wait for for 10 ms until any key is pressed.
@@ -137,8 +140,11 @@ void CaptureAndDetect::captureAndTrack() {
 //    }
 }
 
-void CaptureAndDetect::start() {
-//    capture = new thread(&CaptureAndDetect::captureAndTrack, this);
-      thread capture(&CaptureAndDetect::captureAndTrack, this);
-      capture.join();
+void CaptureAndDetect::start(function<void(Mat)> callTo) {
+    uthread = thread(&CaptureAndDetect::captureAndTrack, this);
+    callback = callTo;
+}
+
+void CaptureAndDetect::stop() {
+    uthread.join();
 }

@@ -2,26 +2,29 @@
 #define CONTROLLER_DIALOG_H
 
 #include <QDialog>
-
+#include "opencv2/opencv.hpp"
+using namespace cv;
 namespace Ui {
-class controller_dialog;
+class ControllerScreen;
 }
 
-class controller_dialog : public QDialog
+class ControllerScreen : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit controller_dialog(QWidget *parent = 0);
-    ~controller_dialog();
+    explicit ControllerScreen(QWidget *parent = 0);
+    ~ControllerScreen();
+    void Callback(Mat);
 
 private:
-    Ui::controller_dialog *ui;
+    Ui::ControllerScreen *ui;
 public slots:
     void pushbutton1_clicked();
     void pushbutton2_clicked();
     void pushbutton3_clicked();
     void pushbutton4_clicked();
+
 };
 
 #endif // CONTROLLER_DIALOG_H
