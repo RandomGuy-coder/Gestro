@@ -36,7 +36,7 @@ If you have any enquiries, contact the team behind Gestro [here](about_the_team)
         <a href="https://www.facebook.com/GestroProject" target="_blank"><img src="assets/fb_logo.png" style="width: 40px; vertical-align: middle; margin-right: 5px;"></a>
         <a href="https://twitter.com/GestroProject" target="_blank"><img src="assets/twitter_logo.png" style="width: 40px; vertical-align: middle; margin-right: 5px;"></a>
         <a href="https://www.instagram.com/gestroproject/" target="_blank"><img src="assets/insta_logo.png" style="width: 40px; vertical-align: middle; margin-right: 5px;"></a>
-        <a href="https://hackaday.io/project/184728-gestro" target="_blank"><img src="assets/hackaday_logo.png" style="width: 40px; vertical-align: middle; margin-right: 5px;"></a>
+        <a href="https://hackaday.io/project/184728-gestro" target="_blank"><img src="assets/hackaday_logo.png" style="width: 36px; vertical-align: middle; margin-right: 5px;"></a>
     </div>
 </nav><br>
 
