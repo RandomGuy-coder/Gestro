@@ -155,4 +155,5 @@ make -j4
         <a href="https://www.instagram.com/gestroproject/" target="_blank"><img src="assets/insta_logo.png" style="width: 40px; vertical-align: middle; margin-right: 5px;"></a>
     </div>
 </nav><br>
-<small><i>Copyright &copy; 2022; ENG5220 - Real-Time-Embedded-Systems - Team 26</i></small>
+<small><i>Copyright &copy; 2022; ENG5220 - Real-Time-Embedded-Systems - Team 26</i></small><br>
+<small><i>Distributed by a <a href="https://github.com/RandomGuy-coder/Gestro/blob/main/LICENSE" target="_blank">GNU GPL-3.0 License.</i></small></a>
