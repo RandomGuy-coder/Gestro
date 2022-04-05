@@ -1,4 +1,3 @@
-
 #ifndef UBUNTU_GESTURECONTROL_DISPLAYCONTROL_H
 #define UBUNTU_GESTURECONTROL_DISPLAYCONTROL_H
 
@@ -16,12 +15,16 @@
 
 class DisplayControl: public windowAction, public keyboardAction, public mouseAction, public volumeControl
 {
+//the member variables for this functiona are the display variable and the event variable    
 private:
+    //display variable
     Display *display;
+    //event variable
     XEvent event;
 
 public:
-    DisplayControl(Display *d, XEvent e):windowAction(d),mouseAction(d,e),keyboardAction(d){};
-}
+    //Contructor that initializes all values for the system by taking in a
+    DisplayControl():windowAction(display),keyboardAction(display),mouseAction(display,event),volumeControl();
+};
 
-#endif //UBUNTU_GESTURECONTROL_DISPLAYCONTROL_H
+#endif UBUNTU_GESTURECONTROL_DISPLAYCONTROL_H

@@ -1,12 +1,8 @@
-#include "OutputControl.h"
-
-
+#include "DisplayControl.h"
 
 //Constructor to initialize the class
 //The class is called with a pointer to the display
 //and an XEvent handler
-//this also initializes 
-DisplayControl::DisplayControl(Display* d, XEvent e):windowAction(d,e),mouseAction(d),keyboardAction(d){
-    display = d;
-    event = e;
-};
+//this also initializes for window, mouse, volume and keyboard control classes
+
+DisplayControl::DisplayControl(){};
