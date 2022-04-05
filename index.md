@@ -3,9 +3,6 @@ nav_order: 1
 title: About Gestro
 ---
 
-## About Gestro
-
-<h1 align="center">Gestro</h1>
 <p align="center">
   <a href="https://github.com/RandomGuy-coder/Gestro">
     <img src="assets/gestro_logo.png" alt="Gestro Logo" width="350">
@@ -14,15 +11,14 @@ title: About Gestro
   <p align="center">Controlling Linux system using hand gestures</p>
 </p>
 
-[**View Our Github**](https://github.com/RandomGuy-coder/Gestro)
+<h1 align="center" class="project-name">Gestro</h1>
+<h2 align="center" class="project-tagline">Controlling Linux system using hand gestures</h2>
 
-<header class="page-header" role="banner">
-  <h1 class="project-name">Gestro</h1>
-  <h2 class="project-tagline">Controlling Linux system using hand gestures</h2>
+<div align="center">
   <a href="https://github.com/RandomGuy-coder/Gestro" class="btn">View our GitHub</a>
   <a href="" class="btn">Download .zip</a>
   <a href="" class="btn">Download .tar.gz</a>
-</header>
+</div>
 
 ### Applications
 ### Demonstration
