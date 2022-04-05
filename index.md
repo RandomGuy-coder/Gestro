@@ -3,15 +3,15 @@ nav_order: 1
 title: About Gestro
 ---
 
-<h1 align="center" class="project-name">Gestro</h1>
 
-<p align="center">
-  <a href="randomguy-coder.github.io/Gestro/">
+<div align="center">
+  <a href="https://randomguy-coder.github.io/Gestro/">
     <img src="assets/gestro_logo.png" alt="Gestro Logo" width="300">
   </a>
-</p>
+</div>
 
-<h2 align="center" class="project-tagline">Controlling Linux system using hand gestures</h2>
+<h2 align="center">Controlling Linux system using hand gestures</h2>
+<i><h4 align="center">by ENG5220 - Real-Time-Embedded-Systems - Team 26</h4></i>
 <br>
 <div align="center">
   <a href="https://github.com/RandomGuy-coder/Gestro" class="btn">View our GitHub</a>
@@ -19,10 +19,15 @@ title: About Gestro
   <a href="" class="btn">Download .tar.gz</a>
 </div>
 
-### Applications
-### Demonstration
-### Contact Us
 
+### Why Gestro?
+
+
+### Demonstration
+
+
+### Contact Us
+If you have any enquiries, contact the team behind Gestro [here](about_the_team)!
 
 
 ### Markdown
