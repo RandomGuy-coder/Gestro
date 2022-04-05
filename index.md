@@ -1,8 +1,40 @@
-## Welcome to GitHub Pages
+## About Gestro
+<h1 align="center">Gestro</h1>
+<p align="center">
+  <a href="https://github.com/RandomGuy-coder/Gestro">
+    <img src="/assets/gestro_logo.png" alt="Gestro Logo" width="200">
+  </a>
 
-You can use the [editor on GitHub](https://github.com/RandomGuy-coder/Gestro/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+  <p align="center">Controlling Linux system using hand gestures</p>
+</p>
+### Applications
+### Demonstration
+### Contact Us
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Installation Guide
+### Prerequisites 
+
+## User Manual
+
+## Requirements
+### Specifications
+### User Stories
+### Milestones
+
+## System Overview
+### System Design
+### Sequence Diagram
+### Class Diagram
+
+## Realtime Responsiveness Analysis
+
+## Unit Testing
+
+## Code Documentation
+
+## About The Team
+
+
 
 ### Markdown
 
