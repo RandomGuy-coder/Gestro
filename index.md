@@ -11,13 +11,14 @@ title: About Gestro
 </div>
 
 <h2 align="center">Controlling Linux system using hand gestures</h2>
-<i><h4 align="center">by ENG5220 - Real-Time-Embedded-Systems - Team 26</h4></i>
+<h4 align="center"><i>by ENG5220 - Real-Time-Embedded-Systems - Team 26</i></h4>
 <br>
 <div align="center">
   <a href="https://github.com/RandomGuy-coder/Gestro" class="btn">View our GitHub</a>
   <a href="" class="btn">Download .zip</a>
   <a href="" class="btn">Download .tar.gz</a>
 </div>
+
 
 
 ### Why Gestro?
@@ -29,6 +30,14 @@ title: About Gestro
 ### Contact Us
 If you have any enquiries, contact the team behind Gestro [here](about_the_team)!
 
+### Follow us on:
+<nav>
+    <div class="sociallinks"><!--links to social pages, opened in new tabs-->
+        <a href="https://www.facebook.com/GestroProject" target="_blank"><img src="assets/fb_logo.png" style="width: 40px; vertical-align: middle; margin-right: 5px;"></a>
+        <a href="https://twitter.com/GestroProject" target="_blank"><img src="assets/twitter_logo.png" style="width: 40px; vertical-align: middle; margin-right: 5px;"></a>
+        <a href="https://www.instagram.com/gestroproject/" target="_blank"><img src="assets/insta_logo.png" style="width: 40px; vertical-align: middle; margin-right: 5px;"></a>
+    </div>
+</nav><br>
 
 ### Markdown
 
