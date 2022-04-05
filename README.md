@@ -1,7 +1,7 @@
 <h1 align="center">Gestro</h1>
 <p align="center">
   <a href="https://github.com/RandomGuy-coder/Gestro">
-    <img src="/resources/gestro_logo.jpeg" alt="Gestro Logo" width="200">
+    <img src="/assets/gestro_logo.png" alt="Gestro Logo" width="200">
   </a>
 
   <p align="center">Controlling Linux system using hand gestures</p>
@@ -150,9 +150,9 @@ make -j4
 <nav>
     Follow us on:<br><br>
     <div class="sociallinks"><!--links to social pages, opened in new tabs-->
-        <a href="https://www.facebook.com/GestroProject" target="_blank"><img src="resources/fblogo.png" style="width: 40px; vertical-align: middle; margin-right: 5px;"></a>
-        <a href="https://twitter.com/Gestro72681347" target="_blank"><img src="resources/twitterlogo.png" style="width: 40px; vertical-align: middle; margin-right: 5px;"></a>
-        <a href="https://www.instagram.com/gestro__u "target="_blank"><img src="resources/instalogo.png" style="width: 40px; vertical-align: middle; margin-right: 5px;"></a>
+        <a href="https://www.facebook.com/GestroProject" target="_blank"><img src="assets/fb_logo.png" style="width: 40px; vertical-align: middle; margin-right: 5px;"></a>
+        <a href="https://twitter.com/Gestro72681347" target="_blank"><img src="assets/twitter_logo.png" style="width: 40px; vertical-align: middle; margin-right: 5px;"></a>
+        <a href="https://www.instagram.com/gestro__u "target="_blank"><img src="assets/insta_logo.png" style="width: 40px; vertical-align: middle; margin-right: 5px;"></a>
     </div>
 </nav><br>
 <small><i>Copyright &copy; 2022; ENG5220 - Real-Time-Embedded-Systems - Team 26</i></small>
