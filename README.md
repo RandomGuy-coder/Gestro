@@ -48,6 +48,23 @@
   </ol>
 </details>
 
+<ul>
+  <li><a href="#About">About</a>
+    <ul>
+      <li><a href="#Functionality">Functionality</a>
+      <li><a href="#Hardware">Hardware</a>
+    </ul>
+  <li><a href="#Quick-Start-Guide">Quick Start Guide</a>
+    <ul>
+      <li><a href="#Installation">Installation</a>
+      <li><a href="#Startup">Startup</a>
+      <li><a href="#Running-Tests">Running Tests</a>
+    </ul>
+  <li><a href="#Usage">Usage</a>
+  <li><a href="#Documentation">Documentation</a>
+  <li><a href="#Stretch-Goals">Stretch Goals</a>
+</ul>
+
 **Functions:**
 * Increase or Decrease Volume and Brightness.
 * Switch between applications.
