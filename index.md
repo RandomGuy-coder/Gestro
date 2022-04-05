@@ -25,7 +25,13 @@ title: About Gestro
 
 
 ### Demonstration
+Here is a demonstration video for Gestro:
 
+<div align="center">
+  <video width="600" controls>
+    <source src="videos/PosturePerfectionv1.0.0.mp4" type="video/mp4">
+  </video>
+</div>
 
 ### Contact Us
 If you have any enquiries, contact the team behind Gestro [here](about_the_team)!
