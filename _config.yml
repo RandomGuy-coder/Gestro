@@ -2,4 +2,4 @@ remote_theme: just-the-docs/just-the-docs
 plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
 
-footer_content: "Tushar Anil Mittal, Tian Jie Wong, Muhatasim Intisar, Ruoqi Sun <br />Copyright &copy; 2022; ENG5220 - Real-Time-Embedded-Systems - Team 26 <br /> Distributed by a <a href='https://github.com/RandomGuy-coder/Gestro/blob/main/LICENSE'>GNU GPL-3.0 license.</a>"
+footer_content: "Copyright &copy; 2022; ENG5220 - Real-Time-Embedded-Systems - Team 26: <br />Tushar Anil Mittal, Tian Jie Wong, Muhatasim Intisar, Ruoqi Sun <br /> Distributed by a <a href='https://github.com/RandomGuy-coder/Gestro/blob/main/LICENSE'>GNU GPL-3.0 license.</a>"
