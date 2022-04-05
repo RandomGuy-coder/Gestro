@@ -19,7 +19,7 @@ title: About Gestro
 <header class="page-header" role="banner">
   <h1 class="project-name">Gestro</h1>
   <h2 class="project-tagline">Controlling Linux system using hand gestures</h2>
-  <a href="https://github.com/RandomGuy-coder/Gestro" class="btn">View on GitHub</a>
+  <a href="https://github.com/RandomGuy-coder/Gestro" class="btn">View our GitHub</a>
   <a href="" class="btn">Download .zip</a>
   <a href="" class="btn">Download .tar.gz</a>
 </header>
