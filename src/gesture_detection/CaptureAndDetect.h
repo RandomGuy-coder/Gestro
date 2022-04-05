@@ -1,7 +1,3 @@
-//
-// Created by tushar on 03/04/2022.
-//
-
 #ifndef GESTRO_CAPTUREANDDETECT_H
 #define GESTRO_CAPTUREANDDETECT_H
 
@@ -17,17 +13,13 @@ using namespace cv;
 class CaptureAndDetect {
 public:
     CaptureAndDetect(void);
-    void calibrateValues(int, void*);
+    void calibrateValues(int, int, int, int);
     static void on_trackbar(int, void*);
     void start(function<void(Mat)> callTo);
     void stop();
     const string trackbarWindowName = "TrackBars";
 
 private:
-    int H_MIN;
-    int H_MAX;
-    int S_MIN;
-    int S_MAX;
     int V_MIN;
     int V_MAX;
     thread uthread;

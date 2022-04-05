@@ -1,58 +1,39 @@
-//
-// Created by tushar on 03/04/2022.
-//
-#include "opencv2/opencv.hpp"
-#include "SkinColorDetector.h"
-#include "FaceRemover.h"
-#include "FingerCounter.h"
 #include "CaptureAndDetect.h"
-
-#include <utility>
 
 using namespace std;
 using namespace cv;
 
 CaptureAndDetect::CaptureAndDetect(void){
-    H_MIN = 0; // minimum Hue
-    H_MAX = 180; // maximum Hue
-    S_MIN = 0; // minimum Saturation
-    S_MAX = 255; // maximum Saturation
     V_MIN = 0; // minimum Value
     V_MAX = 255; //maximum Value
 }
 
-
-void CaptureAndDetect::on_trackbar(int value, void* ptr) {
-    CaptureAndDetect* file = (CaptureAndDetect*)ptr;
-    file->calibrateValues(value, 0);
-}
-
-void CaptureAndDetect::calibrateValues(int, void *) {
+void CaptureAndDetect::calibrateValues(int hMin, int hMax, int sMin, int sMax) {
     if(skinDetector.getCalibrated()) {
-        skinDetector.calibrateValues(H_MIN, H_MAX, S_MIN, S_MAX, V_MIN, V_MAX);
+        skinDetector.calibrateValues(hMin, hMax, sMin, sMax, V_MIN, V_MAX);
     }
 }
 
-void CaptureAndDetect::createTrackBars() {
-
-    namedWindow(trackbarWindowName,0);
-
-    //create memory to store trackbar name on window
-    char TrackbarName[50];
-    sprintf( TrackbarName, "H_MIN", H_MIN);
-    sprintf( TrackbarName, "H_MAX", H_MAX);
-    sprintf( TrackbarName, "S_MIN", S_MIN);
-    sprintf( TrackbarName, "S_MAX", S_MAX);
-    sprintf( TrackbarName, "V_MIN", V_MIN);
-    sprintf( TrackbarName, "V_MAX", V_MAX);
-
-    createTrackbar( "H_MIN", trackbarWindowName, &H_MIN, H_MAX, on_trackbar, this);
-    createTrackbar( "H_MAX", trackbarWindowName, &H_MAX, H_MAX, on_trackbar, this );
-    createTrackbar( "S_MIN", trackbarWindowName, &S_MIN, S_MAX, on_trackbar, this );
-    createTrackbar( "S_MAX", trackbarWindowName, &S_MAX, S_MAX, on_trackbar, this );
-    createTrackbar( "V_MIN", trackbarWindowName, &V_MIN, V_MAX, on_trackbar, this );
-    createTrackbar( "V_MAX", trackbarWindowName, &V_MAX, V_MAX, on_trackbar, this );
-}
+//void CaptureAndDetect::createTrackBars() {
+//
+//    namedWindow(trackbarWindowName,0);
+//
+//    //create memory to store trackbar name on window
+//    char TrackbarName[50];
+//    sprintf( TrackbarName, "H_MIN", H_MIN);
+//    sprintf( TrackbarName, "H_MAX", H_MAX);
+//    sprintf( TrackbarName, "S_MIN", S_MIN);
+//    sprintf( TrackbarName, "S_MAX", S_MAX);
+//    sprintf( TrackbarName, "V_MIN", V_MIN);
+//    sprintf( TrackbarName, "V_MAX", V_MAX);
+//
+//    createTrackbar( "H_MIN", trackbarWindowName, &H_MIN, H_MAX, on_trackbar, this);
+//    createTrackbar( "H_MAX", trackbarWindowName, &H_MAX, H_MAX, on_trackbar, this );
+//    createTrackbar( "S_MIN", trackbarWindowName, &S_MIN, S_MAX, on_trackbar, this );
+//    createTrackbar( "S_MAX", trackbarWindowName, &S_MAX, S_MAX, on_trackbar, this );
+//    createTrackbar( "V_MIN", trackbarWindowName, &V_MIN, V_MAX, on_trackbar, this );
+//    createTrackbar( "V_MAX", trackbarWindowName, &V_MAX, V_MAX, on_trackbar, this );
+//}
 
 void CaptureAndDetect::captureAndTrack() {
 
@@ -67,7 +48,7 @@ void CaptureAndDetect::captureAndTrack() {
     Mat frame, frameOutput, skinMask, bgMask, fingerCounterDebug, backgroundRemoved, newimg;
 
     // create window for trackbars
-    createTrackBars();
+    // createTrackBars();
 
     FaceRemover faceRemover;
     FingerCounter fingerCounter;

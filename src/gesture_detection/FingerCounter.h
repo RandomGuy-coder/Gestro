@@ -1,11 +1,7 @@
-//
-// Created by terrancewong on 23/02/2022.
-//
-
 #ifndef GESTRO_FINGERCOUNTER_H
 #define GESTRO_FINGERCOUNTER_H
 
-#include <opencv2/core/mat.hpp>
+#include "opencv2/imgproc.hpp"
 
 using namespace cv;
 using namespace std;

@@ -1,9 +1,4 @@
-//
-// Created by terrancewong on 20/02/2022.
-//
-
 #include "FaceRemover.h"
-#include "opencv2/opencv.hpp"
 
 String faceClassifierFileName = "../../src/resources/cascades/haarcascade_frontalface_alt.xml";
 CascadeClassifier faceCascadeClassifier;

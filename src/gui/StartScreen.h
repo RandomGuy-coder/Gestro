@@ -16,7 +16,6 @@ class StartScreen : public QWidget
 public:
     explicit StartScreen(QWidget *parent = 0);
     ~StartScreen();
-    CaptureAndDetect captureAndDetect;
 
 private:
     Ui::StartScreen *ui;

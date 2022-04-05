@@ -1,10 +1,4 @@
-//
-// Created by terrancewong on 23/02/2022.
-//
-
 #include "FingerCounter.h"
-
-#include "opencv2/imgproc.hpp"
 
 #define LIMIT_ANGLE_SUP 60
 #define LIMIT_ANGLE_INF 5

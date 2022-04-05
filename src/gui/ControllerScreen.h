@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "opencv2/opencv.hpp"
+#include "CaptureAndDetect.h"
 using namespace cv;
 namespace Ui {
 class ControllerScreen;
@@ -19,12 +20,14 @@ public:
 
 private:
     Ui::ControllerScreen *ui;
+    CaptureAndDetect captureAndDetect;
+
 public slots:
     void pushbutton1_clicked();
     void pushbutton2_clicked();
     void pushbutton3_clicked();
     void pushbutton4_clicked();
-
+    void setCalibrationValues();
 };
 
 #endif // CONTROLLER_DIALOG_H

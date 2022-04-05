@@ -1,11 +1,7 @@
-//
-// Created by terrancewong on 20/02/2022.
-//
-
 #ifndef GESTRO_FACEREMOVER_H
 #define GESTRO_FACEREMOVER_H
 
-#include <opencv2/core/mat.hpp>
+#include "opencv2/opencv.hpp"
 
 using namespace cv;
 using namespace std;

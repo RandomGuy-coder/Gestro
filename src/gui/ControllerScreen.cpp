@@ -20,10 +20,16 @@ ControllerScreen::ControllerScreen(QWidget *parent) :
     ui->label_show_guide->adjustSize();
     //ui->label_show_guide->show();
     ui->scrollArea->setWidget(ui->label_show_guide);
+    captureAndDetect.start(std::bind(&ControllerScreen::Callback, this, std::placeholders::_1));
     connect(ui->unprocessed_feed,SIGNAL(clicked(bool)),this,SLOT(pushbutton1_clicked()));
     connect(ui->skin_mask,SIGNAL(clicked(bool)),this,SLOT(pushbutton2_clicked()));
     connect(ui->detector,SIGNAL(clicked(bool)),this,SLOT(pushbutton3_clicked()));
     connect(ui->calibrate,SIGNAL(clicked(bool)),this,SLOT(pushbutton4_clicked()));
+    connect(ui->hMinSlider, SIGNAL(valueChanged(int)), this, SLOT(setCalibrationValues()));
+    connect(ui->hMaxSlider, SIGNAL(valueChanged(int)), this, SLOT(setCalibrationValues()));
+    connect(ui->sMinSlider, SIGNAL(valueChanged(int)), this, SLOT(setCalibrationValues()));
+    connect(ui->sMaxSlider, SIGNAL(valueChanged(int)), this, SLOT(setCalibrationValues()));
+
 }
 
 ControllerScreen::~ControllerScreen()
@@ -139,6 +145,16 @@ void ControllerScreen::pushbutton4_clicked()
 }
 
 void ControllerScreen::Callback(Mat dest){
+    cvtColor(dest,dest, COLOR_BGR2RGB);
     QImage image1 = QImage((uchar*) dest.data, dest.cols, dest.rows, dest.step, QImage::Format_RGB888);
     ui->label_show_pic->setPixmap(QPixmap::fromImage(image1));
+}
+
+void ControllerScreen::setCalibrationValues() {
+    int hMin = ui->hMinSlider->value();
+    int hMax = ui->hMaxSlider->value();
+    int sMin = ui->sMinSlider->value();
+    int sMax = ui->sMaxSlider->value();
+
+    captureAndDetect.calibrateValues(hMin, hMax, sMin, sMax);
 }

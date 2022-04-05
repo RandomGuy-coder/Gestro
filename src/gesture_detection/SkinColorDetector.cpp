@@ -1,9 +1,4 @@
-//
-// Created by terrancewong on 12/02/2022.
-//
-
 #include "SkinColorDetector.h"
-#include "opencv2/opencv.hpp"
 
 using namespace cv;
 using namespace std;

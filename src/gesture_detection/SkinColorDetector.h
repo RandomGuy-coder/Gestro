@@ -1,10 +1,7 @@
-//
-// Created by terrancewong on 12/02/2022.
-//
-#include "opencv2/opencv.hpp"
-
 #ifndef GESTRO_SKINCOLORDETECTOR_H
 #define GESTRO_SKINCOLORDETECTOR_H
+
+#include "opencv2/opencv.hpp"
 
 using namespace cv;
 

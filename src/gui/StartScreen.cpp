@@ -33,7 +33,6 @@ void StartScreen::pushbutton_start_clicked()
     ControllerScreen *controller_info = new ControllerScreen();
     controller_info->show();
     this->hide();
-    captureAndDetect.start(std::bind(&ControllerScreen::Callback, controller_info, std::placeholders::_1));
 }
 
 void StartScreen::pushbutton_software_intro_clicked()
