@@ -8,7 +8,7 @@ title: About Gestro
 <h1 align="center">Gestro</h1>
 <p align="center">
   <a href="https://github.com/RandomGuy-coder/Gestro">
-    <img src="/assets/gestro_logo.png" alt="Gestro Logo" width="200">
+    <img src="assets/gestro_logo.png" alt="Gestro Logo" width="500">
   </a>
 
   <p align="center">Controlling Linux system using hand gestures</p>
