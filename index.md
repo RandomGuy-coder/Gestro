@@ -8,13 +8,21 @@ title: About Gestro
 <h1 align="center">Gestro</h1>
 <p align="center">
   <a href="https://github.com/RandomGuy-coder/Gestro">
-    <img src="assets/gestro_logo.png" alt="Gestro Logo" width="500">
+    <img src="assets/gestro_logo.png" alt="Gestro Logo" width="350">
   </a>
 
   <p align="center">Controlling Linux system using hand gestures</p>
 </p>
 
 [**View Our Github**](https://github.com/RandomGuy-coder/Gestro)
+
+<header class="page-header" role="banner">
+  <h1 class="project-name">Gestro</h1>
+  <h2 class="project-tagline">Controlling Linux system using hand gestures</h2>
+  <a href="https://github.com/RandomGuy-coder/Gestro" class="btn">View on GitHub</a>
+  <a href="" class="btn">Download .zip</a>
+  <a href="" class="btn">Download .tar.gz</a>
+</header>
 
 ### Applications
 ### Demonstration
