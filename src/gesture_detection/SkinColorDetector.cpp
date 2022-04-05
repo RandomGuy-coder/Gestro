@@ -39,7 +39,7 @@ void SkinColorDetector::calibrate(Mat inputFrame) {
     Mat sample2 = Mat(inputFramehsv, skinColorSamplerRect2);
 
     calculateThresholds(sample1, sample2);
-    setValues();
+    calibrated = true;
 }
 
 void SkinColorDetector::calculateThresholds(Mat sample1, Mat sample2) {
@@ -95,16 +95,4 @@ Mat SkinColorDetector::getSkinMask(Mat inputFrame) {
 void SkinColorDetector::opening(Mat binaryInput, int seShape, Point seSize) {
     Mat sE = getStructuringElement(seShape, seSize);
     morphologyEx(binaryInput, binaryInput, MORPH_OPEN, sE);
-}
-
-void SkinColorDetector::setValues() {
-
-    setTrackbarPos("H_MIN", "TrackBars", hLower);
-    setTrackbarPos("H_MAX", "TrackBars", hUpper);
-    setTrackbarPos("S_MIN", "TrackBars", sLower);
-    setTrackbarPos("S_MAX", "TrackBars", sUpper);
-    setTrackbarPos("V_MIN", "TrackBars", vLower);
-    setTrackbarPos("V_MAX", "TrackBars", vUpper);
-
-    calibrated = true;
 }

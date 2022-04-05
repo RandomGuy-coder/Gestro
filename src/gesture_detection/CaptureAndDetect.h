@@ -12,19 +12,20 @@ using namespace cv;
 
 class CaptureAndDetect {
 public:
-    CaptureAndDetect(void);
+    CaptureAndDetect();
     void calibrateValues(int, int, int, int);
-    static void on_trackbar(int, void*);
     void start(function<void(Mat)> callTo);
     void stop();
-    const string trackbarWindowName = "TrackBars";
+    void calibrateColorPressed();
+    void displayImage(String image);
+    bool calibrate = false;
 
 private:
     int V_MIN;
     int V_MAX;
+    String toDisplay;
     thread uthread;
     SkinColorDetector skinDetector;
-    void createTrackBars();
     void captureAndTrack();
     function<void(Mat)> callback;
 

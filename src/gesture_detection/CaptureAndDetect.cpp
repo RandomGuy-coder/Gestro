@@ -12,28 +12,8 @@ void CaptureAndDetect::calibrateValues(int hMin, int hMax, int sMin, int sMax) {
     if(skinDetector.getCalibrated()) {
         skinDetector.calibrateValues(hMin, hMax, sMin, sMax, V_MIN, V_MAX);
     }
+    cout << hMin << hMax << sMin << sMax << endl;
 }
-
-//void CaptureAndDetect::createTrackBars() {
-//
-//    namedWindow(trackbarWindowName,0);
-//
-//    //create memory to store trackbar name on window
-//    char TrackbarName[50];
-//    sprintf( TrackbarName, "H_MIN", H_MIN);
-//    sprintf( TrackbarName, "H_MAX", H_MAX);
-//    sprintf( TrackbarName, "S_MIN", S_MIN);
-//    sprintf( TrackbarName, "S_MAX", S_MAX);
-//    sprintf( TrackbarName, "V_MIN", V_MIN);
-//    sprintf( TrackbarName, "V_MAX", V_MAX);
-//
-//    createTrackbar( "H_MIN", trackbarWindowName, &H_MIN, H_MAX, on_trackbar, this);
-//    createTrackbar( "H_MAX", trackbarWindowName, &H_MAX, H_MAX, on_trackbar, this );
-//    createTrackbar( "S_MIN", trackbarWindowName, &S_MIN, S_MAX, on_trackbar, this );
-//    createTrackbar( "S_MAX", trackbarWindowName, &S_MAX, S_MAX, on_trackbar, this );
-//    createTrackbar( "V_MIN", trackbarWindowName, &V_MIN, V_MAX, on_trackbar, this );
-//    createTrackbar( "V_MAX", trackbarWindowName, &V_MAX, V_MAX, on_trackbar, this );
-//}
 
 void CaptureAndDetect::captureAndTrack() {
 
@@ -42,13 +22,11 @@ void CaptureAndDetect::captureAndTrack() {
     if(!cap.isOpened()){
         cerr<<"cannot open cam" <<endl;
     }
+
     cap.set(3, 1280);
     cap.set(4,720);
     cap.set(6, VideoWriter::fourcc('M','J','P','G'));
     Mat frame, frameOutput, skinMask, bgMask, fingerCounterDebug, backgroundRemoved, newimg;
-
-    // create window for trackbars
-    // createTrackBars();
 
     FaceRemover faceRemover;
     FingerCounter fingerCounter;
@@ -60,65 +38,52 @@ void CaptureAndDetect::captureAndTrack() {
         bool bSuccess = cap.read(frame); // read a new frame from video
 
         //Breaking the while loop if the frames cannot be captured
-        if (!bSuccess || frame.empty())
-        {
+        if (!bSuccess || frame.empty()) {
             cout << "Video camera is disconnected" << endl;
             cin.get(); //Wait for any key press
             break;
         }
 
-//        //show the flipped frame in the created window
-//        flip(frame, frame, 1);
-//        frameOutput = frame.clone();
-//
-//        skinDetector.drawSkinColorSampler(frameOutput);
-//
-//        if (!skinDetector.getCalibrated()) {
-//            imshow("Detect Skin Color", frameOutput);
-//        } else {
-//            faceRemover.removeFaces(frame);
-//
-//            //Blur the frame
-//            Size kSize;
-//            kSize.height = 3;
-//            kSize.width = 3;
-//            double sigma = 0.3*(3/2 - 1) + 0.8;
-//            GaussianBlur(frame,frame,kSize,sigma,0.0,4);
-//
-//            backgroundRemover ->apply(frame, bgMask);
-//
-//            copyTo(frame,backgroundRemoved,bgMask);
-//            skinMask = skinDetector.getSkinMask(backgroundRemoved);
-//            copyTo(frame, newimg, skinMask);
-//            fingerCounterDebug = fingerCounter.findFingersCount(skinMask, frame);
-//
-//
-//            imshow("Skin Mask", skinMask);
-//
-//            imshow("Binarised Hand Only", fingerCounterDebug);
-//
-            callback(frame);
-//            waitKey(1);
-//                break;
-//            backgroundRemoved = NULL;
-//            newimg = NULL;
-//            waitKey(10);
-//            cout<<"jrtr"<<endl;
+        //show the flipped frame in the created window
+        flip(frame, frame, 1);
+        frameOutput = frame.clone();
+
+        skinDetector.drawSkinColorSampler(frameOutput);
+
+        if (!skinDetector.getCalibrated()) {
+            callback(frameOutput);
+            if (calibrate){
+                skinDetector.calibrate(frame);
+                calibrate = false;
+            }
+        } else {
+            //remove the face from the image using cascade
+            faceRemover.removeFaces(frame);
+
+            //Blur the frame
+            Size kSize;
+            kSize.height = 3;
+            kSize.width = 3;
+            double sigma = 0.3 * (3 / 2 - 1) + 0.8;
+            GaussianBlur(frame, frame, kSize, sigma, 0.0, 4);
+
+            backgroundRemover->apply(frame, bgMask);
+
+            copyTo(frame, backgroundRemoved, bgMask);
+            skinMask = skinDetector.getSkinMask(backgroundRemoved);
+            copyTo(frame, newimg, skinMask);
+            fingerCounterDebug = fingerCounter.findFingersCount(skinMask, frame);
+
+            if (toDisplay == "skinMask") {
+                callback(newimg);
+            } else if (toDisplay == "finger") {
+                callback(frame);
+            }
+
+            backgroundRemoved = NULL;
+            newimg = NULL;
         }
-
-        //wait for for 10 ms until any key is pressed.
-        //If the 'Esc' key is pressed, break the while loop.
-        //If the any other key is pressed, continue the loop
-        //If any key is not pressed withing 10 ms, continue the loop
-
-//        if (pressedKey == 27) { // esc
-//            cout << "Esc key is pressed by user. Stopping the video" << endl;
-//            break;
-//        } else if (pressedKey == 115) { // s
-//            skinDetector.calibrate(frame);
-//            destroyWindow("Detect Skin Color");
-//        }
-//    }
+    }
 }
 
 void CaptureAndDetect::start(function<void(Mat)> callTo) {
@@ -128,4 +93,12 @@ void CaptureAndDetect::start(function<void(Mat)> callTo) {
 
 void CaptureAndDetect::stop() {
     uthread.join();
+}
+
+void CaptureAndDetect::calibrateColorPressed() {
+    calibrate = true;
+}
+
+void CaptureAndDetect::displayImage(String display) {
+    toDisplay = display;
 }

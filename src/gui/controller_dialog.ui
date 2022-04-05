@@ -335,6 +335,12 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="maximum">
+           <number>50</number>
+          </property>
+          <property name="pageStep">
+           <number>1</number>
+          </property>
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
@@ -375,6 +381,15 @@
             <width>400</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="minimum">
+           <number>150</number>
+          </property>
+          <property name="maximum">
+           <number>180</number>
+          </property>
+          <property name="pageStep">
+           <number>1</number>
           </property>
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
@@ -417,6 +432,12 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="maximum">
+           <number>255</number>
+          </property>
+          <property name="pageStep">
+           <number>1</number>
+          </property>
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
@@ -457,6 +478,9 @@
             <width>400</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="maximum">
+           <number>255</number>
           </property>
           <property name="orientation">
            <enum>Qt::Horizontal</enum>

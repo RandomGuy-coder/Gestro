@@ -23,10 +23,10 @@ private:
     CaptureAndDetect captureAndDetect;
 
 public slots:
-    void pushbutton1_clicked();
-    void pushbutton2_clicked();
-    void pushbutton3_clicked();
-    void pushbutton4_clicked();
+    void unprocessedFeed_clicked();
+    void skinMask_clicked();
+    void detector_clicked();
+    void calibrate_clicked();
     void setCalibrationValues();
 };
 

@@ -21,14 +21,17 @@ ControllerScreen::ControllerScreen(QWidget *parent) :
     //ui->label_show_guide->show();
     ui->scrollArea->setWidget(ui->label_show_guide);
     captureAndDetect.start(std::bind(&ControllerScreen::Callback, this, std::placeholders::_1));
-    connect(ui->unprocessed_feed,SIGNAL(clicked(bool)),this,SLOT(pushbutton1_clicked()));
-    connect(ui->skin_mask,SIGNAL(clicked(bool)),this,SLOT(pushbutton2_clicked()));
-    connect(ui->detector,SIGNAL(clicked(bool)),this,SLOT(pushbutton3_clicked()));
-    connect(ui->calibrate,SIGNAL(clicked(bool)),this,SLOT(pushbutton4_clicked()));
+    connect(ui->unprocessed_feed,SIGNAL(clicked(bool)),this,SLOT(unprocessedFeed_clicked()));
+    connect(ui->skin_mask,SIGNAL(clicked(bool)),this,SLOT(skinMask_clicked()));
+    connect(ui->detector,SIGNAL(clicked(bool)),this,SLOT(detector_clicked()));
+    connect(ui->calibrate,SIGNAL(clicked(bool)),this,SLOT(calibrate_clicked()));
     connect(ui->hMinSlider, SIGNAL(valueChanged(int)), this, SLOT(setCalibrationValues()));
     connect(ui->hMaxSlider, SIGNAL(valueChanged(int)), this, SLOT(setCalibrationValues()));
     connect(ui->sMinSlider, SIGNAL(valueChanged(int)), this, SLOT(setCalibrationValues()));
     connect(ui->sMaxSlider, SIGNAL(valueChanged(int)), this, SLOT(setCalibrationValues()));
+
+    ui->skin_mask->setEnabled(false);
+    ui->detector->setEnabled(false);
 
 }
 
@@ -37,7 +40,7 @@ ControllerScreen::~ControllerScreen()
     delete ui;
 }
 
-void ControllerScreen::pushbutton1_clicked()
+void ControllerScreen::unprocessedFeed_clicked()
 {
     QTableWidgetItem *item;
     ui->tableWidget->setRowCount(operate_num+1);      //Set the number of table rows
@@ -65,7 +68,7 @@ void ControllerScreen::pushbutton1_clicked()
 
 
 
-void ControllerScreen::pushbutton2_clicked()
+void ControllerScreen::skinMask_clicked()
 {
     QTableWidgetItem *item;
     ui->tableWidget->setRowCount(operate_num+1);      //Set the number of table rows
@@ -89,9 +92,10 @@ void ControllerScreen::pushbutton2_clicked()
     item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
     ui->tableWidget->setItem(operate_num,3,item);
     operate_num++;
+    captureAndDetect.displayImage("skinMask");
 }
 
-void ControllerScreen::pushbutton3_clicked()
+void ControllerScreen::detector_clicked()
 {
     QTableWidgetItem *item;
     ui->tableWidget->setRowCount(operate_num+1);      //Set the number of table rows
@@ -115,12 +119,15 @@ void ControllerScreen::pushbutton3_clicked()
     item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
     ui->tableWidget->setItem(operate_num,3,item);
     operate_num++;
+    captureAndDetect.displayImage("finger");
 }
 
 
 
-void ControllerScreen::pushbutton4_clicked()
+void ControllerScreen::calibrate_clicked()
 {
+    ui->skin_mask->setEnabled(true);
+    ui->detector->setEnabled(true);
     QTableWidgetItem *item;
     ui->tableWidget->setRowCount(operate_num+1);      //Set the number of table rows
     item = new QTableWidgetItem(QString::number(operate_num+1));
@@ -142,6 +149,8 @@ void ControllerScreen::pushbutton4_clicked()
     item = new QTableWidgetItem(current_time.toString());
     item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
     ui->tableWidget->setItem(operate_num,3,item);
+    ui->calibrate->setEnabled(false);
+    captureAndDetect.calibrateColorPressed();
 }
 
 void ControllerScreen::Callback(Mat dest){
