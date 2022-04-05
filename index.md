@@ -1,4 +1,10 @@
+---
+nav_order: 1
+title: About Gestro
+---
+
 ## About Gestro
+
 <h1 align="center">Gestro</h1>
 <p align="center">
   <a href="https://github.com/RandomGuy-coder/Gestro">
@@ -7,6 +13,7 @@
 
   <p align="center">Controlling Linux system using hand gestures</p>
 </p>
+
 ### Applications
 ### Demonstration
 ### Contact Us
