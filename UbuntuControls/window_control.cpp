@@ -3,6 +3,8 @@
 //
 
 #include "window_control.h"
+#include <iostream>
+using namespace std;
 
 window_control::window_control(void){};
 
@@ -22,15 +24,20 @@ Window window_control::identifyWindow(Display *display)
 void window_control::resize(Display *display, int x, int y)
 {
     Window w = identifyWindow(display);
-    Window* root;
-    int* x_loc;
-    int* y_loc;
-    unsigned int* width;
-    unsigned int* height;
-    unsigned int* border_width;
-    unsigned int* depth;
-    XGetGeometry(display, w, root, x_loc,y_loc,width,height, border_width, depth);
-    XResizeWindow(display, w, x, y);
+    XWindowAttributes windowattr;
+    try {
+        if (XGetWindowAttributes(display, w, &windowattr)==0)
+            {
+                cout << "Failed to get window dimensions";
+            }
+        else
+            {
+                XResizeWindow(display, w, x, y);
+            }
+        }
+    catch (...){
+        cout << "Error Occured";
+    }
 
 }
 
