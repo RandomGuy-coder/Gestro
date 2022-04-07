@@ -4,20 +4,19 @@
 
 #include "mouseAction.h"
 
-mouseAction::mouseAction(Display* d, int b, XEvent e)
+mouseAction::mouseAction(Display* d, XEvent e)
 {
     display = d;
-    button = b;
     event = e;
 }
 
 //this method is used to press down the selected button
-void mouseAction::pressButton(){
+void mouseAction::pressButton(int button){
     mouseControl.click(display, button, event);
 }
 
 //this method is used to release the selected button
-void mouseAction::releaseButton(){
+void mouseAction::releaseButton(int button){
     mouseControl.release(display, button, event);
 }
 

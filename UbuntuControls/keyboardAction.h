@@ -16,10 +16,9 @@ class keyboardAction
 {
 private:
     Display *display;
-    int keycode;
 public:
-    keyboardAction(Display *d, int k);
-    void pressKey();
+    keyboardAction(Display *d);
+    void pressKey(int k);
 };
 
 

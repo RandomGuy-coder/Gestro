@@ -4,12 +4,11 @@
 
 #include "keyboardAction.h"
 
-keyboardAction::keyboardAction(Display *d, int k){
+keyboardAction::keyboardAction(Display *d){
     display = d;
-    keycode = k;
 }
 //a key is pressed and then released
-void keyboardAction::pressKey(){
+void keyboardAction::pressKey(int keycode){
     keyboard_event keyboardEvent;
     keyboardEvent.keyPress(display,keycode);
 }

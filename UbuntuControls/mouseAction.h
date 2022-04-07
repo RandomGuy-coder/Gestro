@@ -15,13 +15,12 @@ class mouseAction
 {
 private:
     Display *display;
-    int button;
     XEvent event;
     mouse_control mouseControl;
 public:
-    mouseAction(Display* d, int b, XEvent e);
-    void pressButton();
-    void releaseButton();
+    mouseAction(Display* d, XEvent e);
+    void pressButton(int button);
+    void releaseButton(int button);
     void moveMouseTo(int x, int y);
 };
 
