@@ -57,19 +57,16 @@ void SkinColorDetector::calculateThresholds(Mat sample1, Mat sample2) {
     sLower = min(hsvMeansSample1[1], hsvMeansSample2[1]);
 
     vUpper = 255;
-    vLower = 1;
+    vLower = 0;
 }
 
-void SkinColorDetector::calibrateValues(int H_MIN, int H_MAX, int S_MIN, int S_MAX, int V_MIN, int V_MAX) {
+void SkinColorDetector::calibrateValues(int H_MIN, int H_MAX, int S_MIN, int S_MAX) {
 
     hUpper = H_MAX;
     hLower = H_MIN;
 
     sUpper = S_MAX;
     sLower = S_MIN;
-
-    vUpper = V_MAX;
-    vLower = V_MIN;
 
 }
 
@@ -83,7 +80,7 @@ Mat SkinColorDetector::getSkinMask(Mat inputFrame) {
     inRange(inputFramehsv,Scalar(hLower, sLower, vLower), Scalar(hUpper, sUpper, vUpper), skinMask);
     inRange(inputFramehsv, Scalar(50, sLower, vLower), Scalar(150, sUpper, vUpper), frame);
     skinMask = skinMask - frame;
-//    cv::erode(skinMask, skinMask, cv::Mat(), Point(-1,-1));
+
     Mat sE = getStructuringElement(MORPH_ELLIPSE, {3,3});
     morphologyEx(skinMask, skinMask, MORPH_OPEN, sE);
 

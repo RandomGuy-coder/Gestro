@@ -29,7 +29,10 @@ ControllerScreen::ControllerScreen(QWidget *parent) :
     connect(ui->hMaxSlider, SIGNAL(valueChanged(int)), this, SLOT(setCalibrationValues()));
     connect(ui->sMinSlider, SIGNAL(valueChanged(int)), this, SLOT(setCalibrationValues()));
     connect(ui->sMaxSlider, SIGNAL(valueChanged(int)), this, SLOT(setCalibrationValues()));
-
+    ui->hMinValue->setText(QString::number(ui->hMinSlider->value()));
+    ui->hMaxValue->setText(QString::number(ui->hMaxSlider->value()));
+    ui->sMinValue->setText(QString::number(ui->sMinSlider->value()));
+    ui->sMaxValue->setText(QString::number(ui->sMaxSlider->value()));
     ui->skin_mask->setEnabled(false);
     ui->detector->setEnabled(false);
 
@@ -164,6 +167,10 @@ void ControllerScreen::setCalibrationValues() {
     int hMax = ui->hMaxSlider->value();
     int sMin = ui->sMinSlider->value();
     int sMax = ui->sMaxSlider->value();
+    ui->hMinValue->setText(QString::number(hMin));
+    ui->hMaxValue->setText(QString::number(hMax));
+    ui->sMinValue->setText(QString::number(sMin));
+    ui->sMaxValue->setText(QString::number(sMax));
 
     captureAndDetect.calibrateValues(hMin, hMax, sMin, sMax);
 }

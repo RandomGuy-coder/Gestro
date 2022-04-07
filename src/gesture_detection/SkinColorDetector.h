@@ -28,7 +28,7 @@ public:
     void calibrate(Mat inputFrame);
     Mat getSkinMask(Mat inputFrame);
     bool getCalibrated() {return calibrated;}
-    void calibrateValues(int H_MIN, int H_MAX, int S_MIN, int S_MAX, int V_MIN, int V_MAX);
+    void calibrateValues(int H_MIN, int H_MAX, int S_MIN, int S_MAX);
 };
 
 

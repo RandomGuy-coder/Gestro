@@ -4,13 +4,11 @@ using namespace std;
 using namespace cv;
 
 CaptureAndDetect::CaptureAndDetect(void){
-    V_MIN = 0; // minimum Value
-    V_MAX = 255; //maximum Value
 }
 
 void CaptureAndDetect::calibrateValues(int hMin, int hMax, int sMin, int sMax) {
     if(skinDetector.getCalibrated()) {
-        skinDetector.calibrateValues(hMin, hMax, sMin, sMax, V_MIN, V_MAX);
+        skinDetector.calibrateValues(hMin, hMax, sMin, sMax);
     }
     cout << hMin << hMax << sMin << sMax << endl;
 }
@@ -30,7 +28,7 @@ void CaptureAndDetect::captureAndTrack() {
 
     FaceRemover faceRemover;
     FingerCounter fingerCounter;
-    Ptr<BackgroundSubtractor> backgroundRemover = createBackgroundSubtractorKNN(200,200.0,false);
+    Ptr<BackgroundSubtractor> backgroundRemover = createBackgroundSubtractorKNN(150,200.0,false);
 
     int counter = 0;
     while (true) {
@@ -75,7 +73,7 @@ void CaptureAndDetect::captureAndTrack() {
             fingerCounterDebug = fingerCounter.findFingersCount(skinMask, frame);
 
             if (toDisplay == "skinMask") {
-                callback(newimg);
+                callback(skinMask);
             } else if (toDisplay == "finger") {
                 callback(frame);
             }
