@@ -2,7 +2,7 @@
 // Created by terrancewong on 21/03/2022.
 //
 
-#include "windowAction.h"
+#include "WindowAction.h"
 
 windowAction::windowAction(Display *d){
     display = d;

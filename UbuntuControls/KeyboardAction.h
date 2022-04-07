@@ -1,12 +1,8 @@
-//
-// Created by terrancewong on 21/03/2022.
-//
-
 #ifndef UBUNTU_GESTURECONTROL_KEYBOARDACTION_H
 #define UBUNTU_GESTURECONTROL_KEYBOARDACTION_H
 
 #include <X11/Xlib.h>
-#include "keyboard_event.h"
+#include "KeyboardEvent.h"
 
 //class to hold all available keyboard shortcuts
 //Class is declared using the keycode

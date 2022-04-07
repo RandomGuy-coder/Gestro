@@ -2,7 +2,7 @@
 // Created by terrancewong on 21/03/2022.
 //
 
-#include "keyboardAction.h"
+#include "KeyboardAction.h"
 
 keyboardAction::keyboardAction(Display *d){
     display = d;

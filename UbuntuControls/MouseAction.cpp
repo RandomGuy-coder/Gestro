@@ -2,7 +2,7 @@
 // Created by terrancewong on 21/03/2022.
 //
 
-#include "mouseAction.h"
+#include "MouseAction.h"
 
 mouseAction::mouseAction(Display* d, XEvent e)
 {

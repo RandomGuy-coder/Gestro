@@ -6,7 +6,7 @@
 #define UBUNTU_GESTURECONTROL_MOUSEACTION_H
 
 #include <X11/Xlib.h>  // X11
-#include "mouse_control.h"
+#include "MouseControl.h"
 
 //class that is used to hold methods for mouse actions
 //To use, declare an object in the class with a pointer to
