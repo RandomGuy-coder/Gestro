@@ -1,7 +1,3 @@
-//
-// Created by terrancewong on 21/03/2022.
-//
-
 #ifndef UBUNTU_GESTURECONTROL_KEYBOARD_EVENT_H
 #define UBUNTU_GESTURECONTROL_KEYBOARD_EVENT_H
 

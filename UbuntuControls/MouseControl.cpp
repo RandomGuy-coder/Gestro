@@ -2,7 +2,7 @@
 // Created by terrancewong on 21/03/2022.
 //
 
-#include "mouse_control.h"
+#include "MouseControl.h"
 
 mouse_control::mouse_control(void){};
 

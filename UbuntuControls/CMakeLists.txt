@@ -12,7 +12,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GCC_COVERAGE_COMPILE_FLAGS}" )
 
 include_directories(${OpenCV_INCLUDE_DIRS})
 add_executable(Ubuntu_GestureControl
-        keyboard_event.cpp keyboardAction.cpp keyboardAction.h mouse_control.cpp mouse_control.h mouseAction.cpp mouseAction.h window_control.cpp window_control.h windowAction.cpp windowAction.h volumeControl.cpp volumeControl.h)
+        KeyboardEvent.cpp KeyboardAction.cpp KeyboardAction.h MouseControl.cpp MouseControl.h MouseAction.cpp MouseAction.h WindowControl.cpp WindowControl.h WindowAction.cpp WindowAction.h VolumeControl.cpp VolumeControl.h)
 target_link_libraries(Ubuntu_GestureControl ${OpenCV_LIBS})
 
 if(ALSA_FOUND)

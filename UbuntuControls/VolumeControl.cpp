@@ -2,7 +2,7 @@
 // Created by terrancewong on 21/03/2022.
 //
 
-#include "volumeControl.h"
+#include "VolumeControl.h"
 
 volumeControl::volumeControl(void) {};
 
