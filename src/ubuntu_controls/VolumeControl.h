@@ -1,15 +1,11 @@
-//
-// Created by terrancewong on 21/03/2022.
-//
-
 #ifndef UBUNTU_GESTURECONTROL_VOLUMECONTROL_H
 #define UBUNTU_GESTURECONTROL_VOLUMECONTROL_H
 
 #include <alsa/asoundlib.h>
 
-class volumeControl {
+class VolumeControl {
 public:
-    volumeControl(void);
+    VolumeControl(void);
     void SetMasterVolume(long volume);
 };
 

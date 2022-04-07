@@ -1,13 +1,9 @@
-//
-// Created by terrancewong on 21/03/2022.
-//
-
 #include "MouseControl.h"
 
-mouse_control::mouse_control(void){};
+MouseControl::MouseControl(void){};
 
 // Simulate mouse click
-void mouse_control::click (Display *display, int button, XEvent event)
+void MouseControl::click (Display *display, int button, XEvent event)
 {
     // Setting up the event
     memset (&event, 0, sizeof (event));
@@ -31,7 +27,7 @@ void mouse_control::click (Display *display, int button, XEvent event)
 }
 
 //release the selected button
-void mouse_control::release(Display *display, int button, XEvent event) {
+void MouseControl::release(Display *display, int button, XEvent event) {
     memset (&event, 0, sizeof (event));
     event.xbutton.button = button;
     event.xbutton.same_screen = True;
@@ -51,7 +47,7 @@ void mouse_control::release(Display *display, int button, XEvent event) {
     XFlush (display);
 }
 // Get mouse coordinates
-void mouse_control::coords(Display *display, int *x, int *y)
+void MouseControl::coords(Display *display, int *x, int *y)
 {
     XEvent event;
     XQueryPointer (display, DefaultRootWindow (display),
@@ -64,14 +60,14 @@ void mouse_control::coords(Display *display, int *x, int *y)
 }
 
 // Move mouse pointer (relative)
-void mouse_control::move (Display *display, int x, int y)
+void MouseControl::move (Display *display, int x, int y)
 {
     XWarpPointer (display, None, None, 0,0,0,0, x, y);
     XFlush (display);
 }
 
 // Move mouse pointer (absolute)
-void mouse_control::move_to (Display *display, int x, int y)
+void MouseControl::move_to (Display *display, int x, int y)
 {
     int cur_x, cur_y;
     coords (display, &cur_x, &cur_y);

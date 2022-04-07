@@ -4,9 +4,9 @@
 #include <X11/Xlib.h>  // X11
 #include <X11/keysymdef.h>
 
-class keyboard_event {
+class KeyboardEvent {
 public:
-    keyboard_event(void);
+    KeyboardEvent(void);
     XKeyEvent createKeyEvent(Display *display, Window &win,
                              Window &winRoot, bool press,
                              int keycode, int modifiers);

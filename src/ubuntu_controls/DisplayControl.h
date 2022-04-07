@@ -1,10 +1,10 @@
 #ifndef UBUNTU_GESTURECONTROL_DISPLAYCONTROL_H
 #define UBUNTU_GESTURECONTROL_DISPLAYCONTROL_H
 
-#include <WindowAction.h>
-#include <KeyboardAction.h>
-#include <VolumeControl.h>
-#include <MouseAction.h>
+#include "WindowAction.h"
+#include "KeyboardAction.h"
+#include "VolumeControl.h"
+#include "MouseAction.h"
 #include <X11/Xlib.h>
 
 //this class is used in order to concisely encapsulate

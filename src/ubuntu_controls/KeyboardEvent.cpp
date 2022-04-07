@@ -1,12 +1,12 @@
 #include "KeyboardEvent.h"
 
-keyboard_event::keyboard_event(void){};
+KeyboardEvent::KeyboardEvent(void){};
 
 // Function to create a keyboard event
 //This function is used in order to simulate a key event i.e. the pressing and releasing of a key
-XKeyEvent keyboard_event::createKeyEvent(Display *display, Window &win,
-                         Window &winRoot, bool press,
-                            int keycode, int modifiers)
+XKeyEvent KeyboardEvent::createKeyEvent(Display *display, Window &win,
+                                        Window &winRoot, bool press,
+                                        int keycode, int modifiers)
 {
     //declare a key press event
     XKeyEvent event;
@@ -39,7 +39,7 @@ XKeyEvent keyboard_event::createKeyEvent(Display *display, Window &win,
 
     return event;
 }
-void keyboard_event::keyPress(Display *display, int keycode){
+void KeyboardEvent::keyPress(Display *display, int keycode){
 
 // Get the root window for the current display.
     Window winRoot = XDefaultRootWindow(display);

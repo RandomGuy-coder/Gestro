@@ -5,6 +5,7 @@ project(Gestro VERSION 1.0.0)
 
 add_subdirectory(gui)
 add_subdirectory(gesture_detection)
+add_subdirectory(ubuntu_controls)
 
 add_executable(Gestro
         main.cpp)

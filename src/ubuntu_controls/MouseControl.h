@@ -1,7 +1,3 @@
-//
-// Created by terrancewong on 21/03/2022.
-//
-
 #ifndef UBUNTU_GESTURECONTROL_MOUSE_CONTROL_H
 #define UBUNTU_GESTURECONTROL_MOUSE_CONTROL_H
 
@@ -9,9 +5,9 @@
 #include <stdio.h>     // printf, fprintf and fflush
 #include <string.h>    // memset
 
-class mouse_control {
+class MouseControl {
 public:
-    mouse_control(void);
+    MouseControl(void);
     void click(Display *display, int button, XEvent event);
     void release(Display *display, int button, XEvent event);
     void coords(Display *display, int *x, int *y);

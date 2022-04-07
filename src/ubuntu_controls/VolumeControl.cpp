@@ -1,14 +1,10 @@
-//
-// Created by terrancewong on 21/03/2022.
-//
-
 #include "VolumeControl.h"
 
-volumeControl::volumeControl(void) {};
+VolumeControl::VolumeControl(void) {};
 
 //In order to use this function//
 //Pass in a long integer value between 0 and 2100
-void volumeControl::SetMasterVolume(long volume)
+void VolumeControl::SetMasterVolume(long volume)
 {
     long min, max;
 

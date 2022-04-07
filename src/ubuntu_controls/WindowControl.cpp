@@ -1,14 +1,10 @@
-//
-// Created by terrancewong on 21/03/2022.
-//
-
 #include "WindowControl.h"
 
-window_control::window_control(void){};
+WindowControl::WindowControl(void){};
 
 // This function can be used to identify the current window that the pointer is placed over
 // The function receives the display as the input and then provides the window as an output
-Window window_control::identifyWindow(Display *display)
+Window WindowControl::identifyWindow(Display *display)
 {
     Window winFocus;
     int revert;
@@ -19,7 +15,7 @@ Window window_control::identifyWindow(Display *display)
 //This function can be used to resize the window
 //The function receives the display and the
 //height and width as an
-void window_control::resize(Display *display, int x, int y)
+void WindowControl::resize(Display *display, int x, int y)
 {
     Window w = identifyWindow(display);
     Window* root;
@@ -34,20 +30,20 @@ void window_control::resize(Display *display, int x, int y)
 
 }
 
-void window_control::move(Display *display, int x, int y)
+void WindowControl::move(Display *display, int x, int y)
 {
     Window w = identifyWindow(display);
     XMoveWindow(display, w, x, y);
 
 }
 
-void window_control::minimize(Display *display)
+void WindowControl::minimize(Display *display)
 {
     Window w = identifyWindow(display);
     XIconifyWindow(display, w, DefaultScreen(display));
 }
 
-void window_control::close(Display *display)
+void WindowControl::close(Display *display)
 {
     Window w = identifyWindow(display);
     XDestroyWindow(display, w);

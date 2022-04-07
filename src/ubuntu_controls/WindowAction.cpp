@@ -1,28 +1,24 @@
-//
-// Created by terrancewong on 21/03/2022.
-//
-
 #include "WindowAction.h"
 
-windowAction::windowAction(Display *d){
+WindowAction::WindowAction(Display *d){
     display = d;
 }
 
 //call method with new width and height as arguments
-void windowAction::changeWindowSize(int x, int y){
+void WindowAction::changeWindowSize(int x, int y){
     windowControl.resize(display, x, y);
 }
 
 //call method with new x and y position from the top left corner
-void windowAction::moveWindow(int x, int y){
+void WindowAction::moveWindow(int x, int y){
     windowControl.move(display, x, y);
 }
 //close the current window
-void windowAction::closeWindow(){
+void WindowAction::closeWindow(){
     windowControl.close(display);
 }
 
 //make the current window an icon
-void windowAction::minimizeWindow(){
+void WindowAction::minimizeWindow(){
     windowControl.minimize(display);
 }

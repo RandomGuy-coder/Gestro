@@ -8,12 +8,12 @@
 //Class is declared using the keycode
 //as defined by the keysymdef library
 
-class keyboardAction
+class KeyboardAction
 {
 private:
     Display *display;
 public:
-    keyboardAction(Display *d);
+    KeyboardAction(Display *d);
     void pressKey(int k);
 };
 

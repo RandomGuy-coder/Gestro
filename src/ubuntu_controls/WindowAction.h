@@ -1,7 +1,3 @@
-//
-// Created by terrancewong on 21/03/2022.
-//
-
 #ifndef UBUNTU_GESTURECONTROL_WINDOWACTION_H
 #define UBUNTU_GESTURECONTROL_WINDOWACTION_H
 
@@ -10,14 +6,14 @@
 
 //Call class to declare a variable
 //that can be used to control window action
-class windowAction{
+class WindowAction{
 private:
     Display* display;
     Window winFocus;
     int revert;
-    window_control windowControl;
+    WindowControl windowControl;
 public:
-    windowAction(Display *d);
+    WindowAction(Display *d);
     void changeWindowSize(int x, int y);
     void moveWindow(int x, int y);
     void closeWindow();
