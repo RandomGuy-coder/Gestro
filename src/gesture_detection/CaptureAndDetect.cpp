@@ -28,7 +28,7 @@ void CaptureAndDetect::captureAndTrack() {
 
     FaceRemover faceRemover;
     FingerCounter fingerCounter;
-    Ptr<BackgroundSubtractor> backgroundRemover = createBackgroundSubtractorKNN(150,200.0,false);
+    Ptr<BackgroundSubtractor> backgroundRemover = createBackgroundSubtractorKNN(200,200.0);
 
     int counter = 0;
     while (true) {
@@ -69,11 +69,11 @@ void CaptureAndDetect::captureAndTrack() {
 
             copyTo(frame, backgroundRemoved, bgMask);
             skinMask = skinDetector.getSkinMask(backgroundRemoved);
-            copyTo(frame, newimg, skinMask);
+            copyTo(backgroundRemoved, newimg, skinMask);
             fingerCounterDebug = fingerCounter.findFingersCount(skinMask, frame);
 
             if (toDisplay == "skinMask") {
-                callback(skinMask);
+                callback(newimg);
             } else if (toDisplay == "finger") {
                 callback(frame);
             }

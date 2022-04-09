@@ -1,18 +1,13 @@
 #include "VolumeControl.h"
 
-VolumeControl::VolumeControl(void) {};
+VolumeControl::VolumeControl(void) {
+
+};
 
 //In order to use this function//
 //Pass in a long integer value between 0 and 2100
 void VolumeControl::SetMasterVolume(long volume)
 {
-    long min, max;
-
-    snd_mixer_t *handle;
-    snd_mixer_selem_id_t *sid;
-    const char *card = "default";
-    const char *selem_name = "Master";
-
     snd_mixer_open(&handle, 0);
     snd_mixer_attach(handle, card);
     snd_mixer_selem_register(handle, NULL, NULL);
