@@ -55,7 +55,8 @@ void SkinColorDetector::calculateThresholds(Mat sample1, Mat sample2) {
 
     sUpper = max(hsvMeansSample1[1], hsvMeansSample2[1]);
     sLower = min(hsvMeansSample1[1], hsvMeansSample2[1]);
-
+    cout << "sUpper" << sUpper << endl;
+    cout << "sLower" << sLower << endl;
     vUpper = 255;
     vLower = 0;
 }

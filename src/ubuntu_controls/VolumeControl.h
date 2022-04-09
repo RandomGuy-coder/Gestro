@@ -4,6 +4,15 @@
 #include <alsa/asoundlib.h>
 
 class VolumeControl {
+
+private:
+    long min, max;
+
+    snd_mixer_t *handle;
+    snd_mixer_selem_id_t  *sid;
+    const char *card = "default";
+    const char *selem_name = "Master";
+
 public:
     VolumeControl(void);
     void SetMasterVolume(long volume);
