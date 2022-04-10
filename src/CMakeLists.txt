@@ -11,5 +11,6 @@ add_executable(Gestro
         main.cpp)
 
 target_link_libraries(Gestro gui)
+target_link_libraries(Gestro ubuntu_controls)
 
-message(STATUS "DIR=${PROJECT_SOURCE_DIR}")
+#message(STATUS "DIR=${PROJECT_SOURCE_DIR}")

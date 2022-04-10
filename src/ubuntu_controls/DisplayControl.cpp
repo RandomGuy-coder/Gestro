@@ -5,6 +5,6 @@
 //and an XEvent handler
 //this also initializes for window, mouse, volume and keyboard control classes
 
-DisplayControl::DisplayControl(Display* d):mouseAction(d,event),keyboardAction(d),windowAction(d),volumeControl(void){
+DisplayControl::DisplayControl(Display* d):MouseAction(d,event),KeyboardAction(d),WindowAction(d),VolumeControl(){
     display = d;
 };

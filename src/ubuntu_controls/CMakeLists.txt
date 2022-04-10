@@ -4,8 +4,7 @@ find_package(X11 REQUIRED)
 set(GCC_COVERAGE_COMPILE_FLAGS "-lasound")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GCC_COVERAGE_COMPILE_FLAGS}" )
 
-add_library(ubuntu_controls
-        KeyboardEvent.cpp KeyboardAction.cpp KeyboardAction.h MouseControl.cpp MouseControl.h MouseAction.cpp MouseAction.h WindowControl.cpp WindowControl.h WindowAction.cpp WindowAction.h VolumeControl.cpp VolumeControl.h)
+add_library(ubuntu_controls DisplayControl.cpp DisplayControl.h KeyboardEvent.cpp KeyboardAction.cpp KeyboardAction.h MouseControl.cpp MouseControl.h MouseAction.cpp MouseAction.h WindowControl.cpp WindowControl.h WindowAction.cpp WindowAction.h VolumeControl.cpp VolumeControl.h)
 
 if(ALSA_FOUND)
     include_directories(${ALSA_INCLUDE_DIRS})
