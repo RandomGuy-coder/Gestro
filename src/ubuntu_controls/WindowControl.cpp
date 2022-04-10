@@ -1,4 +1,5 @@
 #include "WindowControl.h"
+#include "iostream"
 
 WindowControl::WindowControl(void){};
 
@@ -18,15 +19,16 @@ Window WindowControl::identifyWindow(Display *display)
 void WindowControl::resize(Display *display, int x, int y)
 {
     Window w = identifyWindow(display);
-    Window* root;
-    int* x_loc;
-    int* y_loc;
-    unsigned int* width;
-    unsigned int* height;
-    unsigned int* border_width;
-    unsigned int* depth;
-    XGetGeometry(display, w, root, x_loc,y_loc,width,height, border_width, depth);
-    XResizeWindow(display, w, x, y);
+    XWindowAttributes  windowAttributes;
+    try {
+        if (XGetWindowAttributes(display, w, &windowAttributes) == 0) {
+            std::cout << "Failed to get window dimensions";
+        } else {
+            XResizeWindow(display, w, x, y);
+        }
+    } catch (...) {
+        std::cout << "Error occured";
+    }
 
 }
 

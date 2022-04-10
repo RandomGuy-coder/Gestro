@@ -12,8 +12,7 @@
 //so that they can be used in a callback function 
 //without the user needing to create objects for each of those classes
 //any of the methods from the parent classes can be called by simply using dot notation
-#endif
-class DisplayControl: public windowAction, public keyboardAction, public mouseAction, public volumeControl
+class DisplayControl: public WindowAction, public KeyboardAction, public MouseAction, public VolumeControl
 {
 //the member variables for this functiona are the display variable and the event variable    
 private:
