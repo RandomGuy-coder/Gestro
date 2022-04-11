@@ -3,8 +3,8 @@
 
 #include "opencv2/opencv.hpp"
 #include "SkinColorDetector.h"
-#include "FaceRemover.h"
 #include "FingerCounter.h"
+#include "FingerAndCoordinates.h"
 #include "thread"
 
 using namespace std;
@@ -14,20 +14,27 @@ class CaptureAndDetect {
 public:
     CaptureAndDetect();
     void calibrateValues(int, int, int, int);
-    void start(function<void(Mat)> callTo);
+    void start(function<void(Mat)> callTo,  function<void(FingerAndCoordinates)> callToFinger);
     void stop();
     void calibrateColorPressed();
     void displayImage(String image);
     bool calibrate = false;
+    void calibrateBackgroundRemover();
 
 private:
     int V_MIN;
     int V_MAX;
-    String toDisplay;
+    String toDisplay = "unprocessed";
+    FingerAndCoordinates fingerAndCoordinates;
     thread uthread;
     SkinColorDetector skinDetector;
     void captureAndTrack();
     function<void(Mat)> callback;
+    function<void(FingerAndCoordinates)> fingerCallback;
+    bool backgroundCalibrated = false;
+    Ptr<BackgroundSubtractor> backgroundRemover;
+    Rect roi;
+
 
 
 };

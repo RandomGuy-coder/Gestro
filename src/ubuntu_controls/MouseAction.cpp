@@ -18,6 +18,6 @@ void MouseAction::releaseButton(int button){
 
 //this method moves the mouse pointer from current location by the x and y coordinates specified
 void MouseAction::moveMouseTo(int x, int y){
-    mouseControl.move(display, x, y);
+    mouseControl.move_to(display, x, y);
 }
 

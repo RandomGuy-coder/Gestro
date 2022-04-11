@@ -1,11 +1,5 @@
 #include "ControllerScreen.h"
-#include "ui_controller_dialog.h"
-#include <QImage>
-#include <QPixmap>
-#include <QLabel>
-#include <QTableWidget>
-#include <QTableWidgetItem>
-#include <QTime>
+
 uint32_t operate_num = 0;
 ControllerScreen::ControllerScreen(QWidget *parent) :
     QDialog(parent),
@@ -20,7 +14,7 @@ ControllerScreen::ControllerScreen(QWidget *parent) :
     ui->label_show_guide->adjustSize();
     //ui->label_show_guide->show();
     ui->scrollArea->setWidget(ui->label_show_guide);
-    captureAndDetect.start(std::bind(&ControllerScreen::Callback, this, std::placeholders::_1));
+    captureAndDetect.start(std::bind(&ControllerScreen::Callback,  this, std::placeholders::_1), std::bind(&ControllerScreen::Callback_controls,  this, std::placeholders::_1));
     connect(ui->unprocessed_feed,SIGNAL(clicked(bool)),this,SLOT(unprocessedFeed_clicked()));
     connect(ui->skin_mask,SIGNAL(clicked(bool)),this,SLOT(skinMask_clicked()));
     connect(ui->detector,SIGNAL(clicked(bool)),this,SLOT(detector_clicked()));
@@ -29,6 +23,7 @@ ControllerScreen::ControllerScreen(QWidget *parent) :
     connect(ui->hMaxSlider, SIGNAL(valueChanged(int)), this, SLOT(setCalibrationValues()));
     connect(ui->sMinSlider, SIGNAL(valueChanged(int)), this, SLOT(setCalibrationValues()));
     connect(ui->sMaxSlider, SIGNAL(valueChanged(int)), this, SLOT(setCalibrationValues()));
+    connect(ui->calibrateROI, SIGNAL(clicked(bool)),this, SLOT(calibrateBackground_clicked()));
     ui->hMinValue->setText(QString::number(ui->hMinSlider->value()));
     ui->hMaxValue->setText(QString::number(ui->hMaxSlider->value()));
     ui->sMinValue->setText(QString::number(ui->sMinSlider->value()));
@@ -67,6 +62,7 @@ void ControllerScreen::unprocessedFeed_clicked()
     item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
     ui->tableWidget->setItem(operate_num,3,item);
     operate_num++;
+    captureAndDetect.displayImage("unprocessed");
 }
 
 
@@ -160,6 +156,20 @@ void ControllerScreen::Callback(Mat dest){
     cvtColor(dest,dest, COLOR_BGR2RGB);
     QImage image1 = QImage((uchar*) dest.data, dest.cols, dest.rows, dest.step, QImage::Format_RGB888);
     ui->label_show_pic->setPixmap(QPixmap::fromImage(image1));
+}
+
+void ControllerScreen::Callback_controls(FingerAndCoordinates finger) {
+    if(finger.count == 1) {
+        displayControl.moveMouseTo(finger.x, finger.y);
+    } else if(finger.count == 2) {
+        displayControl.muteAndUnmute();
+    } else if(finger.count == 3) {
+        displayControl.minimizeWindow();
+    }
+}
+
+void ControllerScreen::calibrateBackground_clicked(){
+    captureAndDetect.calibrateBackgroundRemover();
 }
 
 void ControllerScreen::setCalibrationValues() {
