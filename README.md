@@ -1,7 +1,7 @@
 <h1 align="center">Gestro</h1>
 <p align="center">
   <a href="https://github.com/RandomGuy-coder/Gestro">
-    <img src="/resources/gestro_logo.jpeg" alt="Gestro Logo" width="200">
+    <img src="/resources/gestro_logo.png" alt="Gestro Logo" width="200">
   </a>
 
   <p align="center">Controlling Linux system using hand gestures</p>
