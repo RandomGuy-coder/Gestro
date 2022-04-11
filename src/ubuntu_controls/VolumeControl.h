@@ -6,7 +6,7 @@
 class VolumeControl {
 
 private:
-    long min, max;
+    long min, max, currentVolume;
 
     snd_mixer_t *handle;
     snd_mixer_selem_id_t  *sid;
@@ -16,6 +16,7 @@ private:
 public:
     VolumeControl(void);
     void SetMasterVolume(long volume);
+    int muteAndUnmute();
 };
 
 

@@ -13,4 +13,5 @@ endif(ALSA_FOUND)
 
 include_directories(${X11_INCLUDE_DIRS})
 target_link_libraries(ubuntu_controls "-lX11" )
+target_include_directories(ubuntu_controls PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 

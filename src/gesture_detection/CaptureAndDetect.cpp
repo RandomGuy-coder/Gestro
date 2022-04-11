@@ -10,7 +10,6 @@ void CaptureAndDetect::calibrateValues(int hMin, int hMax, int sMin, int sMax) {
     if(skinDetector.getCalibrated()) {
         skinDetector.calibrateValues(hMin, hMax, sMin, sMax);
     }
-    cout << hMin << hMax << sMin << sMax << endl;
 }
 
 void CaptureAndDetect::captureAndTrack() {
@@ -23,12 +22,11 @@ void CaptureAndDetect::captureAndTrack() {
 
     cap.set(3, 1280);
     cap.set(4,720);
+    roi = Rect(1280/2, 0, 1280/2, 720/2);
     cap.set(6, VideoWriter::fourcc('M','J','P','G'));
     Mat frame, frameOutput, skinMask, bgMask, fingerCounterDebug, backgroundRemoved, newimg;
 
-    FaceRemover faceRemover;
     FingerCounter fingerCounter;
-    Ptr<BackgroundSubtractor> backgroundRemover = createBackgroundSubtractorKNN(200,200.0);
 
     int counter = 0;
     while (true) {
@@ -44,38 +42,44 @@ void CaptureAndDetect::captureAndTrack() {
 
         //show the flipped frame in the created window
         flip(frame, frame, 1);
-        frameOutput = frame.clone();
-
+        rectangle(frame, roi, Scalar(0,255,255));
+        frameOutput = frame(roi);
+        Mat frame2 = frameOutput.clone();
         skinDetector.drawSkinColorSampler(frameOutput);
+        frameOutput.copyTo(frame(roi));
 
         if (!skinDetector.getCalibrated()) {
-            callback(frameOutput);
+            callback(frame);
             if (calibrate){
-                skinDetector.calibrate(frame);
+                skinDetector.calibrate(frame2);
                 calibrate = false;
             }
-        } else {
-            //remove the face from the image using cascade
-            faceRemover.removeFaces(frame);
-
+        } else if(toDisplay == "unprocessed") {
+            callback(frame);
+        } else if(backgroundCalibrated){
             //Blur the frame
             Size kSize;
             kSize.height = 3;
             kSize.width = 3;
             double sigma = 0.3 * (3 / 2 - 1) + 0.8;
-            GaussianBlur(frame, frame, kSize, sigma, 0.0, 4);
+            GaussianBlur(frame2, frame2, kSize, sigma, 0.0, 4);
 
-            backgroundRemover->apply(frame, bgMask);
+            backgroundRemover->apply(frame2, bgMask, 0);
 
-            copyTo(frame, backgroundRemoved, bgMask);
+            copyTo(frame2, backgroundRemoved, bgMask);
             skinMask = skinDetector.getSkinMask(backgroundRemoved);
             copyTo(backgroundRemoved, newimg, skinMask);
-            fingerCounterDebug = fingerCounter.findFingersCount(skinMask, frame);
+            fingerAndCoordinates = fingerCounter.findFingersCount(skinMask, frame2);
 
             if (toDisplay == "skinMask") {
-                callback(newimg);
-            } else if (toDisplay == "finger") {
+                newimg.copyTo(frame(roi));
                 callback(frame);
+            } else if (toDisplay == "finger") {
+                frame2.copyTo(frame(roi));
+                callback(frame);
+            }
+            if(fingerAndCoordinates.count!=0){
+                fingerCallback(fingerAndCoordinates);
             }
 
             backgroundRemoved = NULL;
@@ -84,9 +88,10 @@ void CaptureAndDetect::captureAndTrack() {
     }
 }
 
-void CaptureAndDetect::start(function<void(Mat)> callTo) {
+void CaptureAndDetect::start(function<void(Mat)> callTo, function<void(FingerAndCoordinates)> callToFinger) {
     uthread = thread(&CaptureAndDetect::captureAndTrack, this);
     callback = callTo;
+    fingerCallback = callToFinger;
 }
 
 void CaptureAndDetect::stop() {
@@ -95,6 +100,11 @@ void CaptureAndDetect::stop() {
 
 void CaptureAndDetect::calibrateColorPressed() {
     calibrate = true;
+}
+
+void CaptureAndDetect::calibrateBackgroundRemover() {
+    backgroundRemover = createBackgroundSubtractorMOG2(10, 30);
+    backgroundCalibrated = true;
 }
 
 void CaptureAndDetect::displayImage(String display) {
