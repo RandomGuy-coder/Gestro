@@ -96,12 +96,11 @@ Click to view our [demonstration video]()!
 ### Installation Guide
 
 **Run the script to install required dependencies:**
-```sh
+```
 ./install_dependencies.sh
 ```
 
 **Steps to Install and Configure OpenCV 4.5.5:**
-* Need Ubuntu 18.04
 
 1. Python version should be above 3.6
 ```
@@ -211,7 +210,9 @@ Contributions are what make the open source community such an amazing place to b
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request -->
+5. Open a Pull Request 
+Anyone who feels they can contribute any imporovements to the project is welcome to fork the project, and submit an issue with a pull request with the changes. For some ideas, concepts for future developement can be found on the project's [issues]() page.
+-->
 
 ## Future Enhancement:
 * Play and Pause
@@ -221,7 +222,7 @@ Contributions are what make the open source community such an amazing place to b
 * Switch between applications
 * Increase and Decrease Brightness
 
-Propose for a new feature [here]()!
+Propose for a new feature [here](https://github.com/RandomGuy-coder/Gestro/issues)!
 
 ## Social Media:
 <nav>
