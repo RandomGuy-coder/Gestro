@@ -5,7 +5,3 @@ has_children: true
 ---
 
 ## Requirements
-
-### Specifications
-### User Stories
-### Milestones
