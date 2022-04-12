@@ -1,7 +1,7 @@
 <h1 align="center">Gestro</h1>
 <p align="center">
   <a href="https://github.com/RandomGuy-coder/Gestro">
-    <img src="/resources/gestro_logo.png" alt="Gestro Logo" width="200">
+    <img src="/assets/gestro_logo.png" alt="Gestro Logo" width="200">
   </a>
 
   <p align="center">Controlling Linux system using hand gestures</p>
@@ -18,57 +18,89 @@
 </div>
 
 <!-- CONTENTS -->
-## Contents
 <details open="open">
-  <summary></summary>
+  <summary>Contents</summary>
   <ol>
     <li>
-      <a href="#about-us">About Us</a>
+      <a href="#about-gestro">About Gestro</a>
       <ul>
-        <li><a href="#components-used">Components Used</a></li>
+        <li><a href="#demonstration-video">Demonstration Video</a></li>
+        <li><a href="#features">Features</a></li>
         <li><a href="#built-with">Built With</a></li>
-        <li><a href="#demonstration">Demonstration</a></li>
+        <li><a href="#built-on">Built On</a></li>
       </ul>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#installation-guide">Installation Guide</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#social-media-and-outreach">Social Media and Outreach</a></li>
-    <li><a href="#contacts">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
+    <li>
+      <a href="#launching-gestro">Launching Gestro</a>
+      <ul>
+        <li><a href="#main-program">Main Program</a></li>
+        <li><a href="#unit-tests">Unit Tests</a></li>
+      </ul>
+    </li>
+    <!-- <li><a href="#contributing">Contributing</a></li> -->
+    <li><a href="#contributors">Contributors</a></li>
+    <li><a href="#future-enhancement">Future Enhancement</a></li>
     <li><a href="#social-media">Social Media</a></li>
+    <li><a href="#documentation">Documentation</a></li>
+    <li><a href="#license">License</a></li>
   </ol>
 </details>
 
-**Functions:**
-* Increase or Decrease Volume and Brightness.
-* Switch between applications.
-* Zoom in and Zoom out.
-* Track mouse.
-* Mute and Unmute.
-* Play and Pause.
-* Next and previous.
+## About Gestro
 
-**Methodologies:**
-* A PC running Ubuntu.
-* A webcam.
-* Using OpenCV.
-
-**Problems Being Solved:**
+**Problems being solved:**
 * Additional everyday functionalities for one that is sitting away from their PC (Eg. When giving a presentation).
 * To aid users with poor fine motor control (Eg. Parkinson's patients).
 * To make controlling the system more user friendly for people that are unfamiliar with modern devices (Eg. Elderly people)
 
-**Steps to Configure OpenCV 4.5.5**
-* Need Ubuntu 18.04
+### Demonstration Video
+Click to view our [demonstration video]()!
+
+<div align="center">
+  <img src="" alt="Screenshot of demonstration" width="600">
+</div>
+
+
+### Features
+* Increase and Decrease Volume.
+* Track mouse.
+* Perform mouse clicks.
+* Enter keys.
+* Change window size.
+* Move, Minimise, and Close window.
+
+### Built With
+* A PC running Ubuntu.
+* A webcam.
+
+### Built On
+* C++
+* CMake
+* OpenCV
+* Boost Unit Test Framework
+* Doxygen
+
+## Getting Started
+
+### Prerequisites
+* A PC running Ubuntu.
+* A webcam
+
+### Installation Guide
+
+**Run the script to install required dependencies:**
+```
+./install_dependencies.sh
+```
+
+**Steps to Install and Configure OpenCV 4.5.5:**
 
 1. Python version should be above 3.6
 ```
@@ -93,29 +125,23 @@ sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1
 ```
 # update the repositories
 sudo apt-get update
-
 # install important packages
 sudo apt install build-essential cmake git pkg-config libgtk-3-dev \
     libavcodec-dev libavformat-dev libswscale-dev libv4l-dev \
     libxvidcore-dev libx264-dev libjpeg-dev libpng-dev libtiff-dev \
     gfortran openexr libatlas-base-dev python3-dev python3-numpy \
     libtbb2 libtbb-dev libdc1394-22-dev
-
 # make directory to download and build opencv
 mkdir ~/opencv_build && cd ~/opencv_build
-
 # download and unpack the repositories
 wget -O opencv.zip https://github.com/opencv/opencv/archive/4.x.zip
 wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.x.zip
 unzip opencv.zip
 unzip opencv_contrib.zip
-
 # cd into opencv-4.x
 cd opencv-4.x
-
 # build the opencv
 mkdir build && cd build
-
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
     -D CMAKE_INSTALL_PREFIX=/usr/local \
     -D INSTALL_C_EXAMPLES=ON \
@@ -123,36 +149,99 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
     -D OPENCV_GENERATE_PKGCONFIG=ON \
     -D OPENCV_EXTRA_MODULES_PATH=~/opencv_build/opencv_contrib-4.x/modules \
     -D BUILD_EXAMPLES=ON ..
-
 # jX the X depends on your number of cores. I ran on 4 cores.
 make -j4
-
 # If the following error occurs: "recipe for target "all" failed", just rerun the make command again:
 make -j4
-
 # when opencv is successfully built, run the following command:
 ```sudo make install```
-
 # To install the required library for volume control
 ```sudo apt install libasound2-dev```
-
 ```
 
-<!-- CONTRIBUTORS -->
-### Contributors:
+**Steps to install Boost Unit Test Framework:**
+1. Download boost from:
+https://boostorg.jfrog.io/artifactory/main/release/1.78.0/source/
+
+2. Enter the following command into terminal to make directory for boost at home folder:
+```
+mkdir ~/boost
+```
+
+3. Unzip the downloaded file from step 1 and cd into the extracted folder with the following command:
+```
+cd [folder path]
+```
+
+4. Run the following command:
+```
+./bootstrap.sh
+```
+
+If an error of permission denied occurs, run:
+```
+chmod u+x ./bootstrap.sh
+```
+
+5. Run the following command:
+```
+./b2 address-model=64 architecture=x86 --with-test link=shared --prefix=/home/[username]/boost install
+*replace [username] with your linux username*
+```
+
+## Launching Gestro
+
+### Main Program
+
+### Unit Tests
+
+
+## Contributors:
+_ENG5220 - Real-time Embedded Systems - Team 26:_
 - [Tushar Anil Mittal, 2669699M](https://github.com/RandomGuy-coder)
 - [Tian Jie Wong, 2702282W](https://github.com/terrsoshi)
 - [Muhatasim Intisar, 2683935I](https://github.com/MuhatasimIntisar)
 - [Ruoqi Sun, 2574212S](https://github.com/David2574)
 
-<!-- SOCIAL MEDIA -->
-### Social Media:
+<!-- CONTRIBUTING -->
+<!--## Contributing
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request 
+Anyone who feels they can contribute any imporovements to the project is welcome to fork the project, and submit an issue with a pull request with the changes. For some ideas, concepts for future developement can be found on the project's [issues]() page.
+-->
+
+## Future Enhancement:
+* Play and Pause
+* Play Next and Previous
+* Mute and Unmute.
+* Zoom in and Zoom out
+* Switch between applications
+* Increase and Decrease Brightness
+
+Propose for a new feature [here](https://github.com/RandomGuy-coder/Gestro/issues)!
+
+## Social Media:
 <nav>
     Follow us on:<br><br>
     <div class="sociallinks"><!--links to social pages, opened in new tabs-->
-        <a href="https://www.facebook.com/GestroProject" target="_blank"><img src="resources/fblogo.png" style="width: 40px; vertical-align: middle; margin-right: 5px;"></a>
-        <a href="https://twitter.com/Gestro72681347" target="_blank"><img src="resources/twitterlogo.png" style="width: 40px; vertical-align: middle; margin-right: 5px;"></a>
-        <a href="https://www.instagram.com/gestro__u "target="_blank"><img src="resources/instalogo.png" style="width: 40px; vertical-align: middle; margin-right: 5px;"></a>
+        <a href="https://www.facebook.com/GestroProject" target="_blank"><img src="assets/fb_logo.png" style="width: 40px; vertical-align: middle; margin-right: 5px;"></a>
+        <a href="https://twitter.com/GestroProject" target="_blank"><img src="assets/twitter_logo.png" style="width: 40px; vertical-align: middle; margin-right: 5px;"></a>
+        <a href="https://www.instagram.com/gestroproject/" target="_blank"><img src="assets/insta_logo.png" style="width: 40px; vertical-align: middle; margin-right: 5px;"></a>
+        <a href="https://hackaday.io/project/184728-gestro" target="_blank"><img src="assets/hackaday_logo.png" style="width: 36px; vertical-align: middle; margin-right: 5px;"></a>
     </div>
-</nav><br>
-<small><i>Copyright &copy; 2022; ENG5220 - Real-Time-Embedded-Systems - Team 26</i></small>
+</nav>
+
+## Documentation
+Visit our [documentation page]()!
+
+## License
+Distributed under the GPL-3.0 License. See [`LICENSE`](https://github.com/RandomGuy-coder/Gestro/blob/main/LICENSE) for more information.
+
+<!-- FOOTER -->
+<br>
+<small><i>Copyright &copy; 2022; ENG5220 - Real-Time-Embedded-Systems - Team 26</i></small><br>
+<small><i>Distributed by a <a href="https://github.com/RandomGuy-coder/Gestro/blob/main/LICENSE" target="_blank">GNU GPL-3.0 License.</i></small></a>
