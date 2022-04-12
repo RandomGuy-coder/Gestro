@@ -5,7 +5,3 @@ has_children: true
 ---
 
 ## System Overview
-
-### System Design
-### Sequence Diagram
-### Class Diagram
