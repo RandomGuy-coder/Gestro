@@ -45,27 +45,3 @@ If you have any enquiries, contact the team behind Gestro [here](about_the_team)
         <a href="https://hackaday.io/project/184728-gestro" target="_blank"><img src="assets/hackaday_logo.png" style="width: 36px; vertical-align: middle; margin-right: 5px;"></a>
     </div>
 </nav><br>
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
