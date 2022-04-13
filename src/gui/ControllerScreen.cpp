@@ -30,7 +30,6 @@ ControllerScreen::ControllerScreen(QWidget *parent) :
     ui->sMaxValue->setText(QString::number(ui->sMaxSlider->value()));
     ui->skin_mask->setEnabled(false);
     ui->detector->setEnabled(false);
-
 }
 
 ControllerScreen::~ControllerScreen()
@@ -150,6 +149,7 @@ void ControllerScreen::calibrate_clicked()
     ui->tableWidget->setItem(operate_num,3,item);
     ui->calibrate->setEnabled(false);
     captureAndDetect.calibrateColorPressed();
+    captureAndDetect.displayImage("skinMask");
 }
 
 void ControllerScreen::Callback(Mat dest){
@@ -160,7 +160,9 @@ void ControllerScreen::Callback(Mat dest){
 
 void ControllerScreen::Callback_controls(FingerAndCoordinates finger) {
     if(finger.count == 1) {
-        displayControl.moveMouseTo(finger.x, finger.y);
+        int x = screen->width/((float)640/(float)finger.x);
+        int y = screen->height/((float)360/(float)finger.y);
+        displayControl.moveMouseTo(x, y);
     } else if(finger.count == 2) {
         displayControl.muteAndUnmute();
     } else if(finger.count == 3) {

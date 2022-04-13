@@ -35,6 +35,7 @@ private:
     CaptureAndDetect captureAndDetect;
     Display *display = XOpenDisplay(NULL);
     DisplayControl displayControl = DisplayControl(display);
+    Screen *screen = DefaultScreenOfDisplay(display);
 
 public slots:
     void unprocessedFeed_clicked();
