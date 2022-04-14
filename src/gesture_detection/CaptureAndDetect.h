@@ -6,6 +6,7 @@
 #include "FingerCounter.h"
 #include "FingerAndCoordinates.h"
 #include "thread"
+#include "CallbackInterface.h"
 
 using namespace std;
 using namespace cv;
@@ -20,6 +21,7 @@ public:
     void displayImage(String image);
     bool calibrate = false;
     void calibrateBackgroundRemover();
+    void connectCallback(CallbackInterface*);
 
 private:
     int V_MIN;
@@ -34,6 +36,7 @@ private:
     bool backgroundCalibrated = false;
     Ptr<BackgroundSubtractor> backgroundRemover;
     Rect roi;
+    CallbackInterface *interface;
 
 
 

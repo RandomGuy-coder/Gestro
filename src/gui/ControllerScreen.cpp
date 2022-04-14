@@ -30,6 +30,7 @@ ControllerScreen::ControllerScreen(QWidget *parent) :
     ui->sMaxValue->setText(QString::number(ui->sMaxSlider->value()));
     ui->skin_mask->setEnabled(false);
     ui->detector->setEnabled(false);
+    captureAndDetect.connectCallback(this);
 }
 
 ControllerScreen::~ControllerScreen()
@@ -185,4 +186,11 @@ void ControllerScreen::setCalibrationValues() {
     ui->sMaxValue->setText(QString::number(sMax));
 
     captureAndDetect.calibrateValues(hMin, hMax, sMin, sMax);
+}
+
+void ControllerScreen::updateImage(Mat dest) {
+    cout << "here" << endl;
+    cvtColor(dest,dest, COLOR_BGR2RGB);
+    QImage image1 = QImage((uchar*) dest.data, dest.cols, dest.rows, dest.step, QImage::Format_RGB888);
+    ui->label_show_pic->setPixmap(QPixmap::fromImage(image1));
 }

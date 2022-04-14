@@ -49,7 +49,7 @@ void CaptureAndDetect::captureAndTrack() {
         frameOutput.copyTo(frame(roi));
 
         if (!skinDetector.getCalibrated()) {
-            callback(frame);
+            interface->updateImage(frame);
             if (calibrate){
                 skinDetector.calibrate(frame2);
                 calibrate = false;
@@ -110,3 +110,8 @@ void CaptureAndDetect::calibrateBackgroundRemover() {
 void CaptureAndDetect::displayImage(String display) {
     toDisplay = display;
 }
+
+void CaptureAndDetect::connectCallback(CallbackInterface *cb) {
+    interface= cb;
+}
+

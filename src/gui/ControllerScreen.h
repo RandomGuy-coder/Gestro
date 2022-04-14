@@ -13,14 +13,14 @@
 #include "CaptureAndDetect.h"
 #include "DisplayControl.h"
 #include "FingerAndCoordinates.h"
-
+#include "CallbackInterface.h"
 
 using namespace cv;
 namespace Ui {
 class ControllerScreen;
 }
 
-class ControllerScreen : public QDialog
+class ControllerScreen : public QDialog, public CallbackInterface
 {
     Q_OBJECT
 
@@ -29,6 +29,7 @@ public:
     ~ControllerScreen();
     void Callback(Mat);
     void Callback_controls(FingerAndCoordinates finger);
+    void updateImage(Mat) override;
 
 private:
     Ui::ControllerScreen *ui;
