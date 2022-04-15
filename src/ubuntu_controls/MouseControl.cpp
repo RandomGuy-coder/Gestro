@@ -24,6 +24,11 @@ void MouseControl::click (Display *display, int button, XEvent event)
     if (XSendEvent (display, PointerWindow, True, ButtonPressMask, &event) == 0)
         fprintf (stderr, "Error to send the event!\n");
     XFlush (display);
+
+    event.type = ButtonRelease;
+    if (XSendEvent (display, PointerWindow, True, ButtonReleaseMask, &event) == 0)
+        fprintf (stderr, "Error to send the event!\n");
+    XFlush (display);
 }
 
 //release the selected button

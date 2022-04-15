@@ -15,8 +15,10 @@ private:
 
 public:
     VolumeControl(void);
-    void SetMasterVolume(long volume);
+    void increaseVolume();
+    void reduceVolume();
     int muteAndUnmute();
+    int unmute();
 };
 
 

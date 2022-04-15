@@ -193,7 +193,18 @@ void ControllerScreen::fingerDetected(FingerAndCoordinates finger) {
             displayControl.pressButton(1);
         }
     } else if(finger.count == 2) {
-        displayControl.muteAndUnmute();
+        if(!finger.click) {
+            displayControl.muteAndUnmute();
+        } else {
+            displayControl.unmute();
+            if(finger.distance > 0) {
+                cout << "increasing" << endl;
+                displayControl.increaseVolume();
+            }
+            else {
+                displayControl.reduceVolume();
+            }
+        }
     } else if(finger.count == 3) {
         displayControl.minimizeWindow();
     }

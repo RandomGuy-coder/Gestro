@@ -6,11 +6,7 @@ printf "Installing dependencies for Gestro\n"
 
 PP_ROOT=$(pwd)
 MIN_CMAKE="3.21"
-CV_VERSION="69357b1e88680658a07cffde7678a4d697469f03"
-
-# Makes use of snippet from: https://stackoverflow.com/a/3278427 for
-# cleanly checking git commits of dependencies
-UPSTREAM=${1:-'@{u}'}
+CV_VERSION="4.5.5"
 
 ## Check for correct version of CMake
 if ! cmake --version >/dev/null 2>&1; then
@@ -27,37 +23,6 @@ CMAKE_VERSION=$(echo "$(cmake --version)" | awk -F'[. ]' '/[0-9]*\.[0-9]*\.[0-9]
 if [ ! "$(printf '%s\n' "$MIN_CMAKE" "$CMAKE_VERSION" | sort -V | head -n1)" = "$MIN_CMAKE" ]; then
   printf "CMake version too low; $CMAKE_VERSION found and ${MIN_CMAKE} needed\n"
   exit 1
-fi
-
-cd ..
-
-## Download cppTimer
-printf "Downloading cppTimer ..."
-if [ ! -d "cppTimer_src" ]; then
-  printf "\n"
-  git clone https://github.com/berndporr/cppTimer.git cppTimer_src || exit 1
-  cd cppTimer_src
-  cmake .
-  make
-  sudo make install
-  cd ..
-else
-  cd cppTimer_src
-  LOCAL=$(git rev-parse @)
-  REMOTE=$(git rev-parse "$UPSTREAM")
-  if [ $LOCAL = $REMOTE ]; then
-    printf " skipped\n"
-  else
-    printf " downloading update\n"
-    make clean
-    git pull origin HEAD
-    cmake .
-    make
-    sudo make install
-  fi
-  cd ..
-  LOCAL=""
-  REMOTE=""
 fi
 
 ## Download OpenCV code
@@ -78,10 +43,13 @@ if [ ! -d "opencv_build" ]; then
   mkdir -p opencv_build
   cd opencv_build
   cmake -DCMAKE_BUILD_TYPE=Release ../opencv_src || exit 1
-  make || exit 1
+  make -j$(nproc) || exit 1
   cd ..
+  rm "$CV_VERSION.zip"
+  rm -r opencv_src
 else
   printf " skipped\n"
+  rm "$CV_VERSION.zip"
 fi
 
 OS="$(uname -s)"
