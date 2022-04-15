@@ -42,6 +42,7 @@ void CaptureAndDetect::captureAndTrack() {
 
         //show the flipped frame in the created window
         flip(frame, frame, 1);
+        currentFrame = frame.clone();
         rectangle(frame, roi, Scalar(0,255,255));
         frameOutput = frame(roi);
         Mat frame2 = frameOutput.clone();
@@ -50,12 +51,14 @@ void CaptureAndDetect::captureAndTrack() {
 
         if (!skinDetector.getCalibrated()) {
             interface->updateImage(frame);
-            if (calibrate){
-                skinDetector.calibrate(frame2);
-                calibrate = false;
-            }
-        } else if(toDisplay == "unprocessed") {
-            callback(frame);
+        } else if (skinDetector.getCalibrated() && !backgroundCalibrated) {
+            Mat FrameToUpdate;
+            copyTo(frame2, FrameToUpdate, skinDetector.getSkinMask(frame2));
+            FrameToUpdate.copyTo(currentFrame(roi));
+            interface->updateImage(currentFrame);
+        }
+        else if(toDisplay == "unprocessed") {
+            interface->updateImage(frame);
         } else if(backgroundCalibrated){
             //Blur the frame
             Size kSize;
@@ -69,29 +72,26 @@ void CaptureAndDetect::captureAndTrack() {
             copyTo(frame2, backgroundRemoved, bgMask);
             skinMask = skinDetector.getSkinMask(backgroundRemoved);
             copyTo(backgroundRemoved, newimg, skinMask);
-            fingerAndCoordinates = fingerCounter.findFingersCount(skinMask, frame2);
 
             if (toDisplay == "skinMask") {
                 newimg.copyTo(frame(roi));
-                callback(frame);
-            } else if (toDisplay == "finger") {
+                interface->updateImage(frame);
+            } else if (toDisplay == "detect") {
+                fingerAndCoordinates = fingerCounter.findFingersCount(skinMask, frame2);
                 frame2.copyTo(frame(roi));
-                callback(frame);
+                interface->updateImage(frame);
+                if(fingerAndCoordinates.count!=0){
+                    interface->fingerDetected(fingerAndCoordinates);
+                }
             }
-            if(fingerAndCoordinates.count!=0){
-                fingerCallback(fingerAndCoordinates);
-            }
-
             backgroundRemoved = NULL;
             newimg = NULL;
         }
     }
 }
 
-void CaptureAndDetect::start(function<void(Mat)> callTo, function<void(FingerAndCoordinates)> callToFinger) {
+void CaptureAndDetect::start() {
     uthread = thread(&CaptureAndDetect::captureAndTrack, this);
-    callback = callTo;
-    fingerCallback = callToFinger;
 }
 
 void CaptureAndDetect::stop() {
@@ -99,7 +99,8 @@ void CaptureAndDetect::stop() {
 }
 
 void CaptureAndDetect::calibrateColorPressed() {
-    calibrate = true;
+    vector<int> a = skinDetector.calibrate(currentFrame);
+    interface->updateCalibratedTrackbar(a[0],a[1],a[2],a[3]);
 }
 
 void CaptureAndDetect::calibrateBackgroundRemover() {

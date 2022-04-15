@@ -16,6 +16,7 @@
 #include "CallbackInterface.h"
 
 using namespace cv;
+using namespace std;
 namespace Ui {
 class ControllerScreen;
 }
@@ -27,9 +28,10 @@ class ControllerScreen : public QDialog, public CallbackInterface
 public:
     explicit ControllerScreen(QWidget *parent = 0);
     ~ControllerScreen();
-    void Callback(Mat);
     void Callback_controls(FingerAndCoordinates finger);
     void updateImage(Mat) override;
+    void updateCalibratedTrackbar(int, int, int, int) override;
+    void fingerDetected(FingerAndCoordinates) override;
 
 private:
     Ui::ControllerScreen *ui;
@@ -46,6 +48,7 @@ public slots:
     void setCalibrationValues();
 
     void calibrateBackground_clicked();
+
 };
 
 #endif // CONTROLLER_DIALOG_H

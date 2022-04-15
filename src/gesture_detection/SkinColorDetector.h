@@ -4,6 +4,7 @@
 #include "opencv2/opencv.hpp"
 
 using namespace cv;
+using namespace std;
 
 class SkinColorDetector {
 private:
@@ -25,7 +26,7 @@ public:
     SkinColorDetector(void);
 
     void drawSkinColorSampler(Mat inputFrame);
-    void calibrate(Mat inputFrame);
+    vector<int> calibrate(Mat inputFrame);
     Mat getSkinMask(Mat inputFrame);
     bool getCalibrated() {return calibrated;}
     void calibrateValues(int H_MIN, int H_MAX, int S_MIN, int S_MAX);

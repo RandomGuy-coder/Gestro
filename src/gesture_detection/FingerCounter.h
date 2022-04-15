@@ -25,7 +25,7 @@ private:
     bool fingerChanged = false;
     int currentFinger = 0;
     int oldFinger = 0;
-
+    Point oldFarPoint;
     Point farthest_point(vector<Vec4i> defects, vector<Point> contour, Point centroid);
 
     int getFinger();

@@ -31,7 +31,7 @@ void SkinColorDetector::drawSkinColorSampler(Mat inputFrame) {
     rectangle(inputFrame, skinColorSamplerRect2, rectColor);
 }
 
-void SkinColorDetector::calibrate(Mat inputFrame) {
+vector<int> SkinColorDetector::calibrate(Mat inputFrame) {
     Mat inputFramehsv;
     cvtColor(inputFrame, inputFramehsv, COLOR_BGR2HSV);
 
@@ -40,10 +40,11 @@ void SkinColorDetector::calibrate(Mat inputFrame) {
 
     calculateThresholds(sample1, sample2);
     calibrated = true;
+    return {hLower, hUpper, sLower, sUpper};
 }
 
 void SkinColorDetector::calculateThresholds(Mat sample1, Mat sample2) {
-//    int offsetLowThreshold = 50, offsetHighThreshold = 10;
+
     Scalar hsvMeansSample1 = mean(sample1);
     Scalar hsvMeansSample2 = mean(sample2);
 
@@ -51,12 +52,11 @@ void SkinColorDetector::calculateThresholds(Mat sample1, Mat sample2) {
     MeansSample2 = hsvMeansSample2;
 
     hUpper = max(hsvMeansSample1[0], hsvMeansSample2[0]);
-    hLower = min(hsvMeansSample1[0], hsvMeansSample2[0]);
+    hLower = 1;
 
     sUpper = max(hsvMeansSample1[1], hsvMeansSample2[1]);
     sLower = min(hsvMeansSample1[1], hsvMeansSample2[1]);
-    cout << "sUpper" << sUpper << endl;
-    cout << "sLower" << sLower << endl;
+
     vUpper = 255;
     vLower = 0;
 }
@@ -78,7 +78,7 @@ Mat SkinColorDetector::getSkinMask(Mat inputFrame) {
     Mat inputFramehsv;
     cvtColor(inputFrame, inputFramehsv, COLOR_BGR2HSV);
 
-    inRange(inputFramehsv,Scalar(hLower, sLower, vLower), Scalar(hUpper, sUpper, vUpper), skinMask);
+    inRange(inputFramehsv,Scalar(1, sLower, vLower), Scalar(hUpper, sUpper, vUpper), skinMask);
     inRange(inputFramehsv, Scalar(50, sLower, vLower), Scalar(150, sUpper, vUpper), frame);
     skinMask = skinMask - frame;
 
