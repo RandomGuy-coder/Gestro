@@ -20,8 +20,12 @@ void VolumeControl::increaseVolume()
     snd_mixer_selem_get_playback_volume_range(elem, &min, &max);
     long value;
     snd_mixer_selem_get_playback_volume(elem, SND_MIXER_SCHN_MONO, &value);
-    std::cout << value << std::endl;
-    snd_mixer_selem_set_playback_volume_all(elem, (value * max / 100) + (max * 0.1));
+    if(value + (max * 0.1) > max) {
+        snd_mixer_selem_set_playback_volume_all(elem,  max);
+    } else {
+        snd_mixer_selem_set_playback_volume_all(elem,  value + (max * 0.1));
+    }
+
     snd_mixer_close(handle);
 };
 
@@ -38,7 +42,11 @@ void VolumeControl::reduceVolume()
     snd_mixer_selem_get_playback_volume_range(elem, &min, &max);
     long value;
     snd_mixer_selem_get_playback_volume(elem, SND_MIXER_SCHN_MONO, &value);
-    snd_mixer_selem_set_playback_volume_all(elem, (value * max / 100) - (max * 0.1));
+    if(value - (max * 0.1) < min) {
+        snd_mixer_selem_set_playback_volume_all(elem,  min);
+    } else {
+        snd_mixer_selem_set_playback_volume_all(elem,  value - (max * 0.1));
+    }
     snd_mixer_close(handle);
 };
 

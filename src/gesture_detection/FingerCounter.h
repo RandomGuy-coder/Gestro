@@ -3,6 +3,7 @@
 #include "FingerAndCoordinates.h"
 #include "opencv2/imgproc.hpp"
 #include "vector"
+#include "Iir.h"
 
 using namespace cv;
 using namespace std;
@@ -27,7 +28,8 @@ private:
     int oldFinger = 0;
     Point oldFarPoint;
     Point farthest_point(vector<Vec4i> defects, vector<Point> contour, Point centroid);
-
+    Iir::Butterworth::LowPass<2> xFilter;
+    Iir::Butterworth::LowPass<2> yFilter;
     int getFinger();
 
     Point

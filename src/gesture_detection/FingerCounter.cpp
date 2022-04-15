@@ -11,6 +11,8 @@ FingerCounter::FingerCounter(void) {
     color_green = Scalar(0, 255, 0);
     color_white = Scalar(255, 255, 255);
     color_yellow = Scalar(0, 255, 255);
+    xFilter.setup(30,3);
+    yFilter.setup(30,3);
 }
 
 FingerAndCoordinates FingerCounter::findFingersCount(Mat input_image, Mat frame) {
@@ -86,9 +88,7 @@ FingerAndCoordinates FingerCounter::findFingersCount(Mat input_image, Mat frame)
     }
     if(fingers.size() == 10) {
         currentFinger = getFinger();
-//        cout <<"current finger" << currentFinger << endl;
         if (currentFinger != oldFinger) {
-//            cout << "oldFinger" << oldFinger << endl;
             Point farthestPoint = getHighestPoint(frame, contours, biggest_contour_index, defects);
             oldFarPoint = farthestPoint;
             oldFinger = currentFinger;
@@ -101,7 +101,7 @@ FingerAndCoordinates FingerCounter::findFingersCount(Mat input_image, Mat frame)
             oldFarPoint = farthestPoint;
             if(currentFinger == 1) {
                 if (sqrt(difference.ddot(difference)) <= 10) {
-                    return {oldFinger, farthestPoint.x, farthestPoint.y, true};
+                    return {oldFinger, xFilter.filter(farthestPoint.x), yFilter.filter(farthestPoint.y), true};
                 }
             } else if(currentFinger == 2) {
                 if(abs(difference.x) > 40) {
@@ -112,7 +112,7 @@ FingerAndCoordinates FingerCounter::findFingersCount(Mat input_image, Mat frame)
         }
     }else if(oldFinger == 1) {
         Point farthestPoint = getHighestPoint(frame, contours, biggest_contour_index, defects);
-        return {oldFinger, farthestPoint.x, farthestPoint.y, false};
+        return {oldFinger, xFilter.filter(farthestPoint.x), yFilter.filter(farthestPoint.y), false};
     }
 
     return {};
