@@ -22,43 +22,48 @@
   <summary>Contents</summary>
   <ol>
     <li>
-      <a href="#about-gestro">About Gestro</a>
+      <a href="#About-Gestro">About Gestro</a>
       <ul>
-        <li><a href="#demonstration-video">Demonstration Video</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#built-with">Built With</a></li>
-        <li><a href="#built-on">Built On</a></li>
+        <li><a href="#Demonstration-Video">Demonstration Video</a></li>
+        <li><a href="#Features">Features</a></li>
+        <li><a href="#Built-With">Built With</a></li>
+        <li><a href="#Built-On">Built On</a></li>
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
+      <a href="#Getting-Started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation-guide">Installation Guide</a></li>
+        <li><a href="#Prerequisites">Prerequisites</a></li>
+        <li><a href="#Installation-Guide">Installation Guide</a></li>
       </ul>
     </li>
     <li>
-      <a href="#launching-gestro">Launching Gestro</a>
+      <a href="#Launching-Gestro">Launching Gestro</a>
       <ul>
-        <li><a href="#main-program">Main Program</a></li>
-        <li><a href="#unit-tests">Unit Tests</a></li>
+        <li><a href="#Main-Program">Main Program</a></li>
+        <li><a href="#Unit-Tests">Unit Tests</a></li>
       </ul>
     </li>
     <!-- <li><a href="#contributing">Contributing</a></li> -->
-    <li><a href="#contributors">Contributors</a></li>
-    <li><a href="#future-enhancement">Future Enhancement</a></li>
-    <li><a href="#social-media">Social Media</a></li>
-    <li><a href="#documentation">Documentation</a></li>
-    <li><a href="#license">License</a></li>
+    <li><a href="#Contributors">Contributors</a></li>
+    <li><a href="#Future-Enhancement">Future Enhancement</a></li>
+    <li><a href="#Social-Media">Social Media</a></li>
+    <li><a href="#Documentation">Documentation</a></li>
+    <li><a href="#License">License</a></li>
   </ol>
 </details>
 
 ## About Gestro
 
-**Problems being solved:**
-* Additional everyday functionalities for one that is sitting away from their PC (Eg. When giving a presentation).
-* To aid users with poor fine motor control (Eg. Parkinson's patients).
-* To make controlling the system more user friendly for people that are unfamiliar with modern devices (Eg. Elderly people)
+Gestro is developed by a group of students from The University of Glasgow currently undertaking the course of ENG5220 - Real-time Embedded Systems under Team 26.
+
+Gestro is an application which allows users to control their Linux system using hand gestures so that users will be able to perform certains actions without the use of a keyboard and mouse. This is particularly useful in cases where users want to control their Linux PC while: being away from it, being unfamiliar with modern devices (such as Elderly people), et cetera.
+
+By using a webcam and libraries such as OpenCV, X11, et cetera, Gestro is able to successfully translate hand gestures performed by users into commands that performs certain operations including, but not limited to, increasing or decreasing the system's volume, move, minimise, or close windows, and mouse clicks. Gestro is designed to be displayed using a Qt application on the users' Linux system running the Ubuntu distribution.
+
+<!-- **enter more about functionalities here** -->
+
+More details can be found below. However, for the complete information about Gestro, please visit our [website](https://randomguy-coder.github.io/Gestro/).
 
 ### Demonstration Video
 Click to view our [demonstration video]()!
@@ -69,152 +74,90 @@ Click to view our [demonstration video]()!
 
 
 ### Features
-* Increase and Decrease Volume.
+* Enter keys.
 * Track mouse.
 * Perform mouse clicks.
-* Enter keys.
+* Increase and Decrease Volume.
 * Change window size.
 * Move, Minimise, and Close window.
 
 ### Built With
-* A PC running Ubuntu.
+* A PC running Ubuntu 18.04 LTS.
 * A webcam.
 
 ### Built On
+* X11
+* Qt 5
 * C++
 * CMake
 * OpenCV
-* Boost Unit Test Framework
 * Doxygen
+* libasound2-dev
+* Boost Unit Test Framework
 
 ## Getting Started
+Gestro is designed to be used on Linux PCs running the Ubuntu distribution. In particular, it was tested and found to be running perfectly on PCs running Ubuntu 18.04 LTS.
 
 ### Prerequisites
 * A PC running Ubuntu.
-* A webcam
+* A webcam.
+
+Gestro requires the following tools and libraries to run (other versions are not tested):
+* X11
+* Qt 5
+* OpenCV 4.5.5
+* libasound2-dev
+* Boost Unit Test Framework
+
+> These required tools and libraries will be installed if you follow step 2 of the [installation guide](#installation-guide) below.
 
 ### Installation Guide
 
-**Run the script to install required dependencies:**
-```
-./install_dependencies.sh
+> If permission is denied while trying to run any of the scripts, please enter the following command into the terminal and try running the script again, ``` sudo chmod +x <script_name>.sh```.
+
+>For example, for the install_dependencies.sh, enter ``` sudo chmod +x install_dependencies.sh ``` into the terminal.
+
+**1. Download the latest [release]() from our Github and extract the contents into the Home folder.**
+
+**2. Launch a terminal and enter the following commands into it to install the requirements:**
+```sh
+cd Gestro && ./install_dependencies.sh
 ```
 
-**Steps to Install and Configure OpenCV 4.5.5:**
-
-1. Python version should be above 3.6
-```
-sudo apt update
-sudo apt install software-properties-common
-sudo add-apt-repository ppa:deadsnakes/ppa
-sudo apt update
-sudo apt install python3.7
-```
-
-2. Check the python version, if shows 3.7 then skip step 3.
-```
-python --version
-```
-
-3. If it shows some other versions of python then you can configure the versions and switch between them. The following command will set 3.7 to highest priority.
-```
-sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1
-```
-
-4. Installing OpenCV just follow the following commands, skipping any command will result in failure.
-```
-# update the repositories
-sudo apt-get update
-# install important packages
-sudo apt install build-essential cmake git pkg-config libgtk-3-dev \
-    libavcodec-dev libavformat-dev libswscale-dev libv4l-dev \
-    libxvidcore-dev libx264-dev libjpeg-dev libpng-dev libtiff-dev \
-    gfortran openexr libatlas-base-dev python3-dev python3-numpy \
-    libtbb2 libtbb-dev libdc1394-22-dev
-# make directory to download and build opencv
-mkdir ~/opencv_build && cd ~/opencv_build
-# download and unpack the repositories
-wget -O opencv.zip https://github.com/opencv/opencv/archive/4.x.zip
-wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.x.zip
-unzip opencv.zip
-unzip opencv_contrib.zip
-# cd into opencv-4.x
-cd opencv-4.x
-# build the opencv
-mkdir build && cd build
-cmake -D CMAKE_BUILD_TYPE=RELEASE \
-    -D CMAKE_INSTALL_PREFIX=/usr/local \
-    -D INSTALL_C_EXAMPLES=ON \
-    -D INSTALL_PYTHON_EXAMPLES=ON \
-    -D OPENCV_GENERATE_PKGCONFIG=ON \
-    -D OPENCV_EXTRA_MODULES_PATH=~/opencv_build/opencv_contrib-4.x/modules \
-    -D BUILD_EXAMPLES=ON ..
-# jX the X depends on your number of cores. I ran on 4 cores.
-make -j4
-# If the following error occurs: "recipe for target "all" failed", just rerun the make command again:
-make -j4
-# when opencv is successfully built, run the following command:
-```sudo make install```
-# To install the required library for volume control
-```sudo apt install libasound2-dev```
-```
-
-**Steps to install Boost Unit Test Framework:**
-1. Download boost from:
-https://boostorg.jfrog.io/artifactory/main/release/1.78.0/source/
-
-2. Enter the following command into terminal to make directory for boost at home folder:
-```
-mkdir ~/boost
-```
-
-3. Unzip the downloaded file from step 1 and cd into the extracted folder with the following command:
-```
-cd [folder path]
-```
-
-4. Run the following command:
-```
-./bootstrap.sh
-```
-
-If an error of permission denied occurs, run:
-```
-chmod u+x ./bootstrap.sh
-```
-
-5. Run the following command:
-```
-./b2 address-model=64 architecture=x86 --with-test link=shared --prefix=/home/[username]/boost install
-*replace [username] with your linux username*
+**3. Enter the following commands into the terminal to run the build script.**
+```sh
+./build.sh
 ```
 
 ## Launching Gestro
+Firstly, launch a terminal and enter the following command to cd into the Gestro directory:
+```sh
+cd ~/Gestro
+```
 
 ### Main Program
+Start the Gestro application by running the following command:
+
+```sh
+./Gestro
+```
+**For instructions on how to use the Gestro application, please see [User Manual](https://randomguy-coder.github.io/Gestro/user_manual.html) on our [website](https://randomguy-coder.github.io/Gestro/)**.
 
 ### Unit Tests
-
+Run the unit tests by running the following command:
+```sh
+./test_run
+```
 
 ## Contributors:
-_ENG5220 - Real-time Embedded Systems - Team 26:_
+ENG5220 - Real-time Embedded Systems - Team 26:
 - [Tushar Anil Mittal, 2669699M](https://github.com/RandomGuy-coder)
 - [Tian Jie Wong, 2702282W](https://github.com/terrsoshi)
 - [Muhatasim Intisar, 2683935I](https://github.com/MuhatasimIntisar)
 - [Ruoqi Sun, 2574212S](https://github.com/David2574)
 
-<!-- CONTRIBUTING -->
-<!--## Contributing
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request 
-Anyone who feels they can contribute any imporovements to the project is welcome to fork the project, and submit an issue with a pull request with the changes. For some ideas, concepts for future developement can be found on the project's [issues]() page.
--->
-
 ## Future Enhancement:
+Here are some of the planned features for this project:
 * Play and Pause
 * Play Next and Previous
 * Mute and Unmute.
@@ -222,7 +165,9 @@ Anyone who feels they can contribute any imporovements to the project is welcome
 * Switch between applications
 * Increase and Decrease Brightness
 
-Propose for a new feature [here](https://github.com/RandomGuy-coder/Gestro/issues)!
+Propose for a new feature or report a bug [here]()!
+
+> Feel free to contribute to this project by forking it and submitting a pull request for the added changes.
 
 ## Social Media:
 <nav>
@@ -236,7 +181,7 @@ Propose for a new feature [here](https://github.com/RandomGuy-coder/Gestro/issue
 </nav>
 
 ## Documentation
-Visit our [documentation page]()!
+Check out [Gestro's documentation page]()!
 
 ## License
 Distributed under the GPL-3.0 License. See [`LICENSE`](https://github.com/RandomGuy-coder/Gestro/blob/main/LICENSE) for more information.
