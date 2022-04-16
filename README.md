@@ -93,6 +93,7 @@ Click to view our [demonstration video]()!
 * OpenCV
 * Doxygen
 * libasound2-dev
+* Iir
 * Boost Unit Test Framework
 
 ## Getting Started
