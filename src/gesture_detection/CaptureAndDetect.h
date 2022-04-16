@@ -6,6 +6,7 @@
 #include "FingerCounter.h"
 #include "FingerAndCoordinates.h"
 #include "thread"
+#include "CallbackInterface.h"
 
 using namespace std;
 using namespace cv;
@@ -14,26 +15,25 @@ class CaptureAndDetect {
 public:
     CaptureAndDetect();
     void calibrateValues(int, int, int, int);
-    void start(function<void(Mat)> callTo,  function<void(FingerAndCoordinates)> callToFinger);
+    void start();
     void stop();
     void calibrateColorPressed();
     void displayImage(String image);
     bool calibrate = false;
     void calibrateBackgroundRemover();
+    void connectCallback(CallbackInterface*);
 
 private:
-    int V_MIN;
-    int V_MAX;
+    Mat currentFrame;
     String toDisplay = "unprocessed";
     FingerAndCoordinates fingerAndCoordinates;
     thread uthread;
     SkinColorDetector skinDetector;
     void captureAndTrack();
-    function<void(Mat)> callback;
-    function<void(FingerAndCoordinates)> fingerCallback;
     bool backgroundCalibrated = false;
     Ptr<BackgroundSubtractor> backgroundRemover;
     Rect roi;
+    CallbackInterface *interface;
 
 
 

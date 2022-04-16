@@ -13,28 +13,32 @@
 #include "CaptureAndDetect.h"
 #include "DisplayControl.h"
 #include "FingerAndCoordinates.h"
-
+#include "CallbackInterface.h"
 
 using namespace cv;
+using namespace std;
 namespace Ui {
 class ControllerScreen;
 }
 
-class ControllerScreen : public QDialog
+class ControllerScreen : public QDialog, public CallbackInterface
 {
     Q_OBJECT
 
 public:
     explicit ControllerScreen(QWidget *parent = 0);
     ~ControllerScreen();
-    void Callback(Mat);
     void Callback_controls(FingerAndCoordinates finger);
+    void updateImage(Mat) override;
+    void updateCalibratedTrackbar(int, int, int, int) override;
+    void fingerDetected(FingerAndCoordinates) override;
 
 private:
     Ui::ControllerScreen *ui;
     CaptureAndDetect captureAndDetect;
     Display *display = XOpenDisplay(NULL);
     DisplayControl displayControl = DisplayControl(display);
+    Screen *screen = DefaultScreenOfDisplay(display);
 
 public slots:
     void unprocessedFeed_clicked();
@@ -44,6 +48,7 @@ public slots:
     void setCalibrationValues();
 
     void calibrateBackground_clicked();
+
 };
 
 #endif // CONTROLLER_DIALOG_H

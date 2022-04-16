@@ -4,12 +4,13 @@
 
 #include "FingerAndCoordinates.h"
 
-FingerAndCoordinates::FingerAndCoordinates(void) {
-
+FingerAndCoordinates::FingerAndCoordinates() {
 }
 
-FingerAndCoordinates::FingerAndCoordinates(int count, int x, int y) {
+FingerAndCoordinates::FingerAndCoordinates(int count, int x, int y, bool click, int distance) {
     this->count = count;
     this->x = x;
     this->y = y;
+    this->click = click;
+    this->distance = distance;
 }

@@ -9,10 +9,12 @@
 class FingerAndCoordinates {
 public:
     int count = 0;
-    int x = 0;
-    int y = 0;
-    FingerAndCoordinates(void);
-    FingerAndCoordinates(int count, int x, int y);
+    int x;
+    int y;
+    int distance;
+    bool click;
+    FingerAndCoordinates();
+    FingerAndCoordinates(int count, int x = 0, int y = 0, bool click = false, int distance = 0);
 };
 
 

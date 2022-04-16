@@ -9,11 +9,10 @@
 FingerCounter::FingerCounter(void) {
     color_blue = Scalar(255, 0, 0);
     color_green = Scalar(0, 255, 0);
-    color_red = Scalar(0, 0, 255);
-    color_black = Scalar(0, 0, 0);
     color_white = Scalar(255, 255, 255);
     color_yellow = Scalar(0, 255, 255);
-    color_purple = Scalar(255, 0, 255);
+    xFilter.setup(30,3);
+    yFilter.setup(30,3);
 }
 
 FingerAndCoordinates FingerCounter::findFingersCount(Mat input_image, Mat frame) {
@@ -44,8 +43,10 @@ FingerAndCoordinates FingerCounter::findFingersCount(Mat input_image, Mat frame)
         }
     }
 
-    if (biggest_contour_index < 0 || biggest_area < 100)
+    if (biggest_contour_index < 0 || biggest_area < 150) {
+        oldFinger = 0;
         return {};
+    }
 
     // find the convex hull object for each contour and the defects, two different data structure are needed by the OpenCV api
     vector<Point> hull_points;
@@ -82,14 +83,70 @@ FingerAndCoordinates FingerCounter::findFingersCount(Mat input_image, Mat frame)
             circle(frame, end_point, 8, color_white, -1);
         }
     }
-    if(cnt != 0) {
-        Moments m = moments(contours[biggest_contour_index], true);
-        Point center(m.m10/m.m00,m.m01/m.m00);
-        Point farthestPoint = farthest_point(defects, contours[biggest_contour_index], center);
-        circle(frame, farthestPoint, 8, color_yellow, -1);
-        return {cnt, farthestPoint.x, farthestPoint.y};
+    if(cnt > 0 and cnt <=5) {
+        fingers.push_back(cnt);
     }
+    if(fingers.size() == 15) {
+        currentFinger = getFinger();
+
+        if (currentFinger != oldFinger) {
+            Point farthestPoint = getHighestPoint(frame, contours, biggest_contour_index, defects);
+            oldFinger = currentFinger;
+            fingers.clear();
+            if(currentFinger == 1)
+                return {currentFinger, xFilter.filter(farthestPoint.x), yFilter.filter(farthestPoint.y), false};
+            else
+                return {currentFinger, farthestPoint.x, farthestPoint.y, false};
+        } else if (oldFinger == currentFinger) {
+            fingers.clear();
+            Point farthestPoint = getHighestPoint(frame, contours, biggest_contour_index, defects);
+            farthestPoint.x = xFilter.filter(farthestPoint.x);
+            farthestPoint.y = yFilter.filter(farthestPoint.y);
+            Point difference = oldFarPoint - farthestPoint;
+            oldFarPoint = farthestPoint;
+            if(currentFinger == 1) {
+                if (sqrt(difference.ddot(difference)) <= 10) {
+                    cout << "here" << endl;
+                    return {oldFinger, xFilter.filter(farthestPoint.x), yFilter.filter(farthestPoint.y), true};
+                }
+            } else if(currentFinger == 2) {
+                if(abs(difference.x) > 40) {
+                    cout << difference << endl;
+                    return {oldFinger, 0, 0, true, difference.x};
+                }
+            }
+        }
+    }else if(oldFinger == 1) {
+        Point farthestPoint = getHighestPoint(frame, contours, biggest_contour_index, defects);
+        return {oldFinger, xFilter.filter(farthestPoint.x), yFilter.filter(farthestPoint.y), false};
+    }
+
     return {};
+}
+
+Point FingerCounter::getHighestPoint(const Mat &frame, const vector<vector<Point>> &contours, int biggest_contour_index,
+                                     vector<Vec4i> &defects) {
+    Moments m = moments(contours[biggest_contour_index], true);
+    Point center(m.m10/m.m00,m.m01/m.m00);
+    Point farthestPoint = farthest_point(defects, contours[biggest_contour_index], center);
+    circle(frame, farthestPoint, 8, color_yellow, -1);
+    return farthestPoint;
+}
+
+int FingerCounter::getFinger() {
+    int frequency[6] = {0};
+    for(int i : fingers){
+        frequency[i]++;
+    }
+    int max = 0;
+    int finger = 0;
+    for(int i = 1; i <= 5; i++) {
+        if(frequency[i] > max) {
+            max = frequency[i];
+            finger = i;
+        }
+    }
+    return finger;
 }
 
 Point FingerCounter::farthest_point(vector<Vec4i> defects, vector<Point>contour, Point centroid){

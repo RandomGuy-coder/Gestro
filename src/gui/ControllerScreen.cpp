@@ -14,7 +14,8 @@ ControllerScreen::ControllerScreen(QWidget *parent) :
     ui->label_show_guide->adjustSize();
     //ui->label_show_guide->show();
     ui->scrollArea->setWidget(ui->label_show_guide);
-    captureAndDetect.start(std::bind(&ControllerScreen::Callback,  this, std::placeholders::_1), std::bind(&ControllerScreen::Callback_controls,  this, std::placeholders::_1));
+    captureAndDetect.start();
+    captureAndDetect.connectCallback(this);
     connect(ui->unprocessed_feed,SIGNAL(clicked(bool)),this,SLOT(unprocessedFeed_clicked()));
     connect(ui->skin_mask,SIGNAL(clicked(bool)),this,SLOT(skinMask_clicked()));
     connect(ui->detector,SIGNAL(clicked(bool)),this,SLOT(detector_clicked()));
@@ -118,7 +119,7 @@ void ControllerScreen::detector_clicked()
     item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
     ui->tableWidget->setItem(operate_num,3,item);
     operate_num++;
-    captureAndDetect.displayImage("finger");
+    captureAndDetect.displayImage("detect");
 }
 
 
@@ -150,22 +151,7 @@ void ControllerScreen::calibrate_clicked()
     ui->tableWidget->setItem(operate_num,3,item);
     ui->calibrate->setEnabled(false);
     captureAndDetect.calibrateColorPressed();
-}
-
-void ControllerScreen::Callback(Mat dest){
-    cvtColor(dest,dest, COLOR_BGR2RGB);
-    QImage image1 = QImage((uchar*) dest.data, dest.cols, dest.rows, dest.step, QImage::Format_RGB888);
-    ui->label_show_pic->setPixmap(QPixmap::fromImage(image1));
-}
-
-void ControllerScreen::Callback_controls(FingerAndCoordinates finger) {
-    if(finger.count == 1) {
-        displayControl.moveMouseTo(finger.x, finger.y);
-    } else if(finger.count == 2) {
-        displayControl.muteAndUnmute();
-    } else if(finger.count == 3) {
-        displayControl.minimizeWindow();
-    }
+    captureAndDetect.displayImage("skinMask");
 }
 
 void ControllerScreen::calibrateBackground_clicked(){
@@ -183,4 +169,43 @@ void ControllerScreen::setCalibrationValues() {
     ui->sMaxValue->setText(QString::number(sMax));
 
     captureAndDetect.calibrateValues(hMin, hMax, sMin, sMax);
+}
+
+void ControllerScreen::updateImage(Mat dest) {
+    cvtColor(dest,dest, COLOR_BGR2RGB);
+    QImage image1 = QImage((uchar*) dest.data, dest.cols, dest.rows, dest.step, QImage::Format_RGB888);
+    ui->label_show_pic->setPixmap(QPixmap::fromImage(image1));
+}
+
+void ControllerScreen::updateCalibratedTrackbar(int hmin, int hmax, int smin, int smax) {
+    ui->hMinSlider->setValue(hmin);
+    ui->hMaxSlider->setValue(hmax);
+    ui->sMinSlider->setValue(smin);
+    ui->sMaxSlider->setValue(smax);
+}
+
+void ControllerScreen::fingerDetected(FingerAndCoordinates finger) {
+    if(finger.count == 1) {
+        int x = screen->width/((float)640/(float)finger.x);
+        int y = screen->height/((float)360/(float)finger.y);
+        displayControl.moveMouseTo(x, y);
+        if(finger.click){
+            displayControl.pressButton(1);
+        }
+    } else if(finger.count == 2) {
+        if(!finger.click) {
+            displayControl.muteAndUnmute();
+        } else {
+            displayControl.unmute();
+            if(finger.distance > 0) {
+                cout << "increasing" << endl;
+                displayControl.increaseVolume();
+            }
+            else {
+                displayControl.reduceVolume();
+            }
+        }
+    } else if(finger.count == 3) {
+        displayControl.minimizeWindow();
+    }
 }

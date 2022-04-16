@@ -1,5 +1,6 @@
  #include "gui/StartScreen.h"
 #include "QApplication"
+#include "VolumeControl.h"
 
 using namespace std;
 
