@@ -25,6 +25,21 @@ if [ ! "$(printf '%s\n' "$MIN_CMAKE" "$CMAKE_VERSION" | sort -V | head -n1)" = "
   exit 1
 fi
 
+printf "Downloading IIR Filter"
+if [ ! -d "iir" ]; then
+  printf "\n"
+  wget "https://github.com/berndporr/iir1/archive/refs/tags/1.9.1.zip" || exit 1
+  unzip -q 1.9.1.zip
+  mv "iir1-1.9.1" iir
+  cd iir
+  cmake . || exit 1
+  make
+  sudo make install
+  cd ..
+else
+  printf " skipped\n"
+fi
+
 ## Download OpenCV code
 printf "Downloading OpenCV ..."
 if [ ! -d "opencv_src" ]; then

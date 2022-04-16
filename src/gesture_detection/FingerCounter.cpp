@@ -86,21 +86,27 @@ FingerAndCoordinates FingerCounter::findFingersCount(Mat input_image, Mat frame)
     if(cnt > 0 and cnt <=5) {
         fingers.push_back(cnt);
     }
-    if(fingers.size() == 10) {
+    if(fingers.size() == 15) {
         currentFinger = getFinger();
+
         if (currentFinger != oldFinger) {
             Point farthestPoint = getHighestPoint(frame, contours, biggest_contour_index, defects);
-            oldFarPoint = farthestPoint;
             oldFinger = currentFinger;
             fingers.clear();
-            return {currentFinger, farthestPoint.x, farthestPoint.y, false};
+            if(currentFinger == 1)
+                return {currentFinger, xFilter.filter(farthestPoint.x), yFilter.filter(farthestPoint.y), false};
+            else
+                return {currentFinger, farthestPoint.x, farthestPoint.y, false};
         } else if (oldFinger == currentFinger) {
             fingers.clear();
             Point farthestPoint = getHighestPoint(frame, contours, biggest_contour_index, defects);
+            farthestPoint.x = xFilter.filter(farthestPoint.x);
+            farthestPoint.y = yFilter.filter(farthestPoint.y);
             Point difference = oldFarPoint - farthestPoint;
             oldFarPoint = farthestPoint;
             if(currentFinger == 1) {
                 if (sqrt(difference.ddot(difference)) <= 10) {
+                    cout << "here" << endl;
                     return {oldFinger, xFilter.filter(farthestPoint.x), yFilter.filter(farthestPoint.y), true};
                 }
             } else if(currentFinger == 2) {
