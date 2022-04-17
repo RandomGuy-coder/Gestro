@@ -1,11 +1,6 @@
 #include "FingerCounter.h"
 #include "iostream"
 
-#define LIMIT_ANGLE_SUP 60
-#define LIMIT_ANGLE_INF 5
-#define BOUNDING_RECT_FINGER_SIZE_SCALING 0.3
-#define BOUNDING_RECT_NEIGHBOR_DISTANCE_SCALING 0.05
-
 FingerCounter::FingerCounter(void) {
     color_blue = Scalar(255, 0, 0);
     color_green = Scalar(0, 255, 0);
@@ -88,7 +83,6 @@ FingerAndCoordinates FingerCounter::findFingersCount(Mat input_image, Mat frame)
     }
     if(fingers.size() == 15) {
         currentFinger = getFinger();
-
         if (currentFinger != oldFinger) {
             Point farthestPoint = getHighestPoint(frame, contours, biggest_contour_index, defects);
             oldFinger = currentFinger;
@@ -109,8 +103,8 @@ FingerAndCoordinates FingerCounter::findFingersCount(Mat input_image, Mat frame)
                     cout << "here" << endl;
                     return {oldFinger, xFilter.filter(farthestPoint.x), yFilter.filter(farthestPoint.y), true};
                 }
-            } else if(currentFinger == 2) {
-                if(abs(difference.x) > 40) {
+            } else if(currentFinger == 2) { //need to check if fist made! use it to mute
+                if (abs(difference.x) > 40) {
                     cout << difference << endl;
                     return {oldFinger, 0, 0, true, difference.x};
                 }

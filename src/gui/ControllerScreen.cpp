@@ -13,9 +13,8 @@ ControllerScreen::ControllerScreen(QWidget *parent) :
     ui->label_show_guide->setPixmap(QPixmap::fromImage(*image3));
     ui->label_show_guide->adjustSize();
     //ui->label_show_guide->show();
+    captureAndDetect.init(this);
     ui->scrollArea->setWidget(ui->label_show_guide);
-    captureAndDetect.start();
-    captureAndDetect.connectCallback(this);
     connect(ui->unprocessed_feed,SIGNAL(clicked(bool)),this,SLOT(unprocessedFeed_clicked()));
     connect(ui->skin_mask,SIGNAL(clicked(bool)),this,SLOT(skinMask_clicked()));
     connect(ui->detector,SIGNAL(clicked(bool)),this,SLOT(detector_clicked()));
@@ -207,5 +206,7 @@ void ControllerScreen::fingerDetected(FingerAndCoordinates finger) {
         }
     } else if(finger.count == 3) {
         displayControl.minimizeWindow();
+    } else if(finger.count == 4 ) {
+        displayControl.pressKey(65);
     }
 }
