@@ -3,6 +3,7 @@ nav_order: 1
 title: About Gestro
 ---
 
+<strong><h1 align="center">Gestro</h1></strong>
 
 <div align="center">
   <a href="https://randomguy-coder.github.io/Gestro/">
@@ -22,7 +23,11 @@ title: About Gestro
 
 
 ### Why Gestro?
+Have you ever wanted to control your system without having to interact directly with the PC while giving a presentation? Do you know of someone who is not accustomed to using a keyboard and mouse to control their PC? Gestro aims to solve such problems by creating a new way to control systems in real-time using hand gestures, all made possible with Computer Vision techniques.
 
+Gestro is an application which allows users to control their Linux system using hand gestures so that users will be able to perform certains actions without the use of a keyboard and mouse. This is particularly useful in cases where users want to control their Linux PC while: being away from it, being unfamiliar with modern devices (such as Elderly people), et cetera.
+
+By using a webcam and libraries such as OpenCV, X11, et cetera, Gestro is able to successfully translate hand gestures performed by users into commands that performs certain operations including, but not limited to, increasing or decreasing the system's volume, move, minimise, or close windows, and mouse clicks. Gestro is designed to be displayed using a Qt application on the users' Linux system running the Ubuntu distribution.
 
 ### Demonstration
 Here is a demonstration video for Gestro:
