@@ -13,18 +13,14 @@ private:
     int offsetHighThreshold;
     Scalar MeansSample1, MeansSample2;
     int dilation_size;
-
     bool calibrated;
-
     Rect skinColorSamplerRect1, skinColorSamplerRect2;
-
     void calculateThresholds(Mat sample1, Mat sample2);
     void opening(Mat binaryInput, int seShape, Point seSize);
     void setValues();
 
 public:
     SkinColorDetector(void);
-
     void drawSkinColorSampler(Mat inputFrame);
     vector<int> calibrate(Mat inputFrame);
     Mat getSkinMask(Mat inputFrame);

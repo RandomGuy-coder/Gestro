@@ -3,9 +3,20 @@
 Capture::Capture() {}
 
 void Capture::init(CaptureAndDetectCallbackInterface *interface, int width, int height) {
-    this->width = width;
-    this->height = height;
+    capture = new VideoCapture(0);
+    if(!capture->isOpened()){
+        capture->open(0);
+    }
+    if(width){
+        capture->set(3, width);
+    }
+    if(height){
+        capture->set(4,height);
+    }
+    capture->set(6, VideoWriter::fourcc('M','J','P','G'));
     callback = interface;
+    capture->read(frame);
+    callback->newFrame(frame);
 }
 
 void Capture::start() {
@@ -19,26 +30,14 @@ void Capture::stop() {
 }
 
 void Capture::imageCap() {
-    VideoCapture capture(0);
-    if(!capture.isOpened()){
-        capture.open(0);
-    }
-    if(width){
-        capture.set(3, width);
-    }
-    if(height){
-        capture.set(4,height);
-    }
-    capture.set(6, VideoWriter::fourcc('M','J','P','G'));
-
     while(running){
-        Mat frame;
         try{
-            capture.read(frame); // read a new frame from video
+            capture->read(frame); // read a new frame from video
             //Breaking the while loop if the frames cannot be captured
             if (frame.empty()) {
                 cerr << "Video camera is disconnected" << endl;
                 running = false;
+                break;
             }
             callback->newFrame(frame);
         } catch (...) {

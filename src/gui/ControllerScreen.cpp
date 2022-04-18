@@ -118,31 +118,3 @@ void ControllerScreen::updateLogTable(String a, String b) {
     ui->tableWidget->setItem(currentRow,2, new QTableWidgetItem(QString::fromStdString(b)));
     ui->tableWidget->setItem(currentRow,3, new QTableWidgetItem(current_time.toString()));
 }
-
-void ControllerScreen::fingerDetected(FingerAndCoordinates finger) {
-//    if(finger.count == 1) {
-//        int x = screen->width/((float)640/(float)finger.x);
-//        int y = screen->height/((float)360/(float)finger.y);
-//        displayControl.moveMouseTo(x, y);
-//        if(finger.click){
-//            displayControl.pressButton(1);
-//        }
-//    } else if(finger.count == 2) {
-//        if(!finger.click) {
-//            displayControl.muteAndUnmute();
-//        } else {
-//            displayControl.unmute();
-//            if(finger.distance > 0) {
-//                cout << "increasing" << endl;
-//                displayControl.increaseVolume();
-//            }
-//            else {
-//                displayControl.reduceVolume();
-//            }
-//        }
-//    } else if(finger.count == 3) {
-//        displayControl.minimizeWindow();
-//    } else if(finger.count == 4 ) {
-//        displayControl.pressKey(65);
-//    }
-}

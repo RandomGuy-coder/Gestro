@@ -10,6 +10,7 @@ using namespace cv;
 class CaptureAndDetectCallbackInterface{
 public:
     virtual void newFrame(Mat) = 0;
+    virtual bool checkForPalm() = 0;
 };
 
 #endif //GESTRO_CAPTUREANDDETECTINTERFACE_H

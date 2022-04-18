@@ -14,6 +14,8 @@ using namespace cv;
 class Capture {
 public:
 
+    bool running = false;
+
     /**
      * The constructor for the class.
      */
@@ -41,10 +43,11 @@ public:
 
 private:
     thread uthread;
-    bool running = false;
     CaptureAndDetectCallbackInterface *callback;
     int height;
     int width;
+    Mat frame;
+    VideoCapture *capture;
 
     /**
     * It captures an image from the webcam, and then calls the callback function with the image

@@ -33,7 +33,6 @@ public:
     void Callback_controls(FingerAndCoordinates finger);
     void updateImage(Mat) override;
     void updateCalibratedTrackbar(int, int, int, int) override;
-    void fingerDetected(FingerAndCoordinates) override;
     void updateLogTable(String a, String b) override;
 
 private:

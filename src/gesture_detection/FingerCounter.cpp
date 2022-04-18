@@ -10,6 +10,10 @@ FingerCounter::FingerCounter(void) {
     yFilter.setup(30,3);
 }
 
+void FingerCounter::ConnectCallback(CaptureAndDetectCallbackInterface* callback){
+        palmCallback = callback;
+}
+
 FingerAndCoordinates FingerCounter::findFingersCount(Mat input_image, Mat frame) {
     Mat contours_image = Mat::zeros(input_image.size(), CV_8UC3);
 
@@ -82,30 +86,36 @@ FingerAndCoordinates FingerCounter::findFingersCount(Mat input_image, Mat frame)
         fingers.push_back(cnt);
     }
     if(fingers.size() == 15) {
-        currentFinger = getFinger();
-        if (currentFinger != oldFinger) {
-            Point farthestPoint = getHighestPoint(frame, contours, biggest_contour_index, defects);
-            oldFinger = currentFinger;
-            fingers.clear();
-            if(currentFinger == 1)
-                return {currentFinger, xFilter.filter(farthestPoint.x), yFilter.filter(farthestPoint.y), false};
-            else
-                return {currentFinger, farthestPoint.x, farthestPoint.y, false};
-        } else if (oldFinger == currentFinger) {
-            fingers.clear();
-            Point farthestPoint = getHighestPoint(frame, contours, biggest_contour_index, defects);
-            farthestPoint.x = xFilter.filter(farthestPoint.x);
-            farthestPoint.y = yFilter.filter(farthestPoint.y);
-            Point difference = oldFarPoint - farthestPoint;
-            oldFarPoint = farthestPoint;
-            if(currentFinger == 1) {
-                if (sqrt(difference.ddot(difference)) <= 10) {
-                    cout << "here" << endl;
-                    return {oldFinger, xFilter.filter(farthestPoint.x), yFilter.filter(farthestPoint.y), true};
-                }
-            } else if(currentFinger == 2) { //need to check if fist made! use it to mute
-                if (abs(difference.x) > 40) {
-                    cout << difference << endl;
+        if(oldFinger == 2 and palmCallback->checkForPalm()) {
+            return {2, 0, 0, true};
+        } else if (oldFinger == 3 and palmCallback->checkForPalm()) {
+            return {3,0,0,true};
+        } else {
+            currentFinger = getFinger();
+            if (currentFinger != oldFinger) {
+                Point farthestPoint = getHighestPoint(frame, contours, biggest_contour_index, defects);
+                oldFinger = currentFinger;
+                fingers.clear();
+                if(currentFinger == 1)
+                    return {currentFinger, xFilter.filter(farthestPoint.x), yFilter.filter(farthestPoint.y), false};
+                else
+                    return {currentFinger, farthestPoint.x, farthestPoint.y, false};
+            } else if (oldFinger == currentFinger) {
+                fingers.clear();
+                Point farthestPoint = getHighestPoint(frame, contours, biggest_contour_index, defects);
+                farthestPoint.x = xFilter.filter(farthestPoint.x);
+                farthestPoint.y = yFilter.filter(farthestPoint.y);
+                Point difference = oldFarPoint - farthestPoint;
+                oldFarPoint = farthestPoint;
+                if(currentFinger == 1) {
+                    if (sqrt(difference.ddot(difference)) <= 10) {
+                        return {oldFinger, xFilter.filter(farthestPoint.x), yFilter.filter(farthestPoint.y), true};
+                    }
+                } else if(currentFinger == 2) {
+                    if (abs(difference.x) > 40) {
+                        return {oldFinger, 0, 0, true, difference.x};
+                    }
+                } else if(currentFinger == 3) {
                     return {oldFinger, 0, 0, true, difference.x};
                 }
             }
@@ -114,7 +124,6 @@ FingerAndCoordinates FingerCounter::findFingersCount(Mat input_image, Mat frame)
         Point farthestPoint = getHighestPoint(frame, contours, biggest_contour_index, defects);
         return {oldFinger, xFilter.filter(farthestPoint.x), yFilter.filter(farthestPoint.y), false};
     }
-
     return {};
 }
 
