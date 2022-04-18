@@ -6,8 +6,9 @@
 #include "FingerCounter.h"
 #include "FingerAndCoordinates.h"
 #include "Capture.h"
-#include "CallbackInterface.h"
-#include "DetectInterface.h"
+#include "ControllerScreenCallbackInterface.h"
+#include "CaptureAndDetectCallbackInterface.h"
+#include "DisplayControlCallbackInterface.h"
 
 using namespace std;
 using namespace cv;
@@ -25,17 +26,18 @@ enum Feed{
     DETECTED
 };
 
-class CaptureAndDetect: public DetectInterface {
+class CaptureAndDetect: public CaptureAndDetectCallbackInterface {
 public:
     CaptureAndDetect();
 
-    void init(CallbackInterface*, Resolution width = WIDTH_1280, Resolution height=HEIGHT_720);
+    void init(ControllerScreenCallbackInterface*, Resolution width = WIDTH_1280, Resolution height=HEIGHT_720);
     void calibrateValues(int, int, int, int);
     void calibrateColorPressed();
     bool calibrate = false;
     void calibrateBackgroundRemover();
     void newFrame(Mat) override;
     void displayImage(int);
+    void connectControlCallback(DisplayControlCallbackInterface*);
 
 private:
     Mat currentFrame;
@@ -46,10 +48,9 @@ private:
     bool backgroundCalibrated = false;
     Ptr<BackgroundSubtractor> backgroundRemover;
     Rect roi;
-    CallbackInterface *callback;
+    ControllerScreenCallbackInterface *callback;
+    DisplayControlCallbackInterface *controlInterface;
     Capture capture;
-
-
 
 };
 #endif //GESTRO_CAPTUREANDDETECT_H

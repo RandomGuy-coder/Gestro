@@ -2,7 +2,7 @@
 
 Capture::Capture() {}
 
-void Capture::init(DetectInterface *interface, int width, int height) {
+void Capture::init(CaptureAndDetectCallbackInterface *interface, int width, int height) {
     this->width = width;
     this->height = height;
     callback = interface;

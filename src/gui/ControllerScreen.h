@@ -14,7 +14,7 @@
 #include "CaptureAndDetect.h"
 #include "DisplayControl.h"
 #include "FingerAndCoordinates.h"
-#include "CallbackInterface.h"
+#include "ControllerScreenCallbackInterface.h"
 #include "CustomSignals.h"
 
 using namespace cv;
@@ -23,7 +23,7 @@ namespace Ui {
 class ControllerScreen;
 }
 
-class ControllerScreen : public QDialog, public CallbackInterface
+class ControllerScreen : public QDialog, public ControllerScreenCallbackInterface
 {
     Q_OBJECT
 

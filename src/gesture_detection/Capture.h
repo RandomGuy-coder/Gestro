@@ -2,7 +2,7 @@
 #define GESTRO_CAPTURE_H
 #include "opencv2/opencv.hpp"
 #include <thread>
-#include "DetectInterface.h"
+#include "CaptureAndDetectCallbackInterface.h"
 
 using namespace std;
 using namespace cv;
@@ -27,7 +27,7 @@ public:
     * @param width The width of the image to be captured.
     * @param height The height of the image to be captured.
     */
-    void init(DetectInterface*,int, int);
+    void init(CaptureAndDetectCallbackInterface*, int, int);
 
     /**
     * It starts a thread that runs the imageCap function to read Images
@@ -42,7 +42,7 @@ public:
 private:
     thread uthread;
     bool running = false;
-    DetectInterface *callback;
+    CaptureAndDetectCallbackInterface *callback;
     int height;
     int width;
 

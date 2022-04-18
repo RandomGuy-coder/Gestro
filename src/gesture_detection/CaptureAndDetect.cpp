@@ -3,7 +3,7 @@
 CaptureAndDetect::CaptureAndDetect() {
 }
 
-void CaptureAndDetect::init(CallbackInterface* interface, Resolution width, Resolution height){
+void CaptureAndDetect::init(ControllerScreenCallbackInterface* interface, Resolution width, Resolution height){
     capture.init(this, width, height);
     roi = Rect(width/2, 0, width/2, height/2);
     callback = interface;
@@ -78,5 +78,9 @@ void CaptureAndDetect::calibrateBackgroundRemover() {
 
 void CaptureAndDetect::displayImage(int feed) {
     toDisplay = feed;
+}
+
+void CaptureAndDetect::connectControlCallback(DisplayControlCallbackInterface* interface) {
+    controlInterface = interface;
 }
 

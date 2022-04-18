@@ -1,5 +1,5 @@
-#ifndef UBUNTU_GESTURECONTROL_MOUSE_CONTROL_H
-#define UBUNTU_GESTURECONTROL_MOUSE_CONTROL_H
+#ifndef GESTRO_MOUSE_CONTROL_H
+#define GESTRO_MOUSE_CONTROL_H
 
 #include <X11/Xlib.h>  // X11
 #include <stdio.h>     // printf, fprintf and fflush
@@ -16,4 +16,4 @@ public:
 };
 
 
-#endif //UBUNTU_GESTURECONTROL_MOUSE_CONTROL_H
+#endif //GESTRO_MOUSE_CONTROL_H
