@@ -3,7 +3,7 @@ nav_order: 1
 title: About Gestro
 ---
 
-<h1 align="center">Gestro</h1>
+**<h1 align="center">Gestro</h1>**
 
 <div align="center">
   <a href="https://randomguy-coder.github.io/Gestro/">
