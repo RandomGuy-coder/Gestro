@@ -1,7 +1,5 @@
 #include "ControllerScreen.h"
 
-uint32_t operate_num = 0;
-
 ControllerScreen::ControllerScreen(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::ControllerScreen)
@@ -54,121 +52,35 @@ ControllerScreen::~ControllerScreen()
 
 void ControllerScreen::unprocessedFeed_clicked()
 {
-    QTableWidgetItem *item;
-    ui->tableWidget->setRowCount(operate_num+1);      //Set the number of table rows
-    item = new QTableWidgetItem(QString::number(operate_num+1));
-    item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
-    ui->tableWidget->setItem(operate_num,0,item);
-
-    QString pushbutton_text = ui->unprocessed_feed->text();
-    item = new QTableWidgetItem(pushbutton_text);
-    item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
-    ui->tableWidget->setItem(operate_num,1,item);
-
-
-    item = new QTableWidgetItem("success");
-    item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
-    ui->tableWidget->setItem(operate_num,2,item);
-
-    QTime current_time = QTime::currentTime();
-
-    item = new QTableWidgetItem(current_time.toString());
-    item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
-    ui->tableWidget->setItem(operate_num,3,item);
-    operate_num++;
     signal.imageViewChanged(UNPROCESSED);
+    updateLogTable("Showing Unprocessed Feed", "SUCCESS");
 }
-
-
 
 void ControllerScreen::skinMask_clicked()
 {
-    QTableWidgetItem *item;
-    ui->tableWidget->setRowCount(operate_num+1);      //Set the number of table rows
-    item = new QTableWidgetItem(QString::number(operate_num+1));
-    item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
-    ui->tableWidget->setItem(operate_num,0,item);
-
-    QString pushbutton_text = ui->skin_mask->text();
-    item = new QTableWidgetItem(pushbutton_text);
-    item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
-    ui->tableWidget->setItem(operate_num,1,item);
-
-
-    item = new QTableWidgetItem("success");
-    item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
-    ui->tableWidget->setItem(operate_num,2,item);
-
-    QTime current_time = QTime::currentTime();
-
-    item = new QTableWidgetItem(current_time.toString());
-    item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
-    ui->tableWidget->setItem(operate_num,3,item);
-    operate_num++;
     signal.imageViewChanged(SKINMASK);
+    updateLogTable("Showing Skin Mask", "SUCCESS");
 }
 
 void ControllerScreen::detector_clicked()
 {
-    QTableWidgetItem *item;
-    ui->tableWidget->setRowCount(operate_num+1);      //Set the number of table rows
-    item = new QTableWidgetItem(QString::number(operate_num+1));
-    item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
-    ui->tableWidget->setItem(operate_num,0,item);
-
-    QString pushbutton_text = ui->detector->text();
-    item = new QTableWidgetItem(pushbutton_text);
-    item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
-    ui->tableWidget->setItem(operate_num,1,item);
-
-
-    item = new QTableWidgetItem("success");
-    item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
-    ui->tableWidget->setItem(operate_num,2,item);
-
-    QTime current_time = QTime::currentTime();
-
-    item = new QTableWidgetItem(current_time.toString());
-    item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
-    ui->tableWidget->setItem(operate_num,3,item);
-    operate_num++;
     signal.imageViewChanged(DETECTED);
+    updateLogTable("Showing Finger Counter", "SUCCESS");
 }
-
-
 
 void ControllerScreen::calibrate_clicked()
 {
     ui->skin_mask->setEnabled(true);
     ui->detector->setEnabled(true);
-    QTableWidgetItem *item;
-    ui->tableWidget->setRowCount(operate_num+1);      //Set the number of table rows
-    item = new QTableWidgetItem(QString::number(operate_num+1));
-    item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
-    ui->tableWidget->setItem(operate_num,0,item);
-
-    QString pushbutton_text = ui->calibrate->text();
-    item = new QTableWidgetItem(pushbutton_text);
-    item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
-    ui->tableWidget->setItem(operate_num,1,item);
-
-
-    item = new QTableWidgetItem("success");
-    item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
-    ui->tableWidget->setItem(operate_num,2,item);
-
-    QTime current_time = QTime::currentTime();
-
-    item = new QTableWidgetItem(current_time.toString());
-    item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
-    ui->tableWidget->setItem(operate_num,3,item);
     ui->calibrate->setEnabled(false);
     signal.calibrate();
     signal.imageViewChanged(SKINMASK);
+    updateLogTable("Calibration", "SUCCESS");
 }
 
 void ControllerScreen::calibrateBackground_clicked(){
     signal.calibrateBackground();
+    updateLogTable("Background calibration", "SUCCESS");
 }
 
 void ControllerScreen::setCalibrationValues() {
@@ -195,6 +107,16 @@ void ControllerScreen::updateCalibratedTrackbar(int hmin, int hmax, int smin, in
     ui->hMaxSlider->setValue(hmax);
     ui->sMinSlider->setValue(smin);
     ui->sMaxSlider->setValue(smax);
+}
+
+void ControllerScreen::updateLogTable(String a, String b) {
+    QTime current_time = QTime::currentTime();
+    int currentRow = ui->tableWidget->rowCount();
+    ui->tableWidget->setRowCount(currentRow + 1);
+    ui->tableWidget->setItem(currentRow,0,new QTableWidgetItem(QString::number(currentRow+1)));
+    ui->tableWidget->setItem(currentRow,1,new QTableWidgetItem(QString::fromStdString(a)));
+    ui->tableWidget->setItem(currentRow,2, new QTableWidgetItem(QString::fromStdString(b)));
+    ui->tableWidget->setItem(currentRow,3, new QTableWidgetItem(current_time.toString()));
 }
 
 void ControllerScreen::fingerDetected(FingerAndCoordinates finger) {
