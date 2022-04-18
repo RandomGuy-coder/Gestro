@@ -4,4 +4,4 @@ title: System Design
 parent: System Overview
 ---
 
-## System Design
+# System Design

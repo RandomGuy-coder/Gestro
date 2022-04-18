@@ -3,7 +3,7 @@ nav_order: 4
 title: Unit Testing
 ---
 
-## Unit Testing
+# Unit Testing
 
 Code that is covered by unit tests is more dependable than code that is not. That being said, unit tests were created to allow us to validate the functionality of each function with ease. This is so that if the programme didn't perform as planned, it would be simple to pinpoint the source of the problem rather than having to sift through a large codebase. Although unit testing may appear to be a time-consuming process initially, but the benefits are evident in the long term.
 

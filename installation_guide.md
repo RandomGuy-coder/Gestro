@@ -3,7 +3,7 @@ nav_order: 2
 title: Getting Started
 ---
 
-## Getting Started
+# Getting Started
 Gestro is designed to be used on Linux PCs running the Ubuntu distribution. In particular, it was tested and found to be running perfectly on PCs running Ubuntu 18.04 LTS.
 
 ### Prerequisites

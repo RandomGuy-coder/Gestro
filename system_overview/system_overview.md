@@ -4,6 +4,6 @@ title: System Overview
 has_children: true
 ---
 
-## System Overview
+# System Overview
 
 Visit the following pages for more details on the design of Gestro:

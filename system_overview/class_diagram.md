@@ -4,4 +4,4 @@ title: Class Diagram
 parent: System Overview
 ---
 
-## Class Diagram
+# Class Diagram

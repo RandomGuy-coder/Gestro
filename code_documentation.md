@@ -3,7 +3,7 @@ nav_order: 8
 title: Code Documentation
 ---
 
-## Code Documentation
+# Code Documentation
 
 The documentation for Gestro are generated using Doxygen:
 

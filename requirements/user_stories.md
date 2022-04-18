@@ -4,7 +4,7 @@ title: User Stories
 parent: Requirements
 ---
 
-## User Stories
+# User Stories
 
 User stories aids us in defining the value of Gestro's functionality, gaining a better grasp of why users desire a specific feature.
 

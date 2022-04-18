@@ -4,6 +4,6 @@ title: Requirements
 has_children: true
 ---
 
-## Requirements
+# Requirements
 
 More details on the project requirements are specified in the following pages:

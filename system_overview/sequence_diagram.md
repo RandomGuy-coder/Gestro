@@ -4,4 +4,4 @@ title: Sequence Diagram
 parent: System Overview
 ---
 
-## Sequence Diagram
+# Sequence Diagram

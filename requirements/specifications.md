@@ -4,7 +4,7 @@ title: Specifications
 parent: Requirements
 ---
 
-## Specifications
+# Specifications
 
 Here are some of the main requirements for Gestro which were identified at the start of the project:
 
