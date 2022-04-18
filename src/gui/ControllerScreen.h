@@ -9,11 +9,13 @@
 #include <QTableWidget>
 #include <QTableWidgetItem>
 #include <QTime>
+#include "boost/bind.hpp"
 #include "opencv2/opencv.hpp"
 #include "CaptureAndDetect.h"
 #include "DisplayControl.h"
 #include "FingerAndCoordinates.h"
-#include "CallbackInterface.h"
+#include "ControllerScreenCallbackInterface.h"
+#include "CustomSignals.h"
 
 using namespace cv;
 using namespace std;
@@ -21,7 +23,7 @@ namespace Ui {
 class ControllerScreen;
 }
 
-class ControllerScreen : public QDialog, public CallbackInterface
+class ControllerScreen : public QDialog, public ControllerScreenCallbackInterface
 {
     Q_OBJECT
 
@@ -39,6 +41,9 @@ private:
     Display *display = XOpenDisplay(NULL);
     DisplayControl displayControl = DisplayControl(display);
     Screen *screen = DefaultScreenOfDisplay(display);
+    CustomSignals signal;
+    void connectGuiEvents();
+    void connectSignals();
 
 public slots:
     void unprocessedFeed_clicked();
@@ -46,9 +51,7 @@ public slots:
     void detector_clicked();
     void calibrate_clicked();
     void setCalibrationValues();
-
     void calibrateBackground_clicked();
-
 };
 
 #endif // CONTROLLER_DIALOG_H

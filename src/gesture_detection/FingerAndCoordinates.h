@@ -2,8 +2,8 @@
 // Created by tushar on 11/04/2022.
 //
 
-#ifndef TEST_FINGERANDCOORDINATES_H
-#define TEST_FINGERANDCOORDINATES_H
+#ifndef GESTRO_FINGERANDCOORDINATES_H
+#define GESTRO_FINGERANDCOORDINATES_H
 
 
 class FingerAndCoordinates {
@@ -18,4 +18,4 @@ public:
 };
 
 
-#endif //TEST_FINGERANDCOORDINATES_H
+#endif //GESTRO_FINGERANDCOORDINATES_H

@@ -1,6 +1,7 @@
 #include "ControllerScreen.h"
 
 uint32_t operate_num = 0;
+
 ControllerScreen::ControllerScreen(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::ControllerScreen)
@@ -13,18 +14,11 @@ ControllerScreen::ControllerScreen(QWidget *parent) :
     ui->label_show_guide->setPixmap(QPixmap::fromImage(*image3));
     ui->label_show_guide->adjustSize();
     //ui->label_show_guide->show();
+    captureAndDetect.init(this);
+    captureAndDetect.connectControlCallback(&displayControl);
     ui->scrollArea->setWidget(ui->label_show_guide);
-    captureAndDetect.start();
-    captureAndDetect.connectCallback(this);
-    connect(ui->unprocessed_feed,SIGNAL(clicked(bool)),this,SLOT(unprocessedFeed_clicked()));
-    connect(ui->skin_mask,SIGNAL(clicked(bool)),this,SLOT(skinMask_clicked()));
-    connect(ui->detector,SIGNAL(clicked(bool)),this,SLOT(detector_clicked()));
-    connect(ui->calibrate,SIGNAL(clicked(bool)),this,SLOT(calibrate_clicked()));
-    connect(ui->hMinSlider, SIGNAL(valueChanged(int)), this, SLOT(setCalibrationValues()));
-    connect(ui->hMaxSlider, SIGNAL(valueChanged(int)), this, SLOT(setCalibrationValues()));
-    connect(ui->sMinSlider, SIGNAL(valueChanged(int)), this, SLOT(setCalibrationValues()));
-    connect(ui->sMaxSlider, SIGNAL(valueChanged(int)), this, SLOT(setCalibrationValues()));
-    connect(ui->calibrateROI, SIGNAL(clicked(bool)),this, SLOT(calibrateBackground_clicked()));
+    connectGuiEvents();
+    connectSignals();
     ui->hMinValue->setText(QString::number(ui->hMinSlider->value()));
     ui->hMaxValue->setText(QString::number(ui->hMaxSlider->value()));
     ui->sMinValue->setText(QString::number(ui->sMinSlider->value()));
@@ -32,6 +26,25 @@ ControllerScreen::ControllerScreen(QWidget *parent) :
     ui->skin_mask->setEnabled(false);
     ui->detector->setEnabled(false);
 
+}
+
+void ControllerScreen::connectSignals() {
+    signal.imageViewChanged.connect(boost::bind(&CaptureAndDetect::displayImage, &captureAndDetect, _1));
+    signal.calibrateBackground.connect(boost::bind(&CaptureAndDetect::calibrateBackgroundRemover, &captureAndDetect));
+    signal.calibrateValues.connect(boost::bind(&CaptureAndDetect::calibrateValues, &captureAndDetect,_1,_2,_3,_4));
+    signal.calibrate.connect(boost::bind(&CaptureAndDetect::calibrateColorPressed, &captureAndDetect));
+}
+
+void ControllerScreen::connectGuiEvents() {
+    connect(ui->unprocessed_feed, SIGNAL(clicked(bool)), this, SLOT(unprocessedFeed_clicked()));
+    connect(ui->skin_mask, SIGNAL(clicked(bool)), this, SLOT(skinMask_clicked()));
+    connect(ui->detector, SIGNAL(clicked(bool)), this, SLOT(detector_clicked()));
+    connect(ui->calibrate, SIGNAL(clicked(bool)), this, SLOT(calibrate_clicked()));
+    connect(ui->hMinSlider, SIGNAL(valueChanged(int)), this, SLOT(setCalibrationValues()));
+    connect(ui->hMaxSlider, SIGNAL(valueChanged(int)), this, SLOT(setCalibrationValues()));
+    connect(ui->sMinSlider, SIGNAL(valueChanged(int)), this, SLOT(setCalibrationValues()));
+    connect(ui->sMaxSlider, SIGNAL(valueChanged(int)), this, SLOT(setCalibrationValues()));
+    connect(ui->calibrateROI, SIGNAL(clicked(bool)), this, SLOT(calibrateBackground_clicked()));
 }
 
 ControllerScreen::~ControllerScreen()
@@ -63,7 +76,7 @@ void ControllerScreen::unprocessedFeed_clicked()
     item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
     ui->tableWidget->setItem(operate_num,3,item);
     operate_num++;
-    captureAndDetect.displayImage("unprocessed");
+    signal.imageViewChanged(UNPROCESSED);
 }
 
 
@@ -92,7 +105,7 @@ void ControllerScreen::skinMask_clicked()
     item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
     ui->tableWidget->setItem(operate_num,3,item);
     operate_num++;
-    captureAndDetect.displayImage("skinMask");
+    signal.imageViewChanged(SKINMASK);
 }
 
 void ControllerScreen::detector_clicked()
@@ -119,7 +132,7 @@ void ControllerScreen::detector_clicked()
     item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
     ui->tableWidget->setItem(operate_num,3,item);
     operate_num++;
-    captureAndDetect.displayImage("detect");
+    signal.imageViewChanged(DETECTED);
 }
 
 
@@ -150,12 +163,12 @@ void ControllerScreen::calibrate_clicked()
     item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
     ui->tableWidget->setItem(operate_num,3,item);
     ui->calibrate->setEnabled(false);
-    captureAndDetect.calibrateColorPressed();
-    captureAndDetect.displayImage("skinMask");
+    signal.calibrate();
+    signal.imageViewChanged(SKINMASK);
 }
 
 void ControllerScreen::calibrateBackground_clicked(){
-    captureAndDetect.calibrateBackgroundRemover();
+    signal.calibrateBackground();
 }
 
 void ControllerScreen::setCalibrationValues() {
@@ -168,7 +181,7 @@ void ControllerScreen::setCalibrationValues() {
     ui->sMinValue->setText(QString::number(sMin));
     ui->sMaxValue->setText(QString::number(sMax));
 
-    captureAndDetect.calibrateValues(hMin, hMax, sMin, sMax);
+    signal.calibrateValues(hMin, hMax, sMin, sMax);
 }
 
 void ControllerScreen::updateImage(Mat dest) {
@@ -185,27 +198,29 @@ void ControllerScreen::updateCalibratedTrackbar(int hmin, int hmax, int smin, in
 }
 
 void ControllerScreen::fingerDetected(FingerAndCoordinates finger) {
-    if(finger.count == 1) {
-        int x = screen->width/((float)640/(float)finger.x);
-        int y = screen->height/((float)360/(float)finger.y);
-        displayControl.moveMouseTo(x, y);
-        if(finger.click){
-            displayControl.pressButton(1);
-        }
-    } else if(finger.count == 2) {
-        if(!finger.click) {
-            displayControl.muteAndUnmute();
-        } else {
-            displayControl.unmute();
-            if(finger.distance > 0) {
-                cout << "increasing" << endl;
-                displayControl.increaseVolume();
-            }
-            else {
-                displayControl.reduceVolume();
-            }
-        }
-    } else if(finger.count == 3) {
-        displayControl.minimizeWindow();
-    }
+//    if(finger.count == 1) {
+//        int x = screen->width/((float)640/(float)finger.x);
+//        int y = screen->height/((float)360/(float)finger.y);
+//        displayControl.moveMouseTo(x, y);
+//        if(finger.click){
+//            displayControl.pressButton(1);
+//        }
+//    } else if(finger.count == 2) {
+//        if(!finger.click) {
+//            displayControl.muteAndUnmute();
+//        } else {
+//            displayControl.unmute();
+//            if(finger.distance > 0) {
+//                cout << "increasing" << endl;
+//                displayControl.increaseVolume();
+//            }
+//            else {
+//                displayControl.reduceVolume();
+//            }
+//        }
+//    } else if(finger.count == 3) {
+//        displayControl.minimizeWindow();
+//    } else if(finger.count == 4 ) {
+//        displayControl.pressKey(65);
+//    }
 }

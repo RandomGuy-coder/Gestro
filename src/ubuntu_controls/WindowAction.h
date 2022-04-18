@@ -1,5 +1,5 @@
-#ifndef UBUNTU_GESTURECONTROL_WINDOWACTION_H
-#define UBUNTU_GESTURECONTROL_WINDOWACTION_H
+#ifndef GESTRO_WINDOWACTION_H
+#define GESTRO_WINDOWACTION_H
 
 #include <X11/Xlib.h>  // X11
 #include "WindowControl.h"
@@ -20,4 +20,4 @@ public:
     void minimizeWindow();
 };
 
-#endif //UBUNTU_GESTURECONTROL_WINDOWACTION_H
+#endif //GESTRO_WINDOWACTION_H

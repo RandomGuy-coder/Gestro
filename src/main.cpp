@@ -1,6 +1,5 @@
- #include "gui/StartScreen.h"
+#include "gui/StartScreen.h"
 #include "QApplication"
-#include "VolumeControl.h"
 
 using namespace std;
 
@@ -10,4 +9,5 @@ int main(int argc,char* argv[] ) {
     w.show();
 
     return a.exec();
+
 }
