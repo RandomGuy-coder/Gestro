@@ -32,6 +32,7 @@ void ControllerScreen::connectSignals() {
     signal.imageViewChanged.connect(boost::bind(&CaptureAndDetect::displayImage, &captureAndDetect, _1));
     signal.calibrateBackground.connect(boost::bind(&CaptureAndDetect::calibrateBackgroundRemover, &captureAndDetect));
     signal.calibrateValues.connect(boost::bind(&CaptureAndDetect::calibrateValues, &captureAndDetect,_1,_2,_3,_4));
+    signal.calibrate.connect(boost::bind(&CaptureAndDetect::calibrateColorPressed, &captureAndDetect));
 }
 
 void ControllerScreen::connectGuiEvents() {
@@ -162,7 +163,7 @@ void ControllerScreen::calibrate_clicked()
     item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
     ui->tableWidget->setItem(operate_num,3,item);
     ui->calibrate->setEnabled(false);
-    captureAndDetect.calibrateColorPressed();
+    signal.calibrate();
     signal.imageViewChanged(SKINMASK);
 }
 

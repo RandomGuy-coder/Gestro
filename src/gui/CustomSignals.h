@@ -5,6 +5,7 @@
 
 struct CustomSignals{
     boost::signals2::signal<void(Feed)> imageViewChanged;
+    boost::signals2::signal<void()> calibrate;
     boost::signals2::signal<void()> calibrateBackground;
     boost::signals2::signal<void(int,int,int,int)> calibrateValues;
 };

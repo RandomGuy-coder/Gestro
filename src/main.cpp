@@ -1,4 +1,4 @@
- #include "gui/StartScreen.h"
+#include "gui/StartScreen.h"
 #include "QApplication"
 
 using namespace std;
