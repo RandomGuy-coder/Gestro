@@ -19,20 +19,27 @@ enum Resolution{
     HEIGHT_1080 = 1080
 };
 
+enum Feed{
+    UNPROCESSED,
+    SKINMASK,
+    DETECTED
+};
+
 class CaptureAndDetect: public DetectInterface {
 public:
     CaptureAndDetect();
+
     void init(CallbackInterface*, Resolution width = WIDTH_1280, Resolution height=HEIGHT_720);
     void calibrateValues(int, int, int, int);
     void calibrateColorPressed();
-    void displayImage(String image);
     bool calibrate = false;
     void calibrateBackgroundRemover();
     void newFrame(Mat) override;
+    void displayImage(int);
 
 private:
     Mat currentFrame;
-    String toDisplay = "unprocessed";
+    int toDisplay = UNPROCESSED;
     FingerAndCoordinates fingerAndCoordinates;
     SkinColorDetector skinDetector;
     FingerCounter fingerCounter;
@@ -41,6 +48,8 @@ private:
     Rect roi;
     CallbackInterface *callback;
     Capture capture;
+
+
 
 };
 #endif //GESTRO_CAPTUREANDDETECT_H

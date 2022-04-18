@@ -1,9 +1,5 @@
-//
-// Created by tushar on 17/04/22.
-//
-
-#ifndef TEST_CAPTURE_H
-#define TEST_CAPTURE_H
+#ifndef GESTRO_CAPTURE_H
+#define GESTRO_CAPTURE_H
 #include "opencv2/opencv.hpp"
 #include <thread>
 #include "DetectInterface.h"
@@ -17,9 +13,9 @@ using namespace cv;
  */
 class Capture {
 public:
+
     /**
      * The constructor for the class.
-     *
      */
     Capture();
 
@@ -57,4 +53,4 @@ private:
 };
 
 
-#endif //TEST_CAPTURE_H
+#endif //GESTRO_CAPTURE_H

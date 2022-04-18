@@ -8,7 +8,6 @@ void CaptureAndDetect::init(CallbackInterface* interface, Resolution width, Reso
     roi = Rect(width/2, 0, width/2, height/2);
     callback = interface;
     capture.start();
-
 }
 
 void CaptureAndDetect::calibrateValues(int hMin, int hMax, int sMin, int sMax) {
@@ -18,7 +17,6 @@ void CaptureAndDetect::calibrateValues(int hMin, int hMax, int sMin, int sMax) {
 }
 
 void CaptureAndDetect::newFrame(Mat frame){
-    cout << frame.size << endl;
     Mat frameOutput, skinMask, bgMask, fingerCounterDebug, backgroundRemoved, newimg;
 
     flip(frame, frame, 1);
@@ -36,7 +34,7 @@ void CaptureAndDetect::newFrame(Mat frame){
         copyTo(frame2, FrameToUpdate, skinDetector.getSkinMask(frame2));
         FrameToUpdate.copyTo(currentFrame(roi));
         callback->updateImage(currentFrame);
-    } else if(toDisplay == "unprocessed") {
+    } else if(toDisplay == UNPROCESSED) {
         callback->updateImage(frame);
     } else if(backgroundCalibrated){
         //Blur the frame
@@ -52,10 +50,10 @@ void CaptureAndDetect::newFrame(Mat frame){
         skinMask = skinDetector.getSkinMask(backgroundRemoved);
         copyTo(backgroundRemoved, newimg, skinMask);
 
-        if (toDisplay == "skinMask") {
+        if (toDisplay == SKINMASK) {
             newimg.copyTo(frame(roi));
             callback->updateImage(frame);
-        } else if (toDisplay == "detect") {
+        } else if (toDisplay == DETECTED) {
             fingerAndCoordinates = fingerCounter.findFingersCount(skinMask, frame2);
             frame2.copyTo(frame(roi));
             callback->updateImage(frame);
@@ -78,7 +76,7 @@ void CaptureAndDetect::calibrateBackgroundRemover() {
     backgroundCalibrated = true;
 }
 
-void CaptureAndDetect::displayImage(String display) {
-    toDisplay = display;
+void CaptureAndDetect::displayImage(int feed) {
+    toDisplay = feed;
 }
 

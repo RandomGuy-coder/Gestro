@@ -34,7 +34,6 @@ void Capture::imageCap() {
     while(running){
         Mat frame;
         try{
-            cout << capture.isOpened() << endl;
             capture.read(frame); // read a new frame from video
             //Breaking the while loop if the frames cannot be captured
             if (frame.empty()) {
