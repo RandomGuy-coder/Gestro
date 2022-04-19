@@ -79,7 +79,7 @@ Click to view our [demonstration video]()!
 * Perform mouse clicks.
 * Increase and Decrease Volume.
 * Change window size.
-* Move, Minimise, and Close window.
+* Move and Minimise window.
 
 ### Built With
 * A PC running Ubuntu 18.04 LTS.
@@ -159,6 +159,7 @@ ENG5220 - Real-time Embedded Systems - Team 26:
 
 ## Future Enhancement:
 Here are some of the planned features for this project:
+* Close Window
 * Play and Pause
 * Play Next and Previous
 * Mute and Unmute.
