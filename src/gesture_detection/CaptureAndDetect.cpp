@@ -14,7 +14,7 @@ void CaptureAndDetect::init(ControllerScreenCallbackInterface *interface,  int s
     capture.start();
     uthread = thread(&CaptureAndDetect::processFrame, this);
     commandThread = thread(&CaptureAndDetect::processCommands, this);
-    palmClassifier = new CascadeClassifier("../../src/resources/cascades/rpalm.xml");
+    palmClassifier = new CascadeClassifier("../src/resources/cascades/rpalm.xml");
     fingerCounter.ConnectCallback(this);
 }
 
