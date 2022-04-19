@@ -2,8 +2,6 @@
 
 KeyboardEvent::KeyboardEvent(void){};
 
-// Function to create a keyboard event
-//This function is used in order to simulate a key event i.e. the pressing and releasing of a key
 XKeyEvent KeyboardEvent::createKeyEvent(Display *display, Window &win,
                                         Window &winRoot, bool press,
                                         int keycode, int modifiers)
@@ -39,6 +37,7 @@ XKeyEvent KeyboardEvent::createKeyEvent(Display *display, Window &win,
 
     return event;
 }
+
 void KeyboardEvent::keyPress(Display *display, int keycode){
 
 // Get the root window for the current display.
@@ -52,10 +51,6 @@ void KeyboardEvent::keyPress(Display *display, int keycode){
 
 // Send a fake key press event to the window.
     XKeyEvent event = createKeyEvent(display, winFocus, winRoot, true, keycode, 0);
-    XSendEvent(event.display, event.window, True, KeyPressMask, (XEvent *)&event);
-
-// Send a fake key release event to the window.
-    event = createKeyEvent(display, winFocus, winRoot, false, keycode, 0);
     XSendEvent(event.display, event.window, True, KeyPressMask, (XEvent *)&event);
 
 }

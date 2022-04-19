@@ -2,10 +2,8 @@
 
 MouseControl::MouseControl(void){};
 
-// Simulate mouse click
 void MouseControl::click (Display *display, int button, XEvent event)
 {
-    // Setting up the event
     memset (&event, 0, sizeof (event));
     event.xbutton.button = button;
     event.xbutton.same_screen = True;
@@ -19,7 +17,6 @@ void MouseControl::click (Display *display, int button, XEvent event)
                        &event.xbutton.x, &event.xbutton.y,
                        &event.xbutton.state);
     }
-    // Press
     event.type = ButtonPress;
     if (XSendEvent (display, PointerWindow, True, ButtonPressMask, &event) == 0)
         fprintf (stderr, "Error to send the event!\n");
@@ -31,7 +28,6 @@ void MouseControl::click (Display *display, int button, XEvent event)
     XFlush (display);
 }
 
-//release the selected button
 void MouseControl::release(Display *display, int button, XEvent event) {
     memset (&event, 0, sizeof (event));
     event.xbutton.button = button;
@@ -51,7 +47,7 @@ void MouseControl::release(Display *display, int button, XEvent event) {
         fprintf (stderr, "Error to send the event!\n");
     XFlush (display);
 }
-// Get mouse coordinates
+
 void MouseControl::coords(Display *display, int *x, int *y)
 {
     XEvent event;
@@ -64,14 +60,12 @@ void MouseControl::coords(Display *display, int *x, int *y)
     *y = event.xbutton.y;
 }
 
-// Move mouse pointer (relative)
 void MouseControl::move (Display *display, int x, int y)
 {
     XWarpPointer (display, None, None, 0,0,0,0, x, y);
     XFlush (display);
 }
 
-// Move mouse pointer (absolute)
 void MouseControl::move_to (Display *display, int x, int y)
 {
     int cur_x, cur_y;

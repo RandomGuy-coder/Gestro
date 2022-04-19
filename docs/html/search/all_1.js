@@ -12,10 +12,16 @@ var searchData=
   ['captureanddetect_2eh',['CaptureAndDetect.h',['../CaptureAndDetect_8h.html',1,'']]],
   ['captureanddetectcallbackinterface',['CaptureAndDetectCallbackInterface',['../classCaptureAndDetectCallbackInterface.html',1,'']]],
   ['captureanddetectcallbackinterface_2eh',['CaptureAndDetectCallbackInterface.h',['../CaptureAndDetectCallbackInterface_8h.html',1,'']]],
+  ['changewindowsize',['changeWindowSize',['../classWindowAction.html#ac7145d79c3b902a716d554d09e6e2a63',1,'WindowAction']]],
   ['checkforpalm',['checkForPalm',['../classCaptureAndDetect.html#a1620075ba1bf4d52a4e455c20f7ac3d1',1,'CaptureAndDetect::checkForPalm()'],['../classCaptureAndDetectCallbackInterface.html#a64755838dd5592bae3ca06b4c5a0d72f',1,'CaptureAndDetectCallbackInterface::checkForPalm()']]],
+  ['click',['click',['../classMouseControl.html#aef7670a46bf01b4a10767a9942dbdb79',1,'MouseControl']]],
+  ['close',['close',['../classWindowControl.html#a2f521062be8be113d1cbcca4f495d693',1,'WindowControl']]],
+  ['closewindow',['closeWindow',['../classWindowAction.html#a99150ce49f2956c56e64b6ba0246424f',1,'WindowAction']]],
   ['command',['command',['../classFingerAndCoordinates.html#af94d8ca7cd08d7144ec919fa997120c0',1,'FingerAndCoordinates']]],
   ['commands',['Commands',['../Commands_8h.html#a1939e90743463fb34c8c571ec0590430',1,'Commands.h']]],
   ['commands_2eh',['Commands.h',['../Commands_8h.html',1,'']]],
   ['connectcallback',['ConnectCallback',['../classFingerCounter.html#a5b5aabaa39ff05c70a873b4c2a7869f9',1,'FingerCounter']]],
-  ['connectcontrolcallback',['connectControlCallback',['../classCaptureAndDetect.html#aa75e3ba836797d18aa02c72bbf975082',1,'CaptureAndDetect']]]
+  ['connectcontrolcallback',['connectControlCallback',['../classCaptureAndDetect.html#aa75e3ba836797d18aa02c72bbf975082',1,'CaptureAndDetect']]],
+  ['coords',['coords',['../classMouseControl.html#af69eee658d62f741ab71aa87fbfb75fc',1,'MouseControl']]],
+  ['createkeyevent',['createKeyEvent',['../classKeyboardEvent.html#a84e25f7a086a015007fe877a55d9444e',1,'KeyboardEvent']]]
 ];

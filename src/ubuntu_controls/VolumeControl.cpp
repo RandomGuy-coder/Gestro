@@ -5,8 +5,6 @@ VolumeControl::VolumeControl(void) {
 
 };
 
-//In order to use this function//
-//Pass in a long integer value between 0 and 2100
 void VolumeControl::increaseVolume()
 {
     snd_mixer_open(&handle, 0);
@@ -25,7 +23,6 @@ void VolumeControl::increaseVolume()
     } else {
         snd_mixer_selem_set_playback_volume_all(elem,  value + (max * 0.1));
     }
-
     snd_mixer_close(handle);
 };
 
@@ -50,7 +47,7 @@ void VolumeControl::reduceVolume()
     snd_mixer_close(handle);
 };
 
-int VolumeControl::muteAndUnmute() {
+void VolumeControl::muteAndUnmute() {
     snd_mixer_open(&handle, 0);
     snd_mixer_attach(handle, card);
     snd_mixer_selem_register(handle, NULL, NULL);
@@ -69,7 +66,7 @@ int VolumeControl::muteAndUnmute() {
     snd_mixer_close(handle);
 }
 
-int VolumeControl::unmute() {
+void VolumeControl::unmute() {
     snd_mixer_open(&handle, 0);
     snd_mixer_attach(handle, card);
     snd_mixer_selem_register(handle, NULL, NULL);
