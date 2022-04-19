@@ -1,0 +1,100 @@
+\hypertarget{CaptureAndDetect_8h}{}\section{src/gesture\+\_\+detection/\+Capture\+And\+Detect.h File Reference}
+\label{CaptureAndDetect_8h}\index{src/gesture\+\_\+detection/\+Capture\+And\+Detect.\+h@{src/gesture\+\_\+detection/\+Capture\+And\+Detect.\+h}}
+{\ttfamily \#include \char`\"{}opencv2/opencv.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Skin\+Color\+Detector.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Finger\+Counter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Finger\+And\+Coordinates.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Capture.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Controller\+Screen\+Callback\+Interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Capture\+And\+Detect\+Callback\+Interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Display\+Control\+Callback\+Interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}thread\char`\"{}}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+Include dependency graph for Capture\+And\+Detect.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{CaptureAndDetect_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{CaptureAndDetect_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classCaptureAndDetect}{Capture\+And\+Detect}
+\begin{DoxyCompactList}\small\item\em This class takes care of starting threads to capture image, process and publish commands. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{CaptureAndDetect_8h_a3c1fc1369ee351f25804c8cde5e85ac3}{Resolution} \{ \hyperlink{CaptureAndDetect_8h_a3c1fc1369ee351f25804c8cde5e85ac3a278580710dc7c233b4035c222f100b9f}{W\+I\+D\+T\+H\+\_\+1280} = 1280, 
+\hyperlink{CaptureAndDetect_8h_a3c1fc1369ee351f25804c8cde5e85ac3aaf8940bab7f04c8cd702f61c4d051f27}{H\+E\+I\+G\+H\+T\+\_\+720} = 720, 
+\hyperlink{CaptureAndDetect_8h_a3c1fc1369ee351f25804c8cde5e85ac3a62cb4c441f62ccfd155870b1d5e590d8}{W\+I\+D\+T\+H\+\_\+1920} = 1920, 
+\hyperlink{CaptureAndDetect_8h_a3c1fc1369ee351f25804c8cde5e85ac3a62e4215c07636cf44ab26b46fabe7029}{H\+E\+I\+G\+H\+T\+\_\+1080} = 1080
+ \}\begin{DoxyCompactList}\small\item\em enum to store resolution \end{DoxyCompactList}
+\item 
+enum \hyperlink{CaptureAndDetect_8h_a425a93be55e757f5e351ec9d6770c50e}{Feed} \{ \hyperlink{CaptureAndDetect_8h_a425a93be55e757f5e351ec9d6770c50ea93c33b647b7a4b7299c25e4e6d98ef7e}{U\+N\+P\+R\+O\+C\+E\+S\+S\+ED}, 
+\hyperlink{CaptureAndDetect_8h_a425a93be55e757f5e351ec9d6770c50ea0c6d4f15b8bd03303ad52a8d155da661}{S\+K\+I\+N\+M\+A\+SK}, 
+\hyperlink{CaptureAndDetect_8h_a425a93be55e757f5e351ec9d6770c50ead3560fe9fd615b5d3177bb08444bbe91}{D\+E\+T\+E\+C\+T\+ED}
+ \}\begin{DoxyCompactList}\small\item\em enum for type of Feed \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{CaptureAndDetect_8h_a425a93be55e757f5e351ec9d6770c50e}\label{CaptureAndDetect_8h_a425a93be55e757f5e351ec9d6770c50e}} 
+\index{Capture\+And\+Detect.\+h@{Capture\+And\+Detect.\+h}!Feed@{Feed}}
+\index{Feed@{Feed}!Capture\+And\+Detect.\+h@{Capture\+And\+Detect.\+h}}
+\subsubsection{\texorpdfstring{Feed}{Feed}}
+{\footnotesize\ttfamily enum \hyperlink{CaptureAndDetect_8h_a425a93be55e757f5e351ec9d6770c50e}{Feed}}
+
+
+
+enum for type of Feed 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+N\+P\+R\+O\+C\+E\+S\+S\+ED@{U\+N\+P\+R\+O\+C\+E\+S\+S\+ED}!Capture\+And\+Detect.\+h@{Capture\+And\+Detect.\+h}}\index{Capture\+And\+Detect.\+h@{Capture\+And\+Detect.\+h}!U\+N\+P\+R\+O\+C\+E\+S\+S\+ED@{U\+N\+P\+R\+O\+C\+E\+S\+S\+ED}}}\mbox{\Hypertarget{CaptureAndDetect_8h_a425a93be55e757f5e351ec9d6770c50ea93c33b647b7a4b7299c25e4e6d98ef7e}\label{CaptureAndDetect_8h_a425a93be55e757f5e351ec9d6770c50ea93c33b647b7a4b7299c25e4e6d98ef7e}} 
+U\+N\+P\+R\+O\+C\+E\+S\+S\+ED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+K\+I\+N\+M\+A\+SK@{S\+K\+I\+N\+M\+A\+SK}!Capture\+And\+Detect.\+h@{Capture\+And\+Detect.\+h}}\index{Capture\+And\+Detect.\+h@{Capture\+And\+Detect.\+h}!S\+K\+I\+N\+M\+A\+SK@{S\+K\+I\+N\+M\+A\+SK}}}\mbox{\Hypertarget{CaptureAndDetect_8h_a425a93be55e757f5e351ec9d6770c50ea0c6d4f15b8bd03303ad52a8d155da661}\label{CaptureAndDetect_8h_a425a93be55e757f5e351ec9d6770c50ea0c6d4f15b8bd03303ad52a8d155da661}} 
+S\+K\+I\+N\+M\+A\+SK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+E\+T\+E\+C\+T\+ED@{D\+E\+T\+E\+C\+T\+ED}!Capture\+And\+Detect.\+h@{Capture\+And\+Detect.\+h}}\index{Capture\+And\+Detect.\+h@{Capture\+And\+Detect.\+h}!D\+E\+T\+E\+C\+T\+ED@{D\+E\+T\+E\+C\+T\+ED}}}\mbox{\Hypertarget{CaptureAndDetect_8h_a425a93be55e757f5e351ec9d6770c50ead3560fe9fd615b5d3177bb08444bbe91}\label{CaptureAndDetect_8h_a425a93be55e757f5e351ec9d6770c50ead3560fe9fd615b5d3177bb08444bbe91}} 
+D\+E\+T\+E\+C\+T\+ED&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{CaptureAndDetect_8h_a3c1fc1369ee351f25804c8cde5e85ac3}\label{CaptureAndDetect_8h_a3c1fc1369ee351f25804c8cde5e85ac3}} 
+\index{Capture\+And\+Detect.\+h@{Capture\+And\+Detect.\+h}!Resolution@{Resolution}}
+\index{Resolution@{Resolution}!Capture\+And\+Detect.\+h@{Capture\+And\+Detect.\+h}}
+\subsubsection{\texorpdfstring{Resolution}{Resolution}}
+{\footnotesize\ttfamily enum \hyperlink{CaptureAndDetect_8h_a3c1fc1369ee351f25804c8cde5e85ac3}{Resolution}}
+
+
+
+enum to store resolution 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+I\+D\+T\+H\+\_\+1280@{W\+I\+D\+T\+H\+\_\+1280}!Capture\+And\+Detect.\+h@{Capture\+And\+Detect.\+h}}\index{Capture\+And\+Detect.\+h@{Capture\+And\+Detect.\+h}!W\+I\+D\+T\+H\+\_\+1280@{W\+I\+D\+T\+H\+\_\+1280}}}\mbox{\Hypertarget{CaptureAndDetect_8h_a3c1fc1369ee351f25804c8cde5e85ac3a278580710dc7c233b4035c222f100b9f}\label{CaptureAndDetect_8h_a3c1fc1369ee351f25804c8cde5e85ac3a278580710dc7c233b4035c222f100b9f}} 
+W\+I\+D\+T\+H\+\_\+1280&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H\+E\+I\+G\+H\+T\+\_\+720@{H\+E\+I\+G\+H\+T\+\_\+720}!Capture\+And\+Detect.\+h@{Capture\+And\+Detect.\+h}}\index{Capture\+And\+Detect.\+h@{Capture\+And\+Detect.\+h}!H\+E\+I\+G\+H\+T\+\_\+720@{H\+E\+I\+G\+H\+T\+\_\+720}}}\mbox{\Hypertarget{CaptureAndDetect_8h_a3c1fc1369ee351f25804c8cde5e85ac3aaf8940bab7f04c8cd702f61c4d051f27}\label{CaptureAndDetect_8h_a3c1fc1369ee351f25804c8cde5e85ac3aaf8940bab7f04c8cd702f61c4d051f27}} 
+H\+E\+I\+G\+H\+T\+\_\+720&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+I\+D\+T\+H\+\_\+1920@{W\+I\+D\+T\+H\+\_\+1920}!Capture\+And\+Detect.\+h@{Capture\+And\+Detect.\+h}}\index{Capture\+And\+Detect.\+h@{Capture\+And\+Detect.\+h}!W\+I\+D\+T\+H\+\_\+1920@{W\+I\+D\+T\+H\+\_\+1920}}}\mbox{\Hypertarget{CaptureAndDetect_8h_a3c1fc1369ee351f25804c8cde5e85ac3a62cb4c441f62ccfd155870b1d5e590d8}\label{CaptureAndDetect_8h_a3c1fc1369ee351f25804c8cde5e85ac3a62cb4c441f62ccfd155870b1d5e590d8}} 
+W\+I\+D\+T\+H\+\_\+1920&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H\+E\+I\+G\+H\+T\+\_\+1080@{H\+E\+I\+G\+H\+T\+\_\+1080}!Capture\+And\+Detect.\+h@{Capture\+And\+Detect.\+h}}\index{Capture\+And\+Detect.\+h@{Capture\+And\+Detect.\+h}!H\+E\+I\+G\+H\+T\+\_\+1080@{H\+E\+I\+G\+H\+T\+\_\+1080}}}\mbox{\Hypertarget{CaptureAndDetect_8h_a3c1fc1369ee351f25804c8cde5e85ac3a62e4215c07636cf44ab26b46fabe7029}\label{CaptureAndDetect_8h_a3c1fc1369ee351f25804c8cde5e85ac3a62e4215c07636cf44ab26b46fabe7029}} 
+H\+E\+I\+G\+H\+T\+\_\+1080&\\
+\hline
+
+\end{DoxyEnumFields}

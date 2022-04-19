@@ -14,6 +14,7 @@ using namespace cv;
 class Capture {
 public:
 
+    /** \brief boolean to check if cmaera is running */
     bool running = false;
 
     /**
@@ -42,11 +43,23 @@ public:
     void stop();
 
 private:
+
+    /** \brief thread to start image capture */
     thread uthread;
+
+    /** \brief callback to capture and detect */
     CaptureAndDetectCallbackInterface *callback;
+
+    /** \brief resolution height */
     int height;
+
+    /** \brief resolution width */
     int width;
+
+    /** \brief captured frame */
     Mat frame;
+
+    /** \brief pointer to VideoCapture */
     VideoCapture *capture;
 
     /**

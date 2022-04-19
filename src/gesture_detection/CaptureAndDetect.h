@@ -15,6 +15,8 @@
 using namespace std;
 using namespace cv;
 
+
+/** \brief enum to store resolution */
 enum Resolution {
     WIDTH_1280 = 1280,
     HEIGHT_720 = 720,
@@ -22,12 +24,18 @@ enum Resolution {
     HEIGHT_1080 = 1080
 };
 
+/** \brief enum for type of Feed */
 enum Feed {
     UNPROCESSED,
     SKINMASK,
     DETECTED
 };
 
+/** @brief This class takes care of starting threads to capture image, process and publish commands
+ *
+ * This class is the mediator between the different functions of the application. Connecting between image
+ * capturing, GUI and and DisplayControl to publish the detected commands.
+ * */
 class CaptureAndDetect : public CaptureAndDetectCallbackInterface {
 public:
 
@@ -111,26 +119,63 @@ public:
     * @param finger The finger that was detected.
     */
     void addToBuffer(FingerAndCoordinates) override;
+
+    /** \brief frame received from capture thread */
     Mat recievedFrame;
 
 private:
+    /** \brief current frame being processed */
     Mat currentFrame;
+
+    /** \brief Fingercoordinate object to store the response */
     FingerAndCoordinates fingerAndCoordinates;
+
+    /** \brief SkinColorDetecter object */
     SkinColorDetector skinDetector;
+
+    /** \brief FingerCounter object */
     FingerCounter fingerCounter;
+
+    /** \brief Bacground substractor object */
     Ptr<BackgroundSubtractor> backgroundRemover;
+
+    /** \brief Region of interest to track the fingers */
     Rect roi;
+
+    /** \brief callback to controller screen GUI */
     ControllerScreenCallbackInterface *callback;
+
+    /** \brief callback to Display Control to send ubuntu commands */
     DisplayControlCallbackInterface *controlInterface;
+
+    /** \brief Cascade classifier to detect fist */
     CascadeClassifier *palmClassifier;
+
+    /** \brief Capture object */
     Capture capture;
+
+    /** \brief thread to start processing images */
     thread uthread;
+
+    /** \brief thread to check for commands and forward to DisplayControl */
     thread commandThread;
+
+    /** \brief buffer to store the finger count, listened by command thread*/
     queue<FingerAndCoordinates> detectedFingers;
+
+    /** \brief width of the display */
     int displayWidth;
+
+    /** \brief height of the display */
     int displayHeight;
+
+    /** \brief feed to display */
     int toDisplay = UNPROCESSED;
+
+    /** \brief bool to check is background has been calibrated */
     bool backgroundCalibrated = false;
+
+    /** \brief boolean flag to check if recieved new frame from Capture */
     bool frameRecieved = false;
 
     /**

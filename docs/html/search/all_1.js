@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['calibrate',['calibrate',['../classCaptureAndDetect.html#ae57b827ebac2b4d5f5baaa8935442183',1,'CaptureAndDetect::calibrate()'],['../classSkinColorDetector.html#ae8b3880d1d75b07e356cd7d1ff128ed9',1,'SkinColorDetector::calibrate()']]],
+  ['calibratebackgroundremover',['calibrateBackgroundRemover',['../classCaptureAndDetect.html#a53065abfb6eed6c074ad4d3370b3f232',1,'CaptureAndDetect']]],
+  ['calibratecolorpressed',['calibrateColorPressed',['../classCaptureAndDetect.html#ac60f9b1d192c043fa9b40c38fc5599e6',1,'CaptureAndDetect']]],
+  ['calibratevalues',['calibrateValues',['../classCaptureAndDetect.html#aafb4f601f860dd38f514f6dd29a1d016',1,'CaptureAndDetect::calibrateValues()'],['../classSkinColorDetector.html#a4739dae25a983fb35a972f3c0ff8faaf',1,'SkinColorDetector::calibrateValues()']]],
+  ['capture',['Capture',['../classCapture.html',1,'Capture'],['../classCapture.html#a97036b5d271238bd4852da79a0091b57',1,'Capture::Capture()']]],
+  ['capture_2ecpp',['Capture.cpp',['../Capture_8cpp.html',1,'']]],
+  ['capture_2eh',['Capture.h',['../Capture_8h.html',1,'']]],
+  ['captureanddetect',['CaptureAndDetect',['../classCaptureAndDetect.html',1,'CaptureAndDetect'],['../classCaptureAndDetect.html#a26c41eaa5100975ec0f50c97592f4bf1',1,'CaptureAndDetect::CaptureAndDetect()']]],
+  ['captureanddetect_2ecpp',['CaptureAndDetect.cpp',['../CaptureAndDetect_8cpp.html',1,'']]],
+  ['captureanddetect_2eh',['CaptureAndDetect.h',['../CaptureAndDetect_8h.html',1,'']]],
+  ['captureanddetectcallbackinterface',['CaptureAndDetectCallbackInterface',['../classCaptureAndDetectCallbackInterface.html',1,'']]],
+  ['captureanddetectcallbackinterface_2eh',['CaptureAndDetectCallbackInterface.h',['../CaptureAndDetectCallbackInterface_8h.html',1,'']]],
+  ['checkforpalm',['checkForPalm',['../classCaptureAndDetect.html#a1620075ba1bf4d52a4e455c20f7ac3d1',1,'CaptureAndDetect::checkForPalm()'],['../classCaptureAndDetectCallbackInterface.html#a64755838dd5592bae3ca06b4c5a0d72f',1,'CaptureAndDetectCallbackInterface::checkForPalm()']]],
+  ['command',['command',['../classFingerAndCoordinates.html#af94d8ca7cd08d7144ec919fa997120c0',1,'FingerAndCoordinates']]],
+  ['commands',['Commands',['../Commands_8h.html#a1939e90743463fb34c8c571ec0590430',1,'Commands.h']]],
+  ['commands_2eh',['Commands.h',['../Commands_8h.html',1,'']]],
+  ['connectcallback',['ConnectCallback',['../classFingerCounter.html#a5b5aabaa39ff05c70a873b4c2a7869f9',1,'FingerCounter']]],
+  ['connectcontrolcallback',['connectControlCallback',['../classCaptureAndDetect.html#aa75e3ba836797d18aa02c72bbf975082',1,'CaptureAndDetect']]]
+];
