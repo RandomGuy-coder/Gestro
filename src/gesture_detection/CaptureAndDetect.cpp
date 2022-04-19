@@ -1,9 +1,10 @@
 #include "CaptureAndDetect.h"
 
+
 CaptureAndDetect::CaptureAndDetect() {
 }
 
-void CaptureAndDetect::init(ControllerScreenCallbackInterface *interface, Resolution width, Resolution height) {
+void CaptureAndDetect::init(ControllerScreenCallbackInterface *interface, Resolution width, Resolution height, int screenWidth, int screenHeight) {
     capture.init(this, width, height);
     roi = Rect(width / 2, 0, width / 2, height / 2);
     callback = interface;
@@ -19,10 +20,12 @@ void CaptureAndDetect::calibrateValues(int hMin, int hMax, int sMin, int sMax) {
     }
 }
 
+
 void CaptureAndDetect::newFrame(Mat incomingFrame) {
     this->recievedFrame = incomingFrame;
     frameRecieved = true;
 }
+
 
 void CaptureAndDetect::processFrame() {
 
@@ -83,7 +86,7 @@ void CaptureAndDetect::processCommands() {
         if(!detectedFingers.empty()) {
             FingerAndCoordinates toProcess = detectedFingers.front();
 
-            if(finger.count == 1) {
+            if(toProcess.count == 1) {
             int x = screen->width/((float)640/(float)finger.x);
             int y = screen->height/((float)360/(float)finger.y);
             displayControl.moveMouseTo(x, y);
@@ -112,6 +115,7 @@ void CaptureAndDetect::processCommands() {
     }
 }
 
+
 void CaptureAndDetect::calibrateColorPressed() {
     vector<int> a = skinDetector.calibrate(currentFrame);
     callback->updateCalibratedTrackbar(a[0], a[1], a[2], a[3]);
@@ -128,6 +132,10 @@ void CaptureAndDetect::displayImage(int feed) {
 
 void CaptureAndDetect::connectControlCallback(DisplayControlCallbackInterface *interface) {
     controlInterface = interface;
+}
+
+void CaptureAndDetect::addToBuffer(FingerAndCoordinates finger) {
+    detectedFingers.push(finger);
 }
 
 bool CaptureAndDetect::checkForPalm() {

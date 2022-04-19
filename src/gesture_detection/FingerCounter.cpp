@@ -87,9 +87,9 @@ FingerAndCoordinates FingerCounter::findFingersCount(Mat input_image, Mat frame)
     }
     if(fingers.size() == 15) {
         if(oldFinger == 2 and palmCallback->checkForPalm()) {
-            return {2, 0, 0, true};
+            return {MUTE_UNMUTE, 0, 0};
         } else if (oldFinger == 3 and palmCallback->checkForPalm()) {
-            return {3,0,0,true};
+            return {MINIMIZE_WINDOW,0,0};
         } else {
             currentFinger = getFinger();
             if (currentFinger != oldFinger) {
@@ -97,9 +97,7 @@ FingerAndCoordinates FingerCounter::findFingersCount(Mat input_image, Mat frame)
                 oldFinger = currentFinger;
                 fingers.clear();
                 if(currentFinger == 1)
-                    return {currentFinger, xFilter.filter(farthestPoint.x), yFilter.filter(farthestPoint.y), false};
-                else
-                    return {currentFinger, farthestPoint.x, farthestPoint.y, false};
+                    return {MOUSE_MOVE, xFilter.filter(farthestPoint.x), yFilter.filter(farthestPoint.y)};
             } else if (oldFinger == currentFinger) {
                 fingers.clear();
                 Point farthestPoint = getHighestPoint(frame, contours, biggest_contour_index, defects);
@@ -109,20 +107,24 @@ FingerAndCoordinates FingerCounter::findFingersCount(Mat input_image, Mat frame)
                 oldFarPoint = farthestPoint;
                 if(currentFinger == 1) {
                     if (sqrt(difference.ddot(difference)) <= 10) {
-                        return {oldFinger, xFilter.filter(farthestPoint.x), yFilter.filter(farthestPoint.y), true};
+                        return {MOUSE_CLICK,farthestPoint.x, farthestPoint.y};
                     }
                 } else if(currentFinger == 2) {
-                    if (abs(difference.x) > 40) {
-                        return {oldFinger, 0, 0, true, difference.x};
+                    if (difference.x > 40) {
+                        return {VOLUME_UP};
+                    } else if (difference.y < 40)
+                    {
+                        return {VOLUME_DECREASE};
                     }
-                } else if(currentFinger == 3) {
-                    return {oldFinger, 0, 0, true, difference.x};
                 }
             }
         }
     }else if(oldFinger == 1) {
         Point farthestPoint = getHighestPoint(frame, contours, biggest_contour_index, defects);
-        return {oldFinger, xFilter.filter(farthestPoint.x), yFilter.filter(farthestPoint.y), false};
+        return {MOUSE_MOVE, xFilter.filter(farthestPoint.x), yFilter.filter(farthestPoint.y)};
+    } else if(oldFinger == 3) {
+        Point farthestPoint = getHighestPoint(frame, contours, biggest_contour_index, defects);
+        return {MOVE_WINDOW, xFilter.filter(farthestPoint.x), yFilter.filter(farthestPoint.y)};
     }
     return {};
 }

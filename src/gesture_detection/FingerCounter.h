@@ -5,10 +5,10 @@
 #include "vector"
 #include "Iir.h"
 #include "CaptureAndDetectCallbackInterface.h"
+#include "commands.h"
 
 using namespace cv;
 using namespace std;
-
 
 class FingerCounter {
 public:

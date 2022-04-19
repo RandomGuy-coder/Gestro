@@ -7,10 +7,8 @@
 FingerAndCoordinates::FingerAndCoordinates() {
 }
 
-FingerAndCoordinates::FingerAndCoordinates(int count, int x, int y, bool click, int distance) {
-    this->count = count;
+FingerAndCoordinates::FingerAndCoordinates(command mycommand, int x, int y) {
+    this->count = mycommand;
     this->x = x;
     this->y = y;
-    this->click = click;
-    this->distance = distance;
 }

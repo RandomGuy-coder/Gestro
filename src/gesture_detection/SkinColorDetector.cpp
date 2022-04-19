@@ -1,11 +1,5 @@
 #include "SkinColorDetector.h"
 
-using namespace cv;
-using namespace std;
-
-/**
- * It initializes the class variables to default values.
- */
 SkinColorDetector::SkinColorDetector(void) {
     hUpper = 0;
     hLower = 0;
@@ -13,20 +7,9 @@ SkinColorDetector::SkinColorDetector(void) {
     sLower = 0;
     vUpper = 0;
     vLower = 0;
-    offsetHighThreshold = 50;
-    offsetLowThreshold = 10;
     calibrated = false;
-
-    dilation_size = 5;
-
-    skinColorSamplerRect1, skinColorSamplerRect2;
 }
 
-/**
- * It draws two rectangles on the input frame, one at the center and one at the top
- *
- * @param inputFrame The frame that is being processed.
- */
 void SkinColorDetector::drawSkinColorSampler(Mat inputFrame) {
     int frameWidth = inputFrame.size().width, frameHeight = inputFrame.size().height;
     int rectSize = 100;
@@ -39,14 +22,6 @@ void SkinColorDetector::drawSkinColorSampler(Mat inputFrame) {
     rectangle(inputFrame, skinColorSamplerRect2, rectColor);
 }
 
-/**
- * It takes a frame as input, converts it to HSV, samples two regions of the frame, and calculates the thresholds for the
- * skin color detector
- *
- * @param inputFrame The frame to be used for calibration.
- *
- * @return The lower and upper bounds for the hue and saturation values.
- */
 vector<int> SkinColorDetector::calibrate(Mat inputFrame) {
     Mat inputFramehsv;
     cvtColor(inputFrame, inputFramehsv, COLOR_BGR2HSV);
@@ -59,12 +34,6 @@ vector<int> SkinColorDetector::calibrate(Mat inputFrame) {
     return {hLower, hUpper, sLower, sUpper};
 }
 
-/**
- * It calculates the upper and lower thresholds for the HSV values of the skin color
- *
- * @param sample1 The first sample of skin color.
- * @param sample2 The second sample of skin color.
- */
 void SkinColorDetector::calculateThresholds(Mat sample1, Mat sample2) {
 
     Scalar hsvMeansSample1 = mean(sample1);
@@ -83,14 +52,6 @@ void SkinColorDetector::calculateThresholds(Mat sample1, Mat sample2) {
     vLower = 0;
 }
 
-/**
- * This function takes in the HSV values of the skin color and sets the upper and lower bounds of the HSV values
- *
- * @param H_MIN The minimum value of the Hue channel.
- * @param H_MAX The maximum value of the Hue channel.
- * @param S_MIN Minimum value for the Saturation channel
- * @param S_MAX The maximum value of the saturation channel.
- */
 void SkinColorDetector::calibrateValues(int H_MIN, int H_MAX, int S_MIN, int S_MAX) {
 
     hUpper = H_MAX;
@@ -101,13 +62,6 @@ void SkinColorDetector::calibrateValues(int H_MIN, int H_MAX, int S_MIN, int S_M
 
 }
 
-/**
- * It takes an input frame, converts it to HSV, then uses the inRange function to create a mask of the skin color
- *
- * @param inputFrame The input frame from the camera
- *
- * @return A binary image of the skin mask.
- */
 Mat SkinColorDetector::getSkinMask(Mat inputFrame) {
 
     Mat skinMask;
@@ -125,16 +79,4 @@ Mat SkinColorDetector::getSkinMask(Mat inputFrame) {
     cv::dilate(skinMask, skinMask, cv::Mat(), Point(-1,-1),2);
 
     return skinMask;
-}
-
-/**
- * It takes a binary image and performs an opening operation on it
- *
- * @param binaryInput The input image in binary format.
- * @param seShape The shape of the structuring element.
- * @param seSize The size of the structuring element.
- */
-void SkinColorDetector::opening(Mat binaryInput, int seShape, Point seSize) {
-    Mat sE = getStructuringElement(seShape, seSize);
-    morphologyEx(binaryInput, binaryInput, MORPH_OPEN, sE);
 }
