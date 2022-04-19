@@ -2,6 +2,7 @@
 #define GESTRO_COMMANDS_H
 
 enum Commands {
+    NO_FINGER,
     MOUSE_MOVE,
     MOUSE_CLICK,
     VOLUME_UP,

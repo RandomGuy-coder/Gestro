@@ -114,7 +114,7 @@ FingerAndCoordinates FingerCounter::findFingersCount(Mat input_image, Mat frame)
                         return {VOLUME_UP};
                     } else if (difference.y < 40)
                     {
-                        return {VOLUME_DECREASE};
+                        return {VOLUME_DOWN};
                     }
                 }
             }

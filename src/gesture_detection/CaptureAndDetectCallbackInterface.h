@@ -6,6 +6,7 @@
 #define GESTRO_CAPTUREANDDETECTINTERFACE_H
 
 #include "opencv2/opencv.hpp"
+#include "FingerAndCoordinates.h"
 
 using namespace cv;
 

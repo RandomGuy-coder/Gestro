@@ -7,7 +7,6 @@ class ControllerScreenCallbackInterface {
 public:
     virtual void updateImage(cv::Mat) = 0;
     virtual void updateCalibratedTrackbar(int, int, int, int) = 0;
-    virtual void fingerDetected(FingerAndCoordinates) = 0;
     virtual void updateLogTable(String a, String b) = 0;
 };
 #endif //GESTRO_CONTROLLERSCREENCALLBACKINTERFACE_H

@@ -71,11 +71,11 @@ void CaptureAndDetect::processFrame() {
                     callback->updateImage(frame);
                 } else if (toDisplay == DETECTED) {
                     fingerAndCoordinates = fingerCounter.findFingersCount(skinMask, frame2);
+                    if (fingerAndCoordinates.command != NO_FINGER) {
+                        detectedFingers.push(fingerAndCoordinates);
+                    }
                     frame2.copyTo(frame(roi));
                     callback->updateImage(frame);
-                    if (fingerAndCoordinates.count != 0) {
-                        callback->fingerDetected(fingerAndCoordinates);
-                    }
                 }
                 backgroundRemoved = NULL;
                 newimg = NULL;
@@ -118,6 +118,7 @@ void CaptureAndDetect::processCommands() {
                     controlInterface->doKeyPress(65);
                     break;
             }
+            detectedFingers.pop();
         }
     }
 }
@@ -148,8 +149,7 @@ void CaptureAndDetect::addToBuffer(FingerAndCoordinates finger) {
 bool CaptureAndDetect::checkForPalm() {
     vector<cv::Rect> features;
     palmClassifier->detectMultiScale(currentFrame, features, 1.1, 5, 0 | CASCADE_SCALE_IMAGE, Size(30,30));
-    if(features.size() != NULL) {
-        cout << "palm" << endl;
+    if(!features.empty()) {
         return true;
     } else {
         return false;
