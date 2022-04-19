@@ -1,8 +1,5 @@
 #include "SkinColorDetector.h"
 
-using namespace cv;
-using namespace std;
-
 SkinColorDetector::SkinColorDetector(void) {
     hUpper = 0;
     hLower = 0;
@@ -10,13 +7,7 @@ SkinColorDetector::SkinColorDetector(void) {
     sLower = 0;
     vUpper = 0;
     vLower = 0;
-    offsetHighThreshold = 50;
-    offsetLowThreshold = 10;
     calibrated = false;
-
-    dilation_size = 5;
-
-    skinColorSamplerRect1, skinColorSamplerRect2;
 }
 
 void SkinColorDetector::drawSkinColorSampler(Mat inputFrame) {
@@ -88,9 +79,4 @@ Mat SkinColorDetector::getSkinMask(Mat inputFrame) {
     cv::dilate(skinMask, skinMask, cv::Mat(), Point(-1,-1),2);
 
     return skinMask;
-}
-
-void SkinColorDetector::opening(Mat binaryInput, int seShape, Point seSize) {
-    Mat sE = getStructuringElement(seShape, seSize);
-    morphologyEx(binaryInput, binaryInput, MORPH_OPEN, sE);
 }

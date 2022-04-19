@@ -1,0 +1,16 @@
+#ifndef GESTRO_COMMANDS_H
+#define GESTRO_COMMANDS_H
+
+enum Commands {
+    NO_FINGER,
+    MOUSE_MOVE,
+    MOUSE_CLICK,
+    VOLUME_UP,
+    VOLUME_DOWN,
+    MUTE_UNMUTE,
+    MOVE_WINDOW,
+    MINIMIZE_WINDOW,
+    PRESS_SPACE
+};
+
+#endif //GESTRO_COMMANDS_H
