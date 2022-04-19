@@ -86,6 +86,7 @@ Click to view our [demonstration video]()!
 * A webcam.
 
 ### Built On
+* Iir
 * X11
 * Qt 5
 * C++
@@ -93,7 +94,6 @@ Click to view our [demonstration video]()!
 * OpenCV
 * Doxygen
 * libasound2-dev
-* Iir
 * Boost Unit Test Framework
 
 ## Getting Started
@@ -131,13 +131,13 @@ cd Gestro && ./install_dependencies.sh
 ```
 
 ## Launching Gestro
-Firstly, launch a terminal and enter the following Commands to cd into the Gestro directory:
+Firstly, launch a terminal and enter the following commands to cd into the Gestro directory:
 ```sh
 cd ~/Gestro
 ```
 
 ### Main Program
-Start the Gestro application by running the following Commands:
+Start the Gestro application by running the following commands:
 
 ```sh
 ./Gestro
