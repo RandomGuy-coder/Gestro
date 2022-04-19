@@ -105,7 +105,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a53065abfb6eed6c074ad4d3370b3f232"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f1ba69514a2debbc6b2a03e76f31b65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCaptureAndDetect.html#a3f1ba69514a2debbc6b2a03e76f31b65">displayImage</a> (int)</td></tr>
 <tr class="separator:a3f1ba69514a2debbc6b2a03e76f31b65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa75e3ba836797d18aa02c72bbf975082"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCaptureAndDetect.html#aa75e3ba836797d18aa02c72bbf975082">connectControlCallback</a> (DisplayControlCallbackInterface *)</td></tr>
+<tr class="memitem:aa75e3ba836797d18aa02c72bbf975082"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCaptureAndDetect.html#aa75e3ba836797d18aa02c72bbf975082">connectControlCallback</a> (<a class="el" href="classDisplayControlCallbackInterface.html">DisplayControlCallbackInterface</a> *)</td></tr>
 <tr class="separator:aa75e3ba836797d18aa02c72bbf975082"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7e70bbcade4e0023541c556ee7cb34e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCaptureAndDetect.html#ac7e70bbcade4e0023541c556ee7cb34e">processFrame</a> ()</td></tr>
 <tr class="separator:ac7e70bbcade4e0023541c556ee7cb34e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -124,7 +124,7 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class takes care of starting threads to capture image, process and publish commands. </p>
-<p>This class is the mediator between the different functions of the application. Connecting between image capturing, GUI and and DisplayControl to publish the detected commands. </p>
+<p>This class is the mediator between the different functions of the application. Connecting between image capturing, GUI and and <a class="el" href="classDisplayControl.html" title="This is a class that is inheriting from the classes WindowAction, KeyboardAction, MouseAction...">DisplayControl</a> to publish the detected commands. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a26c41eaa5100975ec0f50c97592f4bf1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a26c41eaa5100975ec0f50c97592f4bf1">&#9670;&nbsp;</a></span>CaptureAndDetect()</h2>
@@ -304,13 +304,13 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">void CaptureAndDetect::connectControlCallback </td>
           <td>(</td>
-          <td class="paramtype">DisplayControlCallbackInterface *&#160;</td>
+          <td class="paramtype"><a class="el" href="classDisplayControlCallbackInterface.html">DisplayControlCallbackInterface</a> *&#160;</td>
           <td class="paramname"><em>interface</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This function is called by the DisplayControl class to connect the <a class="el" href="classCaptureAndDetect.html" title="This class takes care of starting threads to capture image, process and publish commands. ">CaptureAndDetect</a> class to the DisplayControl class.</p>
+<p>This function is called by the <a class="el" href="classDisplayControl.html" title="This is a class that is inheriting from the classes WindowAction, KeyboardAction, MouseAction...">DisplayControl</a> class to connect the <a class="el" href="classCaptureAndDetect.html" title="This class takes care of starting threads to capture image, process and publish commands. ">CaptureAndDetect</a> class to the <a class="el" href="classDisplayControl.html" title="This is a class that is inheriting from the classes WindowAction, KeyboardAction, MouseAction...">DisplayControl</a> class.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">interface</td><td>The interface that will be used to communicate with the display control. </td></tr>

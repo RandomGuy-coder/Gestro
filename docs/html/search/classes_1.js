@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['fingerandcoordinates',['FingerAndCoordinates',['../classFingerAndCoordinates.html',1,'']]],
-  ['fingercounter',['FingerCounter',['../classFingerCounter.html',1,'']]]
+  ['displaycontrol',['DisplayControl',['../classDisplayControl.html',1,'']]],
+  ['displaycontrolcallbackinterface',['DisplayControlCallbackInterface',['../classDisplayControlCallbackInterface.html',1,'']]]
 ];

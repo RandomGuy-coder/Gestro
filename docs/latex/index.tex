@@ -1,0 +1,217 @@
+Contents
+
+\section*{Gestro}
+
+\href{https://github.com/RandomGuy-coder/Gestro}{\tt }
+
+Controlling Linux system using hand gestures
+
+
+
+     
+
+
+
+$<$details open=\char`\"{}open\char`\"{}$>$
+
+
+\begin{DoxyEnumerate}
+\item \href{#About-Gestro}{\tt About Gestro} 
+\begin{DoxyItemize}
+\item \href{#Demonstration-Video}{\tt Demonstration Video} 
+\item \href{#Features}{\tt Features} 
+\item \href{#Built-With}{\tt Built With} 
+\item \href{#Built-On}{\tt Built On} 
+\end{DoxyItemize}
+\item \href{#Getting-Started}{\tt Getting Started} 
+\begin{DoxyItemize}
+\item \href{#Prerequisites}{\tt Prerequisites} 
+\item \href{#Installation-Guide}{\tt Installation Guide} 
+\end{DoxyItemize}
+\item \href{#Launching-Gestro}{\tt Launching Gestro} 
+\begin{DoxyItemize}
+\item \href{#Main-Program}{\tt Main Program} 
+\item \href{#Unit-Tests}{\tt Unit Tests} 
+\end{DoxyItemize}
+
+
+\item \href{#Contributors}{\tt Contributors} 
+\item \href{#Future-Enhancement}{\tt Future Enhancement} 
+\item \href{#Social-Media}{\tt Social Media} 
+\item \href{#Documentation}{\tt Documentation} 
+\item \href{#License}{\tt License} 
+\end{DoxyEnumerate}$<$/details$>$
+
+\subsection*{About Gestro}
+
+Gestro is developed by a group of students from The University of Glasgow currently undertaking the course of E\+N\+G5220 -\/ Real-\/time Embedded Systems under Team 26.
+
+Gestro is an application which allows users to control their Linux system using hand gestures so that users will be able to perform certains actions without the use of a keyboard and mouse. This is particularly useful in cases where users want to control their Linux PC while\+: being away from it, being unfamiliar with modern devices (such as Elderly people), et cetera.
+
+By using a webcam and libraries such as Open\+CV, X11, et cetera, Gestro is able to successfully translate hand gestures performed by users into commands that performs certain operations including, but not limited to, increasing or decreasing the system\textquotesingle{}s volume, move, minimise, or close windows, and mouse clicks. Gestro is designed to be displayed using a Qt application on the users\textquotesingle{} Linux system running the Ubuntu distribution.
+
+More details can be found below. However, for the complete information about Gestro, please visit our \href{https://randomguy-coder.github.io/Gestro/}{\tt website}.
+
+\subsubsection*{Demonstration Video}
+
+Click to view our \mbox{[}demonstration video\mbox{]}()!
+
+  
+
+\subsubsection*{Features}
+
+
+\begin{DoxyItemize}
+\item Enter keys.
+\item Track mouse.
+\item Perform mouse clicks.
+\item Increase and Decrease Volume.
+\item Change window size.
+\item Move, Minimise, and Close window.
+\end{DoxyItemize}
+
+\subsubsection*{Built With}
+
+
+\begin{DoxyItemize}
+\item A PC running Ubuntu 18.\+04 L\+TS.
+\item A webcam.
+\end{DoxyItemize}
+
+\subsubsection*{Built On}
+
+
+\begin{DoxyItemize}
+\item Iir
+\item X11
+\item Qt 5
+\item C++
+\item C\+Make
+\item Open\+CV
+\item Doxygen
+\item libasound2-\/dev
+\item Boost Unit Test Framework
+\end{DoxyItemize}
+
+\subsection*{Getting Started}
+
+Gestro is designed to be used on Linux P\+Cs running the Ubuntu distribution. In particular, it was tested and found to be running perfectly on P\+Cs running Ubuntu 18.\+04 L\+TS.
+
+\subsubsection*{Prerequisites}
+
+
+\begin{DoxyItemize}
+\item A PC running Ubuntu.
+\item A webcam.
+\end{DoxyItemize}
+
+Gestro requires the following tools and libraries to run (other versions are not tested)\+:
+\begin{DoxyItemize}
+\item X11
+\item Qt 5
+\item Open\+CV 4.\+5.\+5
+\item libasound2-\/dev
+\item Boost Unit Test Framework
+\end{DoxyItemize}
+
+\begin{quote}
+These required tools and libraries will be installed if you follow step 2 of the \href{#installation-guide}{\tt installation guide} below. \end{quote}
+
+
+\subsubsection*{Installation Guide}
+
+\begin{quote}
+If permission is denied while trying to run any of the scripts, please enter the following Commands into the terminal and try running the script again, {\ttfamily sudo chmod +x $<$script\+\_\+name$>$.sh}. \end{quote}
+
+
+$>$For example, for the install\+\_\+dependencies.\+sh, enter {\ttfamily sudo chmod +x install\+\_\+dependencies.\+sh} into the terminal.
+
+{\bfseries 1. Download the latest \mbox{[}release\mbox{]}() from our Github and extract the contents into the Home folder.}
+
+{\bfseries 2. Launch a terminal and enter the following commands into it to install the requirements\+:} 
+\begin{DoxyCode}
+cd Gestro && ./install\_dependencies.sh
+\end{DoxyCode}
+
+
+{\bfseries 3. Enter the following commands into the terminal to run the build script.} 
+\begin{DoxyCode}
+./build.sh
+\end{DoxyCode}
+
+
+\subsection*{Launching Gestro}
+
+Firstly, launch a terminal and enter the following commands to cd into the Gestro directory\+: 
+\begin{DoxyCode}
+cd ~/Gestro
+\end{DoxyCode}
+
+
+\subsubsection*{Main Program}
+
+Start the Gestro application by running the following commands\+:
+
+
+\begin{DoxyCode}
+./Gestro
+\end{DoxyCode}
+ {\bfseries For instructions on how to use the Gestro application, please see \href{https://randomguy-coder.github.io/Gestro/user_manual.html}{\tt User Manual} on our \href{https://randomguy-coder.github.io/Gestro/}{\tt website}}.
+
+\subsubsection*{Unit Tests}
+
+Run the unit tests by running the following Commands\+: 
+\begin{DoxyCode}
+./test\_run
+\end{DoxyCode}
+
+
+\subsection*{Contributors\+:}
+
+E\+N\+G5220 -\/ Real-\/time Embedded Systems -\/ Team 26\+:
+\begin{DoxyItemize}
+\item \href{https://github.com/RandomGuy-coder}{\tt Tushar Anil Mittal, 2669699M}
+\item \href{https://github.com/terrsoshi}{\tt Tian Jie Wong, 2702282W}
+\item \href{https://github.com/MuhatasimIntisar}{\tt Muhatasim Intisar, 2683935I}
+\item \href{https://github.com/David2574}{\tt Ruoqi Sun, 2574212S}
+\end{DoxyItemize}
+
+\subsection*{Future Enhancement\+:}
+
+Here are some of the planned features for this project\+:
+\begin{DoxyItemize}
+\item Play and Pause
+\item Play Next and Previous
+\item Mute and Unmute.
+\item Zoom in and Zoom out
+\item Switch between applications
+\item Increase and Decrease Brightness
+\end{DoxyItemize}
+
+Propose for a new feature or report a bug \mbox{[}here\mbox{]}()!
+
+\begin{quote}
+Feel free to contribute to this project by forking it and submitting a pull request for the added changes. \end{quote}
+
+
+\subsection*{Social Media\+:}
+
+$<$nav$>$ Follow us on\+:~\newline
+~\newline
+  \href{https://www.facebook.com/GestroProject}{\tt } \href{https://twitter.com/GestroProject}{\tt } \href{https://www.instagram.com/gestroproject/}{\tt } \href{https://hackaday.io/project/184728-gestro}{\tt }  $<$/nav$>$
+
+\subsection*{Documentation}
+
+Check out \mbox{[}Gestro\textquotesingle{}s documentation page\mbox{]}()!
+
+\subsection*{License}
+
+Distributed under the G\+P\+L-\/3.\+0 License. See \href{https://github.com/RandomGuy-coder/Gestro/blob/main/LICENSE}{\tt {\ttfamily L\+I\+C\+E\+N\+SE}} for more information.
+
+~\newline
+ 
+\footnotesize {\itshape Copyright \copyright{} 2022; E\+N\+G5220 -\/ Real-\/\+Time-\/\+Embedded-\/\+Systems -\/ Team 26}
+\normalsize ~\newline
+ 
+\footnotesize {\itshape Distributed by a \href{https://github.com/RandomGuy-coder/Gestro/blob/main/LICENSE}{\tt G\+NU G\+P\+L-\/3.\+0 License.} }
+\normalsize 

@@ -8,6 +8,8 @@ using namespace std;
 using namespace cv;
 
 /**
+ * @brief runs a thread to start camera and capture image
+ *
  * A class that captures images from the webcam and calls
  * the callback function with the image.
  */

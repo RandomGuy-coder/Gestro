@@ -44,7 +44,7 @@ void \hyperlink{classCaptureAndDetect_a53065abfb6eed6c074ad4d3370b3f232}{calibra
 \item 
 void \hyperlink{classCaptureAndDetect_a3f1ba69514a2debbc6b2a03e76f31b65}{display\+Image} (int)
 \item 
-void \hyperlink{classCaptureAndDetect_aa75e3ba836797d18aa02c72bbf975082}{connect\+Control\+Callback} (Display\+Control\+Callback\+Interface $\ast$)
+void \hyperlink{classCaptureAndDetect_aa75e3ba836797d18aa02c72bbf975082}{connect\+Control\+Callback} (\hyperlink{classDisplayControlCallbackInterface}{Display\+Control\+Callback\+Interface} $\ast$)
 \item 
 void \hyperlink{classCaptureAndDetect_ac7e70bbcade4e0023541c556ee7cb34e}{process\+Frame} ()
 \item 
@@ -64,7 +64,7 @@ Mat \hyperlink{classCaptureAndDetect_ad614571fedee59ecccccf0c14c3dd542}{recieved
 \subsection{Detailed Description}
 This class takes care of starting threads to capture image, process and publish commands. 
 
-This class is the mediator between the different functions of the application. Connecting between image capturing, G\+UI and and Display\+Control to publish the detected commands. 
+This class is the mediator between the different functions of the application. Connecting between image capturing, G\+UI and and \hyperlink{classDisplayControl}{Display\+Control} to publish the detected commands. 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classCaptureAndDetect_a26c41eaa5100975ec0f50c97592f4bf1}\label{classCaptureAndDetect_a26c41eaa5100975ec0f50c97592f4bf1}} 
@@ -143,9 +143,9 @@ Implements \hyperlink{classCaptureAndDetectCallbackInterface_a64755838dd5592bae3
 \index{Capture\+And\+Detect@{Capture\+And\+Detect}!connect\+Control\+Callback@{connect\+Control\+Callback}}
 \index{connect\+Control\+Callback@{connect\+Control\+Callback}!Capture\+And\+Detect@{Capture\+And\+Detect}}
 \subsubsection{\texorpdfstring{connect\+Control\+Callback()}{connectControlCallback()}}
-{\footnotesize\ttfamily void Capture\+And\+Detect\+::connect\+Control\+Callback (\begin{DoxyParamCaption}\item[{Display\+Control\+Callback\+Interface $\ast$}]{interface }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Capture\+And\+Detect\+::connect\+Control\+Callback (\begin{DoxyParamCaption}\item[{\hyperlink{classDisplayControlCallbackInterface}{Display\+Control\+Callback\+Interface} $\ast$}]{interface }\end{DoxyParamCaption})}
 
-This function is called by the Display\+Control class to connect the \hyperlink{classCaptureAndDetect}{Capture\+And\+Detect} class to the Display\+Control class.
+This function is called by the \hyperlink{classDisplayControl}{Display\+Control} class to connect the \hyperlink{classCaptureAndDetect}{Capture\+And\+Detect} class to the \hyperlink{classDisplayControl}{Display\+Control} class.
 
 
 \begin{DoxyParams}{Parameters}

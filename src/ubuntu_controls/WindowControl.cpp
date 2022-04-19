@@ -3,8 +3,6 @@
 
 WindowControl::WindowControl(void){};
 
-// This function can be used to identify the current window that the pointer is placed over
-// The function receives the display as the input and then provides the window as an output
 Window WindowControl::identifyWindow(Display *display)
 {
     Window winFocus;
@@ -13,30 +11,25 @@ Window WindowControl::identifyWindow(Display *display)
     return winFocus;
 }
 
-//This function can be used to resize the window
-//The function receives the display and the
-//height and width as an
 void WindowControl::resize(Display *display, int x, int y)
 {
     Window w = identifyWindow(display);
     XWindowAttributes  windowAttributes;
     try {
         if (XGetWindowAttributes(display, w, &windowAttributes) == 0) {
-            std::cout << "Failed to get window dimensions";
+            std::cerr << "Failed to get window dimensions" << std::endl;
         } else {
             XResizeWindow(display, w, x, y);
         }
     } catch (...) {
-        std::cout << "Error occured";
+        std::cerr << "Error occured" << std::endl;
     }
-
 }
 
 void WindowControl::move(Display *display, int x, int y)
 {
     Window w = identifyWindow(display);
     XMoveWindow(display, w, x, y);
-
 }
 
 void WindowControl::minimize(Display *display)
