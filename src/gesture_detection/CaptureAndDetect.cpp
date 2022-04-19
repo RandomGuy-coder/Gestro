@@ -4,12 +4,16 @@
 CaptureAndDetect::CaptureAndDetect() {
 }
 
-void CaptureAndDetect::init(ControllerScreenCallbackInterface *interface, Resolution width, Resolution height, int screenWidth, int screenHeight) {
+void CaptureAndDetect::init(ControllerScreenCallbackInterface *interface,  int screenWidth, int screenHeight,
+                            Resolution width, Resolution height) {
     capture.init(this, width, height);
+    displayWidth = screenWidth;
+    displayHeight = screenHeight;
     roi = Rect(width / 2, 0, width / 2, height / 2);
     callback = interface;
     capture.start();
     uthread = thread(&CaptureAndDetect::processFrame, this);
+    commandThread = thread(&CaptureAndDetect::processCommands, this);
     palmClassifier = new CascadeClassifier("../../src/resources/cascades/rpalm.xml");
     fingerCounter.ConnectCallback(this);
 }
@@ -29,7 +33,6 @@ void CaptureAndDetect::newFrame(Mat incomingFrame) {
 
 void CaptureAndDetect::processFrame() {
 
-//    CascadeClassifier fist_classifier("../Resources/fist.xml" );
     while (capture.running) {
         if (frameRecieved) {
             frameRecieved = false;
@@ -86,31 +89,35 @@ void CaptureAndDetect::processCommands() {
         if(!detectedFingers.empty()) {
             FingerAndCoordinates toProcess = detectedFingers.front();
 
-            if(toProcess.count == 1) {
-            int x = screen->width/((float)640/(float)finger.x);
-            int y = screen->height/((float)360/(float)finger.y);
-            displayControl.moveMouseTo(x, y);
-            if(finger.click){
-                displayControl.pressButton(1);
+            switch(toProcess.command) {
+                case MOUSE_MOVE:
+                    controlInterface->doMouseMove(displayWidth/((float)roi.width/(float)toProcess.x),
+                                                  displayHeight/((float)roi.height/(float)toProcess.y));
+                    break;
+                case MOUSE_CLICK:
+                    controlInterface->doButtonPress(1);
+                    break;
+                case VOLUME_UP:
+                    controlInterface->doUnmute();
+                    controlInterface->doIncreaseVolume();
+                    break;
+                case VOLUME_DOWN:
+                    controlInterface->doReduceVolume();
+                    break;
+                case MUTE_UNMUTE:
+                    controlInterface->doMuteUnmute();
+                    break;
+                case MOVE_WINDOW:
+                    controlInterface->doWindowMove(displayWidth/((float)roi.width/(float)toProcess.x),
+                                                   displayHeight/((float)roi.height/(float)toProcess.y));
+                    break;
+                case MINIMIZE_WINDOW:
+                    controlInterface->doWindowMinimize();
+                    break;
+                case PRESS_SPACE:
+                    controlInterface->doKeyPress(65);
+                    break;
             }
-            } else if(finger.count == 2) {
-            if(!finger.click) {
-                displayControl.muteAndUnmute();
-            } else {
-                displayControl.unmute();
-            if(finger.distance > 0) {
-                cout << "increasing" << endl;
-                displayControl.increaseVolume();
-            }
-            else {
-                displayControl.reduceVolume();
-            }
-            }
-        } else if(finger.count == 3) {
-            displayControl.minimizeWindow();
-        } else if(finger.count == 4 ) {
-            displayControl.pressKey(65);
-        }
         }
     }
 }

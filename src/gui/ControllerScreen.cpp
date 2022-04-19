@@ -12,7 +12,8 @@ ControllerScreen::ControllerScreen(QWidget *parent) :
     ui->label_show_guide->setPixmap(QPixmap::fromImage(*image3));
     ui->label_show_guide->adjustSize();
     //ui->label_show_guide->show();
-    captureAndDetect.init(this);
+    Screen *screen = DefaultScreenOfDisplay(display);
+    captureAndDetect.init(this, screen->width, screen->height);
     captureAndDetect.connectControlCallback(&displayControl);
     ui->scrollArea->setWidget(ui->label_show_guide);
     connectGuiEvents();

@@ -114,7 +114,7 @@ Gestro requires the following tools and libraries to run (other versions are not
 
 ### Installation Guide
 
-> If permission is denied while trying to run any of the scripts, please enter the following command into the terminal and try running the script again, ``` sudo chmod +x <script_name>.sh```.
+> If permission is denied while trying to run any of the scripts, please enter the following Commands into the terminal and try running the script again, ``` sudo chmod +x <script_name>.sh```.
 
 >For example, for the install_dependencies.sh, enter ``` sudo chmod +x install_dependencies.sh ``` into the terminal.
 
@@ -131,13 +131,13 @@ cd Gestro && ./install_dependencies.sh
 ```
 
 ## Launching Gestro
-Firstly, launch a terminal and enter the following command to cd into the Gestro directory:
+Firstly, launch a terminal and enter the following Commands to cd into the Gestro directory:
 ```sh
 cd ~/Gestro
 ```
 
 ### Main Program
-Start the Gestro application by running the following command:
+Start the Gestro application by running the following Commands:
 
 ```sh
 ./Gestro
@@ -145,7 +145,7 @@ Start the Gestro application by running the following command:
 **For instructions on how to use the Gestro application, please see [User Manual](https://randomguy-coder.github.io/Gestro/user_manual.html) on our [website](https://randomguy-coder.github.io/Gestro/)**.
 
 ### Unit Tests
-Run the unit tests by running the following command:
+Run the unit tests by running the following Commands:
 ```sh
 ./test_run
 ```

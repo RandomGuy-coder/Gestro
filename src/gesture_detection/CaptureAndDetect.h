@@ -46,7 +46,7 @@ public:
     * @param screenWidth The width of the screen in pixels
     * @param screenHeight The height of the screen in pixels.
     */
-    void init(ControllerScreenCallbackInterface *, Resolution width = WIDTH_1280, Resolution height = HEIGHT_720);
+    void init(ControllerScreenCallbackInterface *, int, int, Resolution width = WIDTH_1280, Resolution height = HEIGHT_720);
 
     /**
     * It takes in the minimum and maximum values for the hue and saturation channels, and then passes them to the skinDetector
@@ -115,20 +115,28 @@ public:
 
 private:
     Mat currentFrame;
-    int toDisplay = UNPROCESSED;
     FingerAndCoordinates fingerAndCoordinates;
     SkinColorDetector skinDetector;
     FingerCounter fingerCounter;
-    bool backgroundCalibrated = false;
     Ptr<BackgroundSubtractor> backgroundRemover;
     Rect roi;
     ControllerScreenCallbackInterface *callback;
     DisplayControlCallbackInterface *controlInterface;
     CascadeClassifier *palmClassifier;
     Capture capture;
-    bool frameRecieved = false;
     thread uthread;
-    void processCommands();
+    thread commandThread;
     queue<FingerAndCoordinates> detectedFingers;
+    int displayWidth;
+    int displayHeight;
+    int toDisplay = UNPROCESSED;
+    bool backgroundCalibrated = false;
+    bool frameRecieved = false;
+
+    /**
+    * It takes the commands from the queue and executes them
+    */
+    void processCommands();
+
 };
 #endif //GESTRO_CAPTUREANDDETECT_H

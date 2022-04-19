@@ -5,7 +5,7 @@
 #include "vector"
 #include "Iir.h"
 #include "CaptureAndDetectCallbackInterface.h"
-#include "commands.h"
+#include "Commands.h"
 
 using namespace cv;
 using namespace std;
@@ -15,7 +15,6 @@ public:
     FingerCounter(void);
     FingerAndCoordinates findFingersCount(Mat input_image, Mat frame);
     void ConnectCallback(CaptureAndDetectCallbackInterface*);
-//    int getFingerNumber() {return fingerNumber;}
 
 private:
     Scalar color_blue;
@@ -26,7 +25,6 @@ private:
     double findPointsDistance(Point a, Point b);
     double findAngle(Point a, Point b, Point c);
     vector<int> fingers;
-    bool fingerChanged = false;
     int currentFinger = 0;
     int oldFinger = 0;
     Point oldFarPoint;

@@ -1,14 +1,14 @@
 #ifndef GESTRO_FINGERANDCOORDINATES_H
 #define GESTRO_FINGERANDCOORDINATES_H
-#include "commands.h"
+#include "Commands.h"
 
 class FingerAndCoordinates {
 public:
-    int count = 0;
+    int command = 0;
     int x;
     int y;
     FingerAndCoordinates();
-    FingerAndCoordinates(command, int x = 0, int y = 0);
+    FingerAndCoordinates(Commands, int x = 0, int y = 0);
 };
 
 
