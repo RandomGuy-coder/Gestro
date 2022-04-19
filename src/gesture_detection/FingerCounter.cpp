@@ -1,5 +1,4 @@
 #include "FingerCounter.h"
-#include "iostream"
 
 FingerCounter::FingerCounter(void) {
     color_blue = Scalar(255, 0, 0);

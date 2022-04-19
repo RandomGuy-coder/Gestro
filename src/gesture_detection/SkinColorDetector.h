@@ -6,6 +6,12 @@
 using namespace cv;
 using namespace std;
 
+/**
+ * @brief detects skin colour threshold and creates a skin mask.
+ *
+ * This class calculates the skin colour from a ROI of the image and
+ * then creates a skin mask on request.
+ */
 class SkinColorDetector {
 public:
     /**
@@ -39,8 +45,11 @@ public:
     */
     Mat getSkinMask(Mat inputFrame);
 
-
-    bool getCalibrated() {return calibrated;}
+    /**
+     * This method returns the calibrated flag.
+     * @return
+     */
+    bool getCalibrated();
 
     /**
     * This function takes in the HSV values of the skin color and sets the upper and lower bounds of the HSV values
@@ -53,9 +62,18 @@ public:
     void calibrateValues(int H_MIN, int H_MAX, int S_MIN, int S_MAX);
 
 private:
+
+    /** @brief These are the upper and lower bounds for the Hue and Saturation values.*/
     int hUpper, hLower, sUpper, sLower, vUpper, vLower;
+
+    /** @brief A variable that stores the mean of the HSV values of the two samples.*/
     Scalar MeansSample1, MeansSample2;
+
+    /** @brief A flag that is set to true when the skin color is calibrated.*/
     bool calibrated;
+
+
+    /** @brief Creating two rectangles. */
     Rect skinColorSamplerRect1, skinColorSamplerRect2;
 
     /**

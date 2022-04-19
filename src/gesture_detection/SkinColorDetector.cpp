@@ -52,6 +52,10 @@ void SkinColorDetector::calculateThresholds(Mat sample1, Mat sample2) {
     vLower = 0;
 }
 
+bool SkinColorDetector::getCalibrated() {
+    return calibrated;
+}
+
 void SkinColorDetector::calibrateValues(int H_MIN, int H_MAX, int S_MIN, int S_MAX) {
 
     hUpper = H_MAX;

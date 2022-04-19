@@ -9,7 +9,7 @@ StartScreen::StartScreen(QWidget *parent) :
     ui(new Ui::StartScreen)
 {
     ui->setupUi(this);
-    QImage *image1 = new QImage("../../src/resources/img/Logo.png");
+    QImage *image1 = new QImage("../src/resources/img/Logo.png");
     ui->label_logo->setPixmap(QPixmap::fromImage(*image1));
     ui->label_logo->show();
     ui->textBrowser_software_intro->setHidden(true);

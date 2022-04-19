@@ -1,0 +1,122 @@
+\hypertarget{classSkinColorDetector}{}\section{Skin\+Color\+Detector Class Reference}
+\label{classSkinColorDetector}\index{Skin\+Color\+Detector@{Skin\+Color\+Detector}}
+
+
+detects skin colour threshold and creates a skin mask.  
+
+
+
+
+{\ttfamily \#include $<$Skin\+Color\+Detector.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSkinColorDetector_ab059f7f926aac46a712db749b4df4f27}{Skin\+Color\+Detector} (void)
+\item 
+void \hyperlink{classSkinColorDetector_a4eb701f5b2761027b3e752d6b3de46c2}{draw\+Skin\+Color\+Sampler} (Mat input\+Frame)
+\item 
+vector$<$ int $>$ \hyperlink{classSkinColorDetector_ae8b3880d1d75b07e356cd7d1ff128ed9}{calibrate} (Mat input\+Frame)
+\item 
+Mat \hyperlink{classSkinColorDetector_a8cf2f51c4c7797a126b767e48458a006}{get\+Skin\+Mask} (Mat input\+Frame)
+\item 
+bool \hyperlink{classSkinColorDetector_ad02c96fbc75934c86d22dd90ee726373}{get\+Calibrated} ()
+\item 
+void \hyperlink{classSkinColorDetector_a4739dae25a983fb35a972f3c0ff8faaf}{calibrate\+Values} (int H\+\_\+\+M\+IN, int H\+\_\+\+M\+AX, int S\+\_\+\+M\+IN, int S\+\_\+\+M\+AX)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+detects skin colour threshold and creates a skin mask. 
+
+This class calculates the skin colour from a R\+OI of the image and then creates a skin mask on request. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSkinColorDetector_ab059f7f926aac46a712db749b4df4f27}\label{classSkinColorDetector_ab059f7f926aac46a712db749b4df4f27}} 
+\index{Skin\+Color\+Detector@{Skin\+Color\+Detector}!Skin\+Color\+Detector@{Skin\+Color\+Detector}}
+\index{Skin\+Color\+Detector@{Skin\+Color\+Detector}!Skin\+Color\+Detector@{Skin\+Color\+Detector}}
+\subsubsection{\texorpdfstring{Skin\+Color\+Detector()}{SkinColorDetector()}}
+{\footnotesize\ttfamily Skin\+Color\+Detector\+::\+Skin\+Color\+Detector (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+It initializes the class variables to default values. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classSkinColorDetector_ae8b3880d1d75b07e356cd7d1ff128ed9}\label{classSkinColorDetector_ae8b3880d1d75b07e356cd7d1ff128ed9}} 
+\index{Skin\+Color\+Detector@{Skin\+Color\+Detector}!calibrate@{calibrate}}
+\index{calibrate@{calibrate}!Skin\+Color\+Detector@{Skin\+Color\+Detector}}
+\subsubsection{\texorpdfstring{calibrate()}{calibrate()}}
+{\footnotesize\ttfamily vector$<$ int $>$ Skin\+Color\+Detector\+::calibrate (\begin{DoxyParamCaption}\item[{Mat}]{input\+Frame }\end{DoxyParamCaption})}
+
+It takes a frame as input, converts it to H\+SV, samples two regions of the frame, and calculates the thresholds for the skin color detector
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Frame} & The frame to be used for calibration.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The lower and upper bounds for the hue and saturation values. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSkinColorDetector_a4739dae25a983fb35a972f3c0ff8faaf}\label{classSkinColorDetector_a4739dae25a983fb35a972f3c0ff8faaf}} 
+\index{Skin\+Color\+Detector@{Skin\+Color\+Detector}!calibrate\+Values@{calibrate\+Values}}
+\index{calibrate\+Values@{calibrate\+Values}!Skin\+Color\+Detector@{Skin\+Color\+Detector}}
+\subsubsection{\texorpdfstring{calibrate\+Values()}{calibrateValues()}}
+{\footnotesize\ttfamily void Skin\+Color\+Detector\+::calibrate\+Values (\begin{DoxyParamCaption}\item[{int}]{H\+\_\+\+M\+IN,  }\item[{int}]{H\+\_\+\+M\+AX,  }\item[{int}]{S\+\_\+\+M\+IN,  }\item[{int}]{S\+\_\+\+M\+AX }\end{DoxyParamCaption})}
+
+This function takes in the H\+SV values of the skin color and sets the upper and lower bounds of the H\+SV values
+
+
+\begin{DoxyParams}{Parameters}
+{\em H\+\_\+\+M\+IN} & The minimum value of the Hue channel. \\
+\hline
+{\em H\+\_\+\+M\+AX} & The maximum value of the Hue channel. \\
+\hline
+{\em S\+\_\+\+M\+IN} & Minimum value for the Saturation channel \\
+\hline
+{\em S\+\_\+\+M\+AX} & The maximum value of the saturation channel. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSkinColorDetector_a4eb701f5b2761027b3e752d6b3de46c2}\label{classSkinColorDetector_a4eb701f5b2761027b3e752d6b3de46c2}} 
+\index{Skin\+Color\+Detector@{Skin\+Color\+Detector}!draw\+Skin\+Color\+Sampler@{draw\+Skin\+Color\+Sampler}}
+\index{draw\+Skin\+Color\+Sampler@{draw\+Skin\+Color\+Sampler}!Skin\+Color\+Detector@{Skin\+Color\+Detector}}
+\subsubsection{\texorpdfstring{draw\+Skin\+Color\+Sampler()}{drawSkinColorSampler()}}
+{\footnotesize\ttfamily void Skin\+Color\+Detector\+::draw\+Skin\+Color\+Sampler (\begin{DoxyParamCaption}\item[{Mat}]{input\+Frame }\end{DoxyParamCaption})}
+
+It draws two rectangles on the input frame, one at the center and one at the top
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Frame} & The frame that is being processed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSkinColorDetector_ad02c96fbc75934c86d22dd90ee726373}\label{classSkinColorDetector_ad02c96fbc75934c86d22dd90ee726373}} 
+\index{Skin\+Color\+Detector@{Skin\+Color\+Detector}!get\+Calibrated@{get\+Calibrated}}
+\index{get\+Calibrated@{get\+Calibrated}!Skin\+Color\+Detector@{Skin\+Color\+Detector}}
+\subsubsection{\texorpdfstring{get\+Calibrated()}{getCalibrated()}}
+{\footnotesize\ttfamily bool Skin\+Color\+Detector\+::get\+Calibrated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This method returns the calibrated flag. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSkinColorDetector_a8cf2f51c4c7797a126b767e48458a006}\label{classSkinColorDetector_a8cf2f51c4c7797a126b767e48458a006}} 
+\index{Skin\+Color\+Detector@{Skin\+Color\+Detector}!get\+Skin\+Mask@{get\+Skin\+Mask}}
+\index{get\+Skin\+Mask@{get\+Skin\+Mask}!Skin\+Color\+Detector@{Skin\+Color\+Detector}}
+\subsubsection{\texorpdfstring{get\+Skin\+Mask()}{getSkinMask()}}
+{\footnotesize\ttfamily Mat Skin\+Color\+Detector\+::get\+Skin\+Mask (\begin{DoxyParamCaption}\item[{Mat}]{input\+Frame }\end{DoxyParamCaption})}
+
+It takes an input frame, converts it to H\+SV, then uses the in\+Range function to create a mask of the skin color
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Frame} & The input frame from the camera\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A binary image of the skin mask. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/gesture\+\_\+detection/\hyperlink{SkinColorDetector_8h}{Skin\+Color\+Detector.\+h}\item 
+src/gesture\+\_\+detection/\hyperlink{SkinColorDetector_8cpp}{Skin\+Color\+Detector.\+cpp}\end{DoxyCompactItemize}

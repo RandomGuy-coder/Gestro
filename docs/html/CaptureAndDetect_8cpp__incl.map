@@ -1,0 +1,9 @@
+<map id="src/gesture_detection/CaptureAndDetect.cpp" name="src/gesture_detection/CaptureAndDetect.cpp">
+<area shape="rect" id="node2" href="$CaptureAndDetect_8h.html" title="CaptureAndDetect.h" alt="" coords="499,95,640,121"/>
+<area shape="rect" id="node4" href="$SkinColorDetector_8h.html" title="SkinColorDetector.h" alt="" coords="26,266,166,293"/>
+<area shape="rect" id="node5" href="$FingerCounter_8h.html" title="FingerCounter.h" alt="" coords="571,177,685,203"/>
+<area shape="rect" id="node6" href="$FingerAndCoordinates_8h.html" title="FingerAndCoordinates.h" alt="" coords="783,348,945,375"/>
+<area shape="rect" id="node10" href="$CaptureAndDetectCallbackInterface_8h.html" title="CaptureAndDetectCallback\lInterface.h" alt="" coords="324,259,505,300"/>
+<area shape="rect" id="node11" href="$Capture_8h.html" title="Capture.h" alt="" coords="326,177,405,203"/>
+<area shape="rect" id="node7" href="$Commands_8h.html" title="Commands.h" alt="" coords="754,423,854,449"/>
+</map>
