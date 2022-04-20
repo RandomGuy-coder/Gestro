@@ -241,7 +241,7 @@
            </font>
           </property>
           <property name="text">
-           <string>Increase and Decrease volume</string>
+           <string>Mute and Unmute</string>
           </property>
          </widget>
         </item>
