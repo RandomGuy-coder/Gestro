@@ -116,7 +116,7 @@ Gestro requires the following tools and libraries to run (other versions are not
 
 > If permission is denied while trying to run any of the scripts, please enter the following Commands into the terminal and try running the script again, ``` sudo chmod +x <script_name>.sh```.
 
->For example, for the install_dependencies.sh, enter ``` sudo chmod +x install_dependencies.sh ``` into the terminal.
+> For example, for the install_dependencies.sh, enter ``` sudo chmod +x install_dependencies.sh ``` into the terminal.
 
 **1. Download the latest [release]() from our Github and extract the contents into the Home folder.**
 
@@ -124,6 +124,7 @@ Gestro requires the following tools and libraries to run (other versions are not
 ```sh
 cd Gestro && ./install_dependencies.sh
 ```
+> Note: If CMake version is found to be too low, please follow instructions [here](https://askubuntu.com/a/829311) to update CMake.
 
 **3. Enter the following commands into the terminal to run the build script.**
 ```sh
