@@ -9,6 +9,7 @@
 #include <QTableWidget>
 #include <QTableWidgetItem>
 #include <QTime>
+#include "QKeyEvent"
 #include "boost/bind.hpp"
 #include "opencv2/opencv.hpp"
 #include "CaptureAndDetect.h"
@@ -17,6 +18,7 @@
 #include "ControllerScreenCallbackInterface.h"
 #include "CustomSignals.h"
 #include "Commands.h"
+
 
 using namespace cv;
 using namespace std;
@@ -35,6 +37,7 @@ public:
     void updateImage(Mat) override;
     void updateCalibratedTrackbar(int, int, int, int) override;
     void updateLogTable(String a, String b) override;
+    void keyPressEvent(QKeyEvent*) override;
 
 private:
     Ui::ControllerScreen *ui;

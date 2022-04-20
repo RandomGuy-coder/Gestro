@@ -165,3 +165,9 @@ void ControllerScreen::enableVolume() {
         enabledCommands.controlVolume= false;
     }
 }
+
+void ControllerScreen::keyPressEvent(QKeyEvent *keypress) {
+    if(keypress->key() == 66){
+        calibrateBackground_clicked();
+    }
+}
