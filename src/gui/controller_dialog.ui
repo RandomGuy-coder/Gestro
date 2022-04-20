@@ -14,7 +14,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Gestro</string>
   </property>
   <widget class="QLabel" name="label_show_guide">
    <property name="geometry">
@@ -127,14 +127,14 @@
          </font>
         </property>
         <property name="text">
-         <string>Calibrate</string>
+         <string>Calibrate Skin</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="calibrateROI">
         <property name="text">
-         <string>ROIBackground</string>
+         <string>Calibrate Background</string>
         </property>
        </widget>
       </item>
@@ -209,7 +209,7 @@
     <item row="0" column="1">
      <widget class="QGroupBox" name="groupBox">
       <property name="title">
-       <string>Select Controls</string>
+       <string>Select Functions</string>
       </property>
       <widget class="QWidget" name="verticalLayoutWidget">
        <property name="geometry">
@@ -229,7 +229,7 @@
            </font>
           </property>
           <property name="text">
-           <string>Control playback or pause</string>
+           <string>Enter Spacebar (Used for play and pause)</string>
           </property>
          </widget>
         </item>
@@ -241,7 +241,7 @@
            </font>
           </property>
           <property name="text">
-           <string>Control computer volume</string>
+           <string>Increase and Decrease volume</string>
           </property>
          </widget>
         </item>
@@ -253,7 +253,7 @@
            </font>
           </property>
           <property name="text">
-           <string>Control application switching</string>
+           <string>Minimize window</string>
           </property>
          </widget>
         </item>
@@ -265,7 +265,7 @@
            </font>
           </property>
           <property name="text">
-           <string>Control computer brightness</string>
+           <string> Move window</string>
           </property>
          </widget>
         </item>
@@ -277,7 +277,7 @@
            </font>
           </property>
           <property name="text">
-           <string>Control mouse</string>
+           <string>Move mouse and mouse clicks</string>
           </property>
          </widget>
         </item>

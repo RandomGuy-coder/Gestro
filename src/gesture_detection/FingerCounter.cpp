@@ -85,20 +85,23 @@ FingerAndCoordinates FingerCounter::findFingersCount(Mat input_image, Mat frame)
         fingers.push_back(cnt);
     }
     if(fingers.size() == 15) {
+        cout << oldFinger << endl;
         if(oldFinger == 2 and palmCallback->checkForPalm()) {
+            cout << "here" << endl;
+            fingers.clear();
             return {MUTE_UNMUTE, 0, 0};
         } else if (oldFinger == 3 and palmCallback->checkForPalm()) {
+            fingers.clear();
             return {MINIMIZE_WINDOW,0,0};
         } else {
             currentFinger = getFinger();
+            fingers.clear();
             if (currentFinger != oldFinger) {
                 Point farthestPoint = getHighestPoint(frame, contours, biggest_contour_index, defects);
                 oldFinger = currentFinger;
-                fingers.clear();
                 if(currentFinger == 1)
                     return {MOUSE_MOVE, xFilter.filter(farthestPoint.x), yFilter.filter(farthestPoint.y)};
             } else if (oldFinger == currentFinger) {
-                fingers.clear();
                 Point farthestPoint = getHighestPoint(frame, contours, biggest_contour_index, defects);
                 farthestPoint.x = xFilter.filter(farthestPoint.x);
                 farthestPoint.y = yFilter.filter(farthestPoint.y);
@@ -111,10 +114,12 @@ FingerAndCoordinates FingerCounter::findFingersCount(Mat input_image, Mat frame)
                 } else if(currentFinger == 2) {
                     if (difference.x > 40) {
                         return {VOLUME_UP};
-                    } else if (difference.y < 40)
+                    } else if (difference.x < -40)
                     {
                         return {VOLUME_DOWN};
                     }
+                } else if(currentFinger == 4) {
+                    return{PRESS_SPACE};
                 }
             }
         }
