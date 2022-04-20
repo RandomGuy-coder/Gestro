@@ -2,6 +2,8 @@
 #include "ui_widget.h"
 #include <QImage>
 #include <QPixmap>
+#include <QFile>
+#include <QTextStream>
 #include "ControllerScreen.h"
 
 StartScreen::StartScreen(QWidget *parent) :
@@ -10,6 +12,18 @@ StartScreen::StartScreen(QWidget *parent) :
 {
     ui->setupUi(this);
     QImage *image1 = new QImage("../src/resources/img/Logo.png");
+    QFile inputFile("../src/resources/text/instructions.txt");
+    inputFile.open(QIODevice::ReadOnly);
+    QTextStream in(&inputFile);
+    QString line = in.readAll();
+    inputFile.close();
+    QFile inputFile2("../src/resources/text/about.txt");
+    inputFile2.open(QIODevice::ReadOnly);
+    QTextStream in2(&inputFile2);
+    QString line2 = in2.readAll();
+    inputFile2.close();
+    ui->textBrowser_software_intro->setPlainText(line);
+    ui->textBrowser_team_intro->setPlainText(line2);
     ui->label_logo->setPixmap(QPixmap::fromImage(*image1));
     ui->label_logo->show();
     ui->textBrowser_software_intro->setHidden(true);

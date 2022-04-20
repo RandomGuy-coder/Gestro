@@ -1,0 +1,12 @@
+The team behind Gestro are students from The University of Glasgow currently undertaking the course of ENG5220 - Real-Time Embedded Systems under Team 26. Gestro is completed as part of the ENG5220 course by Team 26 at The University of Glasgow.
+
+Team Members:
+Tushar Anil Mittal, 2669699M
+Tian Jie Wong, 2702282W
+Muhatasim Intisar, 2683935I
+Ruoqi Sun, 2574212S
+
+Gestro v1.0.0
+Copyright © 2022; ENG5220 - Real-Time-Embedded-Systems - Team 26:
+Tushar Anil Mittal, Tian Jie Wong, Muhatasim Intisar, Ruoqi Sun
+Distributed by a GNU GPL-3.0 license.
