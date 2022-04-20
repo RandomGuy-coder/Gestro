@@ -61,7 +61,6 @@ if [ ! -d "opencv_build" ]; then
   make -j$(nproc) || exit 1
   cd ..
   rm "$CV_VERSION.zip"
-  rm -r opencv_src
 else
   printf " skipped\n"
   rm "$CV_VERSION.zip"

@@ -115,7 +115,7 @@ void CaptureAndDetect::processCommands() {
                     controlInterface->doWindowMinimize();
                     break;
                 case PRESS_SPACE:
-                    controlInterface->doKeyPress(65);
+                    controlInterface->doKeyPress(32);
                     break;
             }
             detectedFingers.pop();

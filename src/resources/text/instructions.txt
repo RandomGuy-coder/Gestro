@@ -1,0 +1,30 @@
+1. Feedback display
+The feedback display displays the Unprocessed Feed by default to show the user what is being captured from their webcam without going through any processing.
+
+To start using Gestro, the user should first press Calibrate Skin, followed by the Calibrate Background button, then select the functions that they want to use before they start performing hand gestures to call the functions. *If the Skin Mask doesn't clearly show only the hand of the user, please adjust the sliders in Calibrate Values.*
+
+Calibrate Skin - Calibrates the feed to detect the skin color of the user. *Note: The user has to first move one of their hands to cover the blue boxes shown in Unprocessed Feed before clicking Calibrate Skin*
+
+Calibrate Background - Calibrates the feed to ignore the background of the user. *Note: Before clicking Calibrate Background, the user should remove their hands from the camera feed to avoid it being detected as background.*
+
+The instructions and description to the other buttons are:
+
+Skin Mask - Displays the skin mask to the user, will be available and is selected automatically after clicking Calibrate Skin.
+
+Detector - Displays the finger detection to the user, will be available after clicking Calibrate Skin.
+
+2. Select Controls
+Here users will be able to select and deselect the features that they would like to use through the corresponding checkboxes,
+
+Here are the list of features which can be select or deselect:
+
+Enter Spacebar (used to control play or pause)
+Increase and Decrease Volume
+Minimise window.
+Move Window.
+Move mouse and perform mouse clicks.
+3. Calibrate Values
+There are four trackbars which can be manually adjusted to make sure the hand detection is working as intended in cases where either or both the automatic calibrate buttons does not give the best results.
+
+4. Log
+There is a log here which records details on the buttons that were selected on previously (Eg. Calibrate Skin, Skin Detector, etc).
