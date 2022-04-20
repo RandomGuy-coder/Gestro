@@ -124,7 +124,7 @@ Gestro requires the following tools and libraries to run (other versions are not
 ```sh
 cd Gestro && ./install_dependencies.sh
 ```
-> Note: If CMake version is found to be too low, please follow instructions [here](https://askubuntu.com/a/829311) to update CMake.
+> Note: If CMake version is found to be too low, please follow instructions [here](https://askubuntu.com/a/829311) to update CMake. After updating CMake, make sure to close and reopen the terminal before starting from step 2 again.
 
 **3. Enter the following commands into the terminal to run the build script.**
 ```sh
