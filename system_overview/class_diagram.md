@@ -16,4 +16,4 @@ The class diagram for Gestro is shown below.
   </a>
 </div>
 
-For more details, please visit our [documentation page]().
+For more details, please visit our [documentation page](docs/html/index.html).

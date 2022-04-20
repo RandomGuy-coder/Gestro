@@ -1,0 +1,92 @@
+\hypertarget{classCapture}{}\section{Capture Class Reference}
+\label{classCapture}\index{Capture@{Capture}}
+
+
+runs a thread to start camera and capture image  
+
+
+
+
+{\ttfamily \#include $<$Capture.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCapture_a97036b5d271238bd4852da79a0091b57}{Capture} ()
+\item 
+void \hyperlink{classCapture_a1c661ca1dca730fae534cb8f54ff6ef5}{init} (\hyperlink{classCaptureAndDetectCallbackInterface}{Capture\+And\+Detect\+Callback\+Interface} $\ast$, int, int)
+\item 
+void \hyperlink{classCapture_a2ffe4eeac4caa296f4fcc75cc82c1436}{start} ()
+\item 
+void \hyperlink{classCapture_ab632f1927461a909b18cce71ec96f76d}{stop} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classCapture_a4120483ac2f664e14a80ec5dcd9915cb}{running} = false
+\begin{DoxyCompactList}\small\item\em boolean to check if cmaera is running \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+runs a thread to start camera and capture image 
+
+A class that captures images from the webcam and calls the callback function with the image. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCapture_a97036b5d271238bd4852da79a0091b57}\label{classCapture_a97036b5d271238bd4852da79a0091b57}} 
+\index{Capture@{Capture}!Capture@{Capture}}
+\index{Capture@{Capture}!Capture@{Capture}}
+\subsubsection{\texorpdfstring{Capture()}{Capture()}}
+{\footnotesize\ttfamily Capture\+::\+Capture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+The constructor for the class. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCapture_a1c661ca1dca730fae534cb8f54ff6ef5}\label{classCapture_a1c661ca1dca730fae534cb8f54ff6ef5}} 
+\index{Capture@{Capture}!init@{init}}
+\index{init@{init}!Capture@{Capture}}
+\subsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Capture\+::init (\begin{DoxyParamCaption}\item[{\hyperlink{classCaptureAndDetectCallbackInterface}{Capture\+And\+Detect\+Callback\+Interface} $\ast$}]{interface,  }\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
+
+It initializes the \hyperlink{classCapture}{Capture} class with the width and height of the image to be captured, and a pointer to the Detect\+Interface class
+
+
+\begin{DoxyParams}{Parameters}
+{\em interface} & The interface that will be called when a new frame is available. \\
+\hline
+{\em width} & The width of the image to be captured. \\
+\hline
+{\em height} & The height of the image to be captured. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCapture_a2ffe4eeac4caa296f4fcc75cc82c1436}\label{classCapture_a2ffe4eeac4caa296f4fcc75cc82c1436}} 
+\index{Capture@{Capture}!start@{start}}
+\index{start@{start}!Capture@{Capture}}
+\subsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Capture\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+It starts a thread that runs the image\+Cap function to read Images \mbox{\Hypertarget{classCapture_ab632f1927461a909b18cce71ec96f76d}\label{classCapture_ab632f1927461a909b18cce71ec96f76d}} 
+\index{Capture@{Capture}!stop@{stop}}
+\index{stop@{stop}!Capture@{Capture}}
+\subsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void Capture\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+It stops the capture thread by setting the running flag to false, and then waits for the thread to finish 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classCapture_a4120483ac2f664e14a80ec5dcd9915cb}\label{classCapture_a4120483ac2f664e14a80ec5dcd9915cb}} 
+\index{Capture@{Capture}!running@{running}}
+\index{running@{running}!Capture@{Capture}}
+\subsubsection{\texorpdfstring{running}{running}}
+{\footnotesize\ttfamily bool Capture\+::running = false}
+
+
+
+boolean to check if cmaera is running 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/gesture\+\_\+detection/\hyperlink{Capture_8h}{Capture.\+h}\item 
+src/gesture\+\_\+detection/\hyperlink{Capture_8cpp}{Capture.\+cpp}\end{DoxyCompactItemize}

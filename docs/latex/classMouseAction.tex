@@ -1,0 +1,102 @@
+\hypertarget{classMouseAction}{}\section{Mouse\+Action Class Reference}
+\label{classMouseAction}\index{Mouse\+Action@{Mouse\+Action}}
+
+
+A wrapper class for mouse control.  
+
+
+
+
+{\ttfamily \#include $<$Mouse\+Action.\+h$>$}
+
+
+
+Inheritance diagram for Mouse\+Action\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=161pt]{classMouseAction__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMouseAction_a42e540b994144f3f8775baded5370b14}{Mouse\+Action} (Display $\ast$d, X\+Event e)
+\item 
+void \hyperlink{classMouseAction_aa017b86a7e358e7a74a8ec50a5a191cf}{press\+Button} (int button)
+\item 
+void \hyperlink{classMouseAction_ab1ac193e88baf8614c55ca2fa7a3b430}{release\+Button} (int button)
+\item 
+void \hyperlink{classMouseAction_a7a14cab01ad2ccdb1b135d4bae939fe2}{move\+Mouse\+To} (int x, int y)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A wrapper class for mouse control. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMouseAction_a42e540b994144f3f8775baded5370b14}\label{classMouseAction_a42e540b994144f3f8775baded5370b14}} 
+\index{Mouse\+Action@{Mouse\+Action}!Mouse\+Action@{Mouse\+Action}}
+\index{Mouse\+Action@{Mouse\+Action}!Mouse\+Action@{Mouse\+Action}}
+\subsubsection{\texorpdfstring{Mouse\+Action()}{MouseAction()}}
+{\footnotesize\ttfamily Mouse\+Action\+::\+Mouse\+Action (\begin{DoxyParamCaption}\item[{Display $\ast$}]{d,  }\item[{X\+Event}]{e }\end{DoxyParamCaption})}
+
+Constructor takes a Display and an X\+Event and stores them in the class
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & The display that the event occurred on. \\
+\hline
+{\em e} & The X\+Event used to trigger the mouse action. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMouseAction_a7a14cab01ad2ccdb1b135d4bae939fe2}\label{classMouseAction_a7a14cab01ad2ccdb1b135d4bae939fe2}} 
+\index{Mouse\+Action@{Mouse\+Action}!move\+Mouse\+To@{move\+Mouse\+To}}
+\index{move\+Mouse\+To@{move\+Mouse\+To}!Mouse\+Action@{Mouse\+Action}}
+\subsubsection{\texorpdfstring{move\+Mouse\+To()}{moveMouseTo()}}
+{\footnotesize\ttfamily void Mouse\+Action\+::move\+Mouse\+To (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+Wrapper function for moving the mouse
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & x-\/coordinate for mouse position. \\
+\hline
+{\em y} & y-\/coordinate for mouse position. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMouseAction_aa017b86a7e358e7a74a8ec50a5a191cf}\label{classMouseAction_aa017b86a7e358e7a74a8ec50a5a191cf}} 
+\index{Mouse\+Action@{Mouse\+Action}!press\+Button@{press\+Button}}
+\index{press\+Button@{press\+Button}!Mouse\+Action@{Mouse\+Action}}
+\subsubsection{\texorpdfstring{press\+Button()}{pressButton()}}
+{\footnotesize\ttfamily void Mouse\+Action\+::press\+Button (\begin{DoxyParamCaption}\item[{int}]{button }\end{DoxyParamCaption})}
+
+Wrapper function for pressing Button
+
+
+\begin{DoxyParams}{Parameters}
+{\em button} & The button to press. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMouseAction_ab1ac193e88baf8614c55ca2fa7a3b430}\label{classMouseAction_ab1ac193e88baf8614c55ca2fa7a3b430}} 
+\index{Mouse\+Action@{Mouse\+Action}!release\+Button@{release\+Button}}
+\index{release\+Button@{release\+Button}!Mouse\+Action@{Mouse\+Action}}
+\subsubsection{\texorpdfstring{release\+Button()}{releaseButton()}}
+{\footnotesize\ttfamily void Mouse\+Action\+::release\+Button (\begin{DoxyParamCaption}\item[{int}]{button }\end{DoxyParamCaption})}
+
+Wrapper function for releasing Button
+
+
+\begin{DoxyParams}{Parameters}
+{\em button} & The button to release. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/ubuntu\+\_\+controls/\hyperlink{MouseAction_8h}{Mouse\+Action.\+h}\item 
+src/ubuntu\+\_\+controls/\hyperlink{MouseAction_8cpp}{Mouse\+Action.\+cpp}\end{DoxyCompactItemize}

@@ -8,5 +8,5 @@ title: Code Documentation
 The documentation for Gestro are generated using Doxygen:
 
 <div align="center">
-  <a href="" class="btn">Visit Gestro's Doxygen Documentation Page</a>
+  <a href="docs/html/index.html" class="btn">Visit Gestro's Doxygen Documentation Page</a>
 </div>
