@@ -74,11 +74,11 @@ Click to view our [demonstration video]()!
 
 
 ### Features
-* Enter keys.
+* Enter Spacebar (Used for Play and Pause).
 * Track mouse.
 * Perform mouse clicks.
 * Increase and Decrease Volume.
-* Change window size.
+
 * Move and Minimise window.
 
 ### Built With
@@ -159,15 +159,17 @@ ENG5220 - Real-time Embedded Systems - Team 26:
 
 ## Future Enhancement:
 Here are some of the planned features for this project:
+* Enter other keys
 * Close Window
+* Change window size
 * Play and Pause
 * Play Next and Previous
-* Mute and Unmute.
+* Mute and Unmute
 * Zoom in and Zoom out
 * Switch between applications
 * Increase and Decrease Brightness
 
-Propose for a new feature or report a bug [here]()!
+Propose for a new feature or report a bug [here](https://github.com/RandomGuy-coder/Gestro/issues)!
 
 > Feel free to contribute to this project by forking it and submitting a pull request for the added changes.
 
@@ -183,7 +185,7 @@ Propose for a new feature or report a bug [here]()!
 </nav>
 
 ## Documentation
-Check out [Gestro's documentation page]()!
+Check out [Gestro's documentation page](https://randomguy-coder.github.io/Gestro/docs/html/index.html)!
 
 ## License
 Distributed under the GPL-3.0 License. See [`LICENSE`](https://github.com/RandomGuy-coder/Gestro/blob/main/LICENSE) for more information.
