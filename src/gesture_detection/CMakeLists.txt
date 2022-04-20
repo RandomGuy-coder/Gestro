@@ -1,6 +1,6 @@
 add_library(gesture_detection Capture.cpp Capture.h CaptureAndDetectCallbackInterface.h CaptureAndDetect.cpp
         CaptureAndDetect.h FingerCounter.cpp FingerCounter.h SkinColorDetector.cpp SkinColorDetector.h
-        FingerAndCoordinates.cpp FingerAndCoordinates.h)
+        FingerAndCoordinates.cpp FingerAndCoordinates.h Commands.cpp Commands.h)
 
 find_package(OpenCV 4.5 REQUIRED PATHS "/usr/local/")
 find_package(Threads)

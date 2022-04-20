@@ -4,7 +4,7 @@
 CaptureAndDetect::CaptureAndDetect() {
 }
 
-void CaptureAndDetect::init(ControllerScreenCallbackInterface *interface,  int screenWidth, int screenHeight,
+void CaptureAndDetect::init(ControllerScreenCallbackInterface *interface, int screenWidth, int screenHeight, EnabledCommand *enabledCommand,
                             Resolution width, Resolution height) {
     capture.init(this, width, height);
     displayWidth = screenWidth;
@@ -16,6 +16,7 @@ void CaptureAndDetect::init(ControllerScreenCallbackInterface *interface,  int s
     commandThread = thread(&CaptureAndDetect::processCommands, this);
     palmClassifier = new CascadeClassifier("../src/resources/cascades/rpalm.xml");
     fingerCounter.ConnectCallback(this);
+    commands = enabledCommand;
 }
 
 void CaptureAndDetect::calibrateValues(int hMin, int hMax, int sMin, int sMax) {
@@ -91,31 +92,47 @@ void CaptureAndDetect::processCommands() {
 
             switch(toProcess.command) {
                 case MOUSE_MOVE:
-                    controlInterface->doMouseMove(displayWidth/((float)roi.width/(float)toProcess.x),
-                                                  displayHeight/((float)roi.height/(float)toProcess.y));
+                    if(commands->controlMouse) {
+                        controlInterface->doMouseMove(displayWidth / ((float) roi.width / (float) toProcess.x),
+                                                      displayHeight / ((float) roi.height / (float) toProcess.y));
+                    }
                     break;
                 case MOUSE_CLICK:
-                    controlInterface->doButtonPress(1);
+                    if(commands->controlMouse) {
+                        controlInterface->doButtonPress(1);
+                    }
                     break;
                 case VOLUME_UP:
-                    controlInterface->doUnmute();
-                    controlInterface->doIncreaseVolume();
+                    if(commands->controlVolume) {
+                        controlInterface->doUnmute();
+                        controlInterface->doIncreaseVolume();
+                    }
                     break;
                 case VOLUME_DOWN:
-                    controlInterface->doReduceVolume();
+                    if(commands->controlVolume) {
+                        controlInterface->doReduceVolume();
+                    }
                     break;
                 case MUTE_UNMUTE:
-                    controlInterface->doMuteUnmute();
+                    if(commands->controlVolume) {
+                        controlInterface->doMuteUnmute();
+                    }
                     break;
                 case MOVE_WINDOW:
-                    controlInterface->doWindowMove(displayWidth/((float)roi.width/(float)toProcess.x),
-                                                   displayHeight/((float)roi.height/(float)toProcess.y));
+                    if(commands->controlMoveWindow) {
+                        controlInterface->doWindowMove(displayWidth / ((float) roi.width / (float) toProcess.x),
+                                                       displayHeight / ((float) roi.height / (float) toProcess.y));
+                    }
                     break;
                 case MINIMIZE_WINDOW:
-                    controlInterface->doWindowMinimize();
+                    if(commands->controlMinimizeWindow) {
+                        controlInterface->doWindowMinimize();
+                    }
                     break;
                 case PRESS_SPACE:
-                    controlInterface->doKeyPress(32);
+                    if(commands->controlSpacebar) {
+                        controlInterface->doKeyPress(32);
+                    }
                     break;
             }
             detectedFingers.pop();

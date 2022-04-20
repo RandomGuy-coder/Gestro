@@ -54,7 +54,7 @@ public:
     * @param screenWidth The width of the screen in pixels
     * @param screenHeight The height of the screen in pixels.
     */
-    void init(ControllerScreenCallbackInterface *, int, int, Resolution width = WIDTH_1280, Resolution height = HEIGHT_720);
+    void init(ControllerScreenCallbackInterface *, int, int, EnabledCommand*, Resolution width = WIDTH_1280, Resolution height = HEIGHT_720);
 
     /**
     * It takes in the minimum and maximum values for the hue and saturation channels, and then passes them to the skinDetector
@@ -162,6 +162,8 @@ private:
 
     /** \brief buffer to store the finger count, listened by command thread*/
     queue<FingerAndCoordinates> detectedFingers;
+
+    EnabledCommand *commands;
 
     /** \brief width of the display */
     int displayWidth;

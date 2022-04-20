@@ -16,6 +16,7 @@
 #include "FingerAndCoordinates.h"
 #include "ControllerScreenCallbackInterface.h"
 #include "CustomSignals.h"
+#include "Commands.h"
 
 using namespace cv;
 using namespace std;
@@ -44,6 +45,7 @@ private:
     CustomSignals signal;
     void connectGuiEvents();
     void connectSignals();
+    EnabledCommand enabledCommands;
 
 public slots:
     void unprocessedFeed_clicked();
@@ -52,6 +54,11 @@ public slots:
     void calibrate_clicked();
     void setCalibrationValues();
     void calibrateBackground_clicked();
+    void enableMouse();
+    void enableSpaceBar();
+    void enableMinimizeWindow();
+    void enableMoveWindow();
+    void enableVolume();
 };
 
 #endif // CONTROLLER_DIALOG_H

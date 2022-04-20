@@ -13,7 +13,7 @@ ControllerScreen::ControllerScreen(QWidget *parent) :
     ui->label_show_guide->adjustSize();
     //ui->label_show_guide->show();
     Screen *screen = DefaultScreenOfDisplay(display);
-    captureAndDetect.init(this, screen->width, screen->height);
+    captureAndDetect.init(this, screen->width, screen->height, &enabledCommands);
     captureAndDetect.connectControlCallback(&displayControl);
     ui->scrollArea->setWidget(ui->label_show_guide);
     connectGuiEvents();
@@ -44,6 +44,12 @@ void ControllerScreen::connectGuiEvents() {
     connect(ui->sMinSlider, SIGNAL(valueChanged(int)), this, SLOT(setCalibrationValues()));
     connect(ui->sMaxSlider, SIGNAL(valueChanged(int)), this, SLOT(setCalibrationValues()));
     connect(ui->calibrateROI, SIGNAL(clicked(bool)), this, SLOT(calibrateBackground_clicked()));
+    connect(ui->checkBox_3, SIGNAL(clicked(bool)), this, SLOT(enableMouse()));
+    connect(ui->checkBox, SIGNAL(clicked(bool)), this, SLOT(enableVolume()));
+    connect(ui->checkBox_5, SIGNAL(clicked(bool)), this, SLOT(enableSpaceBar()));
+    connect(ui->checkBox_4, SIGNAL(clicked(bool)), this, SLOT(enableMinimizeWindow()));
+    connect(ui->checkBox_2,SIGNAL(clicked(bool)), this, SLOT(enableMoveWindow()));
+//    connect(ui->checkBox)
 }
 
 ControllerScreen::~ControllerScreen()
@@ -118,4 +124,44 @@ void ControllerScreen::updateLogTable(String a, String b) {
     ui->tableWidget->setItem(currentRow,1,new QTableWidgetItem(QString::fromStdString(a)));
     ui->tableWidget->setItem(currentRow,2, new QTableWidgetItem(QString::fromStdString(b)));
     ui->tableWidget->setItem(currentRow,3, new QTableWidgetItem(current_time.toString()));
+}
+
+void ControllerScreen::enableMouse() {
+    if(ui->checkBox_3->isChecked()){
+        enabledCommands.controlMouse = true;
+    } else {
+        enabledCommands.controlMouse = false;
+    }
+}
+
+void ControllerScreen::enableSpaceBar() {
+    if(ui->checkBox_5->isChecked()){
+        enabledCommands.controlSpacebar = true;
+    } else {
+        enabledCommands.controlSpacebar = false;
+    }
+}
+
+void ControllerScreen::enableMinimizeWindow() {
+    if(ui->checkBox_4->isChecked()){
+        enabledCommands.controlMinimizeWindow = true;
+    } else {
+        enabledCommands.controlMinimizeWindow= false;
+    }
+}
+
+void ControllerScreen::enableMoveWindow() {
+    if(ui->checkBox_2->isChecked()){
+        enabledCommands.controlMoveWindow = true;
+    } else {
+        enabledCommands.controlMoveWindow= false;
+    }
+}
+
+void ControllerScreen::enableVolume() {
+    if(ui->checkBox->isChecked()){
+        enabledCommands.controlVolume = true;
+    } else {
+        enabledCommands.controlVolume= false;
+    }
 }

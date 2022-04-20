@@ -41,7 +41,7 @@ FingerAndCoordinates FingerCounter::findFingersCount(Mat input_image, Mat frame)
         }
     }
 
-    if (biggest_contour_index < 0 || biggest_area < 150) {
+    if (biggest_contour_index < 0 || biggest_area < 200) {
         oldFinger = 0;
         return {};
     }
@@ -85,9 +85,9 @@ FingerAndCoordinates FingerCounter::findFingersCount(Mat input_image, Mat frame)
         fingers.push_back(cnt);
     }
     if(fingers.size() == 15) {
-        cout << oldFinger << endl;
+//        cout << oldFinger << endl;
         if(oldFinger == 2 and palmCallback->checkForPalm()) {
-            cout << "here" << endl;
+//            cout << "here" << endl;
             fingers.clear();
             return {MUTE_UNMUTE, 0, 0};
         } else if (oldFinger == 3 and palmCallback->checkForPalm()) {
@@ -112,12 +112,13 @@ FingerAndCoordinates FingerCounter::findFingersCount(Mat input_image, Mat frame)
                         return {MOUSE_CLICK,farthestPoint.x, farthestPoint.y};
                     }
                 } else if(currentFinger == 2) {
-                    if (difference.x > 40) {
-                        return {VOLUME_UP};
-                    } else if (difference.x < -40)
-                    {
-                        return {VOLUME_DOWN};
-                    }
+                    return {MUTE_UNMUTE};
+//                    if (difference.x > 40) {
+//                        return {VOLUME_UP};
+//                    } else if (difference.x < -40)
+//                    {
+//                        return {VOLUME_DOWN};
+//                    }
                 } else if(currentFinger == 4) {
                     return{PRESS_SPACE};
                 }
@@ -156,6 +157,12 @@ int FingerCounter::getFinger() {
         }
     }
     return finger;
+//    if(max <= 5) {
+//        return 0;
+//    } else {
+//        return finger;
+//    }
+
 }
 
 Point FingerCounter::farthest_point(vector<Vec4i> defects, vector<Point>contour, Point centroid){

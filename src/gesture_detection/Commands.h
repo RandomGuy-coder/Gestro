@@ -23,4 +23,13 @@ enum Commands {
     PRESS_SPACE
 };
 
+class EnabledCommand{
+public:
+    bool controlSpacebar;
+    bool controlMouse;
+    bool controlMoveWindow;
+    bool controlVolume;
+    bool controlMinimizeWindow;
+    EnabledCommand(void);
+};
 #endif //GESTRO_COMMANDS_H
