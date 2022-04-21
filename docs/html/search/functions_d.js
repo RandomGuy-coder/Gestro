@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['volumecontrol',['VolumeControl',['../classVolumeControl.html#a3cc73bb232bd87f8385da0440126c38c',1,'VolumeControl']]]
+  ['unmute',['unmute',['../classUbuntuController_1_1VolumeControl.html#a4a541c510e22cd07b206ca80f979c1a1',1,'UbuntuController::VolumeControl']]]
 ];

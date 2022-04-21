@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['height_5f1080',['HEIGHT_1080',['../CaptureAndDetect_8h.html#a3c1fc1369ee351f25804c8cde5e85ac3a62e4215c07636cf44ab26b46fabe7029',1,'CaptureAndDetect.h']]],
-  ['height_5f720',['HEIGHT_720',['../CaptureAndDetect_8h.html#a3c1fc1369ee351f25804c8cde5e85ac3aaf8940bab7f04c8cd702f61c4d051f27',1,'CaptureAndDetect.h']]]
+  ['gestro',['Gestro',['../namespaceGestro.html',1,'']]],
+  ['gesturedetection',['GestureDetection',['../namespaceGestureDetection.html',1,'']]],
+  ['getcalibrated',['getCalibrated',['../classGestureDetection_1_1SkinColorDetector.html#ad02c96fbc75934c86d22dd90ee726373',1,'GestureDetection::SkinColorDetector']]],
+  ['getskinmask',['getSkinMask',['../classGestureDetection_1_1SkinColorDetector.html#a8cf2f51c4c7797a126b767e48458a006',1,'GestureDetection::SkinColorDetector']]]
 ];

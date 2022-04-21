@@ -1,5 +1,7 @@
 #include "Commands.h"
 
+using namespace GestureDetection;
+
 EnabledCommand::EnabledCommand() {
     controlMouse = false;
     controlMoveWindow = false;

@@ -22,6 +22,8 @@
 
 using namespace cv;
 using namespace std;
+using namespace Gestro;
+
 namespace Ui {
 class ControllerScreen;
 }

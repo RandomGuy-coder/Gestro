@@ -1,5 +1,7 @@
 #include "KeyboardEvent.h"
 
+using namespace UbuntuController;
+
 KeyboardEvent::KeyboardEvent(void){};
 
 XKeyEvent KeyboardEvent::createKeyEvent(Display *display, Window &win,

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['identifywindow',['identifyWindow',['../classWindowControl.html#aad092a22b19664df4d94fe9a853d350a',1,'WindowControl']]],
-  ['increasevolume',['increaseVolume',['../classVolumeControl.html#a6b51293368c1740b9bee0b8a4e7ed421',1,'VolumeControl']]],
-  ['init',['init',['../classCapture.html#a1c661ca1dca730fae534cb8f54ff6ef5',1,'Capture::init()'],['../classCaptureAndDetect.html#a485523d1c8231e2f744bf9d7fa110f88',1,'CaptureAndDetect::init()']]]
+  ['height_5f1080',['HEIGHT_1080',['../CaptureAndDetect_8h.html#a3c1fc1369ee351f25804c8cde5e85ac3a62e4215c07636cf44ab26b46fabe7029',1,'CaptureAndDetect.h']]],
+  ['height_5f720',['HEIGHT_720',['../CaptureAndDetect_8h.html#a3c1fc1369ee351f25804c8cde5e85ac3aaf8940bab7f04c8cd702f61c4d051f27',1,'CaptureAndDetect.h']]]
 ];

@@ -1,5 +1,6 @@
 #include "CaptureAndDetect.h"
 
+using namespace Gestro;
 
 CaptureAndDetect::CaptureAndDetect() {
 }

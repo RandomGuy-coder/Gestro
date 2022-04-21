@@ -1,6 +1,7 @@
 <map id="src/gesture_detection/Commands.h" name="src/gesture_detection/Commands.h">
 <area shape="rect" id="node2" href="$FingerAndCoordinates_8h.html" title="src/gesture_detection\l/FingerAndCoordinates.h" alt="" coords="270,95,437,136"/>
 <area shape="rect" id="node3" href="$FingerCounter_8h.html" title="src/gesture_detection\l/FingerCounter.h" alt="" coords="440,273,587,315"/>
+<area shape="rect" id="node11" href="$Commands_8cpp.html" title="src/gesture_detection\l/Commands.cpp" alt="" coords="601,95,748,136"/>
 <area shape="rect" id="node4" href="$CaptureAndDetect_8h.html" title="src/gesture_detection\l/CaptureAndDetect.h" alt="" coords="275,363,421,404"/>
 <area shape="rect" id="node7" href="$CaptureAndDetectCallbackInterface_8h.html" title="src/gesture_detection\l/CaptureAndDetectCallbackInterface.h" alt="" coords="230,184,477,225"/>
 <area shape="rect" id="node10" href="$FingerAndCoordinates_8cpp.html" title="src/gesture_detection\l/FingerAndCoordinates.cpp" alt="" coords="26,184,206,225"/>

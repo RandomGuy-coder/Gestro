@@ -1,6 +1,8 @@
 #include "WindowControl.h"
 #include "iostream"
 
+using namespace UbuntuController;
+
 WindowControl::WindowControl(void){};
 
 Window WindowControl::identifyWindow(Display *display)

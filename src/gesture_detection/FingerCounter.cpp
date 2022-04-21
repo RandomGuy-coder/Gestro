@@ -1,5 +1,7 @@
 #include "FingerCounter.h"
 
+using namespace GestureDetection;
+
 FingerCounter::FingerCounter(void) {
     color_blue = Scalar(255, 0, 0);
     color_green = Scalar(0, 255, 0);

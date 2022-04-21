@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['keyboardaction',['KeyboardAction',['../classKeyboardAction.html#af59163694e9b55ceaa75d779363e7fc9',1,'KeyboardAction']]],
-  ['keyboardevent',['KeyboardEvent',['../classKeyboardEvent.html#a5a4efca276ce847a471b228c4a114bc7',1,'KeyboardEvent']]],
-  ['keypress',['keyPress',['../classKeyboardEvent.html#aea537f2a22fc1f162fd81b5d039eb053',1,'KeyboardEvent']]]
+  ['identifywindow',['identifyWindow',['../classUbuntuController_1_1WindowControl.html#aad092a22b19664df4d94fe9a853d350a',1,'UbuntuController::WindowControl']]],
+  ['increasevolume',['increaseVolume',['../classUbuntuController_1_1VolumeControl.html#a6b51293368c1740b9bee0b8a4e7ed421',1,'UbuntuController::VolumeControl']]],
+  ['init',['init',['../classGestureDetection_1_1Capture.html#aaff420636b6bac6593789344cc990580',1,'GestureDetection::Capture::init()'],['../classGestro_1_1CaptureAndDetect.html#a1df110dc696cebc95eb5d7ead2d74447',1,'Gestro::CaptureAndDetect::init()']]]
 ];

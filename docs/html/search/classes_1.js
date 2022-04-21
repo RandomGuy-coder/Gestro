@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['displaycontrol',['DisplayControl',['../classDisplayControl.html',1,'']]],
-  ['displaycontrolcallbackinterface',['DisplayControlCallbackInterface',['../classDisplayControlCallbackInterface.html',1,'']]]
+  ['displaycontrol',['DisplayControl',['../classGestro_1_1DisplayControl.html',1,'Gestro']]],
+  ['displaycontrolcallbackinterface',['DisplayControlCallbackInterface',['../classGestro_1_1DisplayControlCallbackInterface.html',1,'Gestro']]]
 ];

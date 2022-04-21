@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['x',['x',['../classFingerAndCoordinates.html#ac68efb78d744788be7e3105627fe9320',1,'FingerAndCoordinates']]]
+  ['x',['x',['../classGestureDetection_1_1FingerAndCoordinates.html#ad4442375646440085aafa4d366b2eb6b',1,'GestureDetection::FingerAndCoordinates']]]
 ];
