@@ -171,41 +171,6 @@
       </property>
      </widget>
     </item>
-    <item row="2" column="0">
-     <widget class="QScrollArea" name="scrollArea">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="verticalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOn</enum>
-      </property>
-      <property name="horizontalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOn</enum>
-      </property>
-      <property name="sizeAdjustPolicy">
-       <enum>QAbstractScrollArea::AdjustIgnored</enum>
-      </property>
-      <property name="widgetResizable">
-       <bool>false</bool>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <widget class="QWidget" name="scrollAreaWidgetContents">
-       <property name="geometry">
-        <rect>
-         <x>153</x>
-         <y>34</y>
-         <width>319</width>
-         <height>109</height>
-        </rect>
-       </property>
-      </widget>
-     </widget>
-    </item>
     <item row="0" column="1">
      <widget class="QGroupBox" name="groupBox">
       <property name="title">
@@ -608,6 +573,19 @@
         </item>
        </layout>
       </widget>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="gestures_label">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
      </widget>
     </item>
    </layout>
