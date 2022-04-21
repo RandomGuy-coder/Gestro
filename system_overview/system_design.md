@@ -9,7 +9,7 @@ parent: System Overview
 ## System Diagram
 
 <div align="center">
-    <img src="/assets/diagrams/System Diagram.png" alt="System Diagram" width="600"/>
+    <img src="../assets/diagrams/System Diagram.png" alt="System Diagram" width="600"/>
 </div>
 
 ### Webcam

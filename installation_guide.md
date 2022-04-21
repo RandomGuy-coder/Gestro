@@ -1,12 +1,12 @@
 ---
 nav_order: 2
-title: Getting Started
+title: Installation Guide
 ---
 
-# Getting Started
+# Installation Guide
 Gestro is designed to be used on Linux PCs running the Ubuntu distribution. In particular, it was tested and found to be running perfectly on PCs running Ubuntu 18.04 LTS.
 
-### Prerequisites
+## Prerequisites
 * A PC running Ubuntu.
 * A webcam.
 
@@ -17,15 +17,15 @@ Gestro requires the following tools and libraries to run (other versions are not
 * libasound2-dev
 * Google Unit Test FrameWork
 
-> These required tools and libraries will be installed if you follow step 2 of the [installation guide](#installation-guide) below.
+> These required tools and libraries will be installed if you follow step 2 of the [installation instructions](#installation-instructions) below.
 
-### Installation Guide
+## Installation Instructions
 
 > If permission is denied while trying to run any of the scripts, please enter the following Commands into the terminal and try running the script again, ``` sudo chmod +x <script_name>.sh```.
 
 > For example, for the install_dependencies.sh, enter ``` sudo chmod +x install_dependencies.sh ``` into the terminal.
 
-**1. Download the latest [release]() from our Github and extract the contents into the _Home_ folder.**
+**1. Download the latest [release](https://github.com/RandomGuy-coder/Gestro/releases) from our Github and extract the contents into the _Home_ folder.**
 
 > Note: Make sure the folder with the contents is named "Gestro". If not, rename it to "Gestro".
 
