@@ -126,7 +126,7 @@ Gestro requires the following tools and libraries to run (other versions are not
 
 > For example, for the install_dependencies.sh, enter ``` sudo chmod +x install_dependencies.sh ``` into the terminal.
 
-**1. Download the latest [release]() from our Github and extract the contents into the _Home_ folder.**
+**1. Download the latest [release](https://github.com/RandomGuy-coder/Gestro/releases) from our Github and extract the contents into the _Home_ folder.**
 
 > Note: Make sure the folder with the contents is named "Gestro". If not, rename it to "Gestro".
 
@@ -145,6 +145,29 @@ cd ~/Gestro && sudo ./install_dependencies.sh
 ```sh
 sudo ./build.sh
 ```
+> If any of the following errors occured: > 
+> ```
+> This application failed to start because it could not find or load the Qt platform plugin "xcb" in "".
+> ```
+> ```
+> /usr/lib/qt5/bin/uic: error while loading shared libraries: libdouble-conversion.so.1: cannot open shared object file: No such file or directory
+> ```
+> 1. Run this command in the terminal:
+> ```
+> sudo apt-get install libxcb-xinerama0
+> ```
+> _If the previous command said that libxcb-xinerama0 is already installed or the newest version, run this:_
+> ```
+> sudo apt install --reinstall libxcb-xinerama0
+> ```
+> 2. Then, run this command:
+> ```
+> sudo apt install --reinstall libdouble-conversion1
+> ```
+> 3. Now, close and relaunch the terminal, then run the following commands:
+> ```
+> cd ~/Gestro && sudo ./build.sh
+> ```
 
 ## Launching Gestro
 Firstly, launch a terminal and enter the following commands to cd into the Gestro's bin directory:
