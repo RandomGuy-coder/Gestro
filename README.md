@@ -93,7 +93,7 @@ Click to view our [demonstration video]()!
 * OpenCV
 * Doxygen
 * libasound2-dev
-* Boost Unit Test Framework
+* Google Unit Test Framework
 
 ## Getting Started
 Gestro is designed to be used on Linux PCs running the Ubuntu distribution. In particular, it was tested and found to be running perfectly on PCs running Ubuntu 18.04 LTS.
@@ -107,7 +107,7 @@ Gestro requires the following tools and libraries to run (other versions are not
 * Qt 5
 * OpenCV 4.5.5
 * libasound2-dev
-* Boost Unit Test Framework
+* Google Unit Test FrameWork
 
 > These required tools and libraries will be installed if you follow step 2 of the [installation guide](#installation-guide) below.
 
@@ -119,9 +119,16 @@ Gestro requires the following tools and libraries to run (other versions are not
 
 **1. Download the latest [release]() from our Github and extract the contents into the Home folder.**
 
+> Note: Make sure the folder with the contents is named "Gestro". If not, rename it to "Gestro".
+
+> Alternatively, launch a terminal and run:
+> ```
+> git clone https://github.com/RandomGuy-coder/Gestro.git
+> ```
+
 **2. Launch a terminal and enter the following commands into it to install the requirements:**
 ```sh
-cd Gestro && ./install_dependencies.sh
+cd ~/Gestro && ./install_dependencies.sh
 ```
 > Note: If CMake version is found to be too low, please follow instructions [here](https://askubuntu.com/a/829311) to update CMake. After updating CMake, make sure to close and reopen the terminal before starting from step 2 again.
 
@@ -133,7 +140,7 @@ cd Gestro && ./install_dependencies.sh
 ## Launching Gestro
 Firstly, launch a terminal and enter the following commands to cd into the Gestro directory:
 ```sh
-cd bin
+cd ~/Gestro/bin
 ```
 
 ### Main Program
