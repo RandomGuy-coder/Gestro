@@ -117,7 +117,7 @@ Gestro requires the following tools and libraries to run (other versions are not
 
 > For example, for the install_dependencies.sh, enter ``` sudo chmod +x install_dependencies.sh ``` into the terminal.
 
-**1. Download the latest [release]() from our Github and extract the contents into the Home folder.**
+**1. Download the latest [release]() from our Github and extract the contents into the _Home_ folder.**
 
 > Note: Make sure the folder with the contents is named "Gestro". If not, rename it to "Gestro".
 
@@ -128,17 +128,17 @@ Gestro requires the following tools and libraries to run (other versions are not
 
 **2. Launch a terminal and enter the following commands into it to install the requirements:**
 ```sh
-cd ~/Gestro && ./install_dependencies.sh
+cd ~/Gestro && sudo ./install_dependencies.sh
 ```
 > Note: If CMake version is found to be too low, please follow instructions [here](https://askubuntu.com/a/829311) to update CMake. After updating CMake, make sure to close and reopen the terminal before starting from step 2 again.
 
 **3. Enter the following commands into the terminal to run the build script.**
 ```sh
-./build.sh
+sudo ./build.sh
 ```
 
 ## Launching Gestro
-Firstly, launch a terminal and enter the following commands to cd into the Gestro directory:
+Firstly, launch a terminal and enter the following commands to cd into the Gestro's bin directory:
 ```sh
 cd ~/Gestro/bin
 ```
