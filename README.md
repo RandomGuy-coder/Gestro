@@ -72,6 +72,7 @@ Click to view our [demonstration video]()!
   <img src="" alt="Screenshot of demonstration" width="600">
 </div>
 
+> Note: Although each function is shown separately in the video, all of them can be selected and used at the same time.
 
 ### Features
 * Enter Spacebar (Used for Play and Pause).
