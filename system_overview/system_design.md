@@ -20,5 +20,3 @@ The Ubuntu system is the Linux PC of the user running the Ubuntu distribution. G
 
 ### Display
 The GUI of Gestro is displayed on the display of the Ubuntu machine. Other than the GUI, the input video feed and processed feed are also shown on the display in real-time.
-
-## System Interaction
