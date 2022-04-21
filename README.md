@@ -74,10 +74,10 @@ By using a webcam and libraries such as OpenCV, X11, et cetera, Gestro is able t
 More details can be found below. However, for the complete information about Gestro, please visit our [website](https://randomguy-coder.github.io/Gestro/).
 
 ### Demonstration Video
-Click to view our [demonstration video]()!
+Click to view our [demonstration video](https://randomguy-coder.github.io/Gestro/)!
 
 <div align="center">
-  <img src="" alt="Screenshot of demonstration" width="600">
+  <img src="assets/Main Program Screenshot.png" alt="Screenshot of demonstration" width="600">
 </div>
 
 > Note: Although each function is shown separately in the video, all of them can be selected and used at the same time.
@@ -187,7 +187,7 @@ Start the Gestro application by running the following commands:
 ### Unit Tests
 Run the unit tests by running the following Commands:
 ```sh
-./test_run
+cd ~/Gestro && sudo make test
 ```
 
 ## Contributors:
