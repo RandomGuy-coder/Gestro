@@ -78,8 +78,7 @@ More details can be found below. However, for the complete information about Ges
 
 Check out our demonstration video:
 
-[![Demonstration Video](https://randomguy-coder.github.io/Gestro/assets/Gestro%20Demonstration%20Video.m4v)](https://randomguy-coder.github.io/Gestro/#demo-video)
-
+[![Gestro Demonstration Video](https://github.com/RandomGuy-coder/Gestro/blob/gh-pages/assets/Gestro%20Demonstration%20Video.m4v?raw=true)
 
 <div align="center">
   <img src="assets/Main Program Screenshot.png" alt="Screenshot of demonstration" width="600">
