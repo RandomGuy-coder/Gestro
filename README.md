@@ -137,7 +137,8 @@ Gestro requires the following tools and libraries to run (other versions are not
 
 **2. Launch a terminal and enter the following commands into it to install the requirements:**
 ```sh
-cd ~/Gestro && sudo ./install_dependencies.sh
+cd ~/Gestro 
+sudo ./install_dependencies.sh
 ```
 > Note: If CMake version is found to be too low, please follow instructions [here](https://askubuntu.com/a/829311) to update CMake. After updating CMake, make sure to close and reopen the terminal before starting from step 2 again.
 
