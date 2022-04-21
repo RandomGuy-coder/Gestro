@@ -7,6 +7,14 @@
   <p align="center">Controlling Linux system using hand gestures</p>
 </p>
 
+<div align ="center">
+  <a href="https://randomguy-coder.github.io/Gestro/docs/html/index.html">
+    <strong>
+      Check out our docs >>
+    </strong>
+  </a>
+</div>
+<br>
 <div align="center">
 
   ![Contributors](https://img.shields.io/github/contributors/RandomGuy-coder/Gestro?color=9cf&style=flat-square)
