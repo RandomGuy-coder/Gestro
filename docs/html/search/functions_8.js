@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['main',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;main.cpp'],['../_c_make_c_compiler_id_8c.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;CMakeCXXCompilerId.cpp']]],
+  ['main',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
   ['minimize',['minimize',['../class_ubuntu_controller_1_1_window_control.html#abb8d0ae3c43be976259181c848fa4568',1,'UbuntuController::WindowControl']]],
   ['minimizewindow',['minimizeWindow',['../class_ubuntu_controller_1_1_window_action.html#aa6f2b2543505c0c44027b501f151d4bf',1,'UbuntuController::WindowAction']]],
   ['mouseaction',['MouseAction',['../class_ubuntu_controller_1_1_mouse_action.html#a42e540b994144f3f8775baded5370b14',1,'UbuntuController::MouseAction']]],

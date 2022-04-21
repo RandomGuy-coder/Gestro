@@ -1,12 +1,10 @@
 var searchData=
 [
-  ['ubuntucontroller',['UbuntuController',['../namespace_ubuntu_controller.html',1,'']]],
-  ['ui',['Ui',['../namespace_ui.html',1,'Ui'],['../class_controller_screen.html#a25a37166616a171730a89ddb69c120f3',1,'ControllerScreen::ui()'],['../class_start_screen.html#a2213dadd46a5ff18a6b9ef1063077ef0',1,'StartScreen::ui()']]],
-  ['unmute',['unmute',['../class_ubuntu_controller_1_1_volume_control.html#a4a541c510e22cd07b206ca80f979c1a1',1,'UbuntuController::VolumeControl']]],
-  ['unprocessed',['UNPROCESSED',['../_capture_and_detect_8h.html#a425a93be55e757f5e351ec9d6770c50ea93c33b647b7a4b7299c25e4e6d98ef7e',1,'CaptureAndDetect.h']]],
-  ['unprocessedfeed_5fclicked',['unprocessedFeed_clicked',['../class_controller_screen.html#aac8b2856372fa02c4f793cf9183dffed',1,'ControllerScreen']]],
-  ['updatecalibratedtrackbar',['updateCalibratedTrackbar',['../class_controller_screen.html#a700c8c1911e68861b86890a5429d2692',1,'ControllerScreen::updateCalibratedTrackbar()'],['../class_controller_screen_callback_interface.html#aeee7c043e83e959de0788a9d2a5f70bb',1,'ControllerScreenCallbackInterface::updateCalibratedTrackbar()']]],
-  ['updateimage',['updateImage',['../class_controller_screen.html#acf75ddc9588011e360e2199cc37478ec',1,'ControllerScreen::updateImage()'],['../class_controller_screen_callback_interface.html#a7d11a5d40ead88e7f89b8b1ee836b0cd',1,'ControllerScreenCallbackInterface::updateImage()']]],
-  ['updatelogtable',['updateLogTable',['../class_controller_screen.html#a039b816adc94fc7e7757520c10fd1d0b',1,'ControllerScreen::updateLogTable()'],['../class_controller_screen_callback_interface.html#af92ab0514459c690e357064676fa33f0',1,'ControllerScreenCallbackInterface::updateLogTable()']]],
-  ['uthread',['uthread',['../class_gesture_detection_1_1_capture.html#a1eb079eb874f1d4246d1f4f33a66f13f',1,'GestureDetection::Capture::uthread()'],['../class_gestro_1_1_capture_and_detect.html#a0c143ab4c3181d7f32da71bb161e8d02',1,'Gestro::CaptureAndDetect::uthread()']]]
+  ['vlower',['vLower',['../class_gesture_detection_1_1_skin_color_detector.html#adc72a8fe90eb2b5a578bded973229c23',1,'GestureDetection::SkinColorDetector']]],
+  ['volume_5fdown',['VOLUME_DOWN',['../_commands_8h.html#a1939e90743463fb34c8c571ec0590430a529d2dedd2400b280c220d9892527bc7',1,'Commands.h']]],
+  ['volume_5fup',['VOLUME_UP',['../_commands_8h.html#a1939e90743463fb34c8c571ec0590430a9a06e9be8a466cb25472fc5d2245adc2',1,'Commands.h']]],
+  ['volumecontrol',['VolumeControl',['../class_ubuntu_controller_1_1_volume_control.html',1,'UbuntuController::VolumeControl'],['../class_ubuntu_controller_1_1_volume_control.html#a3cc73bb232bd87f8385da0440126c38c',1,'UbuntuController::VolumeControl::VolumeControl()']]],
+  ['volumecontrol_2ecpp',['VolumeControl.cpp',['../_volume_control_8cpp.html',1,'']]],
+  ['volumecontrol_2eh',['VolumeControl.h',['../_volume_control_8h.html',1,'']]],
+  ['vupper',['vUpper',['../class_gesture_detection_1_1_skin_color_detector.html#a82c6256414d9c3cb968d6f0de12fc7d9',1,'GestureDetection::SkinColorDetector']]]
 ];

@@ -1,10 +1,13 @@
 var searchData=
 [
-  ['vlower',['vLower',['../class_gesture_detection_1_1_skin_color_detector.html#adc72a8fe90eb2b5a578bded973229c23',1,'GestureDetection::SkinColorDetector']]],
-  ['volume_5fdown',['VOLUME_DOWN',['../_commands_8h.html#a1939e90743463fb34c8c571ec0590430a529d2dedd2400b280c220d9892527bc7',1,'Commands.h']]],
-  ['volume_5fup',['VOLUME_UP',['../_commands_8h.html#a1939e90743463fb34c8c571ec0590430a9a06e9be8a466cb25472fc5d2245adc2',1,'Commands.h']]],
-  ['volumecontrol',['VolumeControl',['../class_ubuntu_controller_1_1_volume_control.html',1,'UbuntuController::VolumeControl'],['../class_ubuntu_controller_1_1_volume_control.html#a3cc73bb232bd87f8385da0440126c38c',1,'UbuntuController::VolumeControl::VolumeControl()']]],
-  ['volumecontrol_2ecpp',['VolumeControl.cpp',['../_volume_control_8cpp.html',1,'']]],
-  ['volumecontrol_2eh',['VolumeControl.h',['../_volume_control_8h.html',1,'']]],
-  ['vupper',['vUpper',['../class_gesture_detection_1_1_skin_color_detector.html#a82c6256414d9c3cb968d6f0de12fc7d9',1,'GestureDetection::SkinColorDetector']]]
+  ['width',['width',['../class_gesture_detection_1_1_capture.html#ad3a6d053234b05f0d5004014f8c74f9f',1,'GestureDetection::Capture']]],
+  ['width_5f1280',['WIDTH_1280',['../_capture_and_detect_8h.html#a3c1fc1369ee351f25804c8cde5e85ac3a278580710dc7c233b4035c222f100b9f',1,'CaptureAndDetect.h']]],
+  ['width_5f1920',['WIDTH_1920',['../_capture_and_detect_8h.html#a3c1fc1369ee351f25804c8cde5e85ac3a62cb4c441f62ccfd155870b1d5e590d8',1,'CaptureAndDetect.h']]],
+  ['windowaction',['WindowAction',['../class_ubuntu_controller_1_1_window_action.html',1,'UbuntuController::WindowAction'],['../class_ubuntu_controller_1_1_window_action.html#a1836cf300ad545fa88f33454d09765e1',1,'UbuntuController::WindowAction::WindowAction()']]],
+  ['windowaction_2ecpp',['WindowAction.cpp',['../_window_action_8cpp.html',1,'']]],
+  ['windowaction_2eh',['WindowAction.h',['../_window_action_8h.html',1,'']]],
+  ['windowcontrol',['WindowControl',['../class_ubuntu_controller_1_1_window_control.html',1,'UbuntuController::WindowControl'],['../class_ubuntu_controller_1_1_window_action.html#ac12718a724eb4d653f53dc35493461ed',1,'UbuntuController::WindowAction::windowControl()'],['../class_ubuntu_controller_1_1_window_control.html#ac1737a56defaa8f60f53054b2167fee8',1,'UbuntuController::WindowControl::WindowControl()']]],
+  ['windowcontrol_2ecpp',['WindowControl.cpp',['../_window_control_8cpp.html',1,'']]],
+  ['windowcontrol_2eh',['WindowControl.h',['../_window_control_8h.html',1,'']]],
+  ['winfocus',['winFocus',['../class_ubuntu_controller_1_1_window_action.html#aca24fda49c815b7362c21a00b8e26607',1,'UbuntuController::WindowAction']]]
 ];

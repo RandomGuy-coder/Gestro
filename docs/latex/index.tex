@@ -89,7 +89,7 @@ Click to view our \mbox{[}demonstration video\mbox{]}()!
 \item Open\+CV
 \item Doxygen
 \item libasound2-\/dev
-\item Boost Unit Test Framework
+\item Google Unit Test Framework
 \end{DoxyItemize}
 
 \subsection*{Getting Started}
@@ -110,7 +110,7 @@ Click to view our \mbox{[}demonstration video\mbox{]}()!
 \item Qt 5
 \item Open\+CV 4.\+5.\+5
 \item libasound2-\/dev
-\item Boost Unit Test Framework
+\item Google Unit Test Frame\+Work
 \end{DoxyItemize}
 
 \begin{quote}
@@ -127,11 +127,23 @@ If permission is denied while trying to run any of the scripts, please enter the
 For example, for the install\+\_\+dependencies.\+sh, enter {\ttfamily sudo chmod +x install\+\_\+dependencies.\+sh} into the terminal. \end{quote}
 
 
-{\bfseries 1. Download the latest \mbox{[}release\mbox{]}() from our Github and extract the contents into the Home folder.}
+{\bfseries 1. Download the latest \mbox{[}release\mbox{]}() from our Github and extract the contents into the {\itshape Home} folder.}
+
+\begin{quote}
+Note\+: Make sure the folder with the contents is named \char`\"{}\+Gestro\char`\"{}. If not, rename it to \char`\"{}\+Gestro\char`\"{}. \end{quote}
+
+
+\begin{quote}
+Alternatively, launch a terminal and run\+: 
+\begin{DoxyCode}
+git clone https://github.com/RandomGuy-coder/Gestro.git
+\end{DoxyCode}
+ \end{quote}
+
 
 {\bfseries 2. Launch a terminal and enter the following commands into it to install the requirements\+:} 
 \begin{DoxyCode}
-cd Gestro && ./install\_dependencies.sh
+cd ~/Gestro && sudo ./install\_dependencies.sh
 \end{DoxyCode}
  \begin{quote}
 Note\+: If C\+Make version is found to be too low, please follow instructions \href{https://askubuntu.com/a/829311}{\tt here} to update C\+Make. After updating C\+Make, make sure to close and reopen the terminal before starting from step 2 again. \end{quote}
@@ -139,15 +151,15 @@ Note\+: If C\+Make version is found to be too low, please follow instructions \h
 
 {\bfseries 3. Enter the following commands into the terminal to run the build script.} 
 \begin{DoxyCode}
-./build.sh
+sudo ./build.sh
 \end{DoxyCode}
 
 
 \subsection*{Launching \hyperlink{namespace_gestro}{Gestro}}
 
-Firstly, launch a terminal and enter the following commands to cd into the \hyperlink{namespace_gestro}{Gestro} directory\+: 
+Firstly, launch a terminal and enter the following commands to cd into the \hyperlink{namespace_gestro}{Gestro}\textquotesingle{}s bin directory\+: 
 \begin{DoxyCode}
-cd bin
+cd ~/Gestro/bin
 \end{DoxyCode}
 
 

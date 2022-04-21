@@ -155,7 +155,7 @@ $(function() {
 <li>OpenCV</li>
 <li>Doxygen</li>
 <li>libasound2-dev</li>
-<li>Boost Unit Test Framework</li>
+<li>Google Unit Test Framework</li>
 </ul>
 <h2>Getting Started</h2>
 <p><a class="el" href="namespace_gestro.html">Gestro</a> is designed to be used on Linux PCs running the Ubuntu distribution. In particular, it was tested and found to be running perfectly on PCs running Ubuntu 18.04 LTS.</p>
@@ -169,7 +169,7 @@ $(function() {
 <li>Qt 5</li>
 <li>OpenCV 4.5.5</li>
 <li>libasound2-dev</li>
-<li>Boost Unit Test Framework</li>
+<li>Google Unit Test FrameWork</li>
 </ul>
 <blockquote class="doxtable">
 <p>These required tools and libraries will be installed if you follow step 2 of the <a href="#installation-guide">installation guide</a> below. </p>
@@ -181,12 +181,17 @@ $(function() {
 <blockquote class="doxtable">
 <p>For example, for the install_dependencies.sh, enter <code>sudo chmod +x install_dependencies.sh</code> into the terminal. </p>
 </blockquote>
-<p><b>1. Download the latest [release]() from our Github and extract the contents into the Home folder.</b></p>
-<p><b>2. Launch a terminal and enter the following commands into it to install the requirements:</b> </p><div class="fragment"><div class="line">cd Gestro &amp;&amp; ./install_dependencies.sh</div></div><!-- fragment --> <blockquote class="doxtable">
+<p><b>1. Download the latest [release]() from our Github and extract the contents into the <em>Home</em> folder.</b></p>
+<blockquote class="doxtable">
+<p>Note: Make sure the folder with the contents is named "Gestro". If not, rename it to "Gestro". </p>
+</blockquote>
+<blockquote class="doxtable">
+<p>Alternatively, launch a terminal and run: </p><div class="fragment"><div class="line">git clone https://github.com/RandomGuy-coder/Gestro.git</div></div><!-- fragment --> </blockquote>
+<p><b>2. Launch a terminal and enter the following commands into it to install the requirements:</b> </p><div class="fragment"><div class="line">cd ~/Gestro &amp;&amp; sudo ./install_dependencies.sh</div></div><!-- fragment --> <blockquote class="doxtable">
 <p>Note: If CMake version is found to be too low, please follow instructions <a href="https://askubuntu.com/a/829311">here</a> to update CMake. After updating CMake, make sure to close and reopen the terminal before starting from step 2 again. </p>
 </blockquote>
-<p><b>3. Enter the following commands into the terminal to run the build script.</b> </p><div class="fragment"><div class="line">./build.sh</div></div><!-- fragment --><h2>Launching <a class="el" href="namespace_gestro.html">Gestro</a></h2>
-<p>Firstly, launch a terminal and enter the following commands to cd into the <a class="el" href="namespace_gestro.html">Gestro</a> directory: </p><div class="fragment"><div class="line">cd bin</div></div><!-- fragment --><h3>Main Program</h3>
+<p><b>3. Enter the following commands into the terminal to run the build script.</b> </p><div class="fragment"><div class="line">sudo ./build.sh</div></div><!-- fragment --><h2>Launching <a class="el" href="namespace_gestro.html">Gestro</a></h2>
+<p>Firstly, launch a terminal and enter the following commands to cd into the <a class="el" href="namespace_gestro.html">Gestro</a>'s bin directory: </p><div class="fragment"><div class="line">cd ~/Gestro/bin</div></div><!-- fragment --><h3>Main Program</h3>
 <p>Start the <a class="el" href="namespace_gestro.html">Gestro</a> application by running the following commands:</p>
 <div class="fragment"><div class="line">./Gestro</div></div><!-- fragment --><p> <b>For instructions on how to use the <a class="el" href="namespace_gestro.html">Gestro</a> application, please see <a href="https://randomguy-coder.github.io/Gestro/user_manual.html">User Manual</a> on our <a href="https://randomguy-coder.github.io/Gestro/">website</a></b>.</p>
 <h3>Unit Tests</h3>

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['y',['y',['../class_gesture_detection_1_1_finger_and_coordinates.html#a2e975227cf1ed24857600d35ee84e258',1,'GestureDetection::FingerAndCoordinates']]],
-  ['yfilter',['yFilter',['../class_gesture_detection_1_1_finger_counter.html#aaafad0b89fe35e79247270c24988da05',1,'GestureDetection::FingerCounter']]]
+  ['_7econtrollerscreen',['~ControllerScreen',['../class_controller_screen.html#a4871b73dbeec4679ba6bee692bfe71a9',1,'ControllerScreen']]],
+  ['_7estartscreen',['~StartScreen',['../class_start_screen.html#afb1b54b9d5cda32ea7e9e1c5cf8b9300',1,'StartScreen']]]
 ];
