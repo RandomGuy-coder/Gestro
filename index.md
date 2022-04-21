@@ -16,8 +16,8 @@ title: About Gestro
 <br>
 <div align="center">
   <a href="https://github.com/RandomGuy-coder/Gestro" class="btn">View our GitHub</a>
-  <a href="" class="btn">Download .zip</a>
-  <a href="" class="btn">Download .tar.gz</a>
+  <a href="https://github.com/RandomGuy-coder/Gestro/archive/refs/tags/v1.1.zip" class="btn">Download .zip</a>
+  <a href="https://github.com/RandomGuy-coder/Gestro/archive/refs/tags/v1.1.tar.gz" class="btn">Download .tar.gz</a>
 </div>
 
 
