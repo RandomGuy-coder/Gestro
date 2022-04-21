@@ -1,5 +1,7 @@
 #include "FingerAndCoordinates.h"
 
+using namespace GestureDetection;
+
 FingerAndCoordinates::FingerAndCoordinates() {
 }
 

@@ -1,0 +1,74 @@
+\hypertarget{classGestureDetection_1_1FingerCounter}{}\section{Gesture\+Detection\+:\+:Finger\+Counter Class Reference}
+\label{classGestureDetection_1_1FingerCounter}\index{Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}}
+
+
+checks the number of fingers and sends the respective command to be processed.  
+
+
+
+
+{\ttfamily \#include $<$Finger\+Counter.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGestureDetection_1_1FingerCounter_a2f6f5bc97506e87dc7acc6e02579a916}{Finger\+Counter} (void)
+\item 
+\hyperlink{classGestureDetection_1_1FingerAndCoordinates}{Finger\+And\+Coordinates} \hyperlink{classGestureDetection_1_1FingerCounter_a611201352a86dd943f866c1be9507081}{find\+Fingers\+Count} (Mat input\+\_\+image, Mat frame)
+\item 
+void \hyperlink{classGestureDetection_1_1FingerCounter_a5b5aabaa39ff05c70a873b4c2a7869f9}{Connect\+Callback} (\hyperlink{classGestro_1_1CaptureAndDetectCallbackInterface}{Capture\+And\+Detect\+Callback\+Interface} $\ast$)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+checks the number of fingers and sends the respective command to be processed. 
+
+This class is called from the Capture\+And\+Detect after the initial image processing is done, the fingers and stored in the buffer. Once the buffer size is 15 the finger that occurs the most number of times in the buffer is considered and the appropriate command is sent. If finger is one or 3 then the coordinates are sent until a new finger is detected. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGestureDetection_1_1FingerCounter_a2f6f5bc97506e87dc7acc6e02579a916}\label{classGestureDetection_1_1FingerCounter_a2f6f5bc97506e87dc7acc6e02579a916}} 
+\index{Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}!Finger\+Counter@{Finger\+Counter}}
+\index{Finger\+Counter@{Finger\+Counter}!Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}}
+\subsubsection{\texorpdfstring{Finger\+Counter()}{FingerCounter()}}
+{\footnotesize\ttfamily Finger\+Counter\+::\+Finger\+Counter (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+The constructor for the \hyperlink{classGestureDetection_1_1FingerCounter}{Finger\+Counter} class. Initializes the colors and iir filters. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classGestureDetection_1_1FingerCounter_a5b5aabaa39ff05c70a873b4c2a7869f9}\label{classGestureDetection_1_1FingerCounter_a5b5aabaa39ff05c70a873b4c2a7869f9}} 
+\index{Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}!Connect\+Callback@{Connect\+Callback}}
+\index{Connect\+Callback@{Connect\+Callback}!Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}}
+\subsubsection{\texorpdfstring{Connect\+Callback()}{ConnectCallback()}}
+{\footnotesize\ttfamily void Finger\+Counter\+::\+Connect\+Callback (\begin{DoxyParamCaption}\item[{\hyperlink{classGestro_1_1CaptureAndDetectCallbackInterface}{Capture\+And\+Detect\+Callback\+Interface} $\ast$}]{callback }\end{DoxyParamCaption})}
+
+This function is used to connect the callback interface of Capture\+And\+Detect with this class
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & The callback function that will be called when the fist is detected. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGestureDetection_1_1FingerCounter_a611201352a86dd943f866c1be9507081}\label{classGestureDetection_1_1FingerCounter_a611201352a86dd943f866c1be9507081}} 
+\index{Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}!find\+Fingers\+Count@{find\+Fingers\+Count}}
+\index{find\+Fingers\+Count@{find\+Fingers\+Count}!Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}}
+\subsubsection{\texorpdfstring{find\+Fingers\+Count()}{findFingersCount()}}
+{\footnotesize\ttfamily \hyperlink{classGestureDetection_1_1FingerAndCoordinates}{Finger\+And\+Coordinates} Finger\+Counter\+::find\+Fingers\+Count (\begin{DoxyParamCaption}\item[{Mat}]{input\+\_\+image,  }\item[{Mat}]{frame }\end{DoxyParamCaption})}
+
+It finds the contours of the hand, finds the convex hull and the defects, and then counts the number of fingers
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+image} & The image that we want to find the fingers in. \\
+\hline
+{\em frame} & The frame from the camera\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a struct of type \hyperlink{classGestureDetection_1_1FingerAndCoordinates}{Finger\+And\+Coordinates}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/gesture\+\_\+detection/\hyperlink{FingerCounter_8h}{Finger\+Counter.\+h}\item 
+src/gesture\+\_\+detection/\hyperlink{FingerCounter_8cpp}{Finger\+Counter.\+cpp}\end{DoxyCompactItemize}

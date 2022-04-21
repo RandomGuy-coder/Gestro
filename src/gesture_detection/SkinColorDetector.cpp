@@ -1,5 +1,7 @@
 #include "SkinColorDetector.h"
 
+using namespace GestureDetection;
+
 SkinColorDetector::SkinColorDetector(void) {
     hUpper = 0;
     hLower = 0;

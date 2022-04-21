@@ -1,5 +1,7 @@
 #include "DisplayControl.h"
 
+using namespace Gestro;
+
 DisplayControl::DisplayControl(Display* d):MouseAction(d,event),KeyboardAction(d),WindowAction(d),VolumeControl(){
     display = d;
 }

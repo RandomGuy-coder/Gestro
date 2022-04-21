@@ -1,5 +1,7 @@
 #include "WindowAction.h"
 
+using namespace UbuntuController;
+
 WindowAction::WindowAction(Display *d){
     display = d;
 }

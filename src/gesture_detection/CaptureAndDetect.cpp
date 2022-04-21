@@ -1,5 +1,6 @@
 #include "CaptureAndDetect.h"
 
+using namespace Gestro;
 
 CaptureAndDetect::CaptureAndDetect() {
 }
@@ -14,7 +15,6 @@ void CaptureAndDetect::init(ControllerScreenCallbackInterface *interface, int sc
     capture.start();
     uthread = thread(&CaptureAndDetect::processFrame, this);
     commandThread = thread(&CaptureAndDetect::processCommands, this);
-    palmClassifier = new CascadeClassifier("../src/resources/cascades/rpalm.xml");
     fingerCounter.ConnectCallback(this);
     commands = enabledCommand;
 }
@@ -78,8 +78,6 @@ void CaptureAndDetect::processFrame() {
                     frame2.copyTo(frame(roi));
                     callback->updateImage(frame);
                 }
-                backgroundRemoved = NULL;
-                newimg = NULL;
             }
         }
     }
@@ -161,15 +159,5 @@ void CaptureAndDetect::connectControlCallback(DisplayControlCallbackInterface *i
 
 void CaptureAndDetect::addToBuffer(FingerAndCoordinates finger) {
     detectedFingers.push(finger);
-}
-
-bool CaptureAndDetect::checkForPalm() {
-    vector<cv::Rect> features;
-    palmClassifier->detectMultiScale(currentFrame, features, 1.1, 5, 0 | CASCADE_SCALE_IMAGE, Size(30,30));
-    if(!features.empty()) {
-        return true;
-    } else {
-        return false;
-    }
 }
 

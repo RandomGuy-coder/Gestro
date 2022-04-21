@@ -1,5 +1,7 @@
 #include "MouseAction.h"
 
+using namespace UbuntuController;
+
 MouseAction::MouseAction(Display* d, XEvent e)
 {
     display = d;

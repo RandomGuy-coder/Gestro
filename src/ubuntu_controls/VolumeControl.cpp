@@ -1,6 +1,9 @@
 #include "VolumeControl.h"
 #include "iostream"
 #include "stdio.h"
+
+using namespace UbuntuController;
+
 VolumeControl::VolumeControl(void) {
 
 };

@@ -5,17 +5,12 @@ ControllerScreen::ControllerScreen(QWidget *parent) :
     ui(new Ui::ControllerScreen)
 {
     ui->setupUi(this);
-    QImage *image2 = new QImage("C:/Users/jxrt/Desktop/GUI/QT_gui/QT_gui/picture.jpg");
-    ui->label_show_pic->setPixmap(QPixmap::fromImage(*image2));
-    ui->label_show_pic->show();
-    QImage *image3 = new QImage("C:/Users/jxrt/Desktop/GUI/QT_gui/QT_gui/controll.jpg");
-    ui->label_show_guide->setPixmap(QPixmap::fromImage(*image3));
-    ui->label_show_guide->adjustSize();
-    //ui->label_show_guide->show();
+    QImage *image3 = new QImage("../src/resources/img/Gestures.png");
+    ui->gestures_label->setPixmap(QPixmap::fromImage(*image3));
+    ui->gestures_label->adjustSize();
     Screen *screen = DefaultScreenOfDisplay(display);
     captureAndDetect.init(this, screen->width, screen->height, &enabledCommands);
     captureAndDetect.connectControlCallback(&displayControl);
-    ui->scrollArea->setWidget(ui->label_show_guide);
     connectGuiEvents();
     connectSignals();
     ui->hMinValue->setText(QString::number(ui->hMinSlider->value()));

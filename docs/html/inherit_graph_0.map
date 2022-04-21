@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classCapture.html" title="runs a thread to start camera and capture image " alt="" coords="5,5,73,32"/>
+<area shape="rect" id="node1" href="$classGestro_1_1CaptureAndDetectCallbackInterface.html" title="Callback interface for CaptureAndDetect. " alt="" coords="5,5,183,47"/>
+<area shape="rect" id="node2" href="$classGestro_1_1CaptureAndDetect.html" title="This class takes care of starting threads to capture image, process and publish commands. " alt="" coords="231,13,408,39"/>
 </map>

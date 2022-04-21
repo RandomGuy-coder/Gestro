@@ -1,5 +1,7 @@
 #include "KeyboardAction.h"
 
+using namespace UbuntuController;
+
 KeyboardAction::KeyboardAction(Display *d){
     display = d;
 }

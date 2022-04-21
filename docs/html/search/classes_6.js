@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['volumecontrol',['VolumeControl',['../classVolumeControl.html',1,'']]]
+  ['skincolordetector',['SkinColorDetector',['../classGestureDetection_1_1SkinColorDetector.html',1,'GestureDetection']]]
 ];

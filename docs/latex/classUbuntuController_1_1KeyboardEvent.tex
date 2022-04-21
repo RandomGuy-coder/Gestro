@@ -1,0 +1,82 @@
+\hypertarget{classUbuntuController_1_1KeyboardEvent}{}\section{Ubuntu\+Controller\+:\+:Keyboard\+Event Class Reference}
+\label{classUbuntuController_1_1KeyboardEvent}\index{Ubuntu\+Controller\+::\+Keyboard\+Event@{Ubuntu\+Controller\+::\+Keyboard\+Event}}
+
+
+Used to send keyboard events.  
+
+
+
+
+{\ttfamily \#include $<$Keyboard\+Event.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classUbuntuController_1_1KeyboardEvent_a5a4efca276ce847a471b228c4a114bc7}{Keyboard\+Event} (void)
+\item 
+X\+Key\+Event \hyperlink{classUbuntuController_1_1KeyboardEvent_a84e25f7a086a015007fe877a55d9444e}{create\+Key\+Event} (Display $\ast$display, Window \&win, Window \&win\+Root, bool press, int keycode, int modifiers)
+\item 
+void \hyperlink{classUbuntuController_1_1KeyboardEvent_aea537f2a22fc1f162fd81b5d039eb053}{key\+Press} (Display $\ast$display, int keycode)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Used to send keyboard events. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUbuntuController_1_1KeyboardEvent_a5a4efca276ce847a471b228c4a114bc7}\label{classUbuntuController_1_1KeyboardEvent_a5a4efca276ce847a471b228c4a114bc7}} 
+\index{Ubuntu\+Controller\+::\+Keyboard\+Event@{Ubuntu\+Controller\+::\+Keyboard\+Event}!Keyboard\+Event@{Keyboard\+Event}}
+\index{Keyboard\+Event@{Keyboard\+Event}!Ubuntu\+Controller\+::\+Keyboard\+Event@{Ubuntu\+Controller\+::\+Keyboard\+Event}}
+\subsubsection{\texorpdfstring{Keyboard\+Event()}{KeyboardEvent()}}
+{\footnotesize\ttfamily Keyboard\+Event\+::\+Keyboard\+Event (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classUbuntuController_1_1KeyboardEvent_a84e25f7a086a015007fe877a55d9444e}\label{classUbuntuController_1_1KeyboardEvent_a84e25f7a086a015007fe877a55d9444e}} 
+\index{Ubuntu\+Controller\+::\+Keyboard\+Event@{Ubuntu\+Controller\+::\+Keyboard\+Event}!create\+Key\+Event@{create\+Key\+Event}}
+\index{create\+Key\+Event@{create\+Key\+Event}!Ubuntu\+Controller\+::\+Keyboard\+Event@{Ubuntu\+Controller\+::\+Keyboard\+Event}}
+\subsubsection{\texorpdfstring{create\+Key\+Event()}{createKeyEvent()}}
+{\footnotesize\ttfamily X\+Key\+Event Keyboard\+Event\+::create\+Key\+Event (\begin{DoxyParamCaption}\item[{Display $\ast$}]{display,  }\item[{Window \&}]{win,  }\item[{Window \&}]{win\+Root,  }\item[{bool}]{press,  }\item[{int}]{keycode,  }\item[{int}]{modifiers }\end{DoxyParamCaption})}
+
+It creates a key event that can be sent to the X server
+
+
+\begin{DoxyParams}{Parameters}
+{\em display} & The display that the event is occuring on. \\
+\hline
+{\em win} & The window that the event is occuring on. \\
+\hline
+{\em win\+Root} & The root window is the first window that all windows in the display are descended from. \\
+\hline
+{\em press} & whether the key is pressed or released \\
+\hline
+{\em keycode} & The X11 defined code for the key that is simulated. \\
+\hline
+{\em modifiers} & This is a bitmask that specifies the modifier keys that are pressed.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A X\+Key\+Event object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUbuntuController_1_1KeyboardEvent_aea537f2a22fc1f162fd81b5d039eb053}\label{classUbuntuController_1_1KeyboardEvent_aea537f2a22fc1f162fd81b5d039eb053}} 
+\index{Ubuntu\+Controller\+::\+Keyboard\+Event@{Ubuntu\+Controller\+::\+Keyboard\+Event}!key\+Press@{key\+Press}}
+\index{key\+Press@{key\+Press}!Ubuntu\+Controller\+::\+Keyboard\+Event@{Ubuntu\+Controller\+::\+Keyboard\+Event}}
+\subsubsection{\texorpdfstring{key\+Press()}{keyPress()}}
+{\footnotesize\ttfamily void Keyboard\+Event\+::key\+Press (\begin{DoxyParamCaption}\item[{Display $\ast$}]{display,  }\item[{int}]{keycode }\end{DoxyParamCaption})}
+
+It creates a fake key press event and sends it to the window which currently has the keyboard focus
+
+
+\begin{DoxyParams}{Parameters}
+{\em display} & The Display to send the event to. \\
+\hline
+{\em keycode} & The keycode of the key to be pressed. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/ubuntu\+\_\+controls/\hyperlink{KeyboardEvent_8h}{Keyboard\+Event.\+h}\item 
+src/ubuntu\+\_\+controls/\hyperlink{KeyboardEvent_8cpp}{Keyboard\+Event.\+cpp}\end{DoxyCompactItemize}

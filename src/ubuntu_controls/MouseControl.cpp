@@ -1,5 +1,7 @@
 #include "MouseControl.h"
 
+using namespace UbuntuController;
+
 MouseControl::MouseControl(void){};
 
 void MouseControl::click (Display *display, int button, XEvent event)

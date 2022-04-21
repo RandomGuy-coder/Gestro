@@ -1,12 +1,15 @@
 #! /bin/sh
 
-#OpenCV installed via zip file hosted on Github
+#Install all the libraries
 
 printf "Installing dependencies for Gestro\n"
 
 PP_ROOT=$(pwd)
 MIN_CMAKE="3.21"
 CV_VERSION="4.5.5"
+
+mkdir libraries || exit 1
+cd libraries || exit 1
 
 ## Check for correct version of CMake
 if ! cmake --version >/dev/null 2>&1; then
@@ -66,6 +69,22 @@ else
   rm "$CV_VERSION.zip"
 fi
 
+## Downloading and building Google Test
+printf "Downloading Google Test ..."
+if [ ! -d "googletest_src" ]; then
+  printf "\n"
+  wget "https://github.com/google/googletest/archive/refs/tags/release-1.11.0.zip" || exit 1
+  unzip -q "release-1.11.0"
+  mv "googletest-release-1.11.0" googletest_src
+  mkdir googletest_build
+  cd googletest_build
+  cmake ../googletest_src || exit 1
+  make -j$(nproc) || exit 1
+  cd ..
+else
+  printf " skipped\n"
+fi
+
 OS="$(uname -s)"
 
 case $OS in
@@ -85,7 +104,6 @@ case $OS in
   # For unit testing
   printf "Installing unit testing dependencies\n"
   sudo apt install libboost-dev libboost-all-dev -y
-  
   ;;
 *)
   printf "Failed to install dependencies\n"

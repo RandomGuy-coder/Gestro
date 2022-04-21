@@ -1,0 +1,238 @@
+\hypertarget{classGestro_1_1CaptureAndDetect}{}\section{Gestro\+:\+:Capture\+And\+Detect Class Reference}
+\label{classGestro_1_1CaptureAndDetect}\index{Gestro\+::\+Capture\+And\+Detect@{Gestro\+::\+Capture\+And\+Detect}}
+
+
+This class takes care of starting threads to capture image, process and publish commands.  
+
+
+
+
+{\ttfamily \#include $<$Capture\+And\+Detect.\+h$>$}
+
+
+
+Inheritance diagram for Gestro\+:\+:Capture\+And\+Detect\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{classGestro_1_1CaptureAndDetect__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Gestro\+:\+:Capture\+And\+Detect\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{classGestro_1_1CaptureAndDetect__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGestro_1_1CaptureAndDetect_a26c41eaa5100975ec0f50c97592f4bf1}{Capture\+And\+Detect} ()
+\item 
+void \hyperlink{classGestro_1_1CaptureAndDetect_a1df110dc696cebc95eb5d7ead2d74447}{init} (Controller\+Screen\+Callback\+Interface $\ast$, int, int, \hyperlink{classGestureDetection_1_1EnabledCommand}{Enabled\+Command} $\ast$, \hyperlink{CaptureAndDetect_8h_a3c1fc1369ee351f25804c8cde5e85ac3}{Resolution} width=\hyperlink{CaptureAndDetect_8h_a3c1fc1369ee351f25804c8cde5e85ac3a278580710dc7c233b4035c222f100b9f}{W\+I\+D\+T\+H\+\_\+1280}, \hyperlink{CaptureAndDetect_8h_a3c1fc1369ee351f25804c8cde5e85ac3}{Resolution} height=\hyperlink{CaptureAndDetect_8h_a3c1fc1369ee351f25804c8cde5e85ac3aaf8940bab7f04c8cd702f61c4d051f27}{H\+E\+I\+G\+H\+T\+\_\+720})
+\item 
+void \hyperlink{classGestro_1_1CaptureAndDetect_aafb4f601f860dd38f514f6dd29a1d016}{calibrate\+Values} (int, int, int, int)
+\item 
+void \hyperlink{classGestro_1_1CaptureAndDetect_a7f18d1c58b2ae4241766b36aa27385e9}{new\+Frame} (Mat) override
+\item 
+void \hyperlink{classGestro_1_1CaptureAndDetect_ac60f9b1d192c043fa9b40c38fc5599e6}{calibrate\+Color\+Pressed} ()
+\item 
+void \hyperlink{classGestro_1_1CaptureAndDetect_a53065abfb6eed6c074ad4d3370b3f232}{calibrate\+Background\+Remover} ()
+\item 
+void \hyperlink{classGestro_1_1CaptureAndDetect_a3f1ba69514a2debbc6b2a03e76f31b65}{display\+Image} (int)
+\item 
+void \hyperlink{classGestro_1_1CaptureAndDetect_aa75e3ba836797d18aa02c72bbf975082}{connect\+Control\+Callback} (\hyperlink{classGestro_1_1DisplayControlCallbackInterface}{Display\+Control\+Callback\+Interface} $\ast$)
+\item 
+void \hyperlink{classGestro_1_1CaptureAndDetect_ac7e70bbcade4e0023541c556ee7cb34e}{process\+Frame} ()
+\item 
+bool \hyperlink{classGestro_1_1CaptureAndDetect_a1620075ba1bf4d52a4e455c20f7ac3d1}{check\+For\+Palm} ()
+\item 
+void \hyperlink{classGestro_1_1CaptureAndDetect_af376ab5418f7b235ee181d574da71fd6}{add\+To\+Buffer} (\hyperlink{classGestureDetection_1_1FingerAndCoordinates}{Finger\+And\+Coordinates}) override
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classGestro_1_1CaptureAndDetect_acbe1ce90cb6a7bad1c94a6be68cc4f0b}{calibrate} = false
+\item 
+Mat \hyperlink{classGestro_1_1CaptureAndDetect_a5bd3dee8a4b9bffe627b1475a84da4e8}{recieved\+Frame}
+\begin{DoxyCompactList}\small\item\em frame received from capture thread \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class takes care of starting threads to capture image, process and publish commands. 
+
+This class is the mediator between the different functions of the application. Connecting between image capturing, G\+UI and and \hyperlink{classGestro_1_1DisplayControl}{Display\+Control} to publish the detected commands. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGestro_1_1CaptureAndDetect_a26c41eaa5100975ec0f50c97592f4bf1}\label{classGestro_1_1CaptureAndDetect_a26c41eaa5100975ec0f50c97592f4bf1}} 
+\index{Gestro\+::\+Capture\+And\+Detect@{Gestro\+::\+Capture\+And\+Detect}!Capture\+And\+Detect@{Capture\+And\+Detect}}
+\index{Capture\+And\+Detect@{Capture\+And\+Detect}!Gestro\+::\+Capture\+And\+Detect@{Gestro\+::\+Capture\+And\+Detect}}
+\subsubsection{\texorpdfstring{Capture\+And\+Detect()}{CaptureAndDetect()}}
+{\footnotesize\ttfamily Capture\+And\+Detect\+::\+Capture\+And\+Detect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+The constructor for the \hyperlink{classGestro_1_1CaptureAndDetect}{Capture\+And\+Detect} class. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classGestro_1_1CaptureAndDetect_af376ab5418f7b235ee181d574da71fd6}\label{classGestro_1_1CaptureAndDetect_af376ab5418f7b235ee181d574da71fd6}} 
+\index{Gestro\+::\+Capture\+And\+Detect@{Gestro\+::\+Capture\+And\+Detect}!add\+To\+Buffer@{add\+To\+Buffer}}
+\index{add\+To\+Buffer@{add\+To\+Buffer}!Gestro\+::\+Capture\+And\+Detect@{Gestro\+::\+Capture\+And\+Detect}}
+\subsubsection{\texorpdfstring{add\+To\+Buffer()}{addToBuffer()}}
+{\footnotesize\ttfamily void Capture\+And\+Detect\+::add\+To\+Buffer (\begin{DoxyParamCaption}\item[{\hyperlink{classGestureDetection_1_1FingerAndCoordinates}{Finger\+And\+Coordinates}}]{finger }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+It adds a finger to the buffer
+
+
+\begin{DoxyParams}{Parameters}
+{\em finger} & The finger that was detected. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classGestro_1_1CaptureAndDetectCallbackInterface_a8397891f6177ba6257e9cc978d9ddd52}{Gestro\+::\+Capture\+And\+Detect\+Callback\+Interface}.
+
+\mbox{\Hypertarget{classGestro_1_1CaptureAndDetect_a53065abfb6eed6c074ad4d3370b3f232}\label{classGestro_1_1CaptureAndDetect_a53065abfb6eed6c074ad4d3370b3f232}} 
+\index{Gestro\+::\+Capture\+And\+Detect@{Gestro\+::\+Capture\+And\+Detect}!calibrate\+Background\+Remover@{calibrate\+Background\+Remover}}
+\index{calibrate\+Background\+Remover@{calibrate\+Background\+Remover}!Gestro\+::\+Capture\+And\+Detect@{Gestro\+::\+Capture\+And\+Detect}}
+\subsubsection{\texorpdfstring{calibrate\+Background\+Remover()}{calibrateBackgroundRemover()}}
+{\footnotesize\ttfamily void Capture\+And\+Detect\+::calibrate\+Background\+Remover (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+It creates a background remover object that will be used to remove the background from the video frames \mbox{\Hypertarget{classGestro_1_1CaptureAndDetect_ac60f9b1d192c043fa9b40c38fc5599e6}\label{classGestro_1_1CaptureAndDetect_ac60f9b1d192c043fa9b40c38fc5599e6}} 
+\index{Gestro\+::\+Capture\+And\+Detect@{Gestro\+::\+Capture\+And\+Detect}!calibrate\+Color\+Pressed@{calibrate\+Color\+Pressed}}
+\index{calibrate\+Color\+Pressed@{calibrate\+Color\+Pressed}!Gestro\+::\+Capture\+And\+Detect@{Gestro\+::\+Capture\+And\+Detect}}
+\subsubsection{\texorpdfstring{calibrate\+Color\+Pressed()}{calibrateColorPressed()}}
+{\footnotesize\ttfamily void Capture\+And\+Detect\+::calibrate\+Color\+Pressed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+It calls the calibrate function of the skin\+Detector object, which returns a vector of 4 integers, which are then passed to the callback function update\+Calibrated\+Trackbar, which updates the trackbar values \mbox{\Hypertarget{classGestro_1_1CaptureAndDetect_aafb4f601f860dd38f514f6dd29a1d016}\label{classGestro_1_1CaptureAndDetect_aafb4f601f860dd38f514f6dd29a1d016}} 
+\index{Gestro\+::\+Capture\+And\+Detect@{Gestro\+::\+Capture\+And\+Detect}!calibrate\+Values@{calibrate\+Values}}
+\index{calibrate\+Values@{calibrate\+Values}!Gestro\+::\+Capture\+And\+Detect@{Gestro\+::\+Capture\+And\+Detect}}
+\subsubsection{\texorpdfstring{calibrate\+Values()}{calibrateValues()}}
+{\footnotesize\ttfamily void Capture\+And\+Detect\+::calibrate\+Values (\begin{DoxyParamCaption}\item[{int}]{h\+Min,  }\item[{int}]{h\+Max,  }\item[{int}]{s\+Min,  }\item[{int}]{s\+Max }\end{DoxyParamCaption})}
+
+It takes in the minimum and maximum values for the hue and saturation channels, and then passes them to the skin\+Detector object\textquotesingle{}s \hyperlink{classGestro_1_1CaptureAndDetect_aafb4f601f860dd38f514f6dd29a1d016}{calibrate\+Values()} function
+
+
+\begin{DoxyParams}{Parameters}
+{\em h\+Min} & Minimum Hue value \\
+\hline
+{\em h\+Max} & The maximum hue value for the skin color. \\
+\hline
+{\em s\+Min} & Minimum saturation value for the skin color. \\
+\hline
+{\em s\+Max} & The maximum saturation value for the skin color. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGestro_1_1CaptureAndDetect_a1620075ba1bf4d52a4e455c20f7ac3d1}\label{classGestro_1_1CaptureAndDetect_a1620075ba1bf4d52a4e455c20f7ac3d1}} 
+\index{Gestro\+::\+Capture\+And\+Detect@{Gestro\+::\+Capture\+And\+Detect}!check\+For\+Palm@{check\+For\+Palm}}
+\index{check\+For\+Palm@{check\+For\+Palm}!Gestro\+::\+Capture\+And\+Detect@{Gestro\+::\+Capture\+And\+Detect}}
+\subsubsection{\texorpdfstring{check\+For\+Palm()}{checkForPalm()}}
+{\footnotesize\ttfamily bool Capture\+And\+Detect\+::check\+For\+Palm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+It takes the current frame, and checks to see if there is a palm in it
+
+\begin{DoxyReturn}{Returns}
+A boolean value. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classGestro_1_1CaptureAndDetectCallbackInterface_a38fd706c69e3e6839b7328d88f09d7c1}{Gestro\+::\+Capture\+And\+Detect\+Callback\+Interface}.
+
+\mbox{\Hypertarget{classGestro_1_1CaptureAndDetect_aa75e3ba836797d18aa02c72bbf975082}\label{classGestro_1_1CaptureAndDetect_aa75e3ba836797d18aa02c72bbf975082}} 
+\index{Gestro\+::\+Capture\+And\+Detect@{Gestro\+::\+Capture\+And\+Detect}!connect\+Control\+Callback@{connect\+Control\+Callback}}
+\index{connect\+Control\+Callback@{connect\+Control\+Callback}!Gestro\+::\+Capture\+And\+Detect@{Gestro\+::\+Capture\+And\+Detect}}
+\subsubsection{\texorpdfstring{connect\+Control\+Callback()}{connectControlCallback()}}
+{\footnotesize\ttfamily void Capture\+And\+Detect\+::connect\+Control\+Callback (\begin{DoxyParamCaption}\item[{\hyperlink{classGestro_1_1DisplayControlCallbackInterface}{Display\+Control\+Callback\+Interface} $\ast$}]{interface }\end{DoxyParamCaption})}
+
+This function is called by the \hyperlink{classGestro_1_1DisplayControl}{Display\+Control} class to connect the \hyperlink{classGestro_1_1CaptureAndDetect}{Capture\+And\+Detect} class to the \hyperlink{classGestro_1_1DisplayControl}{Display\+Control} class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em interface} & The interface that will be used to communicate with the display control. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGestro_1_1CaptureAndDetect_a3f1ba69514a2debbc6b2a03e76f31b65}\label{classGestro_1_1CaptureAndDetect_a3f1ba69514a2debbc6b2a03e76f31b65}} 
+\index{Gestro\+::\+Capture\+And\+Detect@{Gestro\+::\+Capture\+And\+Detect}!display\+Image@{display\+Image}}
+\index{display\+Image@{display\+Image}!Gestro\+::\+Capture\+And\+Detect@{Gestro\+::\+Capture\+And\+Detect}}
+\subsubsection{\texorpdfstring{display\+Image()}{displayImage()}}
+{\footnotesize\ttfamily void Capture\+And\+Detect\+::display\+Image (\begin{DoxyParamCaption}\item[{int}]{feed }\end{DoxyParamCaption})}
+
+It sets the value of the variable to\+Display to the value of the parameter feed
+
+
+\begin{DoxyParams}{Parameters}
+{\em feed} & The feed to display. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGestro_1_1CaptureAndDetect_a1df110dc696cebc95eb5d7ead2d74447}\label{classGestro_1_1CaptureAndDetect_a1df110dc696cebc95eb5d7ead2d74447}} 
+\index{Gestro\+::\+Capture\+And\+Detect@{Gestro\+::\+Capture\+And\+Detect}!init@{init}}
+\index{init@{init}!Gestro\+::\+Capture\+And\+Detect@{Gestro\+::\+Capture\+And\+Detect}}
+\subsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Capture\+And\+Detect\+::init (\begin{DoxyParamCaption}\item[{Controller\+Screen\+Callback\+Interface $\ast$}]{interface,  }\item[{int}]{screen\+Width,  }\item[{int}]{screen\+Height,  }\item[{\hyperlink{classGestureDetection_1_1EnabledCommand}{Enabled\+Command} $\ast$}]{enabled\+Command,  }\item[{\hyperlink{CaptureAndDetect_8h_a3c1fc1369ee351f25804c8cde5e85ac3}{Resolution}}]{width = {\ttfamily \hyperlink{CaptureAndDetect_8h_a3c1fc1369ee351f25804c8cde5e85ac3a278580710dc7c233b4035c222f100b9f}{W\+I\+D\+T\+H\+\_\+1280}},  }\item[{\hyperlink{CaptureAndDetect_8h_a3c1fc1369ee351f25804c8cde5e85ac3}{Resolution}}]{height = {\ttfamily \hyperlink{CaptureAndDetect_8h_a3c1fc1369ee351f25804c8cde5e85ac3aaf8940bab7f04c8cd702f61c4d051f27}{H\+E\+I\+G\+H\+T\+\_\+720}} }\end{DoxyParamCaption})}
+
+It initializes the capture object, sets the region of interest, sets the callback interface, starts the capture, and starts the thread that processes the frames
+
+
+\begin{DoxyParams}{Parameters}
+{\em interface} & The interface that will be called when a gesture is detected. \\
+\hline
+{\em width} & The width of the camera\textquotesingle{}s resolution. \\
+\hline
+{\em height} & The height of the camera\textquotesingle{}s resolution. \\
+\hline
+{\em screen\+Width} & The width of the screen in pixels \\
+\hline
+{\em screen\+Height} & The height of the screen in pixels. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGestro_1_1CaptureAndDetect_a7f18d1c58b2ae4241766b36aa27385e9}\label{classGestro_1_1CaptureAndDetect_a7f18d1c58b2ae4241766b36aa27385e9}} 
+\index{Gestro\+::\+Capture\+And\+Detect@{Gestro\+::\+Capture\+And\+Detect}!new\+Frame@{new\+Frame}}
+\index{new\+Frame@{new\+Frame}!Gestro\+::\+Capture\+And\+Detect@{Gestro\+::\+Capture\+And\+Detect}}
+\subsubsection{\texorpdfstring{new\+Frame()}{newFrame()}}
+{\footnotesize\ttfamily void Capture\+And\+Detect\+::new\+Frame (\begin{DoxyParamCaption}\item[{Mat}]{incoming\+Frame }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+This function is called by the camera thread when a new frame is available. It sets the recieved\+Frame variable to the new frame and sets the frame\+Recieved variable to true.
+
+
+\begin{DoxyParams}{Parameters}
+{\em incoming\+Frame} & The frame that was recieved from the camera. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classGestro_1_1CaptureAndDetectCallbackInterface_a9a42d0f1b3fd64cea607eeb4e6a46287}{Gestro\+::\+Capture\+And\+Detect\+Callback\+Interface}.
+
+\mbox{\Hypertarget{classGestro_1_1CaptureAndDetect_ac7e70bbcade4e0023541c556ee7cb34e}\label{classGestro_1_1CaptureAndDetect_ac7e70bbcade4e0023541c556ee7cb34e}} 
+\index{Gestro\+::\+Capture\+And\+Detect@{Gestro\+::\+Capture\+And\+Detect}!process\+Frame@{process\+Frame}}
+\index{process\+Frame@{process\+Frame}!Gestro\+::\+Capture\+And\+Detect@{Gestro\+::\+Capture\+And\+Detect}}
+\subsubsection{\texorpdfstring{process\+Frame()}{processFrame()}}
+{\footnotesize\ttfamily void Capture\+And\+Detect\+::process\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+It takes a frame from the camera, processes it, and sends it to the G\+UI to be displayed 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classGestro_1_1CaptureAndDetect_acbe1ce90cb6a7bad1c94a6be68cc4f0b}\label{classGestro_1_1CaptureAndDetect_acbe1ce90cb6a7bad1c94a6be68cc4f0b}} 
+\index{Gestro\+::\+Capture\+And\+Detect@{Gestro\+::\+Capture\+And\+Detect}!calibrate@{calibrate}}
+\index{calibrate@{calibrate}!Gestro\+::\+Capture\+And\+Detect@{Gestro\+::\+Capture\+And\+Detect}}
+\subsubsection{\texorpdfstring{calibrate}{calibrate}}
+{\footnotesize\ttfamily bool Gestro\+::\+Capture\+And\+Detect\+::calibrate = false}
+
+\mbox{\Hypertarget{classGestro_1_1CaptureAndDetect_a5bd3dee8a4b9bffe627b1475a84da4e8}\label{classGestro_1_1CaptureAndDetect_a5bd3dee8a4b9bffe627b1475a84da4e8}} 
+\index{Gestro\+::\+Capture\+And\+Detect@{Gestro\+::\+Capture\+And\+Detect}!recieved\+Frame@{recieved\+Frame}}
+\index{recieved\+Frame@{recieved\+Frame}!Gestro\+::\+Capture\+And\+Detect@{Gestro\+::\+Capture\+And\+Detect}}
+\subsubsection{\texorpdfstring{recieved\+Frame}{recievedFrame}}
+{\footnotesize\ttfamily Mat Gestro\+::\+Capture\+And\+Detect\+::recieved\+Frame}
+
+
+
+frame received from capture thread 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/gesture\+\_\+detection/\hyperlink{CaptureAndDetect_8h}{Capture\+And\+Detect.\+h}\item 
+src/gesture\+\_\+detection/\hyperlink{CaptureAndDetect_8cpp}{Capture\+And\+Detect.\+cpp}\end{DoxyCompactItemize}

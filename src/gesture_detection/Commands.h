@@ -22,14 +22,16 @@ enum Commands {
     /** Press space bar */
     PRESS_SPACE
 };
+namespace GestureDetection {
+    class EnabledCommand {
+    public:
+        bool controlSpacebar;
+        bool controlMouse;
+        bool controlMoveWindow;
+        bool controlVolume;
+        bool controlMinimizeWindow;
 
-class EnabledCommand{
-public:
-    bool controlSpacebar;
-    bool controlMouse;
-    bool controlMoveWindow;
-    bool controlVolume;
-    bool controlMinimizeWindow;
-    EnabledCommand(void);
-};
+        EnabledCommand(void);
+    };
+}
 #endif //GESTRO_COMMANDS_H

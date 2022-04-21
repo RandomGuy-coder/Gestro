@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['windowaction',['WindowAction',['../classWindowAction.html#a1836cf300ad545fa88f33454d09765e1',1,'WindowAction']]],
-  ['windowcontrol',['WindowControl',['../classWindowControl.html#ac1737a56defaa8f60f53054b2167fee8',1,'WindowControl']]]
+  ['volumecontrol',['VolumeControl',['../classUbuntuController_1_1VolumeControl.html#a3cc73bb232bd87f8385da0440126c38c',1,'UbuntuController::VolumeControl']]]
 ];
