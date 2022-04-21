@@ -143,7 +143,7 @@ cd ~/Gestro && sudo ./install_dependencies.sh
 
 **3. Enter the following commands into the terminal to run the build script.**
 ```sh
-sudo ./build.sh
+sudo chmod +x build.sh && sudo ./build.sh
 ```
 > If any of the following errors occured: > 
 > ```
