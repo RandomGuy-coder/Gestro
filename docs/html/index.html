@@ -130,7 +130,7 @@ $(function() {
 <p>By using a webcam and libraries such as OpenCV, X11, et cetera, <a class="el" href="namespace_gestro.html">Gestro</a> is able to successfully translate hand gestures performed by users into commands that performs certain operations including, but not limited to, muting and unmuting the system's volume, move window, mouse move and clicks. <a class="el" href="namespace_gestro.html">Gestro</a> is designed to be displayed using a Qt application on the users' Linux system running the Ubuntu distribution.</p>
 <p>More details can be found below. However, for the complete information about <a class="el" href="namespace_gestro.html">Gestro</a>, please visit our <a href="https://randomguy-coder.github.io/Gestro/">website</a>.</p>
 <h3 id = "Demonstration-Video">Demonstration Video</h3>
-<p>Click to view our <a href="">demonstration video!</a></p>
+<p>Click to view our <a href="https://randomguy-coder.github.io/Gestro/#demo-video">demonstration video!</a></p>
 <div align="center">
   <img src="../../assets/screenshots/Main Program Screenshot.png" alt="Screenshot of demonstration" width="600">
 </div>
@@ -192,7 +192,41 @@ $(function() {
 <p><b>2. Launch a terminal and enter the following commands into it to install the requirements:</b> </p><div class="fragment"><div class="line">cd ~/Gestro<br>sudo ./install_dependencies.sh</div></div><!-- fragment --> <blockquote class="doxtable">
 <p>Note: If CMake version is found to be too low, please follow instructions <a href="https://askubuntu.com/a/829311">here</a> to update CMake. After updating CMake, make sure to close and reopen the terminal before starting from step 2 again. </p>
 </blockquote>
-<p><b>3. Enter the following commands into the terminal to run the build script.</b> </p><div class="fragment"><div class="line">sudo chmod +x build.sh && sudo ./build.sh</div></div><!-- fragment --><h2 id = "Launching-Gestro">Launching <a class="el" href="namespace_gestro.html">Gestro</a></h2>
+<p><b>3. Enter the following commands into the terminal to run the build script.</b> </p><div class="fragment"><div class="line">sudo chmod +x build.sh && sudo ./build.sh</div></div><!-- fragment -->
+
+  <blockquote>
+    <p>If any of the following errors occured: ></p>
+
+  <pre><code>This application failed to start because it could not find or load the Qt platform plugin "xcb" in "".
+  </code></pre>
+
+  <pre><code>/usr/lib/qt5/bin/uic: error while loading shared libraries: libdouble-conversion.so.1: cannot open shared object file: No such file or directory
+  </code></pre>
+
+    <ol>
+    <li>Run this command in the terminal:</li>
+
+  <pre><code>sudo apt-get install libxcb-xinerama0
+  </code></pre>
+
+    <p><em>If the previous command said that libxcb-xinerama0 is already installed or the newest version, run this:</em></p>
+
+  <pre><code>sudo apt install --reinstall libxcb-xinerama0
+  </code></pre>
+
+    <li>Then, run this command:</li>
+
+  <pre><code>sudo apt install --reinstall libdouble-conversion1
+  </code></pre>
+
+    <li>Now, close and relaunch the terminal, then run the following commands:</li>
+    </ol>
+
+  <pre><code>cd ~/Gestro &amp;&amp; sudo ./build.sh
+  </code></pre>
+  </blockquote>
+
+<h2 id = "Launching-Gestro">Launching <a class="el" href="namespace_gestro.html">Gestro</a></h2>
 <p>Firstly, launch a terminal and enter the following commands to cd into the <a class="el" href="namespace_gestro.html">Gestro</a>'s bin directory: </p><div class="fragment"><div class="line">cd ~/Gestro/bin</div></div><!-- fragment --><h3 id = "Main-Program">Main Program</h3>
 <p>Start the <a class="el" href="namespace_gestro.html">Gestro</a> application by running the following commands:</p>
 <div class="fragment"><div class="line">./Gestro</div></div><!-- fragment --><p> <b>For instructions on how to use the <a class="el" href="namespace_gestro.html">Gestro</a> application, please see <a href="https://randomguy-coder.github.io/Gestro/user_manual.html">User Manual</a> on our <a href="https://randomguy-coder.github.io/Gestro/">website</a></b>.</p>
