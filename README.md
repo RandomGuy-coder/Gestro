@@ -63,6 +63,10 @@
 
 ## About Gestro
 
+<div align="center">
+  <img src="assets/Main Program Screenshot.png" alt="Screenshot of demonstration" width="600">
+</div>
+
 Gestro is developed by a group of students from The University of Glasgow currently undertaking the course of ENG5220 - Real-time Embedded Systems under Team 26.
 
 Gestro is an application which allows users to control their Linux system using hand gestures so that users will be able to perform certains actions without the use of a keyboard and mouse. This is particularly useful in cases where users want to control their Linux PC while: being away from it, being unfamiliar with modern devices (such as Elderly people), et cetera.
@@ -78,10 +82,6 @@ Check out our demonstration video:
 
 [![Gestro Demonstration Video](https://user-images.githubusercontent.com/65194817/164545672-85706ffd-abc3-4aec-9838-a3a5d0f5e5fc.mp4
 )](https://randomguy-coder.github.io/Gestro/#demo-video)
-
-<div align="center">
-  <img src="assets/Main Program Screenshot.png" alt="Screenshot of demonstration" width="600">
-</div>
 
 > Note: Although each function is shown separately in the video, all of them can be selected and used at the same time.
 
