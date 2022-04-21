@@ -32,7 +32,7 @@ By using a webcam and libraries such as OpenCV, X11, et cetera, Gestro is able t
 ## Demonstration
 Here is a demonstration video for Gestro:
 
-<div align="center">
+<div align="center" id = "demo-video">
   <video width="600" controls>
     <source src="videos/Gestro demo.mp4" type="video/mp4">
   </video>

@@ -9,8 +9,7 @@ Code that is covered by unit tests is more dependable than code that is not. Tha
 
  Unit tests for Gestro were built using the Google Unit Test Framework, which are all located in the **tests** directory.
 
-In order to run the unit tests, run the following command in a terminal:
+In order to run the unit tests, first install Gestro following the instructions from our [installation guide](installation_guide). Then, run the following command in a terminal:
 ```sh
-cd ~/Gestro
-./test_run
+cd ~/Gestro && sudo make test
 ```

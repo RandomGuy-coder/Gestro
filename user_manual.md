@@ -36,21 +36,21 @@ After Gestro is successfully launched, users will be greeted with the main menu.
 ## Main Program
 
 <div align="center">
-    <img src="assets/screenshots/Main Program.png" alt="Main Program Screenshot" width="600"/>
+    <img src="assets/screenshots/Main Program Screenshot.png" alt="Main Program Screenshot" width="600"/>
 </div>
 
 1. After launching Gestro (follow instructions from [Launching Gestro](Launching-Gestro)), click the _Start_ button from the main menu, where the main program then officially starts, displaying the main user interface to the user.
 2. Move your gesture performing hand to cover the blue boxes located in the yellow region at the upper right, **only then** click the _Calibrate Skin_ button with your hands still covering the blue boxes.
 3. If your hand can be clearly seen while in the yellow region, skip this step and go to step 4. Else, adjust the sliders in _Calibrate Values_.
 4. Remove all body parts including your hands from the yellow region, and click _Calibrate Background_ or press "B" on your keyboard. **Note: ensure that there are no moving objects in the yellow region**
-5. After step 4, make sure that the whole yellow region is entirely black. If it is, move to the next step. Else, repeat step 4 again.
+5. After step 4, make sure that the whole yellow region is entirely black and move the gesture performing hand back into the yellow region. If the hand can be clearly seen among the black background, move to the next step. Else, repeat step 4 again.
 6. Select the functions that you would like to use from _Select Controls_
 7. Click on _Detector_ and start performing gestures following the instructions image that is shown on the same page to execute the corresponding functions.
 
 ## Components of Main Program
 
 <div align="center">
-    <img src="assets/screenshots/Main Program Components.png" alt="Main Program Components Screenshot" width="600"/>
+    <img src="assets/screenshots/Main Program Components Screenshot.png" alt="Main Program Components Screenshot" width="600"/>
 </div>
 
 ### 1. Feedback display
@@ -93,7 +93,7 @@ There is a log here which records details on the buttons that were selected on p
 ## Instructions
 
 <div align="center">
-    <img src="assets/screenshots/Instructions Page.png" alt="Instructions Page Screenshot" width="600"/>
+    <img src="assets/screenshots/Instructions Screenshot.png" alt="Instructions Page Screenshot" width="600"/>
 </div>
 
 The button _Instructions_ from Main Menu shows the users instructions on how to use Gestro.
@@ -101,7 +101,7 @@ The button _Instructions_ from Main Menu shows the users instructions on how to 
 ## About Us
 
 <div align="center">
-    <img src="assets/screenshots/About Us Page.png" alt="About Us Page Screenshot" width="600"/>
+    <img src="assets/screenshots/About Us Screenshot.png" alt="About Us Page Screenshot" width="600"/>
 </div>
 
 The last button _About Us_ in Main Menu brings up a page which introduces the team behind Gestro, along with the current version of Gestro.
