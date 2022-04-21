@@ -124,18 +124,18 @@ $(function() {
 <li>
 <a href="#License">License</a> </li>
 </ol>
-<h2>About <a class="el" href="namespace_gestro.html">Gestro</a></h2>
+<h2 id = "About-Gestro">About <a class="el" href="namespace_gestro.html">Gestro</a></h2>
 <p><a class="el" href="namespace_gestro.html">Gestro</a> is developed by a group of students from The University of Glasgow currently undertaking the course of ENG5220 - Real-time Embedded Systems under Team 26.</p>
 <p><a class="el" href="namespace_gestro.html">Gestro</a> is an application which allows users to control their Linux system using hand gestures so that users will be able to perform certains actions without the use of a keyboard and mouse. This is particularly useful in cases where users want to control their Linux PC while: being away from it, being unfamiliar with modern devices (such as Elderly people), et cetera.</p>
 <p>By using a webcam and libraries such as OpenCV, X11, et cetera, <a class="el" href="namespace_gestro.html">Gestro</a> is able to successfully translate hand gestures performed by users into commands that performs certain operations including, but not limited to, muting and unmuting the system's volume, move window, mouse move and clicks. <a class="el" href="namespace_gestro.html">Gestro</a> is designed to be displayed using a Qt application on the users' Linux system running the Ubuntu distribution.</p>
 <p>More details can be found below. However, for the complete information about <a class="el" href="namespace_gestro.html">Gestro</a>, please visit our <a href="https://randomguy-coder.github.io/Gestro/">website</a>.</p>
-<h3>Demonstration Video</h3>
+<h3 id = "Demonstration-Video">Demonstration Video</h3>
 <p>Click to view our <a href="">demonstration video!</a></p>
 <div align="center">
   <img src="../../assets/screenshots/Main Program Screenshot.png" alt="Screenshot of demonstration" width="600">
 </div>
 <p>Note: Although each function is shown separately in the video, all of them can be selected and used at the same time.</p>
-<div align="center">  </div><h3>Features</h3>
+<div align="center">  </div><h3 id = "Features">Features</h3>
 <ul>
 <li>Enter Spacebar (Used for Play and Pause).</li>
 <li>Track mouse.</li>
@@ -143,12 +143,12 @@ $(function() {
 <li>Mute and Unmute Volume.</li>
 <li>Move and Minimise window.</li>
 </ul>
-<h3>Built With</h3>
+<h3 id = "Built-With">Built With</h3>
 <ul>
 <li>A PC running Ubuntu 18.04 LTS.</li>
 <li>A webcam.</li>
 </ul>
-<h3>Built On</h3>
+<h3 id = "Built-On">Built On</h3>
 <ul>
 <li>Iir</li>
 <li>X11</li>
@@ -160,9 +160,9 @@ $(function() {
 <li>libasound2-dev</li>
 <li>Google Unit Test Framework</li>
 </ul>
-<h2>Getting Started</h2>
+<h2 id = "Getting-Started">Getting Started</h2>
 <p><a class="el" href="namespace_gestro.html">Gestro</a> is designed to be used on Linux PCs running the Ubuntu distribution. In particular, it was tested and found to be running perfectly on PCs running Ubuntu 18.04 LTS.</p>
-<h3>Prerequisites</h3>
+<h3 id = "Prerequisites">Prerequisites</h3>
 <ul>
 <li>A PC running Ubuntu.</li>
 <li>A webcam.</li>
@@ -177,7 +177,7 @@ $(function() {
 <blockquote class="doxtable">
 <p>These required tools and libraries will be installed if you follow step 2 of the <a href="#installation-guide">installation guide</a> below. </p>
 </blockquote>
-<h3>Installation Guide</h3>
+<h3 id = "Installation-Guide">Installation Guide</h3>
 <blockquote class="doxtable">
 <p>If permission is denied while trying to run any of the scripts, please enter the following Commands into the terminal and try running the script again, <code>sudo chmod +x &lt;script_name&gt;.sh</code>. </p>
 </blockquote>
@@ -192,19 +192,19 @@ $(function() {
 <p><b>2. Launch a terminal and enter the following commands into it to install the requirements:</b> </p><div class="fragment"><div class="line">cd ~/Gestro<br>sudo ./install_dependencies.sh</div></div><!-- fragment --> <blockquote class="doxtable">
 <p>Note: If CMake version is found to be too low, please follow instructions <a href="https://askubuntu.com/a/829311">here</a> to update CMake. After updating CMake, make sure to close and reopen the terminal before starting from step 2 again. </p>
 </blockquote>
-<p><b>3. Enter the following commands into the terminal to run the build script.</b> </p><div class="fragment"><div class="line">sudo chmod +x build.sh && sudo ./build.sh</div></div><!-- fragment --><h2>Launching <a class="el" href="namespace_gestro.html">Gestro</a></h2>
-<p>Firstly, launch a terminal and enter the following commands to cd into the <a class="el" href="namespace_gestro.html">Gestro</a>'s bin directory: </p><div class="fragment"><div class="line">cd ~/Gestro/bin</div></div><!-- fragment --><h3>Main Program</h3>
+<p><b>3. Enter the following commands into the terminal to run the build script.</b> </p><div class="fragment"><div class="line">sudo chmod +x build.sh && sudo ./build.sh</div></div><!-- fragment --><h2 id = "Launching-Gestro">Launching <a class="el" href="namespace_gestro.html">Gestro</a></h2>
+<p>Firstly, launch a terminal and enter the following commands to cd into the <a class="el" href="namespace_gestro.html">Gestro</a>'s bin directory: </p><div class="fragment"><div class="line">cd ~/Gestro/bin</div></div><!-- fragment --><h3 id = "Main-Program">Main Program</h3>
 <p>Start the <a class="el" href="namespace_gestro.html">Gestro</a> application by running the following commands:</p>
 <div class="fragment"><div class="line">./Gestro</div></div><!-- fragment --><p> <b>For instructions on how to use the <a class="el" href="namespace_gestro.html">Gestro</a> application, please see <a href="https://randomguy-coder.github.io/Gestro/user_manual.html">User Manual</a> on our <a href="https://randomguy-coder.github.io/Gestro/">website</a></b>.</p>
-<h3>Unit Tests</h3>
-<p>Run the unit tests by running the following commands: </p><div class="fragment"><div class="line">cd ~/Gestro && sudo make test</div></div><!-- fragment --><h2>Contributors:</h2>
+<h3 id = "Unit-Tests">Unit Tests</h3>
+<p>Run the unit tests by running the following commands: </p><div class="fragment"><div class="line">cd ~/Gestro && sudo make test</div></div><!-- fragment --><h2 id = "Contributors">Contributors:</h2>
 <p>ENG5220 - Real-time Embedded Systems - Team 26:</p><ul>
 <li><a href="https://github.com/RandomGuy-coder">Tushar Anil Mittal, 2669699M</a></li>
 <li><a href="https://github.com/terrsoshi">Tian Jie Wong, 2702282W</a></li>
 <li><a href="https://github.com/MuhatasimIntisar">Muhatasim Intisar, 2683935I</a></li>
 <li><a href="https://github.com/David2574">Ruoqi Sun, 2574212S</a></li>
 </ul>
-<h2>Future Enhancement:</h2>
+<h2 id = "Future-Enhancement">Future Enhancement:</h2>
 <p>Here are some of the planned features for this project:</p><ul>
 <li>Enter other keys</li>
 <li>Close Window</li>
@@ -218,7 +218,7 @@ $(function() {
 <blockquote class="doxtable">
 <p>Feel free to contribute to this project by forking it and submitting a pull request for the added changes. </p>
 </blockquote>
-<h2>Social Media:</h2>
+<h2 id = "Social-Media">Social Media:</h2>
 
 <nav>
     Follow us on:<br><br>
@@ -230,9 +230,9 @@ $(function() {
     </div>
 </nav>
 
-<h2>Documentation</h2>
+<h2 id = "Documentation">Documentation</h2>
 <p>Check out <a href="https://randomguy-coder.github.io/Gestro/docs/html/index.html">Gestro's documentation page</a>!</p>
-<h2>License</h2>
+<h2 id = "License">License</h2>
 <p>Distributed under the GPL-3.0 License. See <a href="https://github.com/RandomGuy-coder/Gestro/blob/main/LICENSE"><code>LICENSE</code></a> for more information.</p>
 <p><br />
  <small><em>Copyright &copy; 2022; ENG5220 - Real-Time-Embedded-Systems - Team 26</em></small><br />
