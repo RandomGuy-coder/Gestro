@@ -185,7 +185,7 @@ Start the Gestro application by running the following commands:
 **For instructions on how to use the Gestro application, please see [User Manual](https://randomguy-coder.github.io/Gestro/user_manual.html) on our [website](https://randomguy-coder.github.io/Gestro/)**.
 
 ### Unit Tests
-Run the unit tests by running the following Commands:
+Run the unit tests by running the following commands in a terminal:
 ```sh
 cd ~/Gestro && sudo make test
 ```
