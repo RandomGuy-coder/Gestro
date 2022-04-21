@@ -67,6 +67,14 @@ $(function() {
 <p><a href="https://github.com/RandomGuy-coder/Gestro"></a></p>
 <div align = "center"><img src="gestro_logo.png"></div>
 <h2 align = "center">Controlling Linux system using hand gestures</h2>
+<div align ="center">
+  <a href="https://randomguy-coder.github.io/Gestro/docs/html/index.html">
+    <strong>
+      Check out our docs >>
+    </strong>
+  </a>
+</div>
+<br>
 <div align="center"></div><div align="center"> <div class="image">
 <img src="https://img.shields.io/github/contributors/RandomGuy-coder/Gestro?color=9cf&style=flat-square" alt="Contributors"/>
 <img src="https://img.shields.io/github/issues/RandomGuy-coder/Gestro?color=orange&style=flat-square" alt="Issues"/>
@@ -124,7 +132,7 @@ $(function() {
 <h3>Demonstration Video</h3>
 <p>Click to view our <a href="">demonstration video!</a></p>
 <div align="center">
-  <img src="../../assets/screenshots/Main Program.png" alt="Screenshot of demonstration" width="600">
+  <img src="../../assets/screenshots/Main Program Screenshot.png" alt="Screenshot of demonstration" width="600">
 </div>
 <p>Note: Although each function is shown separately in the video, all of them can be selected and used at the same time.</p>
 <div align="center">  </div><h3>Features</h3>
@@ -176,13 +184,12 @@ $(function() {
 <blockquote class="doxtable">
 <p>For example, for the install_dependencies.sh, enter <code>sudo chmod +x install_dependencies.sh</code> into the terminal. </p>
 </blockquote>
-<p><b>1. Download the latest <a href="https://github.com/RandomGuy-coder/Gestro/releases">release<a> from our Github and extract the contents into the <em>Home</em> folder.</b></p>
-<blockquote class="doxtable">
+<p><b>1. Download the latest <a href="https://github.com/RandomGuy-coder/Gestro/releases">release</a> from our Github and extract the contents into the <em>Home</em> folder.</b></p><blockquote class="doxtable">
 <p>Note: Make sure the folder with the contents is named "Gestro". If not, rename it to "Gestro". </p>
 </blockquote>
 <blockquote class="doxtable">
 <p>Alternatively, launch a terminal and run: </p><div class="fragment"><div class="line">git clone https://github.com/RandomGuy-coder/Gestro.git</div></div><!-- fragment --> </blockquote>
-<p><b>2. Launch a terminal and enter the following commands into it to install the requirements:</b> </p><div class="fragment"><div class="line">cd ~/Gestro <br>sudo ./install_dependencies.sh</div></div><!-- fragment --> <blockquote class="doxtable">
+<p><b>2. Launch a terminal and enter the following commands into it to install the requirements:</b> </p><div class="fragment"><div class="line">cd ~/Gestro<br>sudo ./install_dependencies.sh</div></div><!-- fragment --> <blockquote class="doxtable">
 <p>Note: If CMake version is found to be too low, please follow instructions <a href="https://askubuntu.com/a/829311">here</a> to update CMake. After updating CMake, make sure to close and reopen the terminal before starting from step 2 again. </p>
 </blockquote>
 <p><b>3. Enter the following commands into the terminal to run the build script.</b> </p><div class="fragment"><div class="line">sudo chmod +x build.sh && sudo ./build.sh</div></div><!-- fragment --><h2>Launching <a class="el" href="namespace_gestro.html">Gestro</a></h2>
@@ -190,7 +197,7 @@ $(function() {
 <p>Start the <a class="el" href="namespace_gestro.html">Gestro</a> application by running the following commands:</p>
 <div class="fragment"><div class="line">./Gestro</div></div><!-- fragment --><p> <b>For instructions on how to use the <a class="el" href="namespace_gestro.html">Gestro</a> application, please see <a href="https://randomguy-coder.github.io/Gestro/user_manual.html">User Manual</a> on our <a href="https://randomguy-coder.github.io/Gestro/">website</a></b>.</p>
 <h3>Unit Tests</h3>
-<p>Run the unit tests by running the following Commands: </p><div class="fragment"><div class="line">./test_run</div></div><!-- fragment --><h2>Contributors:</h2>
+<p>Run the unit tests by running the following commands: </p><div class="fragment"><div class="line">cd ~/Gestro && sudo make test</div></div><!-- fragment --><h2>Contributors:</h2>
 <p>ENG5220 - Real-time Embedded Systems - Team 26:</p><ul>
 <li><a href="https://github.com/RandomGuy-coder">Tushar Anil Mittal, 2669699M</a></li>
 <li><a href="https://github.com/terrsoshi">Tian Jie Wong, 2702282W</a></li>
