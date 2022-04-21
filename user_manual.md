@@ -72,10 +72,10 @@ Here users will be able to select and deselect the functions that they would lik
 
 Here are the list of features which can be select or deselect:
 * Enter Spacebar (used to control play or pause)
-* Increase and Decrease Volume
+* Mute and Unmute.
 * Minimise window.
-* Move Window.
-* Move mouse and perform mouse clicks.
+* Move Window. (Use one finger to move the window after selecting the function)
+* Move mouse and perform mouse clicks. (Use one finger to move the cursor after selecting the function)
 
 ### 3. Gesture Instructions
 An image is shown to the user for them to learn the gestures to perform to use each of the functions.

@@ -8,10 +8,10 @@ parent: System Overview
 
 The class diagram for Gestro is shown below.
 
-<embed src="../assets/diagrams/Class Diagram.png" type="application/pdf" width="100%" height="600px" />
-
 <div align="center">
   <img src="../assets/diagrams/Class Diagram.png" alt="Gestro class diagram" width="600">
 </div>
+
+> Note: If the diagram is not being shown clearly, right click it and open it in a new tab and zoom in to view it more clearly.
 
 For more details, please visit our [documentation page](docs/html/index.html).
