@@ -1,0 +1,394 @@
+\hypertarget{class_gesture_detection_1_1_skin_color_detector}{}\section{Gesture\+Detection\+:\+:Skin\+Color\+Detector Class Reference}
+\label{class_gesture_detection_1_1_skin_color_detector}\index{Gesture\+Detection\+::\+Skin\+Color\+Detector@{Gesture\+Detection\+::\+Skin\+Color\+Detector}}
+
+
+detects skin colour threshold and creates a skin mask.  
+
+
+
+
+{\ttfamily \#include $<$Skin\+Color\+Detector.\+h$>$}
+
+
+
+Collaboration diagram for Gesture\+Detection\+:\+:Skin\+Color\+Detector\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{class_gesture_detection_1_1_skin_color_detector__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_gesture_detection_1_1_skin_color_detector_ab059f7f926aac46a712db749b4df4f27}{Skin\+Color\+Detector} (void)
+\item 
+void \hyperlink{class_gesture_detection_1_1_skin_color_detector_a4eb701f5b2761027b3e752d6b3de46c2}{draw\+Skin\+Color\+Sampler} (Mat input\+Frame)
+\item 
+vector$<$ int $>$ \hyperlink{class_gesture_detection_1_1_skin_color_detector_ae8b3880d1d75b07e356cd7d1ff128ed9}{calibrate} (Mat input\+Frame)
+\item 
+Mat \hyperlink{class_gesture_detection_1_1_skin_color_detector_a8cf2f51c4c7797a126b767e48458a006}{get\+Skin\+Mask} (Mat input\+Frame)
+\item 
+bool \hyperlink{class_gesture_detection_1_1_skin_color_detector_ad02c96fbc75934c86d22dd90ee726373}{get\+Calibrated} ()
+\item 
+void \hyperlink{class_gesture_detection_1_1_skin_color_detector_a4739dae25a983fb35a972f3c0ff8faaf}{calibrate\+Values} (int H\+\_\+\+M\+IN, int H\+\_\+\+M\+AX, int S\+\_\+\+M\+IN, int S\+\_\+\+M\+AX)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_gesture_detection_1_1_skin_color_detector_abcb6b9a3ef251dbafb6bca73ae0929f8}{calculate\+Thresholds} (Mat sample1, Mat sample2)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_gesture_detection_1_1_skin_color_detector_a48bd581cb2e8265fa4a26cdee2757c86}{h\+Upper}
+\begin{DoxyCompactList}\small\item\em These are the upper and lower bounds for the Hue and Saturation values. \end{DoxyCompactList}\item 
+int \hyperlink{class_gesture_detection_1_1_skin_color_detector_ae08f063d47dea63ee539dd41cee45097}{h\+Lower}
+\item 
+int \hyperlink{class_gesture_detection_1_1_skin_color_detector_ae771d8e46f1494e88782674983deaf56}{s\+Upper}
+\item 
+int \hyperlink{class_gesture_detection_1_1_skin_color_detector_a2a6a3cb69984c68ce4bc83bb0f985677}{s\+Lower}
+\item 
+int \hyperlink{class_gesture_detection_1_1_skin_color_detector_a82c6256414d9c3cb968d6f0de12fc7d9}{v\+Upper}
+\item 
+int \hyperlink{class_gesture_detection_1_1_skin_color_detector_adc72a8fe90eb2b5a578bded973229c23}{v\+Lower}
+\item 
+Scalar \hyperlink{class_gesture_detection_1_1_skin_color_detector_a8a9acdec847621566cf543a9ac7512b5}{Means\+Sample1}
+\begin{DoxyCompactList}\small\item\em A variable that stores the mean of the H\+SV values of the two samples. \end{DoxyCompactList}\item 
+Scalar \hyperlink{class_gesture_detection_1_1_skin_color_detector_a82bfb240375cc9ab7d8fafc674a1efc4}{Means\+Sample2}
+\item 
+bool \hyperlink{class_gesture_detection_1_1_skin_color_detector_aef5ea498d5f27603fa5c2f17a5ebeb25}{calibrated}
+\begin{DoxyCompactList}\small\item\em A flag that is set to true when the skin color is calibrated. \end{DoxyCompactList}\item 
+Rect \hyperlink{class_gesture_detection_1_1_skin_color_detector_a207207cc6f88590de2769d65e125b76a}{skin\+Color\+Sampler\+Rect1}
+\begin{DoxyCompactList}\small\item\em Creating two rectangles. \end{DoxyCompactList}\item 
+Rect \hyperlink{class_gesture_detection_1_1_skin_color_detector_ac24f18c34a4271f421089643af58ef9c}{skin\+Color\+Sampler\+Rect2}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+detects skin colour threshold and creates a skin mask. 
+
+This class calculates the skin colour from a R\+OI of the image and then creates a skin mask on request. 
+
+Definition at line 16 of file Skin\+Color\+Detector.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_gesture_detection_1_1_skin_color_detector_ab059f7f926aac46a712db749b4df4f27}\label{class_gesture_detection_1_1_skin_color_detector_ab059f7f926aac46a712db749b4df4f27}} 
+\index{Gesture\+Detection\+::\+Skin\+Color\+Detector@{Gesture\+Detection\+::\+Skin\+Color\+Detector}!Skin\+Color\+Detector@{Skin\+Color\+Detector}}
+\index{Skin\+Color\+Detector@{Skin\+Color\+Detector}!Gesture\+Detection\+::\+Skin\+Color\+Detector@{Gesture\+Detection\+::\+Skin\+Color\+Detector}}
+\subsubsection{\texorpdfstring{Skin\+Color\+Detector()}{SkinColorDetector()}}
+{\footnotesize\ttfamily Skin\+Color\+Detector\+::\+Skin\+Color\+Detector (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+It initializes the class variables to default values. 
+
+Definition at line 5 of file Skin\+Color\+Detector.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_gesture_detection_1_1_skin_color_detector_abcb6b9a3ef251dbafb6bca73ae0929f8}\label{class_gesture_detection_1_1_skin_color_detector_abcb6b9a3ef251dbafb6bca73ae0929f8}} 
+\index{Gesture\+Detection\+::\+Skin\+Color\+Detector@{Gesture\+Detection\+::\+Skin\+Color\+Detector}!calculate\+Thresholds@{calculate\+Thresholds}}
+\index{calculate\+Thresholds@{calculate\+Thresholds}!Gesture\+Detection\+::\+Skin\+Color\+Detector@{Gesture\+Detection\+::\+Skin\+Color\+Detector}}
+\subsubsection{\texorpdfstring{calculate\+Thresholds()}{calculateThresholds()}}
+{\footnotesize\ttfamily void Skin\+Color\+Detector\+::calculate\+Thresholds (\begin{DoxyParamCaption}\item[{Mat}]{sample1,  }\item[{Mat}]{sample2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+It calculates the upper and lower thresholds for the H\+SV values of the skin color
+
+
+\begin{DoxyParams}{Parameters}
+{\em sample1} & The first sample of skin color. \\
+\hline
+{\em sample2} & The second sample of skin color. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 39 of file Skin\+Color\+Detector.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_gesture_detection_1_1_skin_color_detector_abcb6b9a3ef251dbafb6bca73ae0929f8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_gesture_detection_1_1_skin_color_detector_ae8b3880d1d75b07e356cd7d1ff128ed9}\label{class_gesture_detection_1_1_skin_color_detector_ae8b3880d1d75b07e356cd7d1ff128ed9}} 
+\index{Gesture\+Detection\+::\+Skin\+Color\+Detector@{Gesture\+Detection\+::\+Skin\+Color\+Detector}!calibrate@{calibrate}}
+\index{calibrate@{calibrate}!Gesture\+Detection\+::\+Skin\+Color\+Detector@{Gesture\+Detection\+::\+Skin\+Color\+Detector}}
+\subsubsection{\texorpdfstring{calibrate()}{calibrate()}}
+{\footnotesize\ttfamily vector$<$ int $>$ Skin\+Color\+Detector\+::calibrate (\begin{DoxyParamCaption}\item[{Mat}]{input\+Frame }\end{DoxyParamCaption})}
+
+It takes a frame as input, converts it to H\+SV, samples two regions of the frame, and calculates the thresholds for the skin color detector
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Frame} & The frame to be used for calibration.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The lower and upper bounds for the hue and saturation values. 
+\end{DoxyReturn}
+
+
+Definition at line 27 of file Skin\+Color\+Detector.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_gesture_detection_1_1_skin_color_detector_ae8b3880d1d75b07e356cd7d1ff128ed9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_gesture_detection_1_1_skin_color_detector_ae8b3880d1d75b07e356cd7d1ff128ed9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_gesture_detection_1_1_skin_color_detector_a4739dae25a983fb35a972f3c0ff8faaf}\label{class_gesture_detection_1_1_skin_color_detector_a4739dae25a983fb35a972f3c0ff8faaf}} 
+\index{Gesture\+Detection\+::\+Skin\+Color\+Detector@{Gesture\+Detection\+::\+Skin\+Color\+Detector}!calibrate\+Values@{calibrate\+Values}}
+\index{calibrate\+Values@{calibrate\+Values}!Gesture\+Detection\+::\+Skin\+Color\+Detector@{Gesture\+Detection\+::\+Skin\+Color\+Detector}}
+\subsubsection{\texorpdfstring{calibrate\+Values()}{calibrateValues()}}
+{\footnotesize\ttfamily void Skin\+Color\+Detector\+::calibrate\+Values (\begin{DoxyParamCaption}\item[{int}]{H\+\_\+\+M\+IN,  }\item[{int}]{H\+\_\+\+M\+AX,  }\item[{int}]{S\+\_\+\+M\+IN,  }\item[{int}]{S\+\_\+\+M\+AX }\end{DoxyParamCaption})}
+
+This function takes in the H\+SV values of the skin color and sets the upper and lower bounds of the H\+SV values
+
+
+\begin{DoxyParams}{Parameters}
+{\em H\+\_\+\+M\+IN} & The minimum value of the Hue channel. \\
+\hline
+{\em H\+\_\+\+M\+AX} & The maximum value of the Hue channel. \\
+\hline
+{\em S\+\_\+\+M\+IN} & Minimum value for the Saturation channel \\
+\hline
+{\em S\+\_\+\+M\+AX} & The maximum value of the saturation channel. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 61 of file Skin\+Color\+Detector.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_gesture_detection_1_1_skin_color_detector_a4739dae25a983fb35a972f3c0ff8faaf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_gesture_detection_1_1_skin_color_detector_a4eb701f5b2761027b3e752d6b3de46c2}\label{class_gesture_detection_1_1_skin_color_detector_a4eb701f5b2761027b3e752d6b3de46c2}} 
+\index{Gesture\+Detection\+::\+Skin\+Color\+Detector@{Gesture\+Detection\+::\+Skin\+Color\+Detector}!draw\+Skin\+Color\+Sampler@{draw\+Skin\+Color\+Sampler}}
+\index{draw\+Skin\+Color\+Sampler@{draw\+Skin\+Color\+Sampler}!Gesture\+Detection\+::\+Skin\+Color\+Detector@{Gesture\+Detection\+::\+Skin\+Color\+Detector}}
+\subsubsection{\texorpdfstring{draw\+Skin\+Color\+Sampler()}{drawSkinColorSampler()}}
+{\footnotesize\ttfamily void Skin\+Color\+Detector\+::draw\+Skin\+Color\+Sampler (\begin{DoxyParamCaption}\item[{Mat}]{input\+Frame }\end{DoxyParamCaption})}
+
+It draws two rectangles on the input frame, one at the center and one at the top
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Frame} & The frame that is being processed. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 15 of file Skin\+Color\+Detector.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_gesture_detection_1_1_skin_color_detector_a4eb701f5b2761027b3e752d6b3de46c2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_gesture_detection_1_1_skin_color_detector_ad02c96fbc75934c86d22dd90ee726373}\label{class_gesture_detection_1_1_skin_color_detector_ad02c96fbc75934c86d22dd90ee726373}} 
+\index{Gesture\+Detection\+::\+Skin\+Color\+Detector@{Gesture\+Detection\+::\+Skin\+Color\+Detector}!get\+Calibrated@{get\+Calibrated}}
+\index{get\+Calibrated@{get\+Calibrated}!Gesture\+Detection\+::\+Skin\+Color\+Detector@{Gesture\+Detection\+::\+Skin\+Color\+Detector}}
+\subsubsection{\texorpdfstring{get\+Calibrated()}{getCalibrated()}}
+{\footnotesize\ttfamily bool Skin\+Color\+Detector\+::get\+Calibrated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This method returns the calibrated flag. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 57 of file Skin\+Color\+Detector.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_gesture_detection_1_1_skin_color_detector_ad02c96fbc75934c86d22dd90ee726373_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_gesture_detection_1_1_skin_color_detector_a8cf2f51c4c7797a126b767e48458a006}\label{class_gesture_detection_1_1_skin_color_detector_a8cf2f51c4c7797a126b767e48458a006}} 
+\index{Gesture\+Detection\+::\+Skin\+Color\+Detector@{Gesture\+Detection\+::\+Skin\+Color\+Detector}!get\+Skin\+Mask@{get\+Skin\+Mask}}
+\index{get\+Skin\+Mask@{get\+Skin\+Mask}!Gesture\+Detection\+::\+Skin\+Color\+Detector@{Gesture\+Detection\+::\+Skin\+Color\+Detector}}
+\subsubsection{\texorpdfstring{get\+Skin\+Mask()}{getSkinMask()}}
+{\footnotesize\ttfamily Mat Skin\+Color\+Detector\+::get\+Skin\+Mask (\begin{DoxyParamCaption}\item[{Mat}]{input\+Frame }\end{DoxyParamCaption})}
+
+It takes an input frame, converts it to H\+SV, then uses the in\+Range function to create a mask of the skin color
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Frame} & The input frame from the camera\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A binary image of the skin mask. 
+\end{DoxyReturn}
+
+
+Definition at line 71 of file Skin\+Color\+Detector.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_gesture_detection_1_1_skin_color_detector_a8cf2f51c4c7797a126b767e48458a006_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_gesture_detection_1_1_skin_color_detector_aef5ea498d5f27603fa5c2f17a5ebeb25}\label{class_gesture_detection_1_1_skin_color_detector_aef5ea498d5f27603fa5c2f17a5ebeb25}} 
+\index{Gesture\+Detection\+::\+Skin\+Color\+Detector@{Gesture\+Detection\+::\+Skin\+Color\+Detector}!calibrated@{calibrated}}
+\index{calibrated@{calibrated}!Gesture\+Detection\+::\+Skin\+Color\+Detector@{Gesture\+Detection\+::\+Skin\+Color\+Detector}}
+\subsubsection{\texorpdfstring{calibrated}{calibrated}}
+{\footnotesize\ttfamily bool Gesture\+Detection\+::\+Skin\+Color\+Detector\+::calibrated\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A flag that is set to true when the skin color is calibrated. 
+
+
+
+Definition at line 74 of file Skin\+Color\+Detector.\+h.
+
+\mbox{\Hypertarget{class_gesture_detection_1_1_skin_color_detector_ae08f063d47dea63ee539dd41cee45097}\label{class_gesture_detection_1_1_skin_color_detector_ae08f063d47dea63ee539dd41cee45097}} 
+\index{Gesture\+Detection\+::\+Skin\+Color\+Detector@{Gesture\+Detection\+::\+Skin\+Color\+Detector}!h\+Lower@{h\+Lower}}
+\index{h\+Lower@{h\+Lower}!Gesture\+Detection\+::\+Skin\+Color\+Detector@{Gesture\+Detection\+::\+Skin\+Color\+Detector}}
+\subsubsection{\texorpdfstring{h\+Lower}{hLower}}
+{\footnotesize\ttfamily int Gesture\+Detection\+::\+Skin\+Color\+Detector\+::h\+Lower\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 68 of file Skin\+Color\+Detector.\+h.
+
+\mbox{\Hypertarget{class_gesture_detection_1_1_skin_color_detector_a48bd581cb2e8265fa4a26cdee2757c86}\label{class_gesture_detection_1_1_skin_color_detector_a48bd581cb2e8265fa4a26cdee2757c86}} 
+\index{Gesture\+Detection\+::\+Skin\+Color\+Detector@{Gesture\+Detection\+::\+Skin\+Color\+Detector}!h\+Upper@{h\+Upper}}
+\index{h\+Upper@{h\+Upper}!Gesture\+Detection\+::\+Skin\+Color\+Detector@{Gesture\+Detection\+::\+Skin\+Color\+Detector}}
+\subsubsection{\texorpdfstring{h\+Upper}{hUpper}}
+{\footnotesize\ttfamily int Gesture\+Detection\+::\+Skin\+Color\+Detector\+::h\+Upper\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+These are the upper and lower bounds for the Hue and Saturation values. 
+
+
+
+Definition at line 68 of file Skin\+Color\+Detector.\+h.
+
+\mbox{\Hypertarget{class_gesture_detection_1_1_skin_color_detector_a8a9acdec847621566cf543a9ac7512b5}\label{class_gesture_detection_1_1_skin_color_detector_a8a9acdec847621566cf543a9ac7512b5}} 
+\index{Gesture\+Detection\+::\+Skin\+Color\+Detector@{Gesture\+Detection\+::\+Skin\+Color\+Detector}!Means\+Sample1@{Means\+Sample1}}
+\index{Means\+Sample1@{Means\+Sample1}!Gesture\+Detection\+::\+Skin\+Color\+Detector@{Gesture\+Detection\+::\+Skin\+Color\+Detector}}
+\subsubsection{\texorpdfstring{Means\+Sample1}{MeansSample1}}
+{\footnotesize\ttfamily Scalar Gesture\+Detection\+::\+Skin\+Color\+Detector\+::\+Means\+Sample1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A variable that stores the mean of the H\+SV values of the two samples. 
+
+
+
+Definition at line 71 of file Skin\+Color\+Detector.\+h.
+
+\mbox{\Hypertarget{class_gesture_detection_1_1_skin_color_detector_a82bfb240375cc9ab7d8fafc674a1efc4}\label{class_gesture_detection_1_1_skin_color_detector_a82bfb240375cc9ab7d8fafc674a1efc4}} 
+\index{Gesture\+Detection\+::\+Skin\+Color\+Detector@{Gesture\+Detection\+::\+Skin\+Color\+Detector}!Means\+Sample2@{Means\+Sample2}}
+\index{Means\+Sample2@{Means\+Sample2}!Gesture\+Detection\+::\+Skin\+Color\+Detector@{Gesture\+Detection\+::\+Skin\+Color\+Detector}}
+\subsubsection{\texorpdfstring{Means\+Sample2}{MeansSample2}}
+{\footnotesize\ttfamily Scalar Gesture\+Detection\+::\+Skin\+Color\+Detector\+::\+Means\+Sample2\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 71 of file Skin\+Color\+Detector.\+h.
+
+\mbox{\Hypertarget{class_gesture_detection_1_1_skin_color_detector_a207207cc6f88590de2769d65e125b76a}\label{class_gesture_detection_1_1_skin_color_detector_a207207cc6f88590de2769d65e125b76a}} 
+\index{Gesture\+Detection\+::\+Skin\+Color\+Detector@{Gesture\+Detection\+::\+Skin\+Color\+Detector}!skin\+Color\+Sampler\+Rect1@{skin\+Color\+Sampler\+Rect1}}
+\index{skin\+Color\+Sampler\+Rect1@{skin\+Color\+Sampler\+Rect1}!Gesture\+Detection\+::\+Skin\+Color\+Detector@{Gesture\+Detection\+::\+Skin\+Color\+Detector}}
+\subsubsection{\texorpdfstring{skin\+Color\+Sampler\+Rect1}{skinColorSamplerRect1}}
+{\footnotesize\ttfamily Rect Gesture\+Detection\+::\+Skin\+Color\+Detector\+::skin\+Color\+Sampler\+Rect1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creating two rectangles. 
+
+
+
+Definition at line 78 of file Skin\+Color\+Detector.\+h.
+
+\mbox{\Hypertarget{class_gesture_detection_1_1_skin_color_detector_ac24f18c34a4271f421089643af58ef9c}\label{class_gesture_detection_1_1_skin_color_detector_ac24f18c34a4271f421089643af58ef9c}} 
+\index{Gesture\+Detection\+::\+Skin\+Color\+Detector@{Gesture\+Detection\+::\+Skin\+Color\+Detector}!skin\+Color\+Sampler\+Rect2@{skin\+Color\+Sampler\+Rect2}}
+\index{skin\+Color\+Sampler\+Rect2@{skin\+Color\+Sampler\+Rect2}!Gesture\+Detection\+::\+Skin\+Color\+Detector@{Gesture\+Detection\+::\+Skin\+Color\+Detector}}
+\subsubsection{\texorpdfstring{skin\+Color\+Sampler\+Rect2}{skinColorSamplerRect2}}
+{\footnotesize\ttfamily Rect Gesture\+Detection\+::\+Skin\+Color\+Detector\+::skin\+Color\+Sampler\+Rect2\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 78 of file Skin\+Color\+Detector.\+h.
+
+\mbox{\Hypertarget{class_gesture_detection_1_1_skin_color_detector_a2a6a3cb69984c68ce4bc83bb0f985677}\label{class_gesture_detection_1_1_skin_color_detector_a2a6a3cb69984c68ce4bc83bb0f985677}} 
+\index{Gesture\+Detection\+::\+Skin\+Color\+Detector@{Gesture\+Detection\+::\+Skin\+Color\+Detector}!s\+Lower@{s\+Lower}}
+\index{s\+Lower@{s\+Lower}!Gesture\+Detection\+::\+Skin\+Color\+Detector@{Gesture\+Detection\+::\+Skin\+Color\+Detector}}
+\subsubsection{\texorpdfstring{s\+Lower}{sLower}}
+{\footnotesize\ttfamily int Gesture\+Detection\+::\+Skin\+Color\+Detector\+::s\+Lower\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 68 of file Skin\+Color\+Detector.\+h.
+
+\mbox{\Hypertarget{class_gesture_detection_1_1_skin_color_detector_ae771d8e46f1494e88782674983deaf56}\label{class_gesture_detection_1_1_skin_color_detector_ae771d8e46f1494e88782674983deaf56}} 
+\index{Gesture\+Detection\+::\+Skin\+Color\+Detector@{Gesture\+Detection\+::\+Skin\+Color\+Detector}!s\+Upper@{s\+Upper}}
+\index{s\+Upper@{s\+Upper}!Gesture\+Detection\+::\+Skin\+Color\+Detector@{Gesture\+Detection\+::\+Skin\+Color\+Detector}}
+\subsubsection{\texorpdfstring{s\+Upper}{sUpper}}
+{\footnotesize\ttfamily int Gesture\+Detection\+::\+Skin\+Color\+Detector\+::s\+Upper\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 68 of file Skin\+Color\+Detector.\+h.
+
+\mbox{\Hypertarget{class_gesture_detection_1_1_skin_color_detector_adc72a8fe90eb2b5a578bded973229c23}\label{class_gesture_detection_1_1_skin_color_detector_adc72a8fe90eb2b5a578bded973229c23}} 
+\index{Gesture\+Detection\+::\+Skin\+Color\+Detector@{Gesture\+Detection\+::\+Skin\+Color\+Detector}!v\+Lower@{v\+Lower}}
+\index{v\+Lower@{v\+Lower}!Gesture\+Detection\+::\+Skin\+Color\+Detector@{Gesture\+Detection\+::\+Skin\+Color\+Detector}}
+\subsubsection{\texorpdfstring{v\+Lower}{vLower}}
+{\footnotesize\ttfamily int Gesture\+Detection\+::\+Skin\+Color\+Detector\+::v\+Lower\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 68 of file Skin\+Color\+Detector.\+h.
+
+\mbox{\Hypertarget{class_gesture_detection_1_1_skin_color_detector_a82c6256414d9c3cb968d6f0de12fc7d9}\label{class_gesture_detection_1_1_skin_color_detector_a82c6256414d9c3cb968d6f0de12fc7d9}} 
+\index{Gesture\+Detection\+::\+Skin\+Color\+Detector@{Gesture\+Detection\+::\+Skin\+Color\+Detector}!v\+Upper@{v\+Upper}}
+\index{v\+Upper@{v\+Upper}!Gesture\+Detection\+::\+Skin\+Color\+Detector@{Gesture\+Detection\+::\+Skin\+Color\+Detector}}
+\subsubsection{\texorpdfstring{v\+Upper}{vUpper}}
+{\footnotesize\ttfamily int Gesture\+Detection\+::\+Skin\+Color\+Detector\+::v\+Upper\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 68 of file Skin\+Color\+Detector.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/gesture\+\_\+detection/\hyperlink{_skin_color_detector_8h}{Skin\+Color\+Detector.\+h}\item 
+src/gesture\+\_\+detection/\hyperlink{_skin_color_detector_8cpp}{Skin\+Color\+Detector.\+cpp}\end{DoxyCompactItemize}

@@ -34,9 +34,11 @@ Here is a demonstration video for Gestro:
 
 <div align="center">
   <video width="600" controls>
-    <source src="videos/PosturePerfectionv1.0.0.mp4" type="video/mp4">
+    <source src="videos/Gestro demo.mp4" type="video/mp4">
   </video>
 </div>
+
+> Note: Although each function is shown separately in the video, all of them can be selected and used at the same time.
 
 ## Contact Us
 If you have any enquiries, contact the team behind Gestro [here](about_the_team)!

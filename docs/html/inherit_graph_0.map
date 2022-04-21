@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classCapture.html" title="runs a thread to start camera and capture image " alt="" coords="5,5,73,32"/>
+<area shape="rect" id="node1" href="$class_controller_screen_callback_interface.html" title="Callback interface to ControllerScreen. " alt="" coords="5,5,176,47"/>
+<area shape="rect" id="node2" href="$class_controller_screen.html" title="It sets up the GUI, initializes CaptureAndDetect, and DisplayControl. " alt="" coords="224,42,343,69"/>
 </map>

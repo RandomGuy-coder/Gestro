@@ -1,0 +1,5 @@
+<map id="Gestro::DisplayControl::doWindowMove" name="Gestro::DisplayControl::doWindowMove">
+<area shape="rect" id="node2" href="$class_ubuntu_controller_1_1_window_action.html#ae79c374bbbc84ff3dfb8565ede5f4220" title="UbuntuController::Window\lAction::moveWindow" alt="" coords="208,5,383,47"/>
+<area shape="rect" id="node3" href="$class_ubuntu_controller_1_1_window_control.html#a367c48d4f217a83225c8ade45e347884" title="UbuntuController::Window\lControl::move" alt="" coords="431,5,605,47"/>
+<area shape="rect" id="node4" href="$class_ubuntu_controller_1_1_window_control.html#aad092a22b19664df4d94fe9a853d350a" title="UbuntuController::Window\lControl::identifyWindow" alt="" coords="653,5,828,47"/>
+</map>

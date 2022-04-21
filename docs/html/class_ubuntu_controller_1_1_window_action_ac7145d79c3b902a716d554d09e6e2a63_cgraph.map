@@ -1,0 +1,4 @@
+<map id="UbuntuController::WindowAction::changeWindowSize" name="UbuntuController::WindowAction::changeWindowSize">
+<area shape="rect" id="node2" href="$class_ubuntu_controller_1_1_window_control.html#a131a982c3338be4187ac6611591e042f" title="UbuntuController::Window\lControl::resize" alt="" coords="236,5,411,47"/>
+<area shape="rect" id="node3" href="$class_ubuntu_controller_1_1_window_control.html#aad092a22b19664df4d94fe9a853d350a" title="UbuntuController::Window\lControl::identifyWindow" alt="" coords="459,5,633,47"/>
+</map>

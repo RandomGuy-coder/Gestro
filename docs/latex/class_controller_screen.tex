@@ -1,0 +1,647 @@
+\hypertarget{class_controller_screen}{}\section{Controller\+Screen Class Reference}
+\label{class_controller_screen}\index{Controller\+Screen@{Controller\+Screen}}
+
+
+It sets up the G\+UI, initializes Capture\+And\+Detect, and Display\+Control.  
+
+
+
+
+{\ttfamily \#include $<$Controller\+Screen.\+h$>$}
+
+
+
+Inheritance diagram for Controller\+Screen\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_controller_screen__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Controller\+Screen\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_controller_screen__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_controller_screen_aac8b2856372fa02c4f793cf9183dffed}{unprocessed\+Feed\+\_\+clicked} ()
+\item 
+void \hyperlink{class_controller_screen_a4d9db4a832f667aacb7d7532f752fd1b}{skin\+Mask\+\_\+clicked} ()
+\item 
+void \hyperlink{class_controller_screen_ac4f535408ffdfa10cbfa1a89d833f592}{detector\+\_\+clicked} ()
+\item 
+void \hyperlink{class_controller_screen_af7f51cf63bb9d2526b0025f35f1e7731}{calibrate\+\_\+clicked} ()
+\item 
+void \hyperlink{class_controller_screen_ae4d6a51231fb1f6f8809ce3d036592bd}{set\+Calibration\+Values} ()
+\item 
+void \hyperlink{class_controller_screen_a7a71b9bc26a3de704f8613f3f2a08fb7}{calibrate\+Background\+\_\+clicked} ()
+\item 
+void \hyperlink{class_controller_screen_a27681be09b97984576a895ad21343b65}{enable\+Mouse} ()
+\item 
+void \hyperlink{class_controller_screen_aa75c31cfb62427bba649b30e58130bfc}{enable\+Space\+Bar} ()
+\item 
+void \hyperlink{class_controller_screen_ad27b95368191153fa12d05091728b022}{enable\+Minimize\+Window} ()
+\item 
+void \hyperlink{class_controller_screen_a90e6dcfb4a0dfb2e845890bba3f208f5}{enable\+Move\+Window} ()
+\item 
+void \hyperlink{class_controller_screen_ae08e0ea89830d8018ff9086e4c4362a5}{enable\+Volume} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_controller_screen_aecef7737326dbb37945e6a9eac6dcede}{Controller\+Screen} (Q\+Widget $\ast$parent=0)
+\item 
+\hyperlink{class_controller_screen_a4871b73dbeec4679ba6bee692bfe71a9}{$\sim$\+Controller\+Screen} ()
+\item 
+void \hyperlink{class_controller_screen_a54062624a4a89d8bf392ab5fa66ac5ff}{Callback\+\_\+controls} (\hyperlink{class_gesture_detection_1_1_finger_and_coordinates}{Finger\+And\+Coordinates} finger)
+\item 
+void \hyperlink{class_controller_screen_acf75ddc9588011e360e2199cc37478ec}{update\+Image} (Mat) override
+\item 
+void \hyperlink{class_controller_screen_a700c8c1911e68861b86890a5429d2692}{update\+Calibrated\+Trackbar} (int, int, int, int) override
+\item 
+void \hyperlink{class_controller_screen_a039b816adc94fc7e7757520c10fd1d0b}{update\+Log\+Table} (String a, String b) override
+\item 
+void \hyperlink{class_controller_screen_afbb0033f9be00fce83d54f2a49b9ba89}{key\+Press\+Event} (Q\+Key\+Event $\ast$) override
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_controller_screen_acf89cc74ff8383884d11a067b3243d4a}{connect\+Gui\+Events} ()
+\item 
+void \hyperlink{class_controller_screen_af7c789ddca1dece0fb0585e84aeb5e81}{connect\+Signals} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\+::\+Controller\+Screen $\ast$ \hyperlink{class_controller_screen_a25a37166616a171730a89ddb69c120f3}{ui}
+\begin{DoxyCompactList}\small\item\em A pointer to the ui class. \end{DoxyCompactList}\item 
+\hyperlink{class_gestro_1_1_capture_and_detect}{Capture\+And\+Detect} \hyperlink{class_controller_screen_a672477c37c55499b69e28da611e7313d}{capture\+And\+Detect}
+\begin{DoxyCompactList}\small\item\em Creating an instance of the Capture\+And\+Detect class. \end{DoxyCompactList}\item 
+Display $\ast$ \hyperlink{class_controller_screen_a240495b9e446bc512d8a7498b3f45981}{display} = X\+Open\+Display(N\+U\+LL)
+\begin{DoxyCompactList}\small\item\em Opening a connection to the X server. \end{DoxyCompactList}\item 
+\hyperlink{class_gestro_1_1_display_control}{Display\+Control} \hyperlink{class_controller_screen_a261f7eb9894dbcfdbddad62ad125e330}{display\+Control} = \hyperlink{class_gestro_1_1_display_control}{Display\+Control}(\hyperlink{class_controller_screen_a240495b9e446bc512d8a7498b3f45981}{display})
+\begin{DoxyCompactList}\small\item\em Creating an instance of the Display\+Control class. \end{DoxyCompactList}\item 
+Screen $\ast$ \hyperlink{class_controller_screen_ae667566a3438ae194170858cd328053e}{screen} = Default\+Screen\+Of\+Display(\hyperlink{class_controller_screen_a240495b9e446bc512d8a7498b3f45981}{display})
+\begin{DoxyCompactList}\small\item\em Getting the default screen of the display. \end{DoxyCompactList}\item 
+\hyperlink{struct_custom_signals}{Custom\+Signals} \hyperlink{class_controller_screen_afe5953fdc933fcc35cf0ef841c83f18c}{signal}
+\begin{DoxyCompactList}\small\item\em Creating an instance of the \hyperlink{struct_custom_signals}{Custom\+Signals} class. \end{DoxyCompactList}\item 
+\hyperlink{class_gesture_detection_1_1_enabled_command}{Enabled\+Command} \hyperlink{class_controller_screen_a96533700d5a3a0593d9b9d24a724b16b}{enabled\+Commands}
+\begin{DoxyCompactList}\small\item\em A class that is used to store the enabled commands. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+It sets up the G\+UI, initializes Capture\+And\+Detect, and Display\+Control. 
+
+Connects the G\+UI events to the appropriate functions, and connects the signals to the appropriate slots
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The parent widget of the dialog. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 39 of file Controller\+Screen.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_controller_screen_aecef7737326dbb37945e6a9eac6dcede}\label{class_controller_screen_aecef7737326dbb37945e6a9eac6dcede}} 
+\index{Controller\+Screen@{Controller\+Screen}!Controller\+Screen@{Controller\+Screen}}
+\index{Controller\+Screen@{Controller\+Screen}!Controller\+Screen@{Controller\+Screen}}
+\subsubsection{\texorpdfstring{Controller\+Screen()}{ControllerScreen()}}
+{\footnotesize\ttfamily Controller\+Screen\+::\+Controller\+Screen (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Construtor 
+\begin{DoxyParams}{Parameters}
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 4 of file Controller\+Screen.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_controller_screen_aecef7737326dbb37945e6a9eac6dcede_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_controller_screen_a4871b73dbeec4679ba6bee692bfe71a9}\label{class_controller_screen_a4871b73dbeec4679ba6bee692bfe71a9}} 
+\index{Controller\+Screen@{Controller\+Screen}!````~Controller\+Screen@{$\sim$\+Controller\+Screen}}
+\index{````~Controller\+Screen@{$\sim$\+Controller\+Screen}!Controller\+Screen@{Controller\+Screen}}
+\subsubsection{\texorpdfstring{$\sim$\+Controller\+Screen()}{~ControllerScreen()}}
+{\footnotesize\ttfamily Controller\+Screen\+::$\sim$\+Controller\+Screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+The destructor for the \hyperlink{class_controller_screen}{Controller\+Screen} class. 
+
+Definition at line 52 of file Controller\+Screen.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_controller_screen_af7f51cf63bb9d2526b0025f35f1e7731}\label{class_controller_screen_af7f51cf63bb9d2526b0025f35f1e7731}} 
+\index{Controller\+Screen@{Controller\+Screen}!calibrate\+\_\+clicked@{calibrate\+\_\+clicked}}
+\index{calibrate\+\_\+clicked@{calibrate\+\_\+clicked}!Controller\+Screen@{Controller\+Screen}}
+\subsubsection{\texorpdfstring{calibrate\+\_\+clicked}{calibrate\_clicked}}
+{\footnotesize\ttfamily void Controller\+Screen\+::calibrate\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+When the calibrate button is clicked, the skin mask and detector buttons are enabled, the calibrate button is disabled, the calibrate signal is emitted, the image view is changed to the skin mask, and the log table is updated 
+
+Definition at line 79 of file Controller\+Screen.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_controller_screen_af7f51cf63bb9d2526b0025f35f1e7731_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_controller_screen_af7f51cf63bb9d2526b0025f35f1e7731_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_controller_screen_a7a71b9bc26a3de704f8613f3f2a08fb7}\label{class_controller_screen_a7a71b9bc26a3de704f8613f3f2a08fb7}} 
+\index{Controller\+Screen@{Controller\+Screen}!calibrate\+Background\+\_\+clicked@{calibrate\+Background\+\_\+clicked}}
+\index{calibrate\+Background\+\_\+clicked@{calibrate\+Background\+\_\+clicked}!Controller\+Screen@{Controller\+Screen}}
+\subsubsection{\texorpdfstring{calibrate\+Background\+\_\+clicked}{calibrateBackground\_clicked}}
+{\footnotesize\ttfamily void Controller\+Screen\+::calibrate\+Background\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+It calls the calibrate\+Background() function in the Signal class, and then updates the log table with a message 
+
+Definition at line 89 of file Controller\+Screen.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_controller_screen_a7a71b9bc26a3de704f8613f3f2a08fb7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_controller_screen_a7a71b9bc26a3de704f8613f3f2a08fb7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_controller_screen_a54062624a4a89d8bf392ab5fa66ac5ff}\label{class_controller_screen_a54062624a4a89d8bf392ab5fa66ac5ff}} 
+\index{Controller\+Screen@{Controller\+Screen}!Callback\+\_\+controls@{Callback\+\_\+controls}}
+\index{Callback\+\_\+controls@{Callback\+\_\+controls}!Controller\+Screen@{Controller\+Screen}}
+\subsubsection{\texorpdfstring{Callback\+\_\+controls()}{Callback\_controls()}}
+{\footnotesize\ttfamily void Controller\+Screen\+::\+Callback\+\_\+controls (\begin{DoxyParamCaption}\item[{\hyperlink{class_gesture_detection_1_1_finger_and_coordinates}{Finger\+And\+Coordinates}}]{finger }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_controller_screen_acf89cc74ff8383884d11a067b3243d4a}\label{class_controller_screen_acf89cc74ff8383884d11a067b3243d4a}} 
+\index{Controller\+Screen@{Controller\+Screen}!connect\+Gui\+Events@{connect\+Gui\+Events}}
+\index{connect\+Gui\+Events@{connect\+Gui\+Events}!Controller\+Screen@{Controller\+Screen}}
+\subsubsection{\texorpdfstring{connect\+Gui\+Events()}{connectGuiEvents()}}
+{\footnotesize\ttfamily void Controller\+Screen\+::connect\+Gui\+Events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+It connects the G\+UI elements to the appropriate slots 
+
+Definition at line 34 of file Controller\+Screen.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_controller_screen_acf89cc74ff8383884d11a067b3243d4a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_controller_screen_acf89cc74ff8383884d11a067b3243d4a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_controller_screen_af7c789ddca1dece0fb0585e84aeb5e81}\label{class_controller_screen_af7c789ddca1dece0fb0585e84aeb5e81}} 
+\index{Controller\+Screen@{Controller\+Screen}!connect\+Signals@{connect\+Signals}}
+\index{connect\+Signals@{connect\+Signals}!Controller\+Screen@{Controller\+Screen}}
+\subsubsection{\texorpdfstring{connect\+Signals()}{connectSignals()}}
+{\footnotesize\ttfamily void Controller\+Screen\+::connect\+Signals (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+It connects the signals from the controller to the slots in the capture\+And\+Detect class 
+
+Definition at line 26 of file Controller\+Screen.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_controller_screen_af7c789ddca1dece0fb0585e84aeb5e81_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_controller_screen_ac4f535408ffdfa10cbfa1a89d833f592}\label{class_controller_screen_ac4f535408ffdfa10cbfa1a89d833f592}} 
+\index{Controller\+Screen@{Controller\+Screen}!detector\+\_\+clicked@{detector\+\_\+clicked}}
+\index{detector\+\_\+clicked@{detector\+\_\+clicked}!Controller\+Screen@{Controller\+Screen}}
+\subsubsection{\texorpdfstring{detector\+\_\+clicked}{detector\_clicked}}
+{\footnotesize\ttfamily void Controller\+Screen\+::detector\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+It changes the image view to the finger counter 
+
+Definition at line 72 of file Controller\+Screen.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_controller_screen_ac4f535408ffdfa10cbfa1a89d833f592_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_controller_screen_ac4f535408ffdfa10cbfa1a89d833f592_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_controller_screen_ad27b95368191153fa12d05091728b022}\label{class_controller_screen_ad27b95368191153fa12d05091728b022}} 
+\index{Controller\+Screen@{Controller\+Screen}!enable\+Minimize\+Window@{enable\+Minimize\+Window}}
+\index{enable\+Minimize\+Window@{enable\+Minimize\+Window}!Controller\+Screen@{Controller\+Screen}}
+\subsubsection{\texorpdfstring{enable\+Minimize\+Window}{enableMinimizeWindow}}
+{\footnotesize\ttfamily void Controller\+Screen\+::enable\+Minimize\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+If the checkbox is checked, then the command is enabled 
+
+Definition at line 148 of file Controller\+Screen.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_controller_screen_ad27b95368191153fa12d05091728b022_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_controller_screen_a27681be09b97984576a895ad21343b65}\label{class_controller_screen_a27681be09b97984576a895ad21343b65}} 
+\index{Controller\+Screen@{Controller\+Screen}!enable\+Mouse@{enable\+Mouse}}
+\index{enable\+Mouse@{enable\+Mouse}!Controller\+Screen@{Controller\+Screen}}
+\subsubsection{\texorpdfstring{enable\+Mouse}{enableMouse}}
+{\footnotesize\ttfamily void Controller\+Screen\+::enable\+Mouse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+If the checkbox is checked, then the control\+Mouse variable is set to true, otherwise it is set to false 
+
+Definition at line 132 of file Controller\+Screen.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_controller_screen_a27681be09b97984576a895ad21343b65_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_controller_screen_a90e6dcfb4a0dfb2e845890bba3f208f5}\label{class_controller_screen_a90e6dcfb4a0dfb2e845890bba3f208f5}} 
+\index{Controller\+Screen@{Controller\+Screen}!enable\+Move\+Window@{enable\+Move\+Window}}
+\index{enable\+Move\+Window@{enable\+Move\+Window}!Controller\+Screen@{Controller\+Screen}}
+\subsubsection{\texorpdfstring{enable\+Move\+Window}{enableMoveWindow}}
+{\footnotesize\ttfamily void Controller\+Screen\+::enable\+Move\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+If the checkbox is checked, then the control\+Move\+Window variable is set to true, otherwise it is set to false 
+
+Definition at line 156 of file Controller\+Screen.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_controller_screen_a90e6dcfb4a0dfb2e845890bba3f208f5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_controller_screen_aa75c31cfb62427bba649b30e58130bfc}\label{class_controller_screen_aa75c31cfb62427bba649b30e58130bfc}} 
+\index{Controller\+Screen@{Controller\+Screen}!enable\+Space\+Bar@{enable\+Space\+Bar}}
+\index{enable\+Space\+Bar@{enable\+Space\+Bar}!Controller\+Screen@{Controller\+Screen}}
+\subsubsection{\texorpdfstring{enable\+Space\+Bar}{enableSpaceBar}}
+{\footnotesize\ttfamily void Controller\+Screen\+::enable\+Space\+Bar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+If the checkbox is checked, then the control\+Spacebar variable is set to true, otherwise it is set to false 
+
+Definition at line 140 of file Controller\+Screen.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_controller_screen_aa75c31cfb62427bba649b30e58130bfc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_controller_screen_ae08e0ea89830d8018ff9086e4c4362a5}\label{class_controller_screen_ae08e0ea89830d8018ff9086e4c4362a5}} 
+\index{Controller\+Screen@{Controller\+Screen}!enable\+Volume@{enable\+Volume}}
+\index{enable\+Volume@{enable\+Volume}!Controller\+Screen@{Controller\+Screen}}
+\subsubsection{\texorpdfstring{enable\+Volume}{enableVolume}}
+{\footnotesize\ttfamily void Controller\+Screen\+::enable\+Volume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+If the checkbox is checked, then the control\+Volume variable is set to true, otherwise it is set to false 
+
+Definition at line 165 of file Controller\+Screen.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_controller_screen_ae08e0ea89830d8018ff9086e4c4362a5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_controller_screen_afbb0033f9be00fce83d54f2a49b9ba89}\label{class_controller_screen_afbb0033f9be00fce83d54f2a49b9ba89}} 
+\index{Controller\+Screen@{Controller\+Screen}!key\+Press\+Event@{key\+Press\+Event}}
+\index{key\+Press\+Event@{key\+Press\+Event}!Controller\+Screen@{Controller\+Screen}}
+\subsubsection{\texorpdfstring{key\+Press\+Event()}{keyPressEvent()}}
+{\footnotesize\ttfamily void Controller\+Screen\+::key\+Press\+Event (\begin{DoxyParamCaption}\item[{Q\+Key\+Event $\ast$}]{keypress }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+If the user presses the \char`\"{}\+B\char`\"{} key, then the \hyperlink{class_controller_screen_a7a71b9bc26a3de704f8613f3f2a08fb7}{calibrate\+Background\+\_\+clicked()} function is called
+
+
+\begin{DoxyParams}{Parameters}
+{\em keypress} & the key that was pressed \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 173 of file Controller\+Screen.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_controller_screen_afbb0033f9be00fce83d54f2a49b9ba89_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_controller_screen_ae4d6a51231fb1f6f8809ce3d036592bd}\label{class_controller_screen_ae4d6a51231fb1f6f8809ce3d036592bd}} 
+\index{Controller\+Screen@{Controller\+Screen}!set\+Calibration\+Values@{set\+Calibration\+Values}}
+\index{set\+Calibration\+Values@{set\+Calibration\+Values}!Controller\+Screen@{Controller\+Screen}}
+\subsubsection{\texorpdfstring{set\+Calibration\+Values}{setCalibrationValues}}
+{\footnotesize\ttfamily void Controller\+Screen\+::set\+Calibration\+Values (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+It sets the calibration values for the signal 
+
+Definition at line 95 of file Controller\+Screen.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_controller_screen_ae4d6a51231fb1f6f8809ce3d036592bd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_controller_screen_a4d9db4a832f667aacb7d7532f752fd1b}\label{class_controller_screen_a4d9db4a832f667aacb7d7532f752fd1b}} 
+\index{Controller\+Screen@{Controller\+Screen}!skin\+Mask\+\_\+clicked@{skin\+Mask\+\_\+clicked}}
+\index{skin\+Mask\+\_\+clicked@{skin\+Mask\+\_\+clicked}!Controller\+Screen@{Controller\+Screen}}
+\subsubsection{\texorpdfstring{skin\+Mask\+\_\+clicked}{skinMask\_clicked}}
+{\footnotesize\ttfamily void Controller\+Screen\+::skin\+Mask\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+When the skin\+Mask button is clicked, the image\+View\+Changed signal is emitted with the S\+K\+I\+N\+M\+A\+SK parameter, and the log table is updated. 
+
+Definition at line 65 of file Controller\+Screen.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_controller_screen_a4d9db4a832f667aacb7d7532f752fd1b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_controller_screen_a4d9db4a832f667aacb7d7532f752fd1b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_controller_screen_aac8b2856372fa02c4f793cf9183dffed}\label{class_controller_screen_aac8b2856372fa02c4f793cf9183dffed}} 
+\index{Controller\+Screen@{Controller\+Screen}!unprocessed\+Feed\+\_\+clicked@{unprocessed\+Feed\+\_\+clicked}}
+\index{unprocessed\+Feed\+\_\+clicked@{unprocessed\+Feed\+\_\+clicked}!Controller\+Screen@{Controller\+Screen}}
+\subsubsection{\texorpdfstring{unprocessed\+Feed\+\_\+clicked}{unprocessedFeed\_clicked}}
+{\footnotesize\ttfamily void Controller\+Screen\+::unprocessed\+Feed\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+When the unprocessed feed button is clicked, the image view is changed to the unprocessed feed and the log table is updated 
+
+Definition at line 58 of file Controller\+Screen.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_controller_screen_aac8b2856372fa02c4f793cf9183dffed_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_controller_screen_aac8b2856372fa02c4f793cf9183dffed_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_controller_screen_a700c8c1911e68861b86890a5429d2692}\label{class_controller_screen_a700c8c1911e68861b86890a5429d2692}} 
+\index{Controller\+Screen@{Controller\+Screen}!update\+Calibrated\+Trackbar@{update\+Calibrated\+Trackbar}}
+\index{update\+Calibrated\+Trackbar@{update\+Calibrated\+Trackbar}!Controller\+Screen@{Controller\+Screen}}
+\subsubsection{\texorpdfstring{update\+Calibrated\+Trackbar()}{updateCalibratedTrackbar()}}
+{\footnotesize\ttfamily void Controller\+Screen\+::update\+Calibrated\+Trackbar (\begin{DoxyParamCaption}\item[{int}]{hmin,  }\item[{int}]{hmax,  }\item[{int}]{smin,  }\item[{int}]{smax }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+It updates the trackbars on the controller screen with the values passed in
+
+
+\begin{DoxyParams}{Parameters}
+{\em hmin} & minimum hue value \\
+\hline
+{\em hmax} & Hue maximum value \\
+\hline
+{\em smin} & minimum saturation value \\
+\hline
+{\em smax} & The maximum value of the saturation channel. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_controller_screen_callback_interface_aeee7c043e83e959de0788a9d2a5f70bb}{Controller\+Screen\+Callback\+Interface}.
+
+
+
+Definition at line 115 of file Controller\+Screen.\+cpp.
+
+\mbox{\Hypertarget{class_controller_screen_acf75ddc9588011e360e2199cc37478ec}\label{class_controller_screen_acf75ddc9588011e360e2199cc37478ec}} 
+\index{Controller\+Screen@{Controller\+Screen}!update\+Image@{update\+Image}}
+\index{update\+Image@{update\+Image}!Controller\+Screen@{Controller\+Screen}}
+\subsubsection{\texorpdfstring{update\+Image()}{updateImage()}}
+{\footnotesize\ttfamily void Controller\+Screen\+::update\+Image (\begin{DoxyParamCaption}\item[{Mat}]{dest }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+It recieves the latest frame converts from B\+GR to R\+GB, then it converts the image to a Q\+Image, and finally it sets the Q\+Image to the label
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & the image to be displayed \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 109 of file Controller\+Screen.\+cpp.
+
+\mbox{\Hypertarget{class_controller_screen_a039b816adc94fc7e7757520c10fd1d0b}\label{class_controller_screen_a039b816adc94fc7e7757520c10fd1d0b}} 
+\index{Controller\+Screen@{Controller\+Screen}!update\+Log\+Table@{update\+Log\+Table}}
+\index{update\+Log\+Table@{update\+Log\+Table}!Controller\+Screen@{Controller\+Screen}}
+\subsubsection{\texorpdfstring{update\+Log\+Table()}{updateLogTable()}}
+{\footnotesize\ttfamily void Controller\+Screen\+::update\+Log\+Table (\begin{DoxyParamCaption}\item[{String}]{a,  }\item[{String}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+It takes two strings as arguments, and adds them to the table widget
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & The first parameter is the name of the function that is being called. \\
+\hline
+{\em b} & the message to be displayed \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_controller_screen_callback_interface_af92ab0514459c690e357064676fa33f0}{Controller\+Screen\+Callback\+Interface}.
+
+
+
+Definition at line 122 of file Controller\+Screen.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_controller_screen_a039b816adc94fc7e7757520c10fd1d0b_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_controller_screen_a672477c37c55499b69e28da611e7313d}\label{class_controller_screen_a672477c37c55499b69e28da611e7313d}} 
+\index{Controller\+Screen@{Controller\+Screen}!capture\+And\+Detect@{capture\+And\+Detect}}
+\index{capture\+And\+Detect@{capture\+And\+Detect}!Controller\+Screen@{Controller\+Screen}}
+\subsubsection{\texorpdfstring{capture\+And\+Detect}{captureAndDetect}}
+{\footnotesize\ttfamily \hyperlink{class_gestro_1_1_capture_and_detect}{Capture\+And\+Detect} Controller\+Screen\+::capture\+And\+Detect\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creating an instance of the Capture\+And\+Detect class. 
+
+
+
+Definition at line 94 of file Controller\+Screen.\+h.
+
+\mbox{\Hypertarget{class_controller_screen_a240495b9e446bc512d8a7498b3f45981}\label{class_controller_screen_a240495b9e446bc512d8a7498b3f45981}} 
+\index{Controller\+Screen@{Controller\+Screen}!display@{display}}
+\index{display@{display}!Controller\+Screen@{Controller\+Screen}}
+\subsubsection{\texorpdfstring{display}{display}}
+{\footnotesize\ttfamily Display$\ast$ Controller\+Screen\+::display = X\+Open\+Display(N\+U\+LL)\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Opening a connection to the X server. 
+
+
+
+Definition at line 97 of file Controller\+Screen.\+h.
+
+\mbox{\Hypertarget{class_controller_screen_a261f7eb9894dbcfdbddad62ad125e330}\label{class_controller_screen_a261f7eb9894dbcfdbddad62ad125e330}} 
+\index{Controller\+Screen@{Controller\+Screen}!display\+Control@{display\+Control}}
+\index{display\+Control@{display\+Control}!Controller\+Screen@{Controller\+Screen}}
+\subsubsection{\texorpdfstring{display\+Control}{displayControl}}
+{\footnotesize\ttfamily \hyperlink{class_gestro_1_1_display_control}{Display\+Control} Controller\+Screen\+::display\+Control = \hyperlink{class_gestro_1_1_display_control}{Display\+Control}(\hyperlink{class_controller_screen_a240495b9e446bc512d8a7498b3f45981}{display})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creating an instance of the Display\+Control class. 
+
+
+
+Definition at line 100 of file Controller\+Screen.\+h.
+
+\mbox{\Hypertarget{class_controller_screen_a96533700d5a3a0593d9b9d24a724b16b}\label{class_controller_screen_a96533700d5a3a0593d9b9d24a724b16b}} 
+\index{Controller\+Screen@{Controller\+Screen}!enabled\+Commands@{enabled\+Commands}}
+\index{enabled\+Commands@{enabled\+Commands}!Controller\+Screen@{Controller\+Screen}}
+\subsubsection{\texorpdfstring{enabled\+Commands}{enabledCommands}}
+{\footnotesize\ttfamily \hyperlink{class_gesture_detection_1_1_enabled_command}{Enabled\+Command} Controller\+Screen\+::enabled\+Commands\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A class that is used to store the enabled commands. 
+
+
+
+Definition at line 109 of file Controller\+Screen.\+h.
+
+\mbox{\Hypertarget{class_controller_screen_ae667566a3438ae194170858cd328053e}\label{class_controller_screen_ae667566a3438ae194170858cd328053e}} 
+\index{Controller\+Screen@{Controller\+Screen}!screen@{screen}}
+\index{screen@{screen}!Controller\+Screen@{Controller\+Screen}}
+\subsubsection{\texorpdfstring{screen}{screen}}
+{\footnotesize\ttfamily Screen$\ast$ Controller\+Screen\+::screen = Default\+Screen\+Of\+Display(\hyperlink{class_controller_screen_a240495b9e446bc512d8a7498b3f45981}{display})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Getting the default screen of the display. 
+
+
+
+Definition at line 103 of file Controller\+Screen.\+h.
+
+\mbox{\Hypertarget{class_controller_screen_afe5953fdc933fcc35cf0ef841c83f18c}\label{class_controller_screen_afe5953fdc933fcc35cf0ef841c83f18c}} 
+\index{Controller\+Screen@{Controller\+Screen}!signal@{signal}}
+\index{signal@{signal}!Controller\+Screen@{Controller\+Screen}}
+\subsubsection{\texorpdfstring{signal}{signal}}
+{\footnotesize\ttfamily \hyperlink{struct_custom_signals}{Custom\+Signals} Controller\+Screen\+::signal\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creating an instance of the \hyperlink{struct_custom_signals}{Custom\+Signals} class. 
+
+
+
+Definition at line 106 of file Controller\+Screen.\+h.
+
+\mbox{\Hypertarget{class_controller_screen_a25a37166616a171730a89ddb69c120f3}\label{class_controller_screen_a25a37166616a171730a89ddb69c120f3}} 
+\index{Controller\+Screen@{Controller\+Screen}!ui@{ui}}
+\index{ui@{ui}!Controller\+Screen@{Controller\+Screen}}
+\subsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily Ui\+::\+Controller\+Screen$\ast$ Controller\+Screen\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A pointer to the ui class. 
+
+
+
+Definition at line 91 of file Controller\+Screen.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/gui/\hyperlink{_controller_screen_8h}{Controller\+Screen.\+h}\item 
+src/gui/\hyperlink{_controller_screen_8cpp}{Controller\+Screen.\+cpp}\end{DoxyCompactItemize}

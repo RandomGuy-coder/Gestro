@@ -1,0 +1,7 @@
+<map id="Gestro::DisplayControl" name="Gestro::DisplayControl">
+<area shape="rect" id="node2" href="$class_ubuntu_controller_1_1_window_action.html" title="Contains functions that accessed by DisplayControl to access the WindowControl. " alt="" coords="5,20,180,215"/>
+<area shape="rect" id="node3" href="$class_ubuntu_controller_1_1_keyboard_action.html" title="A wrapper class for Keyboard Event. " alt="" coords="204,64,387,171"/>
+<area shape="rect" id="node4" href="$class_ubuntu_controller_1_1_mouse_action.html" title="A wrapper class for mouse control. " alt="" coords="411,42,615,193"/>
+<area shape="rect" id="node5" href="$class_ubuntu_controller_1_1_volume_control.html" title="This class uses the ALSA library to send commands to the sound card. " alt="" coords="639,5,811,229"/>
+<area shape="rect" id="node6" href="$class_gestro_1_1_display_control_callback_interface.html" title="{Gestro::DisplayControlCallback\lInterface\n||+ doMouseMove()\l+ doKeyPress()\l+ doIncreaseVolume()\l+ doReduceVolume()\l+ doMuteUnmute()\l+ doUnmute()\l+ doButtonPress()\l+ doWindowMove()\l+ doWindowMinimize()\l}" alt="" coords="835,13,1041,222"/>
+</map>

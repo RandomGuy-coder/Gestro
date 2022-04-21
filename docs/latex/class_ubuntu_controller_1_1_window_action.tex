@@ -1,0 +1,249 @@
+\hypertarget{class_ubuntu_controller_1_1_window_action}{}\section{Ubuntu\+Controller\+:\+:Window\+Action Class Reference}
+\label{class_ubuntu_controller_1_1_window_action}\index{Ubuntu\+Controller\+::\+Window\+Action@{Ubuntu\+Controller\+::\+Window\+Action}}
+
+
+Contains functions that accessed by Display\+Control to access the \hyperlink{class_ubuntu_controller_1_1_window_control}{Window\+Control}.  
+
+
+
+
+{\ttfamily \#include $<$Window\+Action.\+h$>$}
+
+
+
+Inheritance diagram for Ubuntu\+Controller\+:\+:Window\+Action\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{class_ubuntu_controller_1_1_window_action__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ubuntu\+Controller\+:\+:Window\+Action\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{class_ubuntu_controller_1_1_window_action__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_ubuntu_controller_1_1_window_action_a1836cf300ad545fa88f33454d09765e1}{Window\+Action} (Display $\ast$d)
+\item 
+void \hyperlink{class_ubuntu_controller_1_1_window_action_ac7145d79c3b902a716d554d09e6e2a63}{change\+Window\+Size} (int x, int y)
+\item 
+void \hyperlink{class_ubuntu_controller_1_1_window_action_ae79c374bbbc84ff3dfb8565ede5f4220}{move\+Window} (int x, int y)
+\item 
+void \hyperlink{class_ubuntu_controller_1_1_window_action_a99150ce49f2956c56e64b6ba0246424f}{close\+Window} ()
+\item 
+void \hyperlink{class_ubuntu_controller_1_1_window_action_aa6f2b2543505c0c44027b501f151d4bf}{minimize\+Window} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Display $\ast$ \hyperlink{class_ubuntu_controller_1_1_window_action_a48d88d865a625a45df6f48d20ab62066}{display}
+\begin{DoxyCompactList}\small\item\em A pointer to the display. \end{DoxyCompactList}\item 
+Window \hyperlink{class_ubuntu_controller_1_1_window_action_aca24fda49c815b7362c21a00b8e26607}{win\+Focus}
+\begin{DoxyCompactList}\small\item\em A variable that is used to store the window that is currently in focus. \end{DoxyCompactList}\item 
+int \hyperlink{class_ubuntu_controller_1_1_window_action_a1aa60345251fef9fa34a1960ac0cec0e}{revert}
+\begin{DoxyCompactList}\small\item\em Used to store the value of the revert-\/to property of the window. \end{DoxyCompactList}\item 
+\hyperlink{class_ubuntu_controller_1_1_window_control}{Window\+Control} \hyperlink{class_ubuntu_controller_1_1_window_action_ac12718a724eb4d653f53dc35493461ed}{window\+Control}
+\begin{DoxyCompactList}\small\item\em Creating an instance of the \hyperlink{class_ubuntu_controller_1_1_window_control}{Window\+Control} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains functions that accessed by Display\+Control to access the \hyperlink{class_ubuntu_controller_1_1_window_control}{Window\+Control}. 
+
+Definition at line 9 of file Window\+Action.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_ubuntu_controller_1_1_window_action_a1836cf300ad545fa88f33454d09765e1}\label{class_ubuntu_controller_1_1_window_action_a1836cf300ad545fa88f33454d09765e1}} 
+\index{Ubuntu\+Controller\+::\+Window\+Action@{Ubuntu\+Controller\+::\+Window\+Action}!Window\+Action@{Window\+Action}}
+\index{Window\+Action@{Window\+Action}!Ubuntu\+Controller\+::\+Window\+Action@{Ubuntu\+Controller\+::\+Window\+Action}}
+\subsubsection{\texorpdfstring{Window\+Action()}{WindowAction()}}
+{\footnotesize\ttfamily Window\+Action\+::\+Window\+Action (\begin{DoxyParamCaption}\item[{Display $\ast$}]{d }\end{DoxyParamCaption})}
+
+constructor. 
+
+Definition at line 5 of file Window\+Action.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ubuntu_controller_1_1_window_action_ac7145d79c3b902a716d554d09e6e2a63}\label{class_ubuntu_controller_1_1_window_action_ac7145d79c3b902a716d554d09e6e2a63}} 
+\index{Ubuntu\+Controller\+::\+Window\+Action@{Ubuntu\+Controller\+::\+Window\+Action}!change\+Window\+Size@{change\+Window\+Size}}
+\index{change\+Window\+Size@{change\+Window\+Size}!Ubuntu\+Controller\+::\+Window\+Action@{Ubuntu\+Controller\+::\+Window\+Action}}
+\subsubsection{\texorpdfstring{change\+Window\+Size()}{changeWindowSize()}}
+{\footnotesize\ttfamily void Window\+Action\+::change\+Window\+Size (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+Call \hyperlink{class_ubuntu_controller_1_1_window_control}{Window\+Control} to change the size of the window (currently in development)
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the x coordinate of the window \\
+\hline
+{\em y} & The y coordinate of the window. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 9 of file Window\+Action.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ubuntu_controller_1_1_window_action_ac7145d79c3b902a716d554d09e6e2a63_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ubuntu_controller_1_1_window_action_a99150ce49f2956c56e64b6ba0246424f}\label{class_ubuntu_controller_1_1_window_action_a99150ce49f2956c56e64b6ba0246424f}} 
+\index{Ubuntu\+Controller\+::\+Window\+Action@{Ubuntu\+Controller\+::\+Window\+Action}!close\+Window@{close\+Window}}
+\index{close\+Window@{close\+Window}!Ubuntu\+Controller\+::\+Window\+Action@{Ubuntu\+Controller\+::\+Window\+Action}}
+\subsubsection{\texorpdfstring{close\+Window()}{closeWindow()}}
+{\footnotesize\ttfamily void Window\+Action\+::close\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Call \hyperlink{class_ubuntu_controller_1_1_window_control}{Window\+Control} to close the window (currently in development). 
+
+Definition at line 17 of file Window\+Action.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ubuntu_controller_1_1_window_action_a99150ce49f2956c56e64b6ba0246424f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ubuntu_controller_1_1_window_action_a99150ce49f2956c56e64b6ba0246424f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ubuntu_controller_1_1_window_action_aa6f2b2543505c0c44027b501f151d4bf}\label{class_ubuntu_controller_1_1_window_action_aa6f2b2543505c0c44027b501f151d4bf}} 
+\index{Ubuntu\+Controller\+::\+Window\+Action@{Ubuntu\+Controller\+::\+Window\+Action}!minimize\+Window@{minimize\+Window}}
+\index{minimize\+Window@{minimize\+Window}!Ubuntu\+Controller\+::\+Window\+Action@{Ubuntu\+Controller\+::\+Window\+Action}}
+\subsubsection{\texorpdfstring{minimize\+Window()}{minimizeWindow()}}
+{\footnotesize\ttfamily void Window\+Action\+::minimize\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Call \hyperlink{class_ubuntu_controller_1_1_window_control}{Window\+Control} to minimize the window. 
+
+Definition at line 21 of file Window\+Action.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ubuntu_controller_1_1_window_action_aa6f2b2543505c0c44027b501f151d4bf_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ubuntu_controller_1_1_window_action_ae79c374bbbc84ff3dfb8565ede5f4220}\label{class_ubuntu_controller_1_1_window_action_ae79c374bbbc84ff3dfb8565ede5f4220}} 
+\index{Ubuntu\+Controller\+::\+Window\+Action@{Ubuntu\+Controller\+::\+Window\+Action}!move\+Window@{move\+Window}}
+\index{move\+Window@{move\+Window}!Ubuntu\+Controller\+::\+Window\+Action@{Ubuntu\+Controller\+::\+Window\+Action}}
+\subsubsection{\texorpdfstring{move\+Window()}{moveWindow()}}
+{\footnotesize\ttfamily void Window\+Action\+::move\+Window (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+Call \hyperlink{class_ubuntu_controller_1_1_window_control}{Window\+Control} to move the window to the specified coordinates.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x coordinate of the window. \\
+\hline
+{\em y} & The y coordinate of the window. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 13 of file Window\+Action.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ubuntu_controller_1_1_window_action_ae79c374bbbc84ff3dfb8565ede5f4220_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ubuntu_controller_1_1_window_action_ae79c374bbbc84ff3dfb8565ede5f4220_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_ubuntu_controller_1_1_window_action_a48d88d865a625a45df6f48d20ab62066}\label{class_ubuntu_controller_1_1_window_action_a48d88d865a625a45df6f48d20ab62066}} 
+\index{Ubuntu\+Controller\+::\+Window\+Action@{Ubuntu\+Controller\+::\+Window\+Action}!display@{display}}
+\index{display@{display}!Ubuntu\+Controller\+::\+Window\+Action@{Ubuntu\+Controller\+::\+Window\+Action}}
+\subsubsection{\texorpdfstring{display}{display}}
+{\footnotesize\ttfamily Display$\ast$ Ubuntu\+Controller\+::\+Window\+Action\+::display\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A pointer to the display. 
+
+
+
+Definition at line 13 of file Window\+Action.\+h.
+
+\mbox{\Hypertarget{class_ubuntu_controller_1_1_window_action_a1aa60345251fef9fa34a1960ac0cec0e}\label{class_ubuntu_controller_1_1_window_action_a1aa60345251fef9fa34a1960ac0cec0e}} 
+\index{Ubuntu\+Controller\+::\+Window\+Action@{Ubuntu\+Controller\+::\+Window\+Action}!revert@{revert}}
+\index{revert@{revert}!Ubuntu\+Controller\+::\+Window\+Action@{Ubuntu\+Controller\+::\+Window\+Action}}
+\subsubsection{\texorpdfstring{revert}{revert}}
+{\footnotesize\ttfamily int Ubuntu\+Controller\+::\+Window\+Action\+::revert\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Used to store the value of the revert-\/to property of the window. 
+
+
+
+Definition at line 19 of file Window\+Action.\+h.
+
+\mbox{\Hypertarget{class_ubuntu_controller_1_1_window_action_ac12718a724eb4d653f53dc35493461ed}\label{class_ubuntu_controller_1_1_window_action_ac12718a724eb4d653f53dc35493461ed}} 
+\index{Ubuntu\+Controller\+::\+Window\+Action@{Ubuntu\+Controller\+::\+Window\+Action}!window\+Control@{window\+Control}}
+\index{window\+Control@{window\+Control}!Ubuntu\+Controller\+::\+Window\+Action@{Ubuntu\+Controller\+::\+Window\+Action}}
+\subsubsection{\texorpdfstring{window\+Control}{windowControl}}
+{\footnotesize\ttfamily \hyperlink{class_ubuntu_controller_1_1_window_control}{Window\+Control} Ubuntu\+Controller\+::\+Window\+Action\+::window\+Control\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creating an instance of the \hyperlink{class_ubuntu_controller_1_1_window_control}{Window\+Control} class. 
+
+
+
+Definition at line 22 of file Window\+Action.\+h.
+
+\mbox{\Hypertarget{class_ubuntu_controller_1_1_window_action_aca24fda49c815b7362c21a00b8e26607}\label{class_ubuntu_controller_1_1_window_action_aca24fda49c815b7362c21a00b8e26607}} 
+\index{Ubuntu\+Controller\+::\+Window\+Action@{Ubuntu\+Controller\+::\+Window\+Action}!win\+Focus@{win\+Focus}}
+\index{win\+Focus@{win\+Focus}!Ubuntu\+Controller\+::\+Window\+Action@{Ubuntu\+Controller\+::\+Window\+Action}}
+\subsubsection{\texorpdfstring{win\+Focus}{winFocus}}
+{\footnotesize\ttfamily Window Ubuntu\+Controller\+::\+Window\+Action\+::win\+Focus\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A variable that is used to store the window that is currently in focus. 
+
+
+
+Definition at line 16 of file Window\+Action.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/ubuntu\+\_\+controls/\hyperlink{_window_action_8h}{Window\+Action.\+h}\item 
+src/ubuntu\+\_\+controls/\hyperlink{_window_action_8cpp}{Window\+Action.\+cpp}\end{DoxyCompactItemize}

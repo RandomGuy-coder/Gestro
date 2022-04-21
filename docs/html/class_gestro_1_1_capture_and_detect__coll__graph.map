@@ -1,0 +1,10 @@
+<map id="Gestro::CaptureAndDetect" name="Gestro::CaptureAndDetect">
+<area shape="rect" id="node2" href="$class_gestro_1_1_capture_and_detect_callback_interface.html" title="Callback interface for CaptureAndDetect. " alt="" coords="68,5,245,112"/>
+<area shape="rect" id="node7" href="$class_gesture_detection_1_1_capture.html" title="runs a thread to start camera and capture image " alt="" coords="67,233,246,443"/>
+<area shape="rect" id="node9" href="$class_gesture_detection_1_1_finger_counter.html" title="checks the number of fingers and sends the respective command to be processed. " alt="" coords="270,175,438,501"/>
+<area shape="rect" id="node3" href="$class_gesture_detection_1_1_enabled_command.html" title="This is a class that is used to store the enabled commands. " alt="" coords="462,263,640,413"/>
+<area shape="rect" id="node4" href="$class_gesture_detection_1_1_skin_color_detector.html" title="detects skin colour threshold and creates a skin mask. " alt="" coords="664,175,854,501"/>
+<area shape="rect" id="node5" href="$class_controller_screen_callback_interface.html" title="Callback interface to ControllerScreen. " alt="" coords="878,277,1069,399"/>
+<area shape="rect" id="node6" href="$class_gestro_1_1_display_control_callback_interface.html" title="{Gestro::DisplayControlCallback\lInterface\n||+ doMouseMove()\l+ doKeyPress()\l+ doIncreaseVolume()\l+ doReduceVolume()\l+ doMuteUnmute()\l+ doUnmute()\l+ doButtonPress()\l+ doWindowMove()\l+ doWindowMinimize()\l}" alt="" coords="1093,233,1300,443"/>
+<area shape="rect" id="node8" href="$class_gesture_detection_1_1_finger_and_coordinates.html" title="class to store the information detected by the FingerCounter. " alt="" coords="1324,270,1495,406"/>
+</map>

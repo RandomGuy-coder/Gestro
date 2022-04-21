@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classFingerAndCoordinates.html" title="class to store the information detected by the FingerCounter. " alt="" coords="5,5,156,32"/>
+<area shape="rect" id="node1" href="$class_gestro_1_1_capture_and_detect_callback_interface.html" title="Callback interface for CaptureAndDetect. " alt="" coords="5,5,183,47"/>
+<area shape="rect" id="node2" href="$class_gestro_1_1_capture_and_detect.html" title="This class takes care of starting threads to capture image, process and publish commands. " alt="" coords="231,13,408,39"/>
 </map>

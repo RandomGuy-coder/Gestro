@@ -1,0 +1,486 @@
+\hypertarget{class_gesture_detection_1_1_finger_counter}{}\section{Gesture\+Detection\+:\+:Finger\+Counter Class Reference}
+\label{class_gesture_detection_1_1_finger_counter}\index{Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}}
+
+
+checks the number of fingers and sends the respective command to be processed.  
+
+
+
+
+{\ttfamily \#include $<$Finger\+Counter.\+h$>$}
+
+
+
+Collaboration diagram for Gesture\+Detection\+:\+:Finger\+Counter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{class_gesture_detection_1_1_finger_counter__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_gesture_detection_1_1_finger_counter_a2f6f5bc97506e87dc7acc6e02579a916}{Finger\+Counter} (void)
+\item 
+\hyperlink{class_gesture_detection_1_1_finger_and_coordinates}{Finger\+And\+Coordinates} \hyperlink{class_gesture_detection_1_1_finger_counter_a611201352a86dd943f866c1be9507081}{find\+Fingers\+Count} (Mat input\+\_\+image, Mat frame)
+\item 
+void \hyperlink{class_gesture_detection_1_1_finger_counter_a5b5aabaa39ff05c70a873b4c2a7869f9}{Connect\+Callback} (\hyperlink{class_gestro_1_1_capture_and_detect_callback_interface}{Capture\+And\+Detect\+Callback\+Interface} $\ast$)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_gesture_detection_1_1_finger_counter_ab8a8c1f8ddc9eda04ac2bb16820c4c14}{get\+Finger} ()
+\item 
+Point \hyperlink{class_gesture_detection_1_1_finger_counter_a54c1d13833b837d08bcd45c489494370}{get\+Highest\+Point} (const Mat \&frame, const vector$<$ vector$<$ Point $>$$>$ \&contours, int biggest\+\_\+contour\+\_\+index, vector$<$ Vec4i $>$ \&defects)
+\item 
+Point \hyperlink{class_gesture_detection_1_1_finger_counter_a89bf2a26694a8d7f826e88d73d9ba03f}{farthest\+\_\+point} (vector$<$ Vec4i $>$ defects, vector$<$ Point $>$ contour, Point centroid)
+\item 
+double \hyperlink{class_gesture_detection_1_1_finger_counter_a51fdf57f5f19911f34778e925d50b480}{find\+Points\+Distance} (Point a, Point b)
+\item 
+double \hyperlink{class_gesture_detection_1_1_finger_counter_aebba4b98a6332a74ba996536ca080dbb}{find\+Angle} (Point a, Point b, Point c)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Scalar \hyperlink{class_gesture_detection_1_1_finger_counter_a0081a8ce412b872f627f8540baeddd19}{color\+\_\+blue}
+\begin{DoxyCompactList}\small\item\em scalar to store blue color \end{DoxyCompactList}\item 
+Scalar \hyperlink{class_gesture_detection_1_1_finger_counter_a937a79c7b41ecffd6e2c56ca812b06a2}{color\+\_\+green}
+\begin{DoxyCompactList}\small\item\em scalar to store green color \end{DoxyCompactList}\item 
+Scalar \hyperlink{class_gesture_detection_1_1_finger_counter_a6db55f356b9d9c3caccfe94d8a0d6ff3}{color\+\_\+white}
+\begin{DoxyCompactList}\small\item\em scalar to store white color \end{DoxyCompactList}\item 
+Scalar \hyperlink{class_gesture_detection_1_1_finger_counter_a9382982af059fcae51ee2c28e4392271}{color\+\_\+yellow}
+\begin{DoxyCompactList}\small\item\em scalar to store yellow color \end{DoxyCompactList}\item 
+\hyperlink{class_gestro_1_1_capture_and_detect_callback_interface}{Capture\+And\+Detect\+Callback\+Interface} $\ast$ \hyperlink{class_gesture_detection_1_1_finger_counter_adfc37a4aa3d94645e5c1eb59b47a755d}{palm\+Callback}
+\begin{DoxyCompactList}\small\item\em Callback interface to detect fist. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{class_gesture_detection_1_1_finger_counter_abd8a550123de746dfcfb2e52063f664f}{fingers}
+\begin{DoxyCompactList}\small\item\em to store number of fingers in the buffer for 15 frames \end{DoxyCompactList}\item 
+int \hyperlink{class_gesture_detection_1_1_finger_counter_a8d7f597b3c452bdd4d418752eaa616cb}{current\+Finger} = 0
+\begin{DoxyCompactList}\small\item\em store the current detected finger \end{DoxyCompactList}\item 
+int \hyperlink{class_gesture_detection_1_1_finger_counter_a85ab77987a3933bf0b719cf13751060d}{old\+Finger} = 0
+\begin{DoxyCompactList}\small\item\em last detected finger \end{DoxyCompactList}\item 
+Point \hyperlink{class_gesture_detection_1_1_finger_counter_a84c41c1ed2f5c6c76031690664c5efc4}{old\+Far\+Point}
+\begin{DoxyCompactList}\small\item\em last detected far point \end{DoxyCompactList}\item 
+Iir\+::\+Butterworth\+::\+Low\+Pass$<$ 2 $>$ \hyperlink{class_gesture_detection_1_1_finger_counter_a4c922ffcb1a2b6232fc2d7715c523c09}{x\+Filter}
+\begin{DoxyCompactList}\small\item\em 2nd order low pass iir filter to process x coordinates \end{DoxyCompactList}\item 
+Iir\+::\+Butterworth\+::\+Low\+Pass$<$ 2 $>$ \hyperlink{class_gesture_detection_1_1_finger_counter_aaafad0b89fe35e79247270c24988da05}{y\+Filter}
+\begin{DoxyCompactList}\small\item\em 2nd order low pass iir filter to process y coordinates \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+checks the number of fingers and sends the respective command to be processed. 
+
+This class is called from the Capture\+And\+Detect after the initial image processing is done, the fingers and stored in the buffer. Once the buffer size is 15 the finger that occurs the most number of times in the buffer is considered and the appropriate command is sent. If finger is one or 3 then the coordinates are sent until a new finger is detected. 
+
+Definition at line 23 of file Finger\+Counter.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_gesture_detection_1_1_finger_counter_a2f6f5bc97506e87dc7acc6e02579a916}\label{class_gesture_detection_1_1_finger_counter_a2f6f5bc97506e87dc7acc6e02579a916}} 
+\index{Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}!Finger\+Counter@{Finger\+Counter}}
+\index{Finger\+Counter@{Finger\+Counter}!Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}}
+\subsubsection{\texorpdfstring{Finger\+Counter()}{FingerCounter()}}
+{\footnotesize\ttfamily Finger\+Counter\+::\+Finger\+Counter (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+The constructor for the \hyperlink{class_gesture_detection_1_1_finger_counter}{Finger\+Counter} class. Initializes the colors and iir filters. 
+
+Definition at line 5 of file Finger\+Counter.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_gesture_detection_1_1_finger_counter_a5b5aabaa39ff05c70a873b4c2a7869f9}\label{class_gesture_detection_1_1_finger_counter_a5b5aabaa39ff05c70a873b4c2a7869f9}} 
+\index{Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}!Connect\+Callback@{Connect\+Callback}}
+\index{Connect\+Callback@{Connect\+Callback}!Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}}
+\subsubsection{\texorpdfstring{Connect\+Callback()}{ConnectCallback()}}
+{\footnotesize\ttfamily void Finger\+Counter\+::\+Connect\+Callback (\begin{DoxyParamCaption}\item[{\hyperlink{class_gestro_1_1_capture_and_detect_callback_interface}{Capture\+And\+Detect\+Callback\+Interface} $\ast$}]{callback }\end{DoxyParamCaption})}
+
+This function is used to connect the callback interface of Capture\+And\+Detect with this class
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & The callback function that will be called when the fist is detected. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 14 of file Finger\+Counter.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_gesture_detection_1_1_finger_counter_a5b5aabaa39ff05c70a873b4c2a7869f9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_gesture_detection_1_1_finger_counter_a89bf2a26694a8d7f826e88d73d9ba03f}\label{class_gesture_detection_1_1_finger_counter_a89bf2a26694a8d7f826e88d73d9ba03f}} 
+\index{Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}!farthest\+\_\+point@{farthest\+\_\+point}}
+\index{farthest\+\_\+point@{farthest\+\_\+point}!Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}}
+\subsubsection{\texorpdfstring{farthest\+\_\+point()}{farthest\_point()}}
+{\footnotesize\ttfamily Point Finger\+Counter\+::farthest\+\_\+point (\begin{DoxyParamCaption}\item[{vector$<$ Vec4i $>$}]{defects,  }\item[{vector$<$ Point $>$}]{contour,  }\item[{Point}]{centroid }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+It returns the point on the contour that is the farthest from the centroid
+
+
+\begin{DoxyParams}{Parameters}
+{\em defects} & the convexity defects of the hand \\
+\hline
+{\em contour} & the contour of the hand \\
+\hline
+{\em centroid} & The centroid of the hand\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the point with the highest y value. 
+\end{DoxyReturn}
+
+
+Definition at line 150 of file Finger\+Counter.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_gesture_detection_1_1_finger_counter_a89bf2a26694a8d7f826e88d73d9ba03f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_gesture_detection_1_1_finger_counter_aebba4b98a6332a74ba996536ca080dbb}\label{class_gesture_detection_1_1_finger_counter_aebba4b98a6332a74ba996536ca080dbb}} 
+\index{Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}!find\+Angle@{find\+Angle}}
+\index{find\+Angle@{find\+Angle}!Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}}
+\subsubsection{\texorpdfstring{find\+Angle()}{findAngle()}}
+{\footnotesize\ttfamily double Finger\+Counter\+::find\+Angle (\begin{DoxyParamCaption}\item[{Point}]{a,  }\item[{Point}]{b,  }\item[{Point}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+It finds the angle between the three points
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & point one \\
+\hline
+{\em b} & point two \\
+\hline
+{\em c} & point three\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The angle between the three points. 
+\end{DoxyReturn}
+
+
+Definition at line 166 of file Finger\+Counter.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_gesture_detection_1_1_finger_counter_aebba4b98a6332a74ba996536ca080dbb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_gesture_detection_1_1_finger_counter_aebba4b98a6332a74ba996536ca080dbb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_gesture_detection_1_1_finger_counter_a611201352a86dd943f866c1be9507081}\label{class_gesture_detection_1_1_finger_counter_a611201352a86dd943f866c1be9507081}} 
+\index{Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}!find\+Fingers\+Count@{find\+Fingers\+Count}}
+\index{find\+Fingers\+Count@{find\+Fingers\+Count}!Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}}
+\subsubsection{\texorpdfstring{find\+Fingers\+Count()}{findFingersCount()}}
+{\footnotesize\ttfamily \hyperlink{class_gesture_detection_1_1_finger_and_coordinates}{Finger\+And\+Coordinates} Finger\+Counter\+::find\+Fingers\+Count (\begin{DoxyParamCaption}\item[{Mat}]{input\+\_\+image,  }\item[{Mat}]{frame }\end{DoxyParamCaption})}
+
+It finds the contours of the hand, finds the convex hull and the defects, and then counts the number of fingers
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+image} & The image that we want to find the fingers in. \\
+\hline
+{\em frame} & The frame from the camera\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a struct of type \hyperlink{class_gesture_detection_1_1_finger_and_coordinates}{Finger\+And\+Coordinates}. 
+\end{DoxyReturn}
+
+
+Definition at line 18 of file Finger\+Counter.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_gesture_detection_1_1_finger_counter_a611201352a86dd943f866c1be9507081_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_gesture_detection_1_1_finger_counter_a611201352a86dd943f866c1be9507081_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_gesture_detection_1_1_finger_counter_a51fdf57f5f19911f34778e925d50b480}\label{class_gesture_detection_1_1_finger_counter_a51fdf57f5f19911f34778e925d50b480}} 
+\index{Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}!find\+Points\+Distance@{find\+Points\+Distance}}
+\index{find\+Points\+Distance@{find\+Points\+Distance}!Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}}
+\subsubsection{\texorpdfstring{find\+Points\+Distance()}{findPointsDistance()}}
+{\footnotesize\ttfamily double Finger\+Counter\+::find\+Points\+Distance (\begin{DoxyParamCaption}\item[{Point}]{a,  }\item[{Point}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+It finds the distance between two points
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & The first point \\
+\hline
+{\em b} & The second point.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The distance between two points. 
+\end{DoxyReturn}
+
+
+Definition at line 161 of file Finger\+Counter.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_gesture_detection_1_1_finger_counter_a51fdf57f5f19911f34778e925d50b480_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_gesture_detection_1_1_finger_counter_ab8a8c1f8ddc9eda04ac2bb16820c4c14}\label{class_gesture_detection_1_1_finger_counter_ab8a8c1f8ddc9eda04ac2bb16820c4c14}} 
+\index{Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}!get\+Finger@{get\+Finger}}
+\index{get\+Finger@{get\+Finger}!Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}}
+\subsubsection{\texorpdfstring{get\+Finger()}{getFinger()}}
+{\footnotesize\ttfamily int Finger\+Counter\+::get\+Finger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+It counts the number of times each finger is detected and returns the finger that is detected the most
+
+\begin{DoxyReturn}{Returns}
+The finger that is most frequently detected. 
+\end{DoxyReturn}
+
+
+Definition at line 134 of file Finger\+Counter.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_gesture_detection_1_1_finger_counter_ab8a8c1f8ddc9eda04ac2bb16820c4c14_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_gesture_detection_1_1_finger_counter_a54c1d13833b837d08bcd45c489494370}\label{class_gesture_detection_1_1_finger_counter_a54c1d13833b837d08bcd45c489494370}} 
+\index{Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}!get\+Highest\+Point@{get\+Highest\+Point}}
+\index{get\+Highest\+Point@{get\+Highest\+Point}!Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}}
+\subsubsection{\texorpdfstring{get\+Highest\+Point()}{getHighestPoint()}}
+{\footnotesize\ttfamily Point Finger\+Counter\+::get\+Highest\+Point (\begin{DoxyParamCaption}\item[{const Mat \&}]{frame,  }\item[{const vector$<$ vector$<$ Point $>$$>$ \&}]{contours,  }\item[{int}]{biggest\+\_\+contour\+\_\+index,  }\item[{vector$<$ Vec4i $>$ \&}]{defects }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+It finds the highest point of the hand
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame} & The frame to draw on \\
+\hline
+{\em contours} & The contours of the hand \\
+\hline
+{\em biggest\+\_\+contour\+\_\+index} & The index of the biggest contour in the vector of contours. \\
+\hline
+{\em defects} & The convexity defects of the hand.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The highest point of the hand. 
+\end{DoxyReturn}
+
+
+Definition at line 125 of file Finger\+Counter.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_gesture_detection_1_1_finger_counter_a54c1d13833b837d08bcd45c489494370_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_gesture_detection_1_1_finger_counter_a54c1d13833b837d08bcd45c489494370_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_gesture_detection_1_1_finger_counter_a0081a8ce412b872f627f8540baeddd19}\label{class_gesture_detection_1_1_finger_counter_a0081a8ce412b872f627f8540baeddd19}} 
+\index{Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}!color\+\_\+blue@{color\+\_\+blue}}
+\index{color\+\_\+blue@{color\+\_\+blue}!Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}}
+\subsubsection{\texorpdfstring{color\+\_\+blue}{color\_blue}}
+{\footnotesize\ttfamily Scalar Gesture\+Detection\+::\+Finger\+Counter\+::color\+\_\+blue\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+scalar to store blue color 
+
+
+
+Definition at line 49 of file Finger\+Counter.\+h.
+
+\mbox{\Hypertarget{class_gesture_detection_1_1_finger_counter_a937a79c7b41ecffd6e2c56ca812b06a2}\label{class_gesture_detection_1_1_finger_counter_a937a79c7b41ecffd6e2c56ca812b06a2}} 
+\index{Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}!color\+\_\+green@{color\+\_\+green}}
+\index{color\+\_\+green@{color\+\_\+green}!Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}}
+\subsubsection{\texorpdfstring{color\+\_\+green}{color\_green}}
+{\footnotesize\ttfamily Scalar Gesture\+Detection\+::\+Finger\+Counter\+::color\+\_\+green\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+scalar to store green color 
+
+
+
+Definition at line 51 of file Finger\+Counter.\+h.
+
+\mbox{\Hypertarget{class_gesture_detection_1_1_finger_counter_a6db55f356b9d9c3caccfe94d8a0d6ff3}\label{class_gesture_detection_1_1_finger_counter_a6db55f356b9d9c3caccfe94d8a0d6ff3}} 
+\index{Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}!color\+\_\+white@{color\+\_\+white}}
+\index{color\+\_\+white@{color\+\_\+white}!Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}}
+\subsubsection{\texorpdfstring{color\+\_\+white}{color\_white}}
+{\footnotesize\ttfamily Scalar Gesture\+Detection\+::\+Finger\+Counter\+::color\+\_\+white\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+scalar to store white color 
+
+
+
+Definition at line 53 of file Finger\+Counter.\+h.
+
+\mbox{\Hypertarget{class_gesture_detection_1_1_finger_counter_a9382982af059fcae51ee2c28e4392271}\label{class_gesture_detection_1_1_finger_counter_a9382982af059fcae51ee2c28e4392271}} 
+\index{Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}!color\+\_\+yellow@{color\+\_\+yellow}}
+\index{color\+\_\+yellow@{color\+\_\+yellow}!Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}}
+\subsubsection{\texorpdfstring{color\+\_\+yellow}{color\_yellow}}
+{\footnotesize\ttfamily Scalar Gesture\+Detection\+::\+Finger\+Counter\+::color\+\_\+yellow\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+scalar to store yellow color 
+
+
+
+Definition at line 55 of file Finger\+Counter.\+h.
+
+\mbox{\Hypertarget{class_gesture_detection_1_1_finger_counter_a8d7f597b3c452bdd4d418752eaa616cb}\label{class_gesture_detection_1_1_finger_counter_a8d7f597b3c452bdd4d418752eaa616cb}} 
+\index{Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}!current\+Finger@{current\+Finger}}
+\index{current\+Finger@{current\+Finger}!Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}}
+\subsubsection{\texorpdfstring{current\+Finger}{currentFinger}}
+{\footnotesize\ttfamily int Gesture\+Detection\+::\+Finger\+Counter\+::current\+Finger = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+store the current detected finger 
+
+
+
+Definition at line 61 of file Finger\+Counter.\+h.
+
+\mbox{\Hypertarget{class_gesture_detection_1_1_finger_counter_abd8a550123de746dfcfb2e52063f664f}\label{class_gesture_detection_1_1_finger_counter_abd8a550123de746dfcfb2e52063f664f}} 
+\index{Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}!fingers@{fingers}}
+\index{fingers@{fingers}!Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}}
+\subsubsection{\texorpdfstring{fingers}{fingers}}
+{\footnotesize\ttfamily vector$<$int$>$ Gesture\+Detection\+::\+Finger\+Counter\+::fingers\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+to store number of fingers in the buffer for 15 frames 
+
+
+
+Definition at line 59 of file Finger\+Counter.\+h.
+
+\mbox{\Hypertarget{class_gesture_detection_1_1_finger_counter_a84c41c1ed2f5c6c76031690664c5efc4}\label{class_gesture_detection_1_1_finger_counter_a84c41c1ed2f5c6c76031690664c5efc4}} 
+\index{Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}!old\+Far\+Point@{old\+Far\+Point}}
+\index{old\+Far\+Point@{old\+Far\+Point}!Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}}
+\subsubsection{\texorpdfstring{old\+Far\+Point}{oldFarPoint}}
+{\footnotesize\ttfamily Point Gesture\+Detection\+::\+Finger\+Counter\+::old\+Far\+Point\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+last detected far point 
+
+
+
+Definition at line 65 of file Finger\+Counter.\+h.
+
+\mbox{\Hypertarget{class_gesture_detection_1_1_finger_counter_a85ab77987a3933bf0b719cf13751060d}\label{class_gesture_detection_1_1_finger_counter_a85ab77987a3933bf0b719cf13751060d}} 
+\index{Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}!old\+Finger@{old\+Finger}}
+\index{old\+Finger@{old\+Finger}!Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}}
+\subsubsection{\texorpdfstring{old\+Finger}{oldFinger}}
+{\footnotesize\ttfamily int Gesture\+Detection\+::\+Finger\+Counter\+::old\+Finger = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+last detected finger 
+
+
+
+Definition at line 63 of file Finger\+Counter.\+h.
+
+\mbox{\Hypertarget{class_gesture_detection_1_1_finger_counter_adfc37a4aa3d94645e5c1eb59b47a755d}\label{class_gesture_detection_1_1_finger_counter_adfc37a4aa3d94645e5c1eb59b47a755d}} 
+\index{Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}!palm\+Callback@{palm\+Callback}}
+\index{palm\+Callback@{palm\+Callback}!Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}}
+\subsubsection{\texorpdfstring{palm\+Callback}{palmCallback}}
+{\footnotesize\ttfamily \hyperlink{class_gestro_1_1_capture_and_detect_callback_interface}{Capture\+And\+Detect\+Callback\+Interface}$\ast$ Gesture\+Detection\+::\+Finger\+Counter\+::palm\+Callback\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Callback interface to detect fist. 
+
+
+
+Definition at line 57 of file Finger\+Counter.\+h.
+
+\mbox{\Hypertarget{class_gesture_detection_1_1_finger_counter_a4c922ffcb1a2b6232fc2d7715c523c09}\label{class_gesture_detection_1_1_finger_counter_a4c922ffcb1a2b6232fc2d7715c523c09}} 
+\index{Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}!x\+Filter@{x\+Filter}}
+\index{x\+Filter@{x\+Filter}!Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}}
+\subsubsection{\texorpdfstring{x\+Filter}{xFilter}}
+{\footnotesize\ttfamily Iir\+::\+Butterworth\+::\+Low\+Pass$<$2$>$ Gesture\+Detection\+::\+Finger\+Counter\+::x\+Filter\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+2nd order low pass iir filter to process x coordinates 
+
+
+
+Definition at line 68 of file Finger\+Counter.\+h.
+
+\mbox{\Hypertarget{class_gesture_detection_1_1_finger_counter_aaafad0b89fe35e79247270c24988da05}\label{class_gesture_detection_1_1_finger_counter_aaafad0b89fe35e79247270c24988da05}} 
+\index{Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}!y\+Filter@{y\+Filter}}
+\index{y\+Filter@{y\+Filter}!Gesture\+Detection\+::\+Finger\+Counter@{Gesture\+Detection\+::\+Finger\+Counter}}
+\subsubsection{\texorpdfstring{y\+Filter}{yFilter}}
+{\footnotesize\ttfamily Iir\+::\+Butterworth\+::\+Low\+Pass$<$2$>$ Gesture\+Detection\+::\+Finger\+Counter\+::y\+Filter\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+2nd order low pass iir filter to process y coordinates 
+
+
+
+Definition at line 70 of file Finger\+Counter.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/gesture\+\_\+detection/\hyperlink{_finger_counter_8h}{Finger\+Counter.\+h}\item 
+src/gesture\+\_\+detection/\hyperlink{_finger_counter_8cpp}{Finger\+Counter.\+cpp}\end{DoxyCompactItemize}

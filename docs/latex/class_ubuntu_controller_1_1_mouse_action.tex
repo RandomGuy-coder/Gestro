@@ -1,0 +1,227 @@
+\hypertarget{class_ubuntu_controller_1_1_mouse_action}{}\section{Ubuntu\+Controller\+:\+:Mouse\+Action Class Reference}
+\label{class_ubuntu_controller_1_1_mouse_action}\index{Ubuntu\+Controller\+::\+Mouse\+Action@{Ubuntu\+Controller\+::\+Mouse\+Action}}
+
+
+A wrapper class for mouse control.  
+
+
+
+
+{\ttfamily \#include $<$Mouse\+Action.\+h$>$}
+
+
+
+Inheritance diagram for Ubuntu\+Controller\+:\+:Mouse\+Action\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{class_ubuntu_controller_1_1_mouse_action__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ubuntu\+Controller\+:\+:Mouse\+Action\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{class_ubuntu_controller_1_1_mouse_action__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_ubuntu_controller_1_1_mouse_action_a42e540b994144f3f8775baded5370b14}{Mouse\+Action} (Display $\ast$d, X\+Event e)
+\item 
+void \hyperlink{class_ubuntu_controller_1_1_mouse_action_aa017b86a7e358e7a74a8ec50a5a191cf}{press\+Button} (int button)
+\item 
+void \hyperlink{class_ubuntu_controller_1_1_mouse_action_ab1ac193e88baf8614c55ca2fa7a3b430}{release\+Button} (int button)
+\item 
+void \hyperlink{class_ubuntu_controller_1_1_mouse_action_a7a14cab01ad2ccdb1b135d4bae939fe2}{move\+Mouse\+To} (int x, int y)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Display $\ast$ \hyperlink{class_ubuntu_controller_1_1_mouse_action_abda7df4e11759c46bd0c419575353e8a}{display}
+\begin{DoxyCompactList}\small\item\em A pointer to the display. \end{DoxyCompactList}\item 
+X\+Event \hyperlink{class_ubuntu_controller_1_1_mouse_action_aac4074eeeab2989da4a645ed9c118c22}{event}
+\begin{DoxyCompactList}\small\item\em A variable that stores the X\+Event. \end{DoxyCompactList}\item 
+\hyperlink{class_ubuntu_controller_1_1_mouse_control}{Mouse\+Control} \hyperlink{class_ubuntu_controller_1_1_mouse_action_a8c5da1d5bd3de8f926fc132335cf9156}{mouse\+Control}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_ubuntu_controller_1_1_mouse_control}{Mouse\+Control} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A wrapper class for mouse control. 
+
+Definition at line 9 of file Mouse\+Action.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_ubuntu_controller_1_1_mouse_action_a42e540b994144f3f8775baded5370b14}\label{class_ubuntu_controller_1_1_mouse_action_a42e540b994144f3f8775baded5370b14}} 
+\index{Ubuntu\+Controller\+::\+Mouse\+Action@{Ubuntu\+Controller\+::\+Mouse\+Action}!Mouse\+Action@{Mouse\+Action}}
+\index{Mouse\+Action@{Mouse\+Action}!Ubuntu\+Controller\+::\+Mouse\+Action@{Ubuntu\+Controller\+::\+Mouse\+Action}}
+\subsubsection{\texorpdfstring{Mouse\+Action()}{MouseAction()}}
+{\footnotesize\ttfamily Mouse\+Action\+::\+Mouse\+Action (\begin{DoxyParamCaption}\item[{Display $\ast$}]{d,  }\item[{X\+Event}]{e }\end{DoxyParamCaption})}
+
+Constructor takes a Display and an X\+Event and stores them in the class
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & The display that the event occurred on. \\
+\hline
+{\em e} & The X\+Event used to trigger the mouse action. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 5 of file Mouse\+Action.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ubuntu_controller_1_1_mouse_action_a7a14cab01ad2ccdb1b135d4bae939fe2}\label{class_ubuntu_controller_1_1_mouse_action_a7a14cab01ad2ccdb1b135d4bae939fe2}} 
+\index{Ubuntu\+Controller\+::\+Mouse\+Action@{Ubuntu\+Controller\+::\+Mouse\+Action}!move\+Mouse\+To@{move\+Mouse\+To}}
+\index{move\+Mouse\+To@{move\+Mouse\+To}!Ubuntu\+Controller\+::\+Mouse\+Action@{Ubuntu\+Controller\+::\+Mouse\+Action}}
+\subsubsection{\texorpdfstring{move\+Mouse\+To()}{moveMouseTo()}}
+{\footnotesize\ttfamily void Mouse\+Action\+::move\+Mouse\+To (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+Wrapper function for moving the mouse
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & x-\/coordinate for mouse position. \\
+\hline
+{\em y} & y-\/coordinate for mouse position. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 19 of file Mouse\+Action.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ubuntu_controller_1_1_mouse_action_a7a14cab01ad2ccdb1b135d4bae939fe2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ubuntu_controller_1_1_mouse_action_a7a14cab01ad2ccdb1b135d4bae939fe2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ubuntu_controller_1_1_mouse_action_aa017b86a7e358e7a74a8ec50a5a191cf}\label{class_ubuntu_controller_1_1_mouse_action_aa017b86a7e358e7a74a8ec50a5a191cf}} 
+\index{Ubuntu\+Controller\+::\+Mouse\+Action@{Ubuntu\+Controller\+::\+Mouse\+Action}!press\+Button@{press\+Button}}
+\index{press\+Button@{press\+Button}!Ubuntu\+Controller\+::\+Mouse\+Action@{Ubuntu\+Controller\+::\+Mouse\+Action}}
+\subsubsection{\texorpdfstring{press\+Button()}{pressButton()}}
+{\footnotesize\ttfamily void Mouse\+Action\+::press\+Button (\begin{DoxyParamCaption}\item[{int}]{button }\end{DoxyParamCaption})}
+
+Wrapper function for pressing Button
+
+
+\begin{DoxyParams}{Parameters}
+{\em button} & The button to press. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 11 of file Mouse\+Action.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ubuntu_controller_1_1_mouse_action_aa017b86a7e358e7a74a8ec50a5a191cf_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ubuntu_controller_1_1_mouse_action_aa017b86a7e358e7a74a8ec50a5a191cf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ubuntu_controller_1_1_mouse_action_ab1ac193e88baf8614c55ca2fa7a3b430}\label{class_ubuntu_controller_1_1_mouse_action_ab1ac193e88baf8614c55ca2fa7a3b430}} 
+\index{Ubuntu\+Controller\+::\+Mouse\+Action@{Ubuntu\+Controller\+::\+Mouse\+Action}!release\+Button@{release\+Button}}
+\index{release\+Button@{release\+Button}!Ubuntu\+Controller\+::\+Mouse\+Action@{Ubuntu\+Controller\+::\+Mouse\+Action}}
+\subsubsection{\texorpdfstring{release\+Button()}{releaseButton()}}
+{\footnotesize\ttfamily void Mouse\+Action\+::release\+Button (\begin{DoxyParamCaption}\item[{int}]{button }\end{DoxyParamCaption})}
+
+Wrapper function for releasing Button
+
+
+\begin{DoxyParams}{Parameters}
+{\em button} & The button to release. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 15 of file Mouse\+Action.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ubuntu_controller_1_1_mouse_action_ab1ac193e88baf8614c55ca2fa7a3b430_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_ubuntu_controller_1_1_mouse_action_abda7df4e11759c46bd0c419575353e8a}\label{class_ubuntu_controller_1_1_mouse_action_abda7df4e11759c46bd0c419575353e8a}} 
+\index{Ubuntu\+Controller\+::\+Mouse\+Action@{Ubuntu\+Controller\+::\+Mouse\+Action}!display@{display}}
+\index{display@{display}!Ubuntu\+Controller\+::\+Mouse\+Action@{Ubuntu\+Controller\+::\+Mouse\+Action}}
+\subsubsection{\texorpdfstring{display}{display}}
+{\footnotesize\ttfamily Display$\ast$ Ubuntu\+Controller\+::\+Mouse\+Action\+::display\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A pointer to the display. 
+
+
+
+Definition at line 13 of file Mouse\+Action.\+h.
+
+\mbox{\Hypertarget{class_ubuntu_controller_1_1_mouse_action_aac4074eeeab2989da4a645ed9c118c22}\label{class_ubuntu_controller_1_1_mouse_action_aac4074eeeab2989da4a645ed9c118c22}} 
+\index{Ubuntu\+Controller\+::\+Mouse\+Action@{Ubuntu\+Controller\+::\+Mouse\+Action}!event@{event}}
+\index{event@{event}!Ubuntu\+Controller\+::\+Mouse\+Action@{Ubuntu\+Controller\+::\+Mouse\+Action}}
+\subsubsection{\texorpdfstring{event}{event}}
+{\footnotesize\ttfamily X\+Event Ubuntu\+Controller\+::\+Mouse\+Action\+::event\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A variable that stores the X\+Event. 
+
+
+
+Definition at line 16 of file Mouse\+Action.\+h.
+
+\mbox{\Hypertarget{class_ubuntu_controller_1_1_mouse_action_a8c5da1d5bd3de8f926fc132335cf9156}\label{class_ubuntu_controller_1_1_mouse_action_a8c5da1d5bd3de8f926fc132335cf9156}} 
+\index{Ubuntu\+Controller\+::\+Mouse\+Action@{Ubuntu\+Controller\+::\+Mouse\+Action}!mouse\+Control@{mouse\+Control}}
+\index{mouse\+Control@{mouse\+Control}!Ubuntu\+Controller\+::\+Mouse\+Action@{Ubuntu\+Controller\+::\+Mouse\+Action}}
+\subsubsection{\texorpdfstring{mouse\+Control}{mouseControl}}
+{\footnotesize\ttfamily \hyperlink{class_ubuntu_controller_1_1_mouse_control}{Mouse\+Control} Ubuntu\+Controller\+::\+Mouse\+Action\+::mouse\+Control\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\hyperlink{class_ubuntu_controller_1_1_mouse_control}{Mouse\+Control} object. 
+
+
+
+Definition at line 19 of file Mouse\+Action.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/ubuntu\+\_\+controls/\hyperlink{_mouse_action_8h}{Mouse\+Action.\+h}\item 
+src/ubuntu\+\_\+controls/\hyperlink{_mouse_action_8cpp}{Mouse\+Action.\+cpp}\end{DoxyCompactItemize}

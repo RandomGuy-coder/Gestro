@@ -1,0 +1,4 @@
+<map id="UbuntuController::WindowAction::minimizeWindow" name="UbuntuController::WindowAction::minimizeWindow">
+<area shape="rect" id="node2" href="$class_ubuntu_controller_1_1_window_control.html#abb8d0ae3c43be976259181c848fa4568" title="UbuntuController::Window\lControl::minimize" alt="" coords="228,5,403,47"/>
+<area shape="rect" id="node3" href="$class_ubuntu_controller_1_1_window_control.html#aad092a22b19664df4d94fe9a853d350a" title="UbuntuController::Window\lControl::identifyWindow" alt="" coords="451,5,625,47"/>
+</map>

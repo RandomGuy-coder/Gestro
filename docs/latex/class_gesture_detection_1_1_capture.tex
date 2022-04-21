@@ -1,0 +1,288 @@
+\hypertarget{class_gesture_detection_1_1_capture}{}\section{Gesture\+Detection\+:\+:Capture Class Reference}
+\label{class_gesture_detection_1_1_capture}\index{Gesture\+Detection\+::\+Capture@{Gesture\+Detection\+::\+Capture}}
+
+
+runs a thread to start camera and capture image  
+
+
+
+
+{\ttfamily \#include $<$Capture.\+h$>$}
+
+
+
+Collaboration diagram for Gesture\+Detection\+:\+:Capture\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{class_gesture_detection_1_1_capture__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_gesture_detection_1_1_capture_a97036b5d271238bd4852da79a0091b57}{Capture} ()
+\item 
+void \hyperlink{class_gesture_detection_1_1_capture_aaff420636b6bac6593789344cc990580}{init} (\hyperlink{class_gestro_1_1_capture_and_detect_callback_interface}{Gestro\+::\+Capture\+And\+Detect\+Callback\+Interface} $\ast$, int, int)
+\item 
+void \hyperlink{class_gesture_detection_1_1_capture_a2ffe4eeac4caa296f4fcc75cc82c1436}{start} ()
+\item 
+void \hyperlink{class_gesture_detection_1_1_capture_ab632f1927461a909b18cce71ec96f76d}{stop} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_gesture_detection_1_1_capture_ab022086194534e994259e0f6de25e350}{running} = false
+\begin{DoxyCompactList}\small\item\em boolean to check if cmaera is running \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_gesture_detection_1_1_capture_a010b666cb1482b235f8282867e8f1b97}{image\+Cap} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+thread \hyperlink{class_gesture_detection_1_1_capture_a1eb079eb874f1d4246d1f4f33a66f13f}{uthread}
+\begin{DoxyCompactList}\small\item\em thread to start image capture \end{DoxyCompactList}\item 
+\hyperlink{class_gestro_1_1_capture_and_detect_callback_interface}{Gestro\+::\+Capture\+And\+Detect\+Callback\+Interface} $\ast$ \hyperlink{class_gesture_detection_1_1_capture_a1e3b24bb47bd38304293b13f72e330a0}{callback}
+\begin{DoxyCompactList}\small\item\em callback to capture and detect \end{DoxyCompactList}\item 
+int \hyperlink{class_gesture_detection_1_1_capture_abcfde50571827b62b1b634b7da10832d}{height}
+\begin{DoxyCompactList}\small\item\em resolution height \end{DoxyCompactList}\item 
+int \hyperlink{class_gesture_detection_1_1_capture_ad3a6d053234b05f0d5004014f8c74f9f}{width}
+\begin{DoxyCompactList}\small\item\em resolution width \end{DoxyCompactList}\item 
+Mat \hyperlink{class_gesture_detection_1_1_capture_ae91c88b7342fe1ff305a52d9a7114b55}{frame}
+\begin{DoxyCompactList}\small\item\em captured frame \end{DoxyCompactList}\item 
+Video\+Capture $\ast$ \hyperlink{class_gesture_detection_1_1_capture_a43fc54a372cf9e8321f0db49315bfbf4}{capture}
+\begin{DoxyCompactList}\small\item\em pointer to Video\+Capture \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+runs a thread to start camera and capture image 
+
+A class that captures images from the webcam and calls the callback function with the image. 
+
+Definition at line 18 of file Capture.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_gesture_detection_1_1_capture_a97036b5d271238bd4852da79a0091b57}\label{class_gesture_detection_1_1_capture_a97036b5d271238bd4852da79a0091b57}} 
+\index{Gesture\+Detection\+::\+Capture@{Gesture\+Detection\+::\+Capture}!Capture@{Capture}}
+\index{Capture@{Capture}!Gesture\+Detection\+::\+Capture@{Gesture\+Detection\+::\+Capture}}
+\subsubsection{\texorpdfstring{Capture()}{Capture()}}
+{\footnotesize\ttfamily Capture\+::\+Capture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+The constructor for the class. 
+
+Definition at line 3 of file Capture.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_gesture_detection_1_1_capture_a010b666cb1482b235f8282867e8f1b97}\label{class_gesture_detection_1_1_capture_a010b666cb1482b235f8282867e8f1b97}} 
+\index{Gesture\+Detection\+::\+Capture@{Gesture\+Detection\+::\+Capture}!image\+Cap@{image\+Cap}}
+\index{image\+Cap@{image\+Cap}!Gesture\+Detection\+::\+Capture@{Gesture\+Detection\+::\+Capture}}
+\subsubsection{\texorpdfstring{image\+Cap()}{imageCap()}}
+{\footnotesize\ttfamily void Capture\+::image\+Cap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+It captures an image from the webcam, and then calls the callback function with the image 
+
+Definition at line 32 of file Capture.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_gesture_detection_1_1_capture_a010b666cb1482b235f8282867e8f1b97_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_gesture_detection_1_1_capture_a010b666cb1482b235f8282867e8f1b97_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_gesture_detection_1_1_capture_aaff420636b6bac6593789344cc990580}\label{class_gesture_detection_1_1_capture_aaff420636b6bac6593789344cc990580}} 
+\index{Gesture\+Detection\+::\+Capture@{Gesture\+Detection\+::\+Capture}!init@{init}}
+\index{init@{init}!Gesture\+Detection\+::\+Capture@{Gesture\+Detection\+::\+Capture}}
+\subsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Capture\+::init (\begin{DoxyParamCaption}\item[{\hyperlink{class_gestro_1_1_capture_and_detect_callback_interface}{Gestro\+::\+Capture\+And\+Detect\+Callback\+Interface} $\ast$}]{interface,  }\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
+
+It initializes the \hyperlink{class_gesture_detection_1_1_capture}{Capture} class with the width and height of the image to be captured, and a pointer to the Detect\+Interface class
+
+
+\begin{DoxyParams}{Parameters}
+{\em interface} & The interface that will be called when a new frame is available. \\
+\hline
+{\em width} & The width of the image to be captured. \\
+\hline
+{\em height} & The height of the image to be captured. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 5 of file Capture.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_gesture_detection_1_1_capture_aaff420636b6bac6593789344cc990580_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_gesture_detection_1_1_capture_aaff420636b6bac6593789344cc990580_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_gesture_detection_1_1_capture_a2ffe4eeac4caa296f4fcc75cc82c1436}\label{class_gesture_detection_1_1_capture_a2ffe4eeac4caa296f4fcc75cc82c1436}} 
+\index{Gesture\+Detection\+::\+Capture@{Gesture\+Detection\+::\+Capture}!start@{start}}
+\index{start@{start}!Gesture\+Detection\+::\+Capture@{Gesture\+Detection\+::\+Capture}}
+\subsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Capture\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+It starts a thread that runs the image\+Cap function to read Images 
+
+Definition at line 22 of file Capture.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_gesture_detection_1_1_capture_a2ffe4eeac4caa296f4fcc75cc82c1436_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_gesture_detection_1_1_capture_a2ffe4eeac4caa296f4fcc75cc82c1436_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_gesture_detection_1_1_capture_ab632f1927461a909b18cce71ec96f76d}\label{class_gesture_detection_1_1_capture_ab632f1927461a909b18cce71ec96f76d}} 
+\index{Gesture\+Detection\+::\+Capture@{Gesture\+Detection\+::\+Capture}!stop@{stop}}
+\index{stop@{stop}!Gesture\+Detection\+::\+Capture@{Gesture\+Detection\+::\+Capture}}
+\subsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void Capture\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+It stops the capture thread by setting the running flag to false, and then waits for the thread to finish 
+
+Definition at line 27 of file Capture.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_gesture_detection_1_1_capture_a1e3b24bb47bd38304293b13f72e330a0}\label{class_gesture_detection_1_1_capture_a1e3b24bb47bd38304293b13f72e330a0}} 
+\index{Gesture\+Detection\+::\+Capture@{Gesture\+Detection\+::\+Capture}!callback@{callback}}
+\index{callback@{callback}!Gesture\+Detection\+::\+Capture@{Gesture\+Detection\+::\+Capture}}
+\subsubsection{\texorpdfstring{callback}{callback}}
+{\footnotesize\ttfamily \hyperlink{class_gestro_1_1_capture_and_detect_callback_interface}{Gestro\+::\+Capture\+And\+Detect\+Callback\+Interface}$\ast$ Gesture\+Detection\+::\+Capture\+::callback\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+callback to capture and detect 
+
+
+
+Definition at line 55 of file Capture.\+h.
+
+\mbox{\Hypertarget{class_gesture_detection_1_1_capture_a43fc54a372cf9e8321f0db49315bfbf4}\label{class_gesture_detection_1_1_capture_a43fc54a372cf9e8321f0db49315bfbf4}} 
+\index{Gesture\+Detection\+::\+Capture@{Gesture\+Detection\+::\+Capture}!capture@{capture}}
+\index{capture@{capture}!Gesture\+Detection\+::\+Capture@{Gesture\+Detection\+::\+Capture}}
+\subsubsection{\texorpdfstring{capture}{capture}}
+{\footnotesize\ttfamily Video\+Capture$\ast$ Gesture\+Detection\+::\+Capture\+::capture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+pointer to Video\+Capture 
+
+
+
+Definition at line 67 of file Capture.\+h.
+
+\mbox{\Hypertarget{class_gesture_detection_1_1_capture_ae91c88b7342fe1ff305a52d9a7114b55}\label{class_gesture_detection_1_1_capture_ae91c88b7342fe1ff305a52d9a7114b55}} 
+\index{Gesture\+Detection\+::\+Capture@{Gesture\+Detection\+::\+Capture}!frame@{frame}}
+\index{frame@{frame}!Gesture\+Detection\+::\+Capture@{Gesture\+Detection\+::\+Capture}}
+\subsubsection{\texorpdfstring{frame}{frame}}
+{\footnotesize\ttfamily Mat Gesture\+Detection\+::\+Capture\+::frame\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+captured frame 
+
+
+
+Definition at line 64 of file Capture.\+h.
+
+\mbox{\Hypertarget{class_gesture_detection_1_1_capture_abcfde50571827b62b1b634b7da10832d}\label{class_gesture_detection_1_1_capture_abcfde50571827b62b1b634b7da10832d}} 
+\index{Gesture\+Detection\+::\+Capture@{Gesture\+Detection\+::\+Capture}!height@{height}}
+\index{height@{height}!Gesture\+Detection\+::\+Capture@{Gesture\+Detection\+::\+Capture}}
+\subsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily int Gesture\+Detection\+::\+Capture\+::height\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+resolution height 
+
+
+
+Definition at line 58 of file Capture.\+h.
+
+\mbox{\Hypertarget{class_gesture_detection_1_1_capture_ab022086194534e994259e0f6de25e350}\label{class_gesture_detection_1_1_capture_ab022086194534e994259e0f6de25e350}} 
+\index{Gesture\+Detection\+::\+Capture@{Gesture\+Detection\+::\+Capture}!running@{running}}
+\index{running@{running}!Gesture\+Detection\+::\+Capture@{Gesture\+Detection\+::\+Capture}}
+\subsubsection{\texorpdfstring{running}{running}}
+{\footnotesize\ttfamily bool Gesture\+Detection\+::\+Capture\+::running = false}
+
+
+
+boolean to check if cmaera is running 
+
+
+
+Definition at line 22 of file Capture.\+h.
+
+\mbox{\Hypertarget{class_gesture_detection_1_1_capture_a1eb079eb874f1d4246d1f4f33a66f13f}\label{class_gesture_detection_1_1_capture_a1eb079eb874f1d4246d1f4f33a66f13f}} 
+\index{Gesture\+Detection\+::\+Capture@{Gesture\+Detection\+::\+Capture}!uthread@{uthread}}
+\index{uthread@{uthread}!Gesture\+Detection\+::\+Capture@{Gesture\+Detection\+::\+Capture}}
+\subsubsection{\texorpdfstring{uthread}{uthread}}
+{\footnotesize\ttfamily thread Gesture\+Detection\+::\+Capture\+::uthread\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+thread to start image capture 
+
+
+
+Definition at line 52 of file Capture.\+h.
+
+\mbox{\Hypertarget{class_gesture_detection_1_1_capture_ad3a6d053234b05f0d5004014f8c74f9f}\label{class_gesture_detection_1_1_capture_ad3a6d053234b05f0d5004014f8c74f9f}} 
+\index{Gesture\+Detection\+::\+Capture@{Gesture\+Detection\+::\+Capture}!width@{width}}
+\index{width@{width}!Gesture\+Detection\+::\+Capture@{Gesture\+Detection\+::\+Capture}}
+\subsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily int Gesture\+Detection\+::\+Capture\+::width\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+resolution width 
+
+
+
+Definition at line 61 of file Capture.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/gesture\+\_\+detection/\hyperlink{_capture_8h}{Capture.\+h}\item 
+src/gesture\+\_\+detection/\hyperlink{_capture_8cpp}{Capture.\+cpp}\end{DoxyCompactItemize}

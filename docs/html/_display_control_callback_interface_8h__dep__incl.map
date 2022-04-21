@@ -1,0 +1,11 @@
+<map id="src/ubuntu_controls/DisplayControlCallbackInterface.h" name="src/ubuntu_controls/DisplayControlCallbackInterface.h">
+<area shape="rect" id="node2" href="$_capture_and_detect_8h.html" title="src/gesture_detection\l/CaptureAndDetect.h" alt="" coords="194,95,341,136"/>
+<area shape="rect" id="node9" href="$_display_control_8h.html" title="src/ubuntu_controls\l/DisplayControl.h" alt="" coords="377,95,513,136"/>
+<area shape="rect" id="node3" href="$_capture_and_detect_8cpp.html" title="src/gesture_detection\l/CaptureAndDetect.cpp" alt="" coords="175,184,333,225"/>
+<area shape="rect" id="node4" href="$_controller_screen_8h.html" title="src/gui/ControllerScreen.h" alt="" coords="358,191,531,218"/>
+<area shape="rect" id="node7" href="$_start_screen_8h.html" title="src/gui/StartScreen.h" alt="" coords="5,191,151,218"/>
+<area shape="rect" id="node5" href="$_controller_screen_8cpp.html" title="src/gui/ControllerScreen.cpp" alt="" coords="351,273,538,300"/>
+<area shape="rect" id="node6" href="$_start_screen_8cpp.html" title="src/gui/StartScreen.cpp" alt="" coords="160,273,319,300"/>
+<area shape="rect" id="node8" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="29,273,127,300"/>
+<area shape="rect" id="node10" href="$_display_control_8cpp.html" title="src/ubuntu_controls\l/DisplayControl.cpp" alt="" coords="556,184,693,225"/>
+</map>

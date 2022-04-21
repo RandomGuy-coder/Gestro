@@ -1,0 +1,10 @@
+<map id="ControllerScreen::updateLogTable" name="ControllerScreen::updateLogTable">
+<area shape="rect" id="node2" href="$class_controller_screen.html#aac8b2856372fa02c4f793cf9183dffed" title="ControllerScreen::unprocessed\lFeed_clicked" alt="" coords="220,5,421,47"/>
+<area shape="rect" id="node5" href="$class_controller_screen.html#a4d9db4a832f667aacb7d7532f752fd1b" title="ControllerScreen::skinMask\l_clicked" alt="" coords="229,71,412,112"/>
+<area shape="rect" id="node6" href="$class_controller_screen.html#ac4f535408ffdfa10cbfa1a89d833f592" title="ControllerScreen::detector\l_clicked" alt="" coords="233,136,408,177"/>
+<area shape="rect" id="node7" href="$class_controller_screen.html#af7f51cf63bb9d2526b0025f35f1e7731" title="ControllerScreen::calibrate\l_clicked" alt="" coords="233,201,409,243"/>
+<area shape="rect" id="node8" href="$class_controller_screen.html#a7a71b9bc26a3de704f8613f3f2a08fb7" title="ControllerScreen::calibrate\lBackground_clicked" alt="" coords="233,267,409,308"/>
+<area shape="rect" id="node3" href="$class_controller_screen.html#acf89cc74ff8383884d11a067b3243d4a" title="ControllerScreen::connect\lGuiEvents" alt="" coords="474,136,647,177"/>
+<area shape="rect" id="node4" href="$class_controller_screen.html#aecef7737326dbb37945e6a9eac6dcede" title="ControllerScreen::Controller\lScreen" alt="" coords="700,136,883,177"/>
+<area shape="rect" id="node9" href="$class_controller_screen.html#afbb0033f9be00fce83d54f2a49b9ba89" title="ControllerScreen::keyPress\lEvent" alt="" coords="469,267,652,308"/>
+</map>

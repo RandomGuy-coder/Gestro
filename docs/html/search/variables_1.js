@@ -1,5 +1,26 @@
 var searchData=
 [
-  ['recievedframe',['recievedFrame',['../classCaptureAndDetect.html#ad614571fedee59ecccccf0c14c3dd542',1,'CaptureAndDetect']]],
-  ['running',['running',['../classCapture.html#a4120483ac2f664e14a80ec5dcd9915cb',1,'Capture']]]
+  ['calibrate',['calibrate',['../class_gestro_1_1_capture_and_detect.html#acbe1ce90cb6a7bad1c94a6be68cc4f0b',1,'Gestro::CaptureAndDetect::calibrate()'],['../struct_custom_signals.html#affeb9cf3ae6f465af657b9e13f2f51e6',1,'CustomSignals::calibrate()']]],
+  ['calibratebackground',['calibrateBackground',['../struct_custom_signals.html#aa853ceb0f87d27fb4d8318b98a5e36c6',1,'CustomSignals']]],
+  ['calibrated',['calibrated',['../class_gesture_detection_1_1_skin_color_detector.html#aef5ea498d5f27603fa5c2f17a5ebeb25',1,'GestureDetection::SkinColorDetector']]],
+  ['calibratevalues',['calibrateValues',['../struct_custom_signals.html#a9383d26c828ce25b99c0a64fc8adcdc2',1,'CustomSignals']]],
+  ['callback',['callback',['../class_gesture_detection_1_1_capture.html#a1e3b24bb47bd38304293b13f72e330a0',1,'GestureDetection::Capture::callback()'],['../class_gestro_1_1_capture_and_detect.html#ab137d75874d927cb28c5c46e29b82e86',1,'Gestro::CaptureAndDetect::callback()']]],
+  ['capture',['capture',['../class_gesture_detection_1_1_capture.html#a43fc54a372cf9e8321f0db49315bfbf4',1,'GestureDetection::Capture::capture()'],['../class_gestro_1_1_capture_and_detect.html#a6873c3bb2ab557d3997b39f0de032233',1,'Gestro::CaptureAndDetect::capture()']]],
+  ['captureanddetect',['captureAndDetect',['../class_controller_screen.html#a672477c37c55499b69e28da611e7313d',1,'ControllerScreen']]],
+  ['card',['card',['../class_ubuntu_controller_1_1_volume_control.html#a2ce0158fa17926a0a06d254fa61c1024',1,'UbuntuController::VolumeControl']]],
+  ['color_5fblue',['color_blue',['../class_gesture_detection_1_1_finger_counter.html#a0081a8ce412b872f627f8540baeddd19',1,'GestureDetection::FingerCounter']]],
+  ['color_5fgreen',['color_green',['../class_gesture_detection_1_1_finger_counter.html#a937a79c7b41ecffd6e2c56ca812b06a2',1,'GestureDetection::FingerCounter']]],
+  ['color_5fwhite',['color_white',['../class_gesture_detection_1_1_finger_counter.html#a6db55f356b9d9c3caccfe94d8a0d6ff3',1,'GestureDetection::FingerCounter']]],
+  ['color_5fyellow',['color_yellow',['../class_gesture_detection_1_1_finger_counter.html#a9382982af059fcae51ee2c28e4392271',1,'GestureDetection::FingerCounter']]],
+  ['command',['command',['../class_gesture_detection_1_1_finger_and_coordinates.html#a1235facd3de69e4e6fd8a3326e140d18',1,'GestureDetection::FingerAndCoordinates']]],
+  ['commands',['commands',['../class_gestro_1_1_capture_and_detect.html#ad2be564539d1862efb8c8f633cc97e96',1,'Gestro::CaptureAndDetect']]],
+  ['commandthread',['commandThread',['../class_gestro_1_1_capture_and_detect.html#a0c079f5a40fa2b8485331d0392b40c37',1,'Gestro::CaptureAndDetect']]],
+  ['controlinterface',['controlInterface',['../class_gestro_1_1_capture_and_detect.html#ab21df2b869f25d82734079877139d7e4',1,'Gestro::CaptureAndDetect']]],
+  ['controlminimizewindow',['controlMinimizeWindow',['../class_gesture_detection_1_1_enabled_command.html#a0901b0b7dbda1712065df28848ff4c0d',1,'GestureDetection::EnabledCommand']]],
+  ['controlmouse',['controlMouse',['../class_gesture_detection_1_1_enabled_command.html#a49930173fcb2bab93322e9c60d31cad5',1,'GestureDetection::EnabledCommand']]],
+  ['controlmovewindow',['controlMoveWindow',['../class_gesture_detection_1_1_enabled_command.html#a5f91d83cc097a360d4c39a30563eaa18',1,'GestureDetection::EnabledCommand']]],
+  ['controlspacebar',['controlSpacebar',['../class_gesture_detection_1_1_enabled_command.html#abf2d47343a7abbcd43baa577861dd4b7',1,'GestureDetection::EnabledCommand']]],
+  ['controlvolume',['controlVolume',['../class_gesture_detection_1_1_enabled_command.html#a8d2542571d224cdca24f428bc066215f',1,'GestureDetection::EnabledCommand']]],
+  ['currentfinger',['currentFinger',['../class_gesture_detection_1_1_finger_counter.html#a8d7f597b3c452bdd4d418752eaa616cb',1,'GestureDetection::FingerCounter']]],
+  ['currentframe',['currentFrame',['../class_gestro_1_1_capture_and_detect.html#ab7694fb9dc10f0819f0c59feb123087a',1,'Gestro::CaptureAndDetect']]]
 ];

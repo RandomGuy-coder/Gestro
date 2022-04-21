@@ -1,0 +1,5 @@
+<map id="ControllerScreen::calibrateBackground_clicked" name="ControllerScreen::calibrateBackground_clicked">
+<area shape="rect" id="node2" href="$class_controller_screen.html#acf89cc74ff8383884d11a067b3243d4a" title="ControllerScreen::connect\lGuiEvents" alt="" coords="234,5,407,47"/>
+<area shape="rect" id="node4" href="$class_controller_screen.html#afbb0033f9be00fce83d54f2a49b9ba89" title="ControllerScreen::keyPress\lEvent" alt="" coords="229,71,412,112"/>
+<area shape="rect" id="node3" href="$class_controller_screen.html#aecef7737326dbb37945e6a9eac6dcede" title="ControllerScreen::Controller\lScreen" alt="" coords="460,5,643,47"/>
+</map>

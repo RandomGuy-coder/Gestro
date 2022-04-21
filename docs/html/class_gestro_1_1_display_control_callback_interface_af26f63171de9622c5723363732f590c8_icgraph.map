@@ -1,0 +1,5 @@
+<map id="Gestro::DisplayControlCallbackInterface::doIncreaseVolume" name="Gestro::DisplayControlCallbackInterface::doIncreaseVolume">
+<area shape="rect" id="node2" href="$class_gestro_1_1_capture_and_detect.html#a5747ba4779f2f30b599c5082088841ed" title="Gestro::CaptureAndDetect\l::processCommands" alt="" coords="260,5,437,47"/>
+<area shape="rect" id="node3" href="$class_gestro_1_1_capture_and_detect.html#a1df110dc696cebc95eb5d7ead2d74447" title="Gestro::CaptureAndDetect\l::init" alt="" coords="485,5,663,47"/>
+<area shape="rect" id="node4" href="$class_controller_screen.html#aecef7737326dbb37945e6a9eac6dcede" title="ControllerScreen::Controller\lScreen" alt="" coords="711,5,893,47"/>
+</map>

@@ -15,24 +15,32 @@ Gestro requires the following tools and libraries to run (other versions are not
 * Qt 5
 * OpenCV 4.5.5
 * libasound2-dev
-* Boost Unit Test Framework
+* Google Unit Test FrameWork
 
 > These required tools and libraries will be installed if you follow step 2 of the [installation guide](#installation-guide) below.
 
 ### Installation Guide
 
-> If permission is denied while trying to run any of the scripts, please enter the following command into the terminal and try running the script again, ``` sudo chmod +x <script_name>.sh```.
+> If permission is denied while trying to run any of the scripts, please enter the following Commands into the terminal and try running the script again, ``` sudo chmod +x <script_name>.sh```.
 
->For example, for the install_dependencies.sh, enter ``` sudo chmod +x install_dependencies.sh ``` into the terminal.
+> For example, for the install_dependencies.sh, enter ``` sudo chmod +x install_dependencies.sh ``` into the terminal.
 
-**1. Download the latest [release]() from our Github and extract the contents into the Home folder.**
+**1. Download the latest [release]() from our Github and extract the contents into the _Home_ folder.**
+
+> Note: Make sure the folder with the contents is named "Gestro". If not, rename it to "Gestro".
+
+> Alternatively, launch a terminal and run:
+> ```
+> git clone https://github.com/RandomGuy-coder/Gestro.git
+> ```
 
 **2. Launch a terminal and enter the following commands into it to install the requirements:**
 ```sh
-cd Gestro && ./install_dependencies.sh
+cd ~/Gestro && sudo ./install_dependencies.sh
 ```
+> Note: If CMake version is found to be too low, please follow instructions [here](https://askubuntu.com/a/829311) to update CMake. After updating CMake, make sure to close and reopen the terminal before starting from step 2 again.
 
 **3. Enter the following commands into the terminal to run the build script.**
 ```sh
-./build.sh
+sudo ./build.sh
 ```

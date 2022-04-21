@@ -1,0 +1,20 @@
+<map id="src/gui/ControllerScreen.h" name="src/gui/ControllerScreen.h">
+<area shape="rect" id="node13" href="$_capture_and_detect_8h.html" title="CaptureAndDetect.h" alt="" coords="1631,80,1772,107"/>
+<area shape="rect" id="node16" href="$_finger_and_coordinates_8h.html" title="FingerAndCoordinates.h" alt="" coords="2097,319,2260,345"/>
+<area shape="rect" id="node17" href="$_commands_8h.html" title="Commands.h" alt="" coords="1982,393,2082,420"/>
+<area shape="rect" id="node23" href="$_controller_screen_callback_interface_8h.html" title="ControllerScreenCallback\lInterface.h" alt="" coords="2120,229,2291,271"/>
+<area shape="rect" id="node26" href="$_display_control_8h.html" title="DisplayControl.h" alt="" coords="2765,80,2883,107"/>
+<area shape="rect" id="node39" href="$_custom_signals_8h.html" title="CustomSignals.h" alt="" coords="3099,80,3221,107"/>
+<area shape="rect" id="node14" href="$_skin_color_detector_8h.html" title="SkinColorDetector.h" alt="" coords="1262,237,1402,263"/>
+<area shape="rect" id="node15" href="$_finger_counter_8h.html" title="FingerCounter.h" alt="" coords="1805,155,1920,181"/>
+<area shape="rect" id="node20" href="$_capture_and_detect_callback_interface_8h.html" title="CaptureAndDetectCallback\lInterface.h" alt="" coords="1611,229,1792,271"/>
+<area shape="rect" id="node21" href="$_capture_8h.html" title="Capture.h" alt="" coords="1565,155,1643,181"/>
+<area shape="rect" id="node24" href="$_display_control_callback_interface_8h.html" title="DisplayControlCallbackInterface.h" alt="" coords="2416,155,2637,181"/>
+<area shape="rect" id="node27" href="$_window_action_8h.html" title="WindowAction.h" alt="" coords="2863,155,2980,181"/>
+<area shape="rect" id="node30" href="$_keyboard_action_8h.html" title="KeyboardAction.h" alt="" coords="2661,155,2787,181"/>
+<area shape="rect" id="node33" href="$_volume_control_8h.html" title="VolumeControl.h" alt="" coords="3143,155,3262,181"/>
+<area shape="rect" id="node35" href="$_mouse_action_8h.html" title="MouseAction.h" alt="" coords="3009,155,3119,181"/>
+<area shape="rect" id="node29" href="$_window_control_8h.html" title="WindowControl.h" alt="" coords="2860,237,2983,263"/>
+<area shape="rect" id="node31" href="$_keyboard_event_8h.html" title="KeyboardEvent.h" alt="" coords="2612,237,2735,263"/>
+<area shape="rect" id="node36" href="$_mouse_control_8h.html" title="MouseControl.h" alt="" coords="3108,237,3223,263"/>
+</map>

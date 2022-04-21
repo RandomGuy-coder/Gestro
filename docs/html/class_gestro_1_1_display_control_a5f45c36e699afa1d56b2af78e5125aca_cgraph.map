@@ -1,0 +1,4 @@
+<map id="Gestro::DisplayControl::doButtonPress" name="Gestro::DisplayControl::doButtonPress">
+<area shape="rect" id="node2" href="$class_ubuntu_controller_1_1_mouse_action.html#aa017b86a7e358e7a74a8ec50a5a191cf" title="UbuntuController::MouseAction\l::pressButton" alt="" coords="208,5,412,47"/>
+<area shape="rect" id="node3" href="$class_ubuntu_controller_1_1_mouse_control.html#aef7670a46bf01b4a10767a9942dbdb79" title="UbuntuController::MouseControl\l::click" alt="" coords="460,5,669,47"/>
+</map>

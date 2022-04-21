@@ -1,0 +1,7 @@
+<map id="GestureDetection::FingerCounter::findPointsDistance" name="GestureDetection::FingerCounter::findPointsDistance">
+<area shape="rect" id="node2" href="$class_gesture_detection_1_1_finger_counter.html#aebba4b98a6332a74ba996536ca080dbb" title="GestureDetection::Finger\lCounter::findAngle" alt="" coords="240,5,408,47"/>
+<area shape="rect" id="node3" href="$class_gesture_detection_1_1_finger_counter.html#a611201352a86dd943f866c1be9507081" title="GestureDetection::Finger\lCounter::findFingersCount" alt="" coords="456,5,631,47"/>
+<area shape="rect" id="node4" href="$class_gestro_1_1_capture_and_detect.html#ac7e70bbcade4e0023541c556ee7cb34e" title="Gestro::CaptureAndDetect\l::processFrame" alt="" coords="679,5,856,47"/>
+<area shape="rect" id="node5" href="$class_gestro_1_1_capture_and_detect.html#a1df110dc696cebc95eb5d7ead2d74447" title="Gestro::CaptureAndDetect\l::init" alt="" coords="904,5,1081,47"/>
+<area shape="rect" id="node6" href="$class_controller_screen.html#aecef7737326dbb37945e6a9eac6dcede" title="ControllerScreen::Controller\lScreen" alt="" coords="1129,5,1312,47"/>
+</map>

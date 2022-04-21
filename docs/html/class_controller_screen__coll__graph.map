@@ -1,0 +1,19 @@
+<map id="ControllerScreen" name="ControllerScreen">
+<area shape="rect" id="node3" href="$class_controller_screen_callback_interface.html" title="Callback interface to ControllerScreen. " alt="" coords="209,336,399,457"/>
+<area shape="rect" id="node5" href="$class_gestro_1_1_capture_and_detect.html" title="This class takes care of starting threads to capture image, process and publish commands. " alt="" coords="515,623,728,1023"/>
+<area shape="rect" id="node4" href="$class_gesture_detection_1_1_enabled_command.html" title="This is a class that is used to store the enabled commands. " alt="" coords="5,321,184,472"/>
+<area shape="rect" id="node6" href="$class_gestro_1_1_capture_and_detect_callback_interface.html" title="Callback interface for CaptureAndDetect. " alt="" coords="735,35,913,141"/>
+<area shape="rect" id="node9" href="$class_gesture_detection_1_1_capture.html" title="runs a thread to start camera and capture image " alt="" coords="1075,292,1253,501"/>
+<area shape="rect" id="node11" href="$class_gesture_detection_1_1_finger_counter.html" title="checks the number of fingers and sends the respective command to be processed. " alt="" coords="619,233,787,560"/>
+<area shape="rect" id="node7" href="$class_gesture_detection_1_1_skin_color_detector.html" title="detects skin colour threshold and creates a skin mask. " alt="" coords="861,233,1051,560"/>
+<area shape="rect" id="node8" href="$class_gestro_1_1_display_control_callback_interface.html" title="{Gestro::DisplayControlCallback\lInterface\n||+ doMouseMove()\l+ doKeyPress()\l+ doIncreaseVolume()\l+ doReduceVolume()\l+ doMuteUnmute()\l+ doUnmute()\l+ doButtonPress()\l+ doWindowMove()\l+ doWindowMinimize()\l}" alt="" coords="1278,292,1485,501"/>
+<area shape="rect" id="node13" href="$class_gestro_1_1_display_control.html" title="This is a class that is inheriting from the classes WindowAction, KeyboardAction, MouseAction..." alt="" coords="1676,711,1831,935"/>
+<area shape="rect" id="node10" href="$class_gesture_detection_1_1_finger_and_coordinates.html" title="class to store the information detected by the FingerCounter. " alt="" coords="424,329,595,465"/>
+<area shape="rect" id="node12" href="$struct_custom_signals.html" title="Stored signals to connect to. " alt="" coords="752,762,904,883"/>
+<area shape="rect" id="node14" href="$class_ubuntu_controller_1_1_window_action.html" title="Contains functions that accessed by DisplayControl to access the WindowControl. " alt="" coords="1509,307,1683,487"/>
+<area shape="rect" id="node15" href="$class_ubuntu_controller_1_1_window_control.html" title="Used to send window events. " alt="" coords="1509,5,1683,171"/>
+<area shape="rect" id="node16" href="$class_ubuntu_controller_1_1_keyboard_action.html" title="A wrapper class for Keyboard Event. " alt="" coords="1707,343,1890,450"/>
+<area shape="rect" id="node17" href="$class_ubuntu_controller_1_1_mouse_action.html" title="A wrapper class for mouse control. " alt="" coords="1914,329,2118,465"/>
+<area shape="rect" id="node18" href="$class_ubuntu_controller_1_1_mouse_control.html" title="Used to send mouse events. " alt="" coords="1911,13,2121,163"/>
+<area shape="rect" id="node19" href="$class_ubuntu_controller_1_1_volume_control.html" title="This class uses the ALSA library to send commands to the sound card. " alt="" coords="2142,285,2314,509"/>
+</map>

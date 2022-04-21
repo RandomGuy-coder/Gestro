@@ -1,7 +1,0 @@
-<map id="DisplayControl" name="DisplayControl">
-<area shape="rect" id="node2" href="$classWindowAction.html" title="Contains functions that accessed by DisplayControl to access the WindowControl. " alt="" coords="57,5,164,32"/>
-<area shape="rect" id="node3" href="$classKeyboardAction.html" title="A wrapper class for Keyboard Event. " alt="" coords="53,56,168,83"/>
-<area shape="rect" id="node4" href="$classMouseAction.html" title="A wrapper class for mouse control. " alt="" coords="61,107,160,133"/>
-<area shape="rect" id="node5" href="$classVolumeControl.html" title="This class uses the ALSA library to send commands to the sound card. " alt="" coords="57,157,165,184"/>
-<area shape="rect" id="node6" href="$classDisplayControlCallbackInterface.html" title="DisplayControlCallbackInterface" alt="" coords="5,208,216,235"/>
-</map>

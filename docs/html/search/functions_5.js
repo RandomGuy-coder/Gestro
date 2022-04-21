@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['identifywindow',['identifyWindow',['../classWindowControl.html#aad092a22b19664df4d94fe9a853d350a',1,'WindowControl']]],
-  ['increasevolume',['increaseVolume',['../classVolumeControl.html#a6b51293368c1740b9bee0b8a4e7ed421',1,'VolumeControl']]],
-  ['init',['init',['../classCapture.html#a1c661ca1dca730fae534cb8f54ff6ef5',1,'Capture::init()'],['../classCaptureAndDetect.html#a485523d1c8231e2f744bf9d7fa110f88',1,'CaptureAndDetect::init()']]]
+  ['getcalibrated',['getCalibrated',['../class_gesture_detection_1_1_skin_color_detector.html#ad02c96fbc75934c86d22dd90ee726373',1,'GestureDetection::SkinColorDetector']]],
+  ['getfinger',['getFinger',['../class_gesture_detection_1_1_finger_counter.html#ab8a8c1f8ddc9eda04ac2bb16820c4c14',1,'GestureDetection::FingerCounter']]],
+  ['gethighestpoint',['getHighestPoint',['../class_gesture_detection_1_1_finger_counter.html#a54c1d13833b837d08bcd45c489494370',1,'GestureDetection::FingerCounter']]],
+  ['getskinmask',['getSkinMask',['../class_gesture_detection_1_1_skin_color_detector.html#a8cf2f51c4c7797a126b767e48458a006',1,'GestureDetection::SkinColorDetector']]]
 ];

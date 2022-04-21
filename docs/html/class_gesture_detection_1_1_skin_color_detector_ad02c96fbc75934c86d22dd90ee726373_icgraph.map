@@ -1,0 +1,6 @@
+<map id="GestureDetection::SkinColorDetector::getCalibrated" name="GestureDetection::SkinColorDetector::getCalibrated">
+<area shape="rect" id="node2" href="$class_gestro_1_1_capture_and_detect.html#aafb4f601f860dd38f514f6dd29a1d016" title="Gestro::CaptureAndDetect\l::calibrateValues" alt="" coords="243,5,420,47"/>
+<area shape="rect" id="node3" href="$class_gestro_1_1_capture_and_detect.html#ac7e70bbcade4e0023541c556ee7cb34e" title="Gestro::CaptureAndDetect\l::processFrame" alt="" coords="243,71,420,112"/>
+<area shape="rect" id="node4" href="$class_gestro_1_1_capture_and_detect.html#a1df110dc696cebc95eb5d7ead2d74447" title="Gestro::CaptureAndDetect\l::init" alt="" coords="468,71,645,112"/>
+<area shape="rect" id="node5" href="$class_controller_screen.html#aecef7737326dbb37945e6a9eac6dcede" title="ControllerScreen::Controller\lScreen" alt="" coords="693,71,876,112"/>
+</map>

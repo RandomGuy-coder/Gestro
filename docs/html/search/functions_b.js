@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['skincolordetector',['SkinColorDetector',['../classSkinColorDetector.html#ab059f7f926aac46a712db749b4df4f27',1,'SkinColorDetector']]],
-  ['start',['start',['../classCapture.html#a2ffe4eeac4caa296f4fcc75cc82c1436',1,'Capture']]],
-  ['stop',['stop',['../classCapture.html#ab632f1927461a909b18cce71ec96f76d',1,'Capture']]]
+  ['reducevolume',['reduceVolume',['../class_ubuntu_controller_1_1_volume_control.html#ad8e3e3740268388e906984fa807761a1',1,'UbuntuController::VolumeControl']]],
+  ['release',['release',['../class_ubuntu_controller_1_1_mouse_control.html#a0b2111e195e98133385cd559972fa779',1,'UbuntuController::MouseControl']]],
+  ['releasebutton',['releaseButton',['../class_ubuntu_controller_1_1_mouse_action.html#ab1ac193e88baf8614c55ca2fa7a3b430',1,'UbuntuController::MouseAction']]],
+  ['resize',['resize',['../class_ubuntu_controller_1_1_window_control.html#a131a982c3338be4187ac6611591e042f',1,'UbuntuController::WindowControl']]]
 ];

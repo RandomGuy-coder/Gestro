@@ -1,0 +1,9 @@
+<map id="Gestro::DisplayControl" name="Gestro::DisplayControl">
+<area shape="rect" id="node2" href="$class_ubuntu_controller_1_1_window_action.html" title="Contains functions that accessed by DisplayControl to access the WindowControl. " alt="" coords="5,255,180,435"/>
+<area shape="rect" id="node3" href="$class_ubuntu_controller_1_1_window_control.html" title="Used to send window events. " alt="" coords="5,5,180,171"/>
+<area shape="rect" id="node4" href="$class_ubuntu_controller_1_1_keyboard_action.html" title="A wrapper class for Keyboard Event. " alt="" coords="204,292,387,399"/>
+<area shape="rect" id="node5" href="$class_ubuntu_controller_1_1_mouse_action.html" title="A wrapper class for mouse control. " alt="" coords="411,277,615,413"/>
+<area shape="rect" id="node6" href="$class_ubuntu_controller_1_1_mouse_control.html" title="Used to send mouse events. " alt="" coords="408,13,617,163"/>
+<area shape="rect" id="node7" href="$class_ubuntu_controller_1_1_volume_control.html" title="This class uses the ALSA library to send commands to the sound card. " alt="" coords="639,233,811,457"/>
+<area shape="rect" id="node8" href="$class_gestro_1_1_display_control_callback_interface.html" title="{Gestro::DisplayControlCallback\lInterface\n||+ doMouseMove()\l+ doKeyPress()\l+ doIncreaseVolume()\l+ doReduceVolume()\l+ doMuteUnmute()\l+ doUnmute()\l+ doButtonPress()\l+ doWindowMove()\l+ doWindowMinimize()\l}" alt="" coords="835,241,1041,450"/>
+</map>
