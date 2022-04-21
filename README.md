@@ -74,11 +74,10 @@ By using a webcam and libraries such as OpenCV, X11, et cetera, Gestro is able t
 More details can be found below. However, for the complete information about Gestro, please visit our [website](https://randomguy-coder.github.io/Gestro/).
 
 ### Demonstration Video
-<-- Click to view our [![demonstration video]](https://randomguy-coder.github.io/Gestro/#demo-video)! -->
-
 Check out our demonstration video:
 
-[![Gestro Demonstration Video](https://github.com/RandomGuy-coder/Gestro/blob/gh-pages/assets/Gestro%20Demonstration%20Video.m4v?raw=true)
+[![Gestro Demonstration Video](https://user-images.githubusercontent.com/65194817/164545672-85706ffd-abc3-4aec-9838-a3a5d0f5e5fc.mp4
+)](https://randomguy-coder.github.io/Gestro/#demo-video)
 
 <div align="center">
   <img src="assets/Main Program Screenshot.png" alt="Screenshot of demonstration" width="600">
