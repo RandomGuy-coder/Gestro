@@ -93,7 +93,7 @@ Click to view our [demonstration video]()!
 * OpenCV
 * Doxygen
 * libasound2-dev
-* Boost Unit Test Framework
+* Google Unit Test Framework
 
 ## Getting Started
 Gestro is designed to be used on Linux PCs running the Ubuntu distribution. In particular, it was tested and found to be running perfectly on PCs running Ubuntu 18.04 LTS.
@@ -107,7 +107,7 @@ Gestro requires the following tools and libraries to run (other versions are not
 * Qt 5
 * OpenCV 4.5.5
 * libasound2-dev
-* Boost Unit Test Framework
+* Google Unit Test FrameWork
 
 > These required tools and libraries will be installed if you follow step 2 of the [installation guide](#installation-guide) below.
 
