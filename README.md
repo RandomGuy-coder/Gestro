@@ -59,7 +59,7 @@ Gestro is developed by a group of students from The University of Glasgow curren
 
 Gestro is an application which allows users to control their Linux system using hand gestures so that users will be able to perform certains actions without the use of a keyboard and mouse. This is particularly useful in cases where users want to control their Linux PC while: being away from it, being unfamiliar with modern devices (such as Elderly people), et cetera.
 
-By using a webcam and libraries such as OpenCV, X11, et cetera, Gestro is able to successfully translate hand gestures performed by users into commands that performs certain operations including, but not limited to, increasing or decreasing the system's volume, move, minimise, or close windows, and mouse clicks. Gestro is designed to be displayed using a Qt application on the users' Linux system running the Ubuntu distribution.
+By using a webcam and libraries such as OpenCV, X11, et cetera, Gestro is able to successfully translate hand gestures performed by users into commands that performs certain operations including, but not limited to, muting and unmuting the system's volume, move window, mouse move and clicks. Gestro is designed to be displayed using a Qt application on the users' Linux system running the Ubuntu distribution.
 
 <!-- **enter more about functionalities here** -->
 
@@ -77,8 +77,7 @@ Click to view our [demonstration video]()!
 * Enter Spacebar (Used for Play and Pause).
 * Track mouse.
 * Perform mouse clicks.
-* Increase and Decrease Volume.
-
+* Mute and Unmute Volume.
 * Move and Minimise window.
 
 ### Built With
@@ -134,7 +133,7 @@ cd Gestro && ./install_dependencies.sh
 ## Launching Gestro
 Firstly, launch a terminal and enter the following commands to cd into the Gestro directory:
 ```sh
-cd ~/Gestro
+cd bin
 ```
 
 ### Main Program
@@ -163,9 +162,7 @@ Here are some of the planned features for this project:
 * Enter other keys
 * Close Window
 * Change window size
-* Play and Pause
 * Play Next and Previous
-* Mute and Unmute
 * Zoom in and Zoom out
 * Switch between applications
 * Increase and Decrease Brightness
