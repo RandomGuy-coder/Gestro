@@ -34,7 +34,7 @@ Here is a demonstration video for Gestro:
 
 <div align="center" id = "demo-video">
   <video width="600" controls>
-    <source src="videos/Gestro demo.mp4" type="video/mp4">
+    <source src="assets/Gestro Demonstration Video.m4v" type="video/mp4">
   </video>
 </div>
 
