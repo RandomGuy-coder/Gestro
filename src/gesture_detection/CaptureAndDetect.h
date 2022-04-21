@@ -111,13 +111,6 @@ namespace Gestro {
         void processFrame();
 
         /**
-        * It takes the current frame, and checks to see if there is a palm in it
-        *
-        * @return A boolean value.
-        */
-        bool checkForPalm();
-
-        /**
         * It adds a finger to the buffer
         *
         * @param finger The finger that was detected.
@@ -151,9 +144,6 @@ namespace Gestro {
 
         /** \brief callback to Display Control to send ubuntu commands */
         DisplayControlCallbackInterface *controlInterface;
-
-        /** \brief Cascade classifier to detect fist */
-        CascadeClassifier *palmClassifier;
 
         /** \brief Capture object */
         Capture capture;

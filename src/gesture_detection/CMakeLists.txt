@@ -2,7 +2,7 @@ add_library(gesture_detection Capture.cpp Capture.h CaptureAndDetectCallbackInte
         CaptureAndDetect.h FingerCounter.cpp FingerCounter.h SkinColorDetector.cpp SkinColorDetector.h
         FingerAndCoordinates.cpp FingerAndCoordinates.h Commands.cpp Commands.h)
 
-set(OpenCV_DIR "${CMAKE_CURRENT_BINARY_DIR}/../../../opencv_build")
+set(OpenCV_DIR "${CMAKE_CURRENT_BINARY_DIR}/../../../libraries/opencv_build")
 find_package(OpenCV REQUIRED)
 find_package(Threads)
 find_package(iir)

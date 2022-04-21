@@ -14,9 +14,6 @@ namespace Gestro {
         /** @brief virtual method to update newFrame */
         virtual void newFrame(Mat) = 0;
 
-        /** @brief virtual method to check if fist in image */
-        virtual bool checkForPalm() = 0;
-
         /** @brief virtual method to add data to buffer */
         virtual void addToBuffer(FingerAndCoordinates) = 0;
     };
