@@ -3,6 +3,7 @@
 
 #include "boost/signals2.hpp"
 
+/** @brief Stored signals to connect to */
 struct CustomSignals{
     boost::signals2::signal<void(Feed)> imageViewChanged;
     boost::signals2::signal<void()> calibrate;

@@ -7,12 +7,12 @@ using namespace cv;
 using namespace std;
 
 namespace GestureDetection {
-/**
- * @brief detects skin colour threshold and creates a skin mask.
- *
- * This class calculates the skin colour from a ROI of the image and
- * then creates a skin mask on request.
- */
+    /**
+    * @brief detects skin colour threshold and creates a skin mask.
+    *
+    * This class calculates the skin colour from a ROI of the image and
+    * then creates a skin mask on request.
+    */
     class SkinColorDetector {
     public:
         /**

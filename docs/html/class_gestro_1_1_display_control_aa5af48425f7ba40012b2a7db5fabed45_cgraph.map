@@ -1,0 +1,5 @@
+<map id="Gestro::DisplayControl::doKeyPress" name="Gestro::DisplayControl::doKeyPress">
+<area shape="rect" id="node2" href="$class_ubuntu_controller_1_1_keyboard_action.html#ab09e3956685d6fb11cd1cdf86a673b48" title="UbuntuController::Keyboard\lAction::pressKey" alt="" coords="208,5,391,47"/>
+<area shape="rect" id="node3" href="$class_ubuntu_controller_1_1_keyboard_event.html#aea537f2a22fc1f162fd81b5d039eb053" title="UbuntuController::Keyboard\lEvent::keyPress" alt="" coords="439,5,621,47"/>
+<area shape="rect" id="node4" href="$class_ubuntu_controller_1_1_keyboard_event.html#a84e25f7a086a015007fe877a55d9444e" title="UbuntuController::Keyboard\lEvent::createKeyEvent" alt="" coords="669,5,852,47"/>
+</map>

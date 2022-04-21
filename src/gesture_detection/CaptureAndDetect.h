@@ -33,11 +33,11 @@ enum Feed {
 
 
 namespace Gestro {
-/** @brief This class takes care of starting threads to capture image, process and publish commands
- *
- * This class is the mediator between the different functions of the application. Connecting between image
- * capturing, GUI and and DisplayControl to publish the detected commands.
- * */
+    /** @brief This class takes care of starting threads to capture image, process and publish commands
+    *
+    * This class is the mediator between the different functions of the application. Connecting between image
+    * capturing, GUI and and DisplayControl to publish the detected commands.
+    * */
     class CaptureAndDetect : public CaptureAndDetectCallbackInterface {
     public:
 
@@ -47,14 +47,15 @@ namespace Gestro {
         CaptureAndDetect();
 
         /**
-        * It initializes the capture object, sets the region of interest, sets the callback interface, starts the capture, and
-        * starts the thread that processes the frames
+        * It initializes the capture and detection threads, and starts them
         *
-        * @param interface The interface that will be called when a gesture is detected.
-        * @param width The width of the camera's resolution.
-        * @param height The height of the camera's resolution.
+        * @param interface The interface to call when a gesture is detected.
         * @param screenWidth The width of the screen in pixels
-        * @param screenHeight The height of the screen in pixels.
+        * @param screenHeight The height of the screen in pixels
+        * @param enabledCommand This is a pointer to an EnabledCommand object. This object is used to determine if the user has
+        * enabled the finger counter.
+        * @param width The width of the camera image
+        *  @param height The height of the camera's resolution.
         */
         void init(ControllerScreenCallbackInterface *, int, int, EnabledCommand *, Resolution width = WIDTH_1280,
                   Resolution height = HEIGHT_720);

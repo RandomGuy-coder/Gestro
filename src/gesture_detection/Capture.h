@@ -9,12 +9,12 @@ using namespace cv;
 using namespace Gestro;
 
 namespace GestureDetection {
-/**
- * @brief runs a thread to start camera and capture image
- *
- * A class that captures images from the webcam and calls
- * the callback function with the image.
- */
+    /**
+    * @brief runs a thread to start camera and capture image
+    *
+    * A class that captures images from the webcam and calls
+    *  the callback function with the image.
+    */
     class Capture {
     public:
 

@@ -1,0 +1,5 @@
+<map id="UbuntuController::MouseControl::coords" name="UbuntuController::MouseControl::coords">
+<area shape="rect" id="node2" href="$class_ubuntu_controller_1_1_mouse_control.html#a067b9b5aab08ad63fef9dce22b45763f" title="UbuntuController::MouseControl\l::move_to" alt="" coords="263,5,472,47"/>
+<area shape="rect" id="node3" href="$class_ubuntu_controller_1_1_mouse_action.html#a7a14cab01ad2ccdb1b135d4bae939fe2" title="UbuntuController::MouseAction\l::moveMouseTo" alt="" coords="520,5,724,47"/>
+<area shape="rect" id="node4" href="$class_gestro_1_1_display_control.html#aa8c509a1e17ba12d164dcfe43cf281d4" title="Gestro::DisplayControl\l::doMouseMove" alt="" coords="772,5,927,47"/>
+</map>

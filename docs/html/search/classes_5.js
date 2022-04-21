@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['mouseaction',['MouseAction',['../classUbuntuController_1_1MouseAction.html',1,'UbuntuController']]],
-  ['mousecontrol',['MouseControl',['../classUbuntuController_1_1MouseControl.html',1,'UbuntuController']]]
+  ['mouseaction',['MouseAction',['../class_ubuntu_controller_1_1_mouse_action.html',1,'UbuntuController']]],
+  ['mousecontrol',['MouseControl',['../class_ubuntu_controller_1_1_mouse_control.html',1,'UbuntuController']]]
 ];

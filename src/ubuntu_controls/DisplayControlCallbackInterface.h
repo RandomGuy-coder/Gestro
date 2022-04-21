@@ -2,7 +2,7 @@
 #define GESTRO_DISPLAYCONTROLCALLBACK_H
 
 namespace Gestro {
-/** @briefA An interface to use as callback. */
+    /** @briefA An interface to use as callback. */
     class DisplayControlCallbackInterface {
     public:
         virtual void doMouseMove(int, int) = 0;

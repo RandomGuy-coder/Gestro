@@ -1,0 +1,44 @@
+<map id="ControllerScreen::ControllerScreen" name="ControllerScreen::ControllerScreen">
+<area shape="rect" id="node2" href="$class_gestro_1_1_capture_and_detect.html#a1df110dc696cebc95eb5d7ead2d74447" title="Gestro::CaptureAndDetect\l::init" alt="" coords="236,427,413,468"/>
+<area shape="rect" id="node29" href="$class_gestro_1_1_capture_and_detect.html#aa75e3ba836797d18aa02c72bbf975082" title="Gestro::CaptureAndDetect\l::connectControlCallback" alt="" coords="236,1080,413,1121"/>
+<area shape="rect" id="node30" href="$class_controller_screen.html#acf89cc74ff8383884d11a067b3243d4a" title="ControllerScreen::connect\lGuiEvents" alt="" coords="238,1145,411,1187"/>
+<area shape="rect" id="node43" href="$class_controller_screen.html#af7c789ddca1dece0fb0585e84aeb5e81" title="ControllerScreen::connect\lSignals" alt="" coords="238,1211,411,1252"/>
+<area shape="rect" id="node3" href="$class_gesture_detection_1_1_capture.html#aaff420636b6bac6593789344cc990580" title="GestureDetection::Capture\l::init" alt="" coords="475,40,654,81"/>
+<area shape="rect" id="node5" href="$class_gesture_detection_1_1_capture.html#a2ffe4eeac4caa296f4fcc75cc82c1436" title="GestureDetection::Capture\l::start" alt="" coords="475,136,654,177"/>
+<area shape="rect" id="node7" href="$class_gestro_1_1_capture_and_detect.html#ac7e70bbcade4e0023541c556ee7cb34e" title="Gestro::CaptureAndDetect\l::processFrame" alt="" coords="476,263,653,304"/>
+<area shape="rect" id="node18" href="$class_gestro_1_1_capture_and_detect.html#a5747ba4779f2f30b599c5082088841ed" title="Gestro::CaptureAndDetect\l::processCommands" alt="" coords="476,623,653,664"/>
+<area shape="rect" id="node28" href="$class_gesture_detection_1_1_finger_counter.html#a5b5aabaa39ff05c70a873b4c2a7869f9" title="GestureDetection::Finger\lCounter::ConnectCallback" alt="" coords="477,688,653,729"/>
+<area shape="rect" id="node4" href="$class_gestro_1_1_capture_and_detect_callback_interface.html#a9a42d0f1b3fd64cea607eeb4e6a46287" title="virtual method to update newFrame " alt="" coords="977,5,1171,47"/>
+<area shape="rect" id="node6" href="$class_gesture_detection_1_1_capture.html#a010b666cb1482b235f8282867e8f1b97" title="GestureDetection::Capture\l::imageCap" alt="" coords="733,35,912,76"/>
+<area shape="rect" id="node8" href="$class_gesture_detection_1_1_skin_color_detector.html#a4eb701f5b2761027b3e752d6b3de46c2" title="GestureDetection::SkinColor\lDetector::drawSkinColorSampler" alt="" coords="716,100,929,141"/>
+<area shape="rect" id="node9" href="$class_gesture_detection_1_1_skin_color_detector.html#ad02c96fbc75934c86d22dd90ee726373" title="GestureDetection::SkinColor\lDetector::getCalibrated" alt="" coords="728,165,917,207"/>
+<area shape="rect" id="node10" href="$class_controller_screen_callback_interface.html#a7d11a5d40ead88e7f89b8b1ee836b0cd" title="ControllerScreenCallback\lInterface::updateImage" alt="" coords="737,231,908,272"/>
+<area shape="rect" id="node11" href="$class_gesture_detection_1_1_skin_color_detector.html#a8cf2f51c4c7797a126b767e48458a006" title="GestureDetection::SkinColor\lDetector::getSkinMask" alt="" coords="728,296,917,337"/>
+<area shape="rect" id="node12" href="$class_gesture_detection_1_1_finger_counter.html#a611201352a86dd943f866c1be9507081" title="GestureDetection::Finger\lCounter::findFingersCount" alt="" coords="735,361,910,403"/>
+<area shape="rect" id="node13" href="$class_gesture_detection_1_1_finger_counter.html#aebba4b98a6332a74ba996536ca080dbb" title="GestureDetection::Finger\lCounter::findAngle" alt="" coords="990,296,1158,337"/>
+<area shape="rect" id="node15" href="$class_gesture_detection_1_1_finger_counter.html#ab8a8c1f8ddc9eda04ac2bb16820c4c14" title="GestureDetection::Finger\lCounter::getFinger" alt="" coords="990,361,1158,403"/>
+<area shape="rect" id="node16" href="$class_gesture_detection_1_1_finger_counter.html#a54c1d13833b837d08bcd45c489494370" title="GestureDetection::Finger\lCounter::getHighestPoint" alt="" coords="989,427,1159,468"/>
+<area shape="rect" id="node14" href="$class_gesture_detection_1_1_finger_counter.html#a51fdf57f5f19911f34778e925d50b480" title="GestureDetection::Finger\lCounter::findPointsDistance" alt="" coords="1219,296,1405,337"/>
+<area shape="rect" id="node17" href="$class_gesture_detection_1_1_finger_counter.html#a89bf2a26694a8d7f826e88d73d9ba03f" title="GestureDetection::Finger\lCounter::farthest_point" alt="" coords="1228,427,1396,468"/>
+<area shape="rect" id="node19" href="$class_gestro_1_1_display_control_callback_interface.html#a35d453c78b578d061c89c95b3ae9ee8a" title="Gestro::DisplayControlCallback\lInterface::doMouseMove" alt="" coords="719,427,926,468"/>
+<area shape="rect" id="node20" href="$class_gestro_1_1_display_control_callback_interface.html#ab661600cad2743fd41253fb9cabbee51" title="Gestro::DisplayControlCallback\lInterface::doButtonPress" alt="" coords="719,492,926,533"/>
+<area shape="rect" id="node21" href="$class_gestro_1_1_display_control_callback_interface.html#a74ddca7b1ef399a41f6025163407bb4d" title="Gestro::DisplayControlCallback\lInterface::doUnmute" alt="" coords="719,557,926,599"/>
+<area shape="rect" id="node22" href="$class_gestro_1_1_display_control_callback_interface.html#af26f63171de9622c5723363732f590c8" title="Gestro::DisplayControlCallback\lInterface::doIncreaseVolume" alt="" coords="719,623,926,664"/>
+<area shape="rect" id="node23" href="$class_gestro_1_1_display_control_callback_interface.html#a8648fb64585379393917e6b50e348070" title="Gestro::DisplayControlCallback\lInterface::doReduceVolume" alt="" coords="719,688,926,729"/>
+<area shape="rect" id="node24" href="$class_gestro_1_1_display_control_callback_interface.html#ab660632d549760b0404388fc8e86714a" title="Gestro::DisplayControlCallback\lInterface::doMuteUnmute" alt="" coords="719,753,926,795"/>
+<area shape="rect" id="node25" href="$class_gestro_1_1_display_control_callback_interface.html#a5232eef7102a1db6d227189132c92ebd" title="Gestro::DisplayControlCallback\lInterface::doWindowMove" alt="" coords="719,819,926,860"/>
+<area shape="rect" id="node26" href="$class_gestro_1_1_display_control_callback_interface.html#a677aa306f08c548396a048c680bf5e10" title="Gestro::DisplayControlCallback\lInterface::doWindowMinimize" alt="" coords="719,884,926,925"/>
+<area shape="rect" id="node27" href="$class_gestro_1_1_display_control_callback_interface.html#aa6d1e75bb4b3aa0b0e10497576b1053f" title="Gestro::DisplayControlCallback\lInterface::doKeyPress" alt="" coords="719,949,926,991"/>
+<area shape="rect" id="node31" href="$class_controller_screen.html#aac8b2856372fa02c4f793cf9183dffed" title="ControllerScreen::unprocessed\lFeed_clicked" alt="" coords="464,851,665,892"/>
+<area shape="rect" id="node33" href="$class_controller_screen.html#a4d9db4a832f667aacb7d7532f752fd1b" title="ControllerScreen::skinMask\l_clicked" alt="" coords="473,916,656,957"/>
+<area shape="rect" id="node34" href="$class_controller_screen.html#ac4f535408ffdfa10cbfa1a89d833f592" title="ControllerScreen::detector\l_clicked" alt="" coords="477,981,652,1023"/>
+<area shape="rect" id="node35" href="$class_controller_screen.html#af7f51cf63bb9d2526b0025f35f1e7731" title="ControllerScreen::calibrate\l_clicked" alt="" coords="477,1047,653,1088"/>
+<area shape="rect" id="node36" href="$class_controller_screen.html#ae4d6a51231fb1f6f8809ce3d036592bd" title="ControllerScreen::setCalibration\lValues" alt="" coords="461,1112,668,1153"/>
+<area shape="rect" id="node37" href="$class_controller_screen.html#a7a71b9bc26a3de704f8613f3f2a08fb7" title="ControllerScreen::calibrate\lBackground_clicked" alt="" coords="477,1177,653,1219"/>
+<area shape="rect" id="node38" href="$class_controller_screen.html#a27681be09b97984576a895ad21343b65" title="ControllerScreen::enable\lMouse" alt="" coords="482,1243,647,1284"/>
+<area shape="rect" id="node39" href="$class_controller_screen.html#ae08e0ea89830d8018ff9086e4c4362a5" title="ControllerScreen::enable\lVolume" alt="" coords="482,1308,647,1349"/>
+<area shape="rect" id="node40" href="$class_controller_screen.html#aa75c31cfb62427bba649b30e58130bfc" title="ControllerScreen::enable\lSpaceBar" alt="" coords="482,1373,647,1415"/>
+<area shape="rect" id="node41" href="$class_controller_screen.html#ad27b95368191153fa12d05091728b022" title="ControllerScreen::enable\lMinimizeWindow" alt="" coords="482,1439,647,1480"/>
+<area shape="rect" id="node42" href="$class_controller_screen.html#a90e6dcfb4a0dfb2e845890bba3f208f5" title="ControllerScreen::enable\lMoveWindow" alt="" coords="482,1504,647,1545"/>
+<area shape="rect" id="node32" href="$class_controller_screen.html#a039b816adc94fc7e7757520c10fd1d0b" title="ControllerScreen::update\lLogTable" alt="" coords="739,1015,906,1056"/>
+</map>

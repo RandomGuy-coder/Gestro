@@ -577,6 +577,18 @@
     </item>
     <item row="2" column="0">
      <widget class="QLabel" name="gestures_label">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>640</width>
+        <height>192</height>
+       </size>
+      </property>
       <property name="text">
        <string/>
       </property>

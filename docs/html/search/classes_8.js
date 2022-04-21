@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['windowaction',['WindowAction',['../classUbuntuController_1_1WindowAction.html',1,'UbuntuController']]],
-  ['windowcontrol',['WindowControl',['../classUbuntuController_1_1WindowControl.html',1,'UbuntuController']]]
+  ['windowaction',['WindowAction',['../class_ubuntu_controller_1_1_window_action.html',1,'UbuntuController']]],
+  ['windowcontrol',['WindowControl',['../class_ubuntu_controller_1_1_window_control.html',1,'UbuntuController']]]
 ];

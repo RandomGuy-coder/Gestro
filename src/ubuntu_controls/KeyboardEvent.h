@@ -5,9 +5,11 @@
 #include <X11/keysymdef.h>
 
 namespace UbuntuController {
-/** @brief Used to send keyboard events */
+
+    /** @brief Used to send keyboard events */
     class KeyboardEvent {
     public:
+        /** Constructor */
         KeyboardEvent(void);
 
         /**

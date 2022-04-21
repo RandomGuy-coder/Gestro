@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['volumecontrol',['VolumeControl',['../classUbuntuController_1_1VolumeControl.html',1,'UbuntuController']]]
+  ['volumecontrol',['VolumeControl',['../class_ubuntu_controller_1_1_volume_control.html',1,'UbuntuController']]]
 ];

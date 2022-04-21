@@ -1,0 +1,12 @@
+<map id="Gestro::CaptureAndDetect::processFrame" name="Gestro::CaptureAndDetect::processFrame">
+<area shape="rect" id="node2" href="$class_gesture_detection_1_1_skin_color_detector.html#a4eb701f5b2761027b3e752d6b3de46c2" title="GestureDetection::SkinColor\lDetector::drawSkinColorSampler" alt="" coords="231,5,444,47"/>
+<area shape="rect" id="node3" href="$class_gesture_detection_1_1_skin_color_detector.html#ad02c96fbc75934c86d22dd90ee726373" title="GestureDetection::SkinColor\lDetector::getCalibrated" alt="" coords="243,71,432,112"/>
+<area shape="rect" id="node4" href="$class_controller_screen_callback_interface.html#a7d11a5d40ead88e7f89b8b1ee836b0cd" title="ControllerScreenCallback\lInterface::updateImage" alt="" coords="252,136,423,177"/>
+<area shape="rect" id="node5" href="$class_gesture_detection_1_1_skin_color_detector.html#a8cf2f51c4c7797a126b767e48458a006" title="GestureDetection::SkinColor\lDetector::getSkinMask" alt="" coords="243,201,432,243"/>
+<area shape="rect" id="node6" href="$class_gesture_detection_1_1_finger_counter.html#a611201352a86dd943f866c1be9507081" title="GestureDetection::Finger\lCounter::findFingersCount" alt="" coords="250,267,425,308"/>
+<area shape="rect" id="node7" href="$class_gesture_detection_1_1_finger_counter.html#aebba4b98a6332a74ba996536ca080dbb" title="GestureDetection::Finger\lCounter::findAngle" alt="" coords="493,201,661,243"/>
+<area shape="rect" id="node9" href="$class_gesture_detection_1_1_finger_counter.html#ab8a8c1f8ddc9eda04ac2bb16820c4c14" title="GestureDetection::Finger\lCounter::getFinger" alt="" coords="493,267,661,308"/>
+<area shape="rect" id="node10" href="$class_gesture_detection_1_1_finger_counter.html#a54c1d13833b837d08bcd45c489494370" title="GestureDetection::Finger\lCounter::getHighestPoint" alt="" coords="492,332,661,373"/>
+<area shape="rect" id="node8" href="$class_gesture_detection_1_1_finger_counter.html#a51fdf57f5f19911f34778e925d50b480" title="GestureDetection::Finger\lCounter::findPointsDistance" alt="" coords="709,201,896,243"/>
+<area shape="rect" id="node11" href="$class_gesture_detection_1_1_finger_counter.html#a89bf2a26694a8d7f826e88d73d9ba03f" title="GestureDetection::Finger\lCounter::farthest_point" alt="" coords="719,332,887,373"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Gestro::CaptureAndDetect::calibrateColorPressed" name="Gestro::CaptureAndDetect::calibrateColorPressed">
+<area shape="rect" id="node2" href="$class_gesture_detection_1_1_skin_color_detector.html#ae8b3880d1d75b07e356cd7d1ff128ed9" title="GestureDetection::SkinColor\lDetector::calibrate" alt="" coords="251,5,441,47"/>
+<area shape="rect" id="node4" href="$class_controller_screen_callback_interface.html#aeee7c043e83e959de0788a9d2a5f70bb" title="ControllerScreenCallback\lInterface::updateCalibratedTrackbar" alt="" coords="231,71,461,112"/>
+<area shape="rect" id="node3" href="$class_gesture_detection_1_1_skin_color_detector.html#abcb6b9a3ef251dbafb6bca73ae0929f8" title="GestureDetection::SkinColor\lDetector::calculateThresholds" alt="" coords="509,5,705,47"/>
+</map>

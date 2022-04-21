@@ -6,7 +6,7 @@
 #include <string.h>    // memset
 
 namespace UbuntuController {
-/** @brief Used to send mouse events */
+    /** @brief Used to send mouse events */
     class MouseControl {
     public:
 

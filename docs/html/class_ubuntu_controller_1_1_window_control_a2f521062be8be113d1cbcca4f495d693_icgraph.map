@@ -1,0 +1,4 @@
+<map id="UbuntuController::WindowControl::close" name="UbuntuController::WindowControl::close">
+<area shape="rect" id="node2" href="$class_ubuntu_controller_1_1_window_action.html#a99150ce49f2956c56e64b6ba0246424f" title="UbuntuController::Window\lAction::closeWindow" alt="" coords="228,5,403,47"/>
+<area shape="rect" id="node3" href="$class_gestro_1_1_display_control.html#ad5fa763a77c680ce7b2089c6d79c4eb7" title="Gestro::DisplayControl\l::doWindowMinimize" alt="" coords="451,5,605,47"/>
+</map>

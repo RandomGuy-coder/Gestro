@@ -1,23 +1,13 @@
 var searchData=
 [
-  ['main',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
-  ['main_2ecpp',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['minimize',['minimize',['../classUbuntuController_1_1WindowControl.html#abb8d0ae3c43be976259181c848fa4568',1,'UbuntuController::WindowControl']]],
-  ['minimize_5fwindow',['MINIMIZE_WINDOW',['../Commands_8h.html#a1939e90743463fb34c8c571ec0590430a91e132cc77d496b33c233c6381ddf12e',1,'Commands.h']]],
-  ['minimizewindow',['minimizeWindow',['../classUbuntuController_1_1WindowAction.html#aa6f2b2543505c0c44027b501f151d4bf',1,'UbuntuController::WindowAction']]],
-  ['mouse_5fclick',['MOUSE_CLICK',['../Commands_8h.html#a1939e90743463fb34c8c571ec0590430a6e5c89c351b7128fdba923464fcdb47a',1,'Commands.h']]],
-  ['mouse_5fmove',['MOUSE_MOVE',['../Commands_8h.html#a1939e90743463fb34c8c571ec0590430a7513d383f97428a41f8b44594874d469',1,'Commands.h']]],
-  ['mouseaction',['MouseAction',['../classUbuntuController_1_1MouseAction.html',1,'UbuntuController::MouseAction'],['../classUbuntuController_1_1MouseAction.html#a42e540b994144f3f8775baded5370b14',1,'UbuntuController::MouseAction::MouseAction()']]],
-  ['mouseaction_2ecpp',['MouseAction.cpp',['../MouseAction_8cpp.html',1,'']]],
-  ['mouseaction_2eh',['MouseAction.h',['../MouseAction_8h.html',1,'']]],
-  ['mousecontrol',['MouseControl',['../classUbuntuController_1_1MouseControl.html',1,'UbuntuController::MouseControl'],['../classUbuntuController_1_1MouseControl.html#a16de792a08f8e9bbcb656ba0e434507c',1,'UbuntuController::MouseControl::MouseControl()']]],
-  ['mousecontrol_2ecpp',['MouseControl.cpp',['../MouseControl_8cpp.html',1,'']]],
-  ['mousecontrol_2eh',['MouseControl.h',['../MouseControl_8h.html',1,'']]],
-  ['move',['move',['../classUbuntuController_1_1MouseControl.html#a73a5e37468d8c1e7be8bcd1ac15c2135',1,'UbuntuController::MouseControl::move()'],['../classUbuntuController_1_1WindowControl.html#a367c48d4f217a83225c8ade45e347884',1,'UbuntuController::WindowControl::move()']]],
-  ['move_5fto',['move_to',['../classUbuntuController_1_1MouseControl.html#a067b9b5aab08ad63fef9dce22b45763f',1,'UbuntuController::MouseControl']]],
-  ['move_5fwindow',['MOVE_WINDOW',['../Commands_8h.html#a1939e90743463fb34c8c571ec0590430a8da4f522968e4f3f86e96bb8c91551c5',1,'Commands.h']]],
-  ['movemouseto',['moveMouseTo',['../classUbuntuController_1_1MouseAction.html#a7a14cab01ad2ccdb1b135d4bae939fe2',1,'UbuntuController::MouseAction']]],
-  ['movewindow',['moveWindow',['../classUbuntuController_1_1WindowAction.html#ae79c374bbbc84ff3dfb8565ede5f4220',1,'UbuntuController::WindowAction']]],
-  ['mute_5funmute',['MUTE_UNMUTE',['../Commands_8h.html#a1939e90743463fb34c8c571ec0590430a512f4445bc4a96f8e9714ecae8440b35',1,'Commands.h']]],
-  ['muteandunmute',['muteAndUnmute',['../classUbuntuController_1_1VolumeControl.html#a77273bc06d0f25068045860b0c6b4f91',1,'UbuntuController::VolumeControl']]]
+  ['identifywindow',['identifyWindow',['../class_ubuntu_controller_1_1_window_control.html#aad092a22b19664df4d94fe9a853d350a',1,'UbuntuController::WindowControl']]],
+  ['imagecap',['imageCap',['../class_gesture_detection_1_1_capture.html#a010b666cb1482b235f8282867e8f1b97',1,'GestureDetection::Capture']]],
+  ['imageviewchanged',['imageViewChanged',['../struct_custom_signals.html#ac453891590a3536656f21a5ef55efcbe',1,'CustomSignals']]],
+  ['increasevolume',['increaseVolume',['../class_ubuntu_controller_1_1_volume_control.html#a6b51293368c1740b9bee0b8a4e7ed421',1,'UbuntuController::VolumeControl']]],
+  ['info_5farch',['info_arch',['../_c_make_c_compiler_id_8c.html#a59647e99d304ed33b15cb284c27ed391',1,'info_arch():&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#a59647e99d304ed33b15cb284c27ed391',1,'info_arch():&#160;CMakeCXXCompilerId.cpp']]],
+  ['info_5fcompiler',['info_compiler',['../_c_make_c_compiler_id_8c.html#a4b0efeb7a5d59313986b3a0390f050f6',1,'info_compiler():&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#a4b0efeb7a5d59313986b3a0390f050f6',1,'info_compiler():&#160;CMakeCXXCompilerId.cpp']]],
+  ['info_5flanguage_5fextensions_5fdefault',['info_language_extensions_default',['../_c_make_c_compiler_id_8c.html#a0f46a8a39e09d9b803c4766904fd7e99',1,'info_language_extensions_default():&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#a0f46a8a39e09d9b803c4766904fd7e99',1,'info_language_extensions_default():&#160;CMakeCXXCompilerId.cpp']]],
+  ['info_5flanguage_5fstandard_5fdefault',['info_language_standard_default',['../_c_make_c_compiler_id_8c.html#a4607cccf070750927b458473ca82c090',1,'info_language_standard_default():&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#a4607cccf070750927b458473ca82c090',1,'info_language_standard_default():&#160;CMakeCXXCompilerId.cpp']]],
+  ['info_5fplatform',['info_platform',['../_c_make_c_compiler_id_8c.html#a2321403dee54ee23f0c2fa849c60f7d4',1,'info_platform():&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#a2321403dee54ee23f0c2fa849c60f7d4',1,'info_platform():&#160;CMakeCXXCompilerId.cpp']]],
+  ['init',['init',['../class_gesture_detection_1_1_capture.html#aaff420636b6bac6593789344cc990580',1,'GestureDetection::Capture::init()'],['../class_gestro_1_1_capture_and_detect.html#a1df110dc696cebc95eb5d7ead2d74447',1,'Gestro::CaptureAndDetect::init()']]]
 ];

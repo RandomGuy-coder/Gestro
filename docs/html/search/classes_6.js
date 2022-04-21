@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['skincolordetector',['SkinColorDetector',['../classGestureDetection_1_1SkinColorDetector.html',1,'GestureDetection']]]
+  ['skincolordetector',['SkinColorDetector',['../class_gesture_detection_1_1_skin_color_detector.html',1,'GestureDetection']]],
+  ['startscreen',['StartScreen',['../class_start_screen.html',1,'']]]
 ];

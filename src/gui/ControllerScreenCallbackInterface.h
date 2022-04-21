@@ -3,6 +3,7 @@
 #include "opencv2/opencv.hpp"
 #include "FingerAndCoordinates.h"
 
+/** @brief Callback interface to ControllerScreen */
 class ControllerScreenCallbackInterface {
 public:
     virtual void updateImage(cv::Mat) = 0;

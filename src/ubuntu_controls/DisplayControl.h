@@ -11,16 +11,15 @@
 using namespace UbuntuController;
 
 namespace Gestro {
-/** @brief This is a class that is inheriting from the classes WindowAction, KeyboardAction, MouseAction, VolumeControl, and DisplayControlCallbackInterface.
- *
- *
- * This class is used in order to concisely encapsulate the classes
- * for keyboard,window, mouse and volume control into a single class
- * so that they can be used in a callback function without the user
- * needing to create objects for each of those classes any of the
- * methods from the parent classes can be called by simply using dot notation
- * */
-
+    /** @brief This is a class that is inheriting from the classes WindowAction, KeyboardAction, MouseAction, VolumeControl, and DisplayControlCallbackInterface.
+    *
+    *
+    * This class is used in order to concisely encapsulate the classes
+    * for keyboard,window, mouse and volume control into a single class
+    * so that they can be used in a callback function without the user
+    * needing to create objects for each of those classes any of the
+    * methods from the parent classes can be called by simply using dot notation
+    * */
     class DisplayControl
             : public WindowAction,
               public KeyboardAction,

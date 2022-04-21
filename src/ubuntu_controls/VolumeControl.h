@@ -4,7 +4,7 @@
 #include <alsa/asoundlib.h>
 
 namespace UbuntuController {
-/** @brief This class uses the ALSA library to send commands to the sound card. */
+    /** @brief This class uses the ALSA library to send commands to the sound card. */
     class VolumeControl {
 
     private:

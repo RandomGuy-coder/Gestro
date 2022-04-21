@@ -1,0 +1,5 @@
+<map id="ControllerScreenCallbackInterface::updateImage" name="ControllerScreenCallbackInterface::updateImage">
+<area shape="rect" id="node2" href="$class_gestro_1_1_capture_and_detect.html#ac7e70bbcade4e0023541c556ee7cb34e" title="Gestro::CaptureAndDetect\l::processFrame" alt="" coords="224,5,401,47"/>
+<area shape="rect" id="node3" href="$class_gestro_1_1_capture_and_detect.html#a1df110dc696cebc95eb5d7ead2d74447" title="Gestro::CaptureAndDetect\l::init" alt="" coords="449,5,627,47"/>
+<area shape="rect" id="node4" href="$class_controller_screen.html#aecef7737326dbb37945e6a9eac6dcede" title="ControllerScreen::Controller\lScreen" alt="" coords="675,5,857,47"/>
+</map>

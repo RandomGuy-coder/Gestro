@@ -1,0 +1,4 @@
+<map id="ControllerScreen::keyPressEvent" name="ControllerScreen::keyPressEvent">
+<area shape="rect" id="node2" href="$class_controller_screen.html#a7a71b9bc26a3de704f8613f3f2a08fb7" title="ControllerScreen::calibrate\lBackground_clicked" alt="" coords="236,5,412,47"/>
+<area shape="rect" id="node3" href="$class_controller_screen.html#a039b816adc94fc7e7757520c10fd1d0b" title="ControllerScreen::update\lLogTable" alt="" coords="460,5,627,47"/>
+</map>

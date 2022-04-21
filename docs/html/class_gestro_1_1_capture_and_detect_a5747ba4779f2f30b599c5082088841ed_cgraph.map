@@ -1,0 +1,11 @@
+<map id="Gestro::CaptureAndDetect::processCommands" name="Gestro::CaptureAndDetect::processCommands">
+<area shape="rect" id="node2" href="$class_gestro_1_1_display_control_callback_interface.html#a35d453c78b578d061c89c95b3ae9ee8a" title="Gestro::DisplayControlCallback\lInterface::doMouseMove" alt="" coords="231,5,437,47"/>
+<area shape="rect" id="node3" href="$class_gestro_1_1_display_control_callback_interface.html#ab661600cad2743fd41253fb9cabbee51" title="Gestro::DisplayControlCallback\lInterface::doButtonPress" alt="" coords="231,71,437,112"/>
+<area shape="rect" id="node4" href="$class_gestro_1_1_display_control_callback_interface.html#a74ddca7b1ef399a41f6025163407bb4d" title="Gestro::DisplayControlCallback\lInterface::doUnmute" alt="" coords="231,136,437,177"/>
+<area shape="rect" id="node5" href="$class_gestro_1_1_display_control_callback_interface.html#af26f63171de9622c5723363732f590c8" title="Gestro::DisplayControlCallback\lInterface::doIncreaseVolume" alt="" coords="231,201,437,243"/>
+<area shape="rect" id="node6" href="$class_gestro_1_1_display_control_callback_interface.html#a8648fb64585379393917e6b50e348070" title="Gestro::DisplayControlCallback\lInterface::doReduceVolume" alt="" coords="231,267,437,308"/>
+<area shape="rect" id="node7" href="$class_gestro_1_1_display_control_callback_interface.html#ab660632d549760b0404388fc8e86714a" title="Gestro::DisplayControlCallback\lInterface::doMuteUnmute" alt="" coords="231,332,437,373"/>
+<area shape="rect" id="node8" href="$class_gestro_1_1_display_control_callback_interface.html#a5232eef7102a1db6d227189132c92ebd" title="Gestro::DisplayControlCallback\lInterface::doWindowMove" alt="" coords="231,397,437,439"/>
+<area shape="rect" id="node9" href="$class_gestro_1_1_display_control_callback_interface.html#a677aa306f08c548396a048c680bf5e10" title="Gestro::DisplayControlCallback\lInterface::doWindowMinimize" alt="" coords="231,463,437,504"/>
+<area shape="rect" id="node10" href="$class_gestro_1_1_display_control_callback_interface.html#aa6d1e75bb4b3aa0b0e10497576b1053f" title="Gestro::DisplayControlCallback\lInterface::doKeyPress" alt="" coords="231,528,437,569"/>
+</map>

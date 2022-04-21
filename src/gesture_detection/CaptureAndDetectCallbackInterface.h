@@ -8,7 +8,7 @@ using namespace cv;
 using namespace GestureDetection;
 
 namespace Gestro {
-/** @brief Callback interface for CaptureAndDetect */
+    /** @brief Callback interface for CaptureAndDetect */
     class CaptureAndDetectCallbackInterface {
     public:
         /** @brief virtual method to update newFrame */

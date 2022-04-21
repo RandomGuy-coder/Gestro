@@ -4,7 +4,7 @@
 #include <X11/Xlib.h>  // X11
 
 namespace UbuntuController {
-/** @brief Used to send window events */
+    /** @brief Used to send window events */
     class WindowControl {
     public:
         /**

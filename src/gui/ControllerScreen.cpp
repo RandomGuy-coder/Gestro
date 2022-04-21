@@ -1,5 +1,6 @@
 #include "ControllerScreen.h"
 
+
 ControllerScreen::ControllerScreen(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::ControllerScreen)
@@ -7,7 +8,6 @@ ControllerScreen::ControllerScreen(QWidget *parent) :
     ui->setupUi(this);
     QImage *image3 = new QImage("../src/resources/img/Gestures.png");
     ui->gestures_label->setPixmap(QPixmap::fromImage(*image3));
-    ui->gestures_label->adjustSize();
     Screen *screen = DefaultScreenOfDisplay(display);
     captureAndDetect.init(this, screen->width, screen->height, &enabledCommands);
     captureAndDetect.connectControlCallback(&displayControl);
@@ -22,12 +22,14 @@ ControllerScreen::ControllerScreen(QWidget *parent) :
 
 }
 
+
 void ControllerScreen::connectSignals() {
     signal.imageViewChanged.connect(boost::bind(&CaptureAndDetect::displayImage, &captureAndDetect, _1));
     signal.calibrateBackground.connect(boost::bind(&CaptureAndDetect::calibrateBackgroundRemover, &captureAndDetect));
     signal.calibrateValues.connect(boost::bind(&CaptureAndDetect::calibrateValues, &captureAndDetect,_1,_2,_3,_4));
     signal.calibrate.connect(boost::bind(&CaptureAndDetect::calibrateColorPressed, &captureAndDetect));
 }
+
 
 void ControllerScreen::connectGuiEvents() {
     connect(ui->unprocessed_feed, SIGNAL(clicked(bool)), this, SLOT(unprocessedFeed_clicked()));
@@ -44,13 +46,14 @@ void ControllerScreen::connectGuiEvents() {
     connect(ui->checkBox_5, SIGNAL(clicked(bool)), this, SLOT(enableSpaceBar()));
     connect(ui->checkBox_4, SIGNAL(clicked(bool)), this, SLOT(enableMinimizeWindow()));
     connect(ui->checkBox_2,SIGNAL(clicked(bool)), this, SLOT(enableMoveWindow()));
-//    connect(ui->checkBox)
 }
+
 
 ControllerScreen::~ControllerScreen()
 {
     delete ui;
 }
+
 
 void ControllerScreen::unprocessedFeed_clicked()
 {
@@ -58,17 +61,20 @@ void ControllerScreen::unprocessedFeed_clicked()
     updateLogTable("Showing Unprocessed Feed", "SUCCESS");
 }
 
+
 void ControllerScreen::skinMask_clicked()
 {
     signal.imageViewChanged(SKINMASK);
     updateLogTable("Showing Skin Mask", "SUCCESS");
 }
 
+
 void ControllerScreen::detector_clicked()
 {
     signal.imageViewChanged(DETECTED);
     updateLogTable("Showing Finger Counter", "SUCCESS");
 }
+
 
 void ControllerScreen::calibrate_clicked()
 {
@@ -85,6 +91,7 @@ void ControllerScreen::calibrateBackground_clicked(){
     updateLogTable("Background calibration", "SUCCESS");
 }
 
+
 void ControllerScreen::setCalibrationValues() {
     int hMin = ui->hMinSlider->value();
     int hMax = ui->hMaxSlider->value();
@@ -97,6 +104,7 @@ void ControllerScreen::setCalibrationValues() {
 
     signal.calibrateValues(hMin, hMax, sMin, sMax);
 }
+
 
 void ControllerScreen::updateImage(Mat dest) {
     cvtColor(dest,dest, COLOR_BGR2RGB);
@@ -152,6 +160,7 @@ void ControllerScreen::enableMoveWindow() {
         enabledCommands.controlMoveWindow= false;
     }
 }
+
 
 void ControllerScreen::enableVolume() {
     if(ui->checkBox->isChecked()){

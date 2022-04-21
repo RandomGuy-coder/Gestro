@@ -1,0 +1,10 @@
+<map id="src/gesture_detection/CaptureAndDetect.h" name="src/gesture_detection/CaptureAndDetect.h">
+<area shape="rect" id="node3" href="$_skin_color_detector_8h.html" title="SkinColorDetector.h" alt="" coords="730,95,870,121"/>
+<area shape="rect" id="node4" href="$_finger_counter_8h.html" title="FingerCounter.h" alt="" coords="137,95,252,121"/>
+<area shape="rect" id="node5" href="$_finger_and_coordinates_8h.html" title="FingerAndCoordinates.h" alt="" coords="113,259,276,285"/>
+<area shape="rect" id="node9" href="$_capture_and_detect_callback_interface_8h.html" title="CaptureAndDetectCallback\lInterface.h" alt="" coords="477,169,659,211"/>
+<area shape="rect" id="node10" href="$_capture_8h.html" title="Capture.h" alt="" coords="575,95,654,121"/>
+<area shape="rect" id="node12" href="$_controller_screen_callback_interface_8h.html" title="ControllerScreenCallback\lInterface.h" alt="" coords="232,169,403,211"/>
+<area shape="rect" id="node13" href="$_display_control_callback_interface_8h.html" title="DisplayControlCallbackInterface.h" alt="" coords="945,95,1167,121"/>
+<area shape="rect" id="node6" href="$_commands_8h.html" title="Commands.h" alt="" coords="43,333,143,360"/>
+</map>

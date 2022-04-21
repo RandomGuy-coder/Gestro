@@ -5,7 +5,7 @@
 #include "WindowControl.h"
 
 namespace UbuntuController {
-/** @brief Contains functions that accessed by DisplayControl to access the WindowControl. */
+    /** @brief Contains functions that accessed by DisplayControl to access the WindowControl. */
     class WindowAction {
     private:
 

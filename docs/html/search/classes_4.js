@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['keyboardaction',['KeyboardAction',['../classUbuntuController_1_1KeyboardAction.html',1,'UbuntuController']]],
-  ['keyboardevent',['KeyboardEvent',['../classUbuntuController_1_1KeyboardEvent.html',1,'UbuntuController']]]
+  ['keyboardaction',['KeyboardAction',['../class_ubuntu_controller_1_1_keyboard_action.html',1,'UbuntuController']]],
+  ['keyboardevent',['KeyboardEvent',['../class_ubuntu_controller_1_1_keyboard_event.html',1,'UbuntuController']]]
 ];

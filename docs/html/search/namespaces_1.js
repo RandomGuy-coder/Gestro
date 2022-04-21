@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['ubuntucontroller',['UbuntuController',['../namespaceUbuntuController.html',1,'']]]
+  ['ubuntucontroller',['UbuntuController',['../namespace_ubuntu_controller.html',1,'']]],
+  ['ui',['Ui',['../namespace_ui.html',1,'']]]
 ];

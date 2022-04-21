@@ -5,7 +5,7 @@
 #include "KeyboardEvent.h"
 
 namespace UbuntuController {
-/** @brief A wrapper class for Keyboard Event. */
+    /** @brief A wrapper class for Keyboard Event. */
     class KeyboardAction {
     private:
         /** @brief A pointer to the display.*/

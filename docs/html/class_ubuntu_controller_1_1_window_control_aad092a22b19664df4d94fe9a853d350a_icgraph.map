@@ -1,0 +1,12 @@
+<map id="UbuntuController::WindowControl::identifyWindow" name="UbuntuController::WindowControl::identifyWindow">
+<area shape="rect" id="node2" href="$class_ubuntu_controller_1_1_window_control.html#a131a982c3338be4187ac6611591e042f" title="UbuntuController::Window\lControl::resize" alt="" coords="228,5,403,47"/>
+<area shape="rect" id="node4" href="$class_ubuntu_controller_1_1_window_control.html#a367c48d4f217a83225c8ade45e347884" title="UbuntuController::Window\lControl::move" alt="" coords="228,71,403,112"/>
+<area shape="rect" id="node7" href="$class_ubuntu_controller_1_1_window_control.html#abb8d0ae3c43be976259181c848fa4568" title="UbuntuController::Window\lControl::minimize" alt="" coords="228,136,403,177"/>
+<area shape="rect" id="node9" href="$class_ubuntu_controller_1_1_window_control.html#a2f521062be8be113d1cbcca4f495d693" title="UbuntuController::Window\lControl::close" alt="" coords="228,201,403,243"/>
+<area shape="rect" id="node3" href="$class_ubuntu_controller_1_1_window_action.html#ac7145d79c3b902a716d554d09e6e2a63" title="UbuntuController::Window\lAction::changeWindowSize" alt="" coords="451,5,633,47"/>
+<area shape="rect" id="node5" href="$class_ubuntu_controller_1_1_window_action.html#ae79c374bbbc84ff3dfb8565ede5f4220" title="UbuntuController::Window\lAction::moveWindow" alt="" coords="455,71,629,112"/>
+<area shape="rect" id="node6" href="$class_gestro_1_1_display_control.html#aca4208c53cac28e164e7949effdc04cd" title="Gestro::DisplayControl\l::doWindowMove" alt="" coords="681,71,836,112"/>
+<area shape="rect" id="node8" href="$class_ubuntu_controller_1_1_window_action.html#aa6f2b2543505c0c44027b501f151d4bf" title="UbuntuController::Window\lAction::minimizeWindow" alt="" coords="455,136,629,177"/>
+<area shape="rect" id="node10" href="$class_ubuntu_controller_1_1_window_action.html#a99150ce49f2956c56e64b6ba0246424f" title="UbuntuController::Window\lAction::closeWindow" alt="" coords="455,201,629,243"/>
+<area shape="rect" id="node11" href="$class_gestro_1_1_display_control.html#ad5fa763a77c680ce7b2089c6d79c4eb7" title="Gestro::DisplayControl\l::doWindowMinimize" alt="" coords="681,201,836,243"/>
+</map>

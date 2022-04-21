@@ -23,14 +23,25 @@ enum Commands {
     PRESS_SPACE
 };
 namespace GestureDetection {
+    /** @brief This is a class that is used to store the enabled commands.*/
     class EnabledCommand {
     public:
+        /** @brief flag to check if controlSpacebar is active.*/
         bool controlSpacebar;
+
+        /** @brief flag to check if controlMouse is active.*/
         bool controlMouse;
+
+        /** @brief flag to check if controlMoveWindow is active.*/
         bool controlMoveWindow;
+
+        /** @brief flag to check if controlVolume is active.*/
         bool controlVolume;
+
+        /** @brief flag to check if controlMinimizeWindow is active.*/
         bool controlMinimizeWindow;
 
+        /** Constructor */
         EnabledCommand(void);
     };
 }

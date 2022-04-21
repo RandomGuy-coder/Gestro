@@ -1,0 +1,7 @@
+<map id="GestureDetection::FingerCounter::findFingersCount" name="GestureDetection::FingerCounter::findFingersCount">
+<area shape="rect" id="node2" href="$class_gesture_detection_1_1_finger_counter.html#aebba4b98a6332a74ba996536ca080dbb" title="GestureDetection::Finger\lCounter::findAngle" alt="" coords="229,5,397,47"/>
+<area shape="rect" id="node4" href="$class_gesture_detection_1_1_finger_counter.html#ab8a8c1f8ddc9eda04ac2bb16820c4c14" title="GestureDetection::Finger\lCounter::getFinger" alt="" coords="229,71,397,112"/>
+<area shape="rect" id="node5" href="$class_gesture_detection_1_1_finger_counter.html#a54c1d13833b837d08bcd45c489494370" title="GestureDetection::Finger\lCounter::getHighestPoint" alt="" coords="228,136,397,177"/>
+<area shape="rect" id="node3" href="$class_gesture_detection_1_1_finger_counter.html#a51fdf57f5f19911f34778e925d50b480" title="GestureDetection::Finger\lCounter::findPointsDistance" alt="" coords="445,5,632,47"/>
+<area shape="rect" id="node6" href="$class_gesture_detection_1_1_finger_counter.html#a89bf2a26694a8d7f826e88d73d9ba03f" title="GestureDetection::Finger\lCounter::farthest_point" alt="" coords="455,136,623,177"/>
+</map>

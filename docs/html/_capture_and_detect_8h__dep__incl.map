@@ -1,0 +1,8 @@
+<map id="src/gesture_detection/CaptureAndDetect.h" name="src/gesture_detection/CaptureAndDetect.h">
+<area shape="rect" id="node2" href="$_capture_and_detect_8cpp.html" title="src/gesture_detection\l/CaptureAndDetect.cpp" alt="" coords="5,95,164,136"/>
+<area shape="rect" id="node3" href="$_controller_screen_8h.html" title="src/gui/ControllerScreen.h" alt="" coords="189,102,362,129"/>
+<area shape="rect" id="node6" href="$_start_screen_8h.html" title="src/gui/StartScreen.h" alt="" coords="387,102,532,129"/>
+<area shape="rect" id="node4" href="$_controller_screen_8cpp.html" title="src/gui/ControllerScreen.cpp" alt="" coords="93,184,279,211"/>
+<area shape="rect" id="node5" href="$_start_screen_8cpp.html" title="src/gui/StartScreen.cpp" alt="" coords="304,184,463,211"/>
+<area shape="rect" id="node7" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="487,184,584,211"/>
+</map>

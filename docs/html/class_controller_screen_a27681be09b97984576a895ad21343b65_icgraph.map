@@ -1,0 +1,4 @@
+<map id="ControllerScreen::enableMouse" name="ControllerScreen::enableMouse">
+<area shape="rect" id="node2" href="$class_controller_screen.html#acf89cc74ff8383884d11a067b3243d4a" title="ControllerScreen::connect\lGuiEvents" alt="" coords="219,5,392,47"/>
+<area shape="rect" id="node3" href="$class_controller_screen.html#aecef7737326dbb37945e6a9eac6dcede" title="ControllerScreen::Controller\lScreen" alt="" coords="440,5,623,47"/>
+</map>

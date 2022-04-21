@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['gestro',['Gestro',['../namespaceGestro.html',1,'']]],
-  ['gesturedetection',['GestureDetection',['../namespaceGestureDetection.html',1,'']]]
+  ['gestro',['Gestro',['../namespace_gestro.html',1,'']]],
+  ['gesturedetection',['GestureDetection',['../namespace_gesture_detection.html',1,'']]]
 ];

@@ -1,0 +1,233 @@
+\hypertarget{class_ubuntu_controller_1_1_window_control}{}\section{Ubuntu\+Controller\+:\+:Window\+Control Class Reference}
+\label{class_ubuntu_controller_1_1_window_control}\index{Ubuntu\+Controller\+::\+Window\+Control@{Ubuntu\+Controller\+::\+Window\+Control}}
+
+
+Used to send window events.  
+
+
+
+
+{\ttfamily \#include $<$Window\+Control.\+h$>$}
+
+
+
+Collaboration diagram for Ubuntu\+Controller\+:\+:Window\+Control\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{class_ubuntu_controller_1_1_window_control__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_ubuntu_controller_1_1_window_control_ac1737a56defaa8f60f53054b2167fee8}{Window\+Control} (void)
+\item 
+Window \hyperlink{class_ubuntu_controller_1_1_window_control_aad092a22b19664df4d94fe9a853d350a}{identify\+Window} (Display $\ast$display)
+\item 
+void \hyperlink{class_ubuntu_controller_1_1_window_control_a131a982c3338be4187ac6611591e042f}{resize} (Display $\ast$display, int x, int y)
+\item 
+void \hyperlink{class_ubuntu_controller_1_1_window_control_a367c48d4f217a83225c8ade45e347884}{move} (Display $\ast$display, int x, int y)
+\item 
+void \hyperlink{class_ubuntu_controller_1_1_window_control_abb8d0ae3c43be976259181c848fa4568}{minimize} (Display $\ast$display)
+\item 
+void \hyperlink{class_ubuntu_controller_1_1_window_control_a2f521062be8be113d1cbcca4f495d693}{close} (Display $\ast$display)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Used to send window events. 
+
+Definition at line 8 of file Window\+Control.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_ubuntu_controller_1_1_window_control_ac1737a56defaa8f60f53054b2167fee8}\label{class_ubuntu_controller_1_1_window_control_ac1737a56defaa8f60f53054b2167fee8}} 
+\index{Ubuntu\+Controller\+::\+Window\+Control@{Ubuntu\+Controller\+::\+Window\+Control}!Window\+Control@{Window\+Control}}
+\index{Window\+Control@{Window\+Control}!Ubuntu\+Controller\+::\+Window\+Control@{Ubuntu\+Controller\+::\+Window\+Control}}
+\subsubsection{\texorpdfstring{Window\+Control()}{WindowControl()}}
+{\footnotesize\ttfamily Window\+Control\+::\+Window\+Control (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Constructor 
+
+Definition at line 6 of file Window\+Control.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ubuntu_controller_1_1_window_control_a2f521062be8be113d1cbcca4f495d693}\label{class_ubuntu_controller_1_1_window_control_a2f521062be8be113d1cbcca4f495d693}} 
+\index{Ubuntu\+Controller\+::\+Window\+Control@{Ubuntu\+Controller\+::\+Window\+Control}!close@{close}}
+\index{close@{close}!Ubuntu\+Controller\+::\+Window\+Control@{Ubuntu\+Controller\+::\+Window\+Control}}
+\subsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily void Window\+Control\+::close (\begin{DoxyParamCaption}\item[{Display $\ast$}]{display }\end{DoxyParamCaption})}
+
+It closes the window
+
+
+\begin{DoxyParams}{Parameters}
+{\em display} & The display to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 43 of file Window\+Control.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ubuntu_controller_1_1_window_control_a2f521062be8be113d1cbcca4f495d693_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ubuntu_controller_1_1_window_control_a2f521062be8be113d1cbcca4f495d693_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ubuntu_controller_1_1_window_control_aad092a22b19664df4d94fe9a853d350a}\label{class_ubuntu_controller_1_1_window_control_aad092a22b19664df4d94fe9a853d350a}} 
+\index{Ubuntu\+Controller\+::\+Window\+Control@{Ubuntu\+Controller\+::\+Window\+Control}!identify\+Window@{identify\+Window}}
+\index{identify\+Window@{identify\+Window}!Ubuntu\+Controller\+::\+Window\+Control@{Ubuntu\+Controller\+::\+Window\+Control}}
+\subsubsection{\texorpdfstring{identify\+Window()}{identifyWindow()}}
+{\footnotesize\ttfamily Window Window\+Control\+::identify\+Window (\begin{DoxyParamCaption}\item[{Display $\ast$}]{display }\end{DoxyParamCaption})}
+
+It returns the window that currently has focus
+
+
+\begin{DoxyParams}{Parameters}
+{\em display} & The display to use.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The window that has focus. 
+\end{DoxyReturn}
+
+
+Definition at line 8 of file Window\+Control.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ubuntu_controller_1_1_window_control_aad092a22b19664df4d94fe9a853d350a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ubuntu_controller_1_1_window_control_abb8d0ae3c43be976259181c848fa4568}\label{class_ubuntu_controller_1_1_window_control_abb8d0ae3c43be976259181c848fa4568}} 
+\index{Ubuntu\+Controller\+::\+Window\+Control@{Ubuntu\+Controller\+::\+Window\+Control}!minimize@{minimize}}
+\index{minimize@{minimize}!Ubuntu\+Controller\+::\+Window\+Control@{Ubuntu\+Controller\+::\+Window\+Control}}
+\subsubsection{\texorpdfstring{minimize()}{minimize()}}
+{\footnotesize\ttfamily void Window\+Control\+::minimize (\begin{DoxyParamCaption}\item[{Display $\ast$}]{display }\end{DoxyParamCaption})}
+
+It minimizes the window
+
+
+\begin{DoxyParams}{Parameters}
+{\em display} & The display to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 37 of file Window\+Control.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ubuntu_controller_1_1_window_control_abb8d0ae3c43be976259181c848fa4568_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ubuntu_controller_1_1_window_control_abb8d0ae3c43be976259181c848fa4568_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ubuntu_controller_1_1_window_control_a367c48d4f217a83225c8ade45e347884}\label{class_ubuntu_controller_1_1_window_control_a367c48d4f217a83225c8ade45e347884}} 
+\index{Ubuntu\+Controller\+::\+Window\+Control@{Ubuntu\+Controller\+::\+Window\+Control}!move@{move}}
+\index{move@{move}!Ubuntu\+Controller\+::\+Window\+Control@{Ubuntu\+Controller\+::\+Window\+Control}}
+\subsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void Window\+Control\+::move (\begin{DoxyParamCaption}\item[{Display $\ast$}]{display,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+It moves the window to the specified coordinates
+
+
+\begin{DoxyParams}{Parameters}
+{\em display} & The display to use. \\
+\hline
+{\em x} & The x coordinate of the window\textquotesingle{}s new position. \\
+\hline
+{\em y} & The y coordinate of the window\textquotesingle{}s new position. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 31 of file Window\+Control.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ubuntu_controller_1_1_window_control_a367c48d4f217a83225c8ade45e347884_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ubuntu_controller_1_1_window_control_a367c48d4f217a83225c8ade45e347884_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ubuntu_controller_1_1_window_control_a131a982c3338be4187ac6611591e042f}\label{class_ubuntu_controller_1_1_window_control_a131a982c3338be4187ac6611591e042f}} 
+\index{Ubuntu\+Controller\+::\+Window\+Control@{Ubuntu\+Controller\+::\+Window\+Control}!resize@{resize}}
+\index{resize@{resize}!Ubuntu\+Controller\+::\+Window\+Control@{Ubuntu\+Controller\+::\+Window\+Control}}
+\subsubsection{\texorpdfstring{resize()}{resize()}}
+{\footnotesize\ttfamily void Window\+Control\+::resize (\begin{DoxyParamCaption}\item[{Display $\ast$}]{display,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+It takes a display and two integers as arguments, and resizes the window to the given dimensions
+
+
+\begin{DoxyParams}{Parameters}
+{\em display} & The display to use. \\
+\hline
+{\em x} & The x coordinate of the upper left corner of the window. \\
+\hline
+{\em y} & The y coordinate of the upper-\/left outside corner of the window. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 16 of file Window\+Control.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ubuntu_controller_1_1_window_control_a131a982c3338be4187ac6611591e042f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ubuntu_controller_1_1_window_control_a131a982c3338be4187ac6611591e042f_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/ubuntu\+\_\+controls/\hyperlink{_window_control_8h}{Window\+Control.\+h}\item 
+src/ubuntu\+\_\+controls/\hyperlink{_window_control_8cpp}{Window\+Control.\+cpp}\end{DoxyCompactItemize}

@@ -5,7 +5,7 @@
 #include "MouseControl.h"
 
 namespace UbuntuController {
-/** @brief A wrapper class for mouse control. */
+    /** @brief A wrapper class for mouse control. */
     class MouseAction {
     private:
 

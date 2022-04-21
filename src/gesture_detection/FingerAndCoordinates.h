@@ -3,8 +3,8 @@
 #include "Commands.h"
 
 namespace GestureDetection {
-/** @brief class to store the information detected by the FingerCounter.
- */
+    /** @brief class to store the information detected by the FingerCounter.
+    */
     class FingerAndCoordinates {
     public:
         /** @brief stores the command ENUM */

@@ -12,14 +12,14 @@ using namespace std;
 using namespace Gestro;
 
 namespace GestureDetection {
-/**
- * @brief checks the number of fingers and sends the respective command to be processed.
- *
- * This class is called from the CaptureAndDetect after the initial image processing is done,
- * the fingers and stored in the buffer. Once the buffer size is 15 the finger that occurs
- * the most number of times in the buffer is considered and the appropriate command is sent.
- * If finger is one or 3 then the coordinates are sent until a new finger is detected.
- */
+    /**
+    * @brief checks the number of fingers and sends the respective command to be processed.
+    *
+    * This class is called from the CaptureAndDetect after the initial image processing is done,
+    * the fingers and stored in the buffer. Once the buffer size is 15 the finger that occurs
+    * the most number of times in the buffer is considered and the appropriate command is sent.
+    * If finger is one or 3 then the coordinates are sent until a new finger is detected.
+    */
     class FingerCounter {
     public:
         /**

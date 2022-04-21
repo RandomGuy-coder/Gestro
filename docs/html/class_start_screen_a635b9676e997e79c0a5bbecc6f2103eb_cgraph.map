@@ -1,0 +1,5 @@
+<map id="StartScreen::StartScreen" name="StartScreen::StartScreen">
+<area shape="rect" id="node2" href="$class_start_screen.html#a8343a5d292a0361ae1a760ff109f5740" title="StartScreen::pushbutton\l_start_clicked" alt="" coords="221,5,384,47"/>
+<area shape="rect" id="node3" href="$class_start_screen.html#a46f7199921ac073d0601ba4ca92659c7" title="StartScreen::pushbutton\l_software_intro_clicked" alt="" coords="221,71,384,112"/>
+<area shape="rect" id="node4" href="$class_start_screen.html#a5b2dcf2fc1bf0bae99674a1d2f7c4771" title="StartScreen::pushbutton\l_team_intro_clicked" alt="" coords="221,136,384,177"/>
+</map>
