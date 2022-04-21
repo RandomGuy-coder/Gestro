@@ -119,6 +119,13 @@ Gestro requires the following tools and libraries to run (other versions are not
 
 **1. Download the latest [release]() from our Github and extract the contents into the Home folder.**
 
+> Note: Make sure the folder with the contents is named "Gestro". If not, rename it to "Gestro".
+
+> Alternatively, launch a terminal and run:
+> ```
+> git clone https://github.com/RandomGuy-coder/Gestro.git
+> ```
+
 **2. Launch a terminal and enter the following commands into it to install the requirements:**
 ```sh
 cd Gestro && ./install_dependencies.sh
@@ -133,7 +140,7 @@ cd Gestro && ./install_dependencies.sh
 ## Launching Gestro
 Firstly, launch a terminal and enter the following commands to cd into the Gestro directory:
 ```sh
-cd bin
+cd ~/Gestro/bin
 ```
 
 ### Main Program
